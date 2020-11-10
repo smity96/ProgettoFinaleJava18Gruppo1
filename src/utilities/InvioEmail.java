@@ -47,7 +47,7 @@ public class InvioEmail extends HttpServlet {
 	    Session session = Session.getDefaultInstance(props,  
 	    new javax.mail.Authenticator() {
 	       protected PasswordAuthentication getPasswordAuthentication() {  
-	       return new PasswordAuthentication(from,password);  
+	       return new PasswordAuthentication(from,password);   
 	   }  
 	   });  
 
