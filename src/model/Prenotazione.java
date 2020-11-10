@@ -7,7 +7,7 @@ import javax.persistence.*;
 @NamedQuery(name="Prenotazione.findAll", query="SELECT p FROM Prenotazione p")
 public class Prenotazione implements Serializable {
 	private static final long serialVersionUID = 1L;
-
+	//commento anche qua
 	@Id
 	@Column(name="id_prenotazione")
 	private int id_prenotazione;
