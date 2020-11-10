@@ -1,0 +1,85 @@
+.banner {
+  background-image: url(../src/cinema-sala3.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  min-height: 75vh;
+}
+
+.custom-posizionamento {
+  position: absolute;
+  bottom: 30%;
+}
+
+.custom-posizionamento2 {
+  position: absolute;
+  bottom: 5%;
+}
+
+
+.img-banner {
+  max-height: 30vh;
+}
+
+.banner-title {
+  font-size: 7rem;
+}
+
+.banner-title2 {
+  font-size: 4rem;
+}
+
+.c-image{
+  max-height: 30rem;
+  margin: auto;
+}
+
+.img-container {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer ;
+}
+
+.size-custom {
+  height: 30rem;
+  width: 22rem;
+}
+
+.single-film {
+  border: none; 
+}
+
+.img-custom {
+height: 100%;
+width: 100%;
+margin: auto;
+display: block;  
+}
+
+
+.film-item-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 0.8rem;
+  background: #f19820;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+  -webkit-transform: translate(100%, 100%);
+  transform: translate(100%, 100%);
+}
+.img-container:hover .film-item-icon {
+  -webkit-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color:black !important;
+    opacity: 1; /* Firefox */
+  }
+
+  input:focus {
+    background-color: #f19820 !important;
+}

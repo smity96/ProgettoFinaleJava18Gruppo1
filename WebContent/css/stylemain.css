@@ -1,0 +1,71 @@
+/* TEMA SCURO */
+
+/* colore sfondo nero */
+.bg-nero {
+ background-color: #000000;
+}
+/* fine colore sfondo nero */
+
+/* colore sfondo dorato */
+.bg-oro {
+    background-color: #f19820;
+   }
+   /* fine colore sfondo dorato */
+
+/* colore corpo sezione */
+.bg-grigio-scuro {
+    background-color: #181a1e;
+}
+/* fine colore corpo sezione */
+
+/* scritte dorate */
+.scritta-dorata {
+    color: #f19820;
+}
+
+.scritta-bianca {
+    color: #fffffe;
+}
+
+.scritta-click-scuro:hover {
+    color: #fffffe;
+}
+/* fine scritte dorate */
+
+/* FINE TEMA SCURO */
+
+/* TEMA CHIARO */
+
+/* colore sfondo nero */
+.bg-bianco {
+    background-color: #fffffe;
+   }
+   /* fine colore sfondo nero */
+   
+   /* colore sfondo dorato */
+   .bg-oro {
+       background-color: #f19820;
+      }
+      /* fine colore sfondo dorato */
+   
+   /* colore corpo sezione */
+   .bg-grigio-chiaro {
+       background-color: #d9d9d9;
+   }
+   /* fine colore corpo sezione */
+   
+   /* scritte dorate */
+   .scritta-dorata {
+       color: #f19820;
+   }
+   
+   .scritta-nera {
+       color: #000000;
+   }
+   
+   .scritta-click-chiaro:hover {
+       color: #fffffe;
+   }
+   /* fine scritte dorate */
+   
+   /* FINE TEMA CHIARO */
