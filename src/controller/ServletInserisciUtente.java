@@ -29,15 +29,13 @@ public class ServletInserisciUtente extends HttpServlet {
 	public ServletInserisciUtente() {
 		super();
 		listaU =UtilitiesDbUtente.listaUtenti();
-
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		String email=request.getParameter("email");
 		String pi =request.getParameter("P.I.");
 		boolean reg=true;
@@ -51,7 +49,6 @@ public class ServletInserisciUtente extends HttpServlet {
 				}
 			}	
 			if(!request.getParameter("password").equals("") || !request.getParameter("data_di_nascita").equals("")||!reg) {
-
 				utente.setEmail(email);
 				utente.setPIva(pi);
 				utente.setNome(request.getParameter("nome"));
@@ -71,14 +68,10 @@ public class ServletInserisciUtente extends HttpServlet {
 				UtilitiesDbUtente.insUtente(utente);
 				System.out.println(utente.getNome());
 				listaU.add(utente);
-
 			}else {
 				response.sendRedirect("/registrazione.jsp");
 
 			}
-
-			//doGet(request, response);
-
 		}
 	}
 }
