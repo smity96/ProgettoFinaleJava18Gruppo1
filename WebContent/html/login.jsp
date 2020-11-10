@@ -11,10 +11,9 @@
     </head>
 
 <body class="bg-dark text-center"> 
-    <!-- Ciao -->
-    <!-- a te -->
+  
     <!--Form del login: -->
-    <form class="form-signin" action="#" method="#">
+    <form class="form-signin" action="/ProgettoFinaleJava18Gruppo1/ServletAccessoUtente" method="post">
         <img class="mb-4 mt-5" src="../src/logocinema.png" alt="Logo" width="72" height="72">
         <p class="h3 mb-3 text-warning">Accedi:</p>
           <p class="text-warning"><input class="rounded" name="email" type="email" placeholder="Email"></p>

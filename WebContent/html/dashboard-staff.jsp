@@ -1,3 +1,6 @@
+<%@page import="utilities.UtilitiesDbUtente"%>
+<%@page import="model.Utente"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -15,6 +18,9 @@
 </head>
 
 <body>
+<%
+	List<Utente>listaU=UtilitiesDbUtente.listaUtenti();
+%>
     <!-- navbar in alto-->
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
@@ -471,14 +477,18 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <%
+                                for(Utente u:listaU){
+                                %>
                                     <tr class="d-flex colore-icone-scuro">
-                                        <td class="col-3"><label>0</label></td>
-                                        <td class="col-3"><label>Nome</label></td>
+                                        <td class="col-3"><label><%=u.getIdUtente() %></label></td>
+                                        <td class="col-3"><label><%=u.getNome()+","+u.getCognome() %></label></td>
+                                        <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?remove<%=u %>"><i
+                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"><button>ELIMINA</button></i></a></td>
                                         <td class="col-3"><a href=""><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a></td>
-                                        <td class="col-3"><a href=""><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a></td>
+                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-edit"><button>MODIFICA</button></i></a></td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
@@ -493,17 +503,21 @@
                             </div>
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
+                              
                                     <tr class="d-flex">
                                         <th class="col-2">Id° Utente</th>
                                         <th class="col-2">Nome Utente</th>
                                         <th class="col-5">Gestisci Utente</th>
                                         <th class="col-3">Conferma Operazione</th>
                                     </tr>
+                                    
                                 </thead>
                                 <tbody>
                                     <tr class="d-flex">
-                                        <td class="col-2"><label>0</label></td>
-                                        <td class="col-2"><label>Nome</label></td>
+                                      <%for(Utente x:listaU){
+                                		%>
+                                        <td class="col-2"><label><%=x.getIdUtente() %></label></td>
+                                        <td class="col-2"><label><%=x.getNome() %></label></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
                                                     <option value="cancella-utente">cancella utente</option>
@@ -515,6 +529,7 @@
 
 
                                         </td>
+                                        <%} %>
                                     </tr>
                                 </tbody>
                             </table>

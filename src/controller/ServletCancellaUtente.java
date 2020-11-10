@@ -16,6 +16,7 @@ import utilities.UtilitiesDbUtente;
 public class ServletCancellaUtente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	List<Utente>listaU;
+	Utente u;
     public ServletCancellaUtente() {
         super();
   
@@ -27,19 +28,17 @@ public class ServletCancellaUtente extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Utente u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("id")));
 		listaU=UtilitiesDbUtente.listaUtenti();
-		for(Utente ut:listaU) {
-			if(ut.equals(u)) {
-				listaU.remove(u);
-			}
+		if(request.getParameter("remove")!=null) {
+			//u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("remove")));
+			//Utente u=UtilitiesDbUtente.leggiUtenteById(request.getParameter("remove"));
+			UtilitiesDbUtente.cancUtente(request.getParameter("remove"));
 		}
-		
-		
-		if(u!= null && u.getRuolo()==3){
-			UtilitiesDbUtente.cancUtente(u);
-	}
-		
+			for(Utente ut:listaU) {
+				if(ut.equals(u)) {
+					listaU.remove(u);
+				}
+			}
 		doGet(request, response);
 	}
 
