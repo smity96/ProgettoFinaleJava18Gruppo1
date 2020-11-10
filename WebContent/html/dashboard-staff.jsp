@@ -475,7 +475,7 @@
                                         <td class="col-3"><label>0</label></td>
                                         <td class="col-3"><label>Nome</label></td>
                                         <td class="col-3"><a href=""><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i</a></td>
+                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a></td>
                                         <td class="col-3"><a href=""><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a></td>
                                     </tr>
