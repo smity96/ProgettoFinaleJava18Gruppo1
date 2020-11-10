@@ -37,6 +37,7 @@ public class ServletCancellaFilm extends HttpServlet {
 				UtilitiesDbFilm.cancellaFilm(f2);
 			}
 		}
+		//un commento
 		response.sendRedirect("provaFilm.jsp");
 	}
 }
