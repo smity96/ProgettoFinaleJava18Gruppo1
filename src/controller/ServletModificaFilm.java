@@ -6,8 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -30,7 +28,6 @@ public class ServletModificaFilm extends HttpServlet {
 
 	public ServletModificaFilm() {
 		super();
-
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -46,8 +43,6 @@ public class ServletModificaFilm extends HttpServlet {
 		HttpSession session = request.getSession();
 		// creo l'ogetto dalle risorse ottenute
 		Film f3 = new Film();
-		System.out.println(request.getParameter("id_filmMod"));
-		System.out.println(request.getParameter("titolo"));
 		f3.setIdFilm(Integer.parseInt(request.getParameter("id_filmMod")));
 		f3.setTitolo(request.getParameter("titolo"));
 		f3.setGenere(request.getParameter("genere"));
@@ -61,10 +56,7 @@ public class ServletModificaFilm extends HttpServlet {
 		} catch (NumberFormatException e1) {
 			response.getWriter().append("Anno sbagliato");
 			e1.printStackTrace();
-		} catch (IOException e1) {
-			response.getWriter().append("Anno sbagliato");
-			e1.printStackTrace();
-		}
+		} 
 		f3.setDurata(Integer.parseInt(request.getParameter("durata")));
 		f3.setUrlTrailer(request.getParameter("urlTrailer"));
 		f3.setTrama(request.getParameter("trama"));
@@ -105,7 +97,6 @@ public class ServletModificaFilm extends HttpServlet {
 			if (check == false) {
 				UtilitiesDbFilm.inserisciFilm(f3);
 			}
-
 		}
 		response.sendRedirect("provaFilm.jsp");
 	}

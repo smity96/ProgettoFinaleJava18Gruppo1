@@ -7,10 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action=ServletInserisciPrenotazione method="GET">
+	<form action="ServletInserisciPrenotazione" method="Post">
 
-	  <input type="text" name="proiezione" value="id_prenotazione"><br>
-	  <input type="text" name="utente" value="id_prenotazione"><br>
+	  <input type="text" name="proiezione" value="id_prenotazione"></br>
+	  <input type="text" name="utente" value="id_prenotazione"></br>
+	  <input type="number" name="posti_prenotati"></br>
 	  <input type="submit" value="Submit">
 	</form> 
 </body>
