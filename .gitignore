@@ -23,7 +23,7 @@
 hs_err_pid*
 
 #file classpath
-/.classpath
+.classpath
 
 #file di settings
 /.settings
