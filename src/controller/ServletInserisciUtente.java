@@ -38,6 +38,7 @@ public class ServletInserisciUtente extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 /*cadads*/
+		//lorem ipsum
 		String email=request.getParameter("email");
 		String pi =request.getParameter("P.I.");
 		boolean reg=true;
