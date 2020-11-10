@@ -11,7 +11,9 @@
     </head>
 
 <body class="bg-dark text-center"> 
-    
+    <!-- Ciao -->
+    <!-- a te -->
+        <!-- bella -->
     <!--Form del login: -->
     <form class="form-signin" action="#" method="#">
         <img class="mb-4 mt-5" src="../src/logocinema.png" alt="Logo" width="72" height="72">

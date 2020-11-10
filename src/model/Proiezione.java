@@ -90,5 +90,4 @@ public class Proiezione implements Serializable {
 			return false;
 		return true;
 	}
-	
 }
