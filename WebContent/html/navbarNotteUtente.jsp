@@ -10,7 +10,7 @@
 <body>
     
     <!--Titolo e logo barra ricerca-->
-    <title>Sorrento Movie</title>
+    <title>Sorrento Cinema</title>
     <link rel = "icon" href ="../src/logocinema.png" type = "image/x-icon"> 
 
     <!--Navbar Utente base loggato: -->
