@@ -22,7 +22,4 @@
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="output" path="build/classes"/>
-	<classpathentry excluding="controller/" kind="src" path="src"/>
-	<classpathentry kind="src" path="src/controller"/>
-	<classpathentry kind="output" path="bin"/>
 </classpath>
