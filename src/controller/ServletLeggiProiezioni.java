@@ -33,4 +33,3 @@ public class ServletLeggiProiezioni extends HttpServlet {
 	}
 
 }
-//sto facendo il commento
