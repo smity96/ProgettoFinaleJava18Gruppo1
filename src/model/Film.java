@@ -20,7 +20,7 @@ public class Film implements Serializable {
 
 	@Column(name="genere")
 	private String genere;
-	
+
 	@Column(name="locandina")
 	private String locandina;
 
@@ -35,7 +35,7 @@ public class Film implements Serializable {
 
 	public Film() {
 	}
-
+	
 	public String getAnnoDiUscita() {
 		return this.annoDiUscita;
 	}
