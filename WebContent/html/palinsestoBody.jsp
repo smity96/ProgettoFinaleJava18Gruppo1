@@ -75,9 +75,6 @@
 		int Durata=p.getIntervallo()+p.getFilm().getDurata();
 		int DurataH=Durata/60;
 		int DurataM=Durata-(DurataH*60);
-		
-		/*DateFormat dateFormat = new SimpleDateFormat("yyyy");  
-	    String annoFilmUscita = dateFormat.format(p.getFilm().getAnnoDiUscita()); */
 	    
 	%>
       <!--Immagine della locandina film e informazioni relative al film che cambiano di film in film :-->
