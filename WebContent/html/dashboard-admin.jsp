@@ -1,3 +1,6 @@
+<%@page import="utilities.UtilitiesDbFilm"%>
+<%@page import="model.*"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,7 +12,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="..\css\fontawesome-free-5.15.0-web\css\all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="..\css\style-dash.css">
 </head>
 
@@ -277,22 +280,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <%List<Film> tuttiFilm=UtilitiesDbFilm.leggiFilmAll(); %>
+                                <%for(Film f: tuttiFilm){ %>
                                     <tr class="d-flex align-items-center">
                                         <td class="col-4 bordo-trasparente"><img class="img-fluid film-custom-height"
-                                                src="https://static.posters.cz/image/750webp/34925.webp" alt=""></td>
+                                                src="<%=f.getLocandina() %>" alt=""></td>
                                         <td class="col-4 text-capitalize bordo-trasparente">
-                                            <p class="colore-icone-scuro colore-icone-scuro">Chen il malvagio, re di
-                                                java web</p>
+                                            <p class="colore-icone-scuro colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
                                             <a data-toggle="modal" data-target=".modifica-film" href="">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         <td class="col-2 bordo-trasparente">
-                                            <a href="#"><i
+                                            <a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletCancellaFilm?id_film=<%=f.getIdFilm() %>"><i
                                                     class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
                                             </a>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
@@ -317,11 +322,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                
+                                <%for(Film f: tuttiFilm){ %>
                                     <tr class="d-flex align-items-center">
                                         <td class="col-6 text-capitalize bordo-trasparente">
                                             <img class="img-fluid film-custom-height mb-3"
-                                                src="https://static.posters.cz/image/750webp/34925.webp" alt="">
-                                            <p class="colore-icone-scuro">Chen il malvagio, re di java web</p>
+                                                src="<%=f.getLocandina() %>" alt="">
+                                            <p class="colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-3 bordo-trasparente">
                                             <a data-toggle="modal" data-target=".modifica-film" href="">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
@@ -332,6 +339,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
@@ -359,19 +367,21 @@
                                         <th class="col-2 colore-icone-scuro">Data e Ora</th>
                                         <th class="col-2 colore-icone-scuro">Film Proiettato</th>
                                         <th class="col-2 colore-icone-scuro">Intervallo</th>
-                                        <th class="col-2 colore-icone-scuro">N° Posti</th>
+                                        <th class="col-2 colore-icone-scuro">N. Posti</th>
                                         <th class="col-2 colore-icone-scuro">Modifica Proiezione</th>
                                         <th class="col-2 colore-icone-scuro">Cancella Proiezione</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                
+                                <%for(Film f:tuttiFilm){ %>
                                     <tr class="d-flex align-items-center justify-content-center">
                                         <td class="col-2 bordo-trasparente colore-icone-scuro">
                                             <p>08/11/2020</p>
                                             <p>12:00 - 14:00</p>
                                         </td>
                                         <td class="col-2 bordo-trasparente text-capitalize colore-icone-scuro">
-                                            <p>Chen il malvagio, re di java web</p>
+                                            <p><%=f.getTitolo() %></p>
                                         </td>
                                         <td class="col-2 bordo-trasparente colore-icone-scuro">
                                             <p>15 min</p>
@@ -390,6 +400,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
