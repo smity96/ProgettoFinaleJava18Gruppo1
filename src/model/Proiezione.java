@@ -19,7 +19,7 @@ public class Proiezione implements Serializable {
 
 	private int intervallo;
 
-	private int postiMax;
+	private int postiMax = 100;
 
 	public Proiezione() {
 	}

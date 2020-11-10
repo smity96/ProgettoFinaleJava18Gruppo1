@@ -7,12 +7,13 @@ import javax.persistence.*;
 @NamedQuery(name="Prenotazione.findAll", query="SELECT p FROM Prenotazione p")
 public class Prenotazione implements Serializable {
 	private static final long serialVersionUID = 1L;
-	//commento anche qua
+	
 	@Id
 	@Column(name="id_prenotazione")
 	private int id_prenotazione;
 	private int proiezione;
 	private int utente;
+	private int posti_prenotati;
 
 
 	public int getIdPrenotazione() {
@@ -39,11 +40,19 @@ public class Prenotazione implements Serializable {
 	public void setUtente(int utente) {
 		this.utente = utente;
 	}
+	
+	public int getPosti_prenotati() {
+		return this.posti_prenotati;
+	}
+
+	public void setPosti_prenotati(int posti_prenotati) {
+		this.posti_prenotati = posti_prenotati;
+	}
 
 	@Override
 	public String toString() {
 		return "Prenotazione [id_prenotazione=" + id_prenotazione + ", proiezione=" + proiezione + ", utente=" + utente
-				+ "]";
+				+ ", posti_prenotati" + posti_prenotati + "]";
 	}
 
 }
