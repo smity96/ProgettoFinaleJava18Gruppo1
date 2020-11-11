@@ -58,11 +58,11 @@ public class ServletModificaProiezione extends HttpServlet {
 			//provasendredirect
 			//TODO controllo? jsp amministratore/staff
 			System.out.println("if");
-			response.sendRedirect("ServletLeggiProiezioni"); 
+			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
 		}else {
 			System.out.println("else");
 			UtilitiesDbProiezione.modificaProiezione(pDaModificare);
-			response.sendRedirect("ServletLeggiProiezioni"); 
+			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
 		}
 	}
 

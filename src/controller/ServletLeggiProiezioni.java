@@ -24,7 +24,7 @@ public class ServletLeggiProiezioni extends HttpServlet {
 		request.setAttribute("Proiezioni", Proiezioni);
 		request.setAttribute("Films", Films);
 		//TODO cambiare path 
-		request.getRequestDispatcher("/ProvaPannelloAmministratore.jsp").forward(request, response);
+		request.getRequestDispatcher("/dashboard-admin.jsp").forward(request, response);
 	}
 
 

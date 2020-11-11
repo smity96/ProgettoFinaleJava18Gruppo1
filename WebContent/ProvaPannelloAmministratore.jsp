@@ -48,7 +48,7 @@
 			  <select id="film" name="idFilm">
 			  <%for(Film f : films){ %>
 			    <option value="<%= f.getIdFilm() %>"><%= f.getTitolo() %></option>
-			   <%} %>
+			  <%} %>
 			  </select>
 		      <input type="submit" value="Modifica">
 		    </form>

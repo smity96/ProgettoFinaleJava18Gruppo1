@@ -1,4 +1,4 @@
-<%@page import="utilities.UtilitiesDbFilm"%>
+<%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -13,8 +13,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="..\css\style-dash.css">
-</head>
+    <style type="text/css">
+    	<%@include file="../css/style-dash.css"%>
+    </style>
+    </head>
 
 <body>
     <!-- navbar in alto-->
@@ -270,6 +272,8 @@
                                     <p class="fas fa-plus aggiungi-custom">Aggiungi Film</p>
                                 </a>
                             </div>
+                            <form action="ServletCancellaFilm" method="post">
+                            <%List<Film> tuttiFilm=UtilitiesDbFilm.leggiFilmAll(); %>
                             <table class="table table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
@@ -280,15 +284,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <%List<Film> tuttiFilm=UtilitiesDbFilm.leggiFilmAll(); %>
-                                <%for(Film f: tuttiFilm){ %>
+                                
+                                <%for(Film f: tuttiFilm){ 
+                                request.setAttribute("id_filmMod", f);%>
                                     <tr class="d-flex align-items-center">
                                         <td class="col-4 bordo-trasparente"><img class="img-fluid film-custom-height"
                                                 src="<%=f.getLocandina() %>" alt=""></td>
+                                        
                                         <td class="col-4 text-capitalize bordo-trasparente">
                                             <p class="colore-icone-scuro colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
-                                            <a data-toggle="modal" data-target=".modifica-film" href="">
+                                            <a data-toggle="modal" data-target=".modifica-film" href="#">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         <td class="col-2 bordo-trasparente">
@@ -300,6 +306,7 @@
                                     <%} %>
                                 </tbody>
                             </table>
+                            </form>
                         </div>
                     </div>
 
@@ -352,7 +359,8 @@
 
 
                 <div class="container-fluid m-0 p-0 d-none funzione-menu gestione-proiezione">
-
+                
+    			
                     <div class="row text-uppercase text-center d-none d-md-flex">
                         <div class="col-12 p-0">
                             <div class="mb-3 align-items-center justify-content-center">
@@ -374,31 +382,38 @@
                                 </thead>
                                 <tbody>
                                 
-                                <%for(Film f:tuttiFilm){ %>
+                                <%
+                                List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
+                                for(Proiezione p : proiezioni){ 
+                                %>
                                     <tr class="d-flex align-items-center justify-content-center">
                                         <td class="col-2 bordo-trasparente colore-icone-scuro">
-                                            <p>08/11/2020</p>
-                                            <p>12:00 - 14:00</p>
-                                        </td>
+                                            <p><%= p.getDataOra() %></p>
+                                        </td> 
                                         <td class="col-2 bordo-trasparente text-capitalize colore-icone-scuro">
-                                            <p><%=f.getTitolo() %></p>
+                                            <img class="img-fluid film-custom-height mb-3"
+                                                src="<%= p.getFilm().getLocandina() %>" alt="">
+                                            <p><%= p.getFilm().getTitolo() %></p>
                                         </td>
                                         <td class="col-2 bordo-trasparente colore-icone-scuro">
-                                            <p>15 min</p>
+                                            <p><%= p.getIntervallo() %></p>
                                         </td>
                                         <td class="col-2 bordo-trasparente colore-icone-scuro">
-                                            <p>50 Posti</p>
+                                            <p><%= p.getPostiMax() %></p>
                                         </td>
                                         <td class="col-2 bordo-trasparente">
                                             <a data-toggle="modal" data-target=".modifica-film-proiezione" href="">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         </td>
+                                        
                                         <td class="col-2 bordo-trasparente">
-                                            <a href="#"><i
-                                                    class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
-                                            </a>
+                                            <form action="ServletCancellaProiezione" method="POST">
+                                            <input type="hidden" name="idDaEliminare" value="<%= p.getIdProiezione() %>">
+                                          <button type="submit" class="btn"><i class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i></button>
+                                           </form>
                                         </td>
+                                        
                                     </tr>
                                     <%} %>
                                 </tbody>
@@ -408,7 +423,7 @@
 
                     <!-- inizio gestione proiezione parte 2 -->
 
-
+					
                     <div class="row text-uppercase text-center d-md-none d-flex">
                         <div class="col-12 p-0">
                             <div class="mb-4">
@@ -427,16 +442,17 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                 <%for(Proiezione p : proiezioni){  %>
                                     <tr class="d-flex align-items-center justify-content-center">
                                         <td class="col-4 bordo-trasparente text-capitalize colore-icone-scuro">
                                             <img class="img-fluid film-custom-height mb-3"
-                                                src="https://static.posters.cz/image/750webp/34925.webp" alt="">
-                                            <p>Chen il malvagio, re di java web</p>
+                                                src="<%= p.getFilm().getLocandina() %>" alt="">
+                                            <p><%= p.getFilm().getTitolo() %></p>
                                         </td>
                                         <td class="col-4 bordo-trasparente colore-icone-scuro">
-                                            <p>Data E Ora:</p> <p class="p-0 m-0">08/11/2020</p> <p>12:00 - 14:00</p>
-                                            <p>Intervallo:</p> <p>15 min</p>
-                                            <p>N째 Posti:</p> <p>50 Posti</p>
+                                            <p>Data E Ora:</p> <p class="p-0 m-0"><%= p.getDataOra() %></p>
+                                            <p>Intervallo:</p> <p><%= p.getIntervallo() %></p>
+                                            <p>N� Posti:</p> <p><%= p.getPostiMax() %></p>
                                         </td>
 
                                         <td class="col-2 bordo-trasparente">
@@ -445,11 +461,13 @@
                                             </a>
                                         </td>
                                         <td class="col-2 bordo-trasparente">
-                                            <a href="#"><i
-                                                    class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
-                                            </a>
+                                            <form action="ServletCancellaProiezione" method="POST">
+                                            <input type="hidden" name="idDaEliminare" value="<%= p.getIdProiezione() %>">
+                                           <button type="submit" class="btn"><i class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i></button>
+                                           </form>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
@@ -514,7 +532,7 @@
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 colore-icone-scuro">Id째 Utente</th>
+                                        <th class="col-2 colore-icone-scuro">Id. Utente</th>
                                         <th class="col-2 colore-icone-scuro">Nome Utente</th>
                                         <th class="col-2 colore-icone-scuro">Conferma Utente</th>
                                         <th class="col-2 colore-icone-scuro">Cancella Utente</th>
@@ -556,7 +574,7 @@
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2">Id째 Utente</th>
+                                        <th class="col-2">Id. Utente</th>
                                         <th class="col-2">Nome Utente</th>
                                         <th class="col-5">Gestisci Utente</th>
                                         <th class="col-3">Conferma Operazione</th>
@@ -620,7 +638,7 @@
                     <button type="button" class="btn btn-primary" data-dismiss="modal">
                         Rimani
                     </button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
                         Esci
                     </button>
                 </div>
@@ -636,6 +654,10 @@
 
                 <!-- Modal body -->
                 <div class="modal-body p-0 m-0">
+                <form action="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletModificaFilm" method="post" enctype="multipart/form-data">
+                <%// TODO Sistemare il placeholder 
+                Film f1=new Film();
+                //Film f=UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id_filmMod")));%>
                     <table class="table table-bordered table-hover table-dark m-0">
                         <thead>
                             <tr>
@@ -643,35 +665,49 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="d-flex">
+                        <!-- inizio nuovo pezzo di form by Chen -->
+                        <tr class="d-flex">
+                                <th class="col-md-2 col-3"><label>Id</label></th>
+                                <td class="col-md-10 col-9">
+                                <select class="form-control col-8" type="text" name="titolo"
+                                        class="text-capitalize">
+                                        <%for(Film f:tuttiFilm){ %>
+                                        <option><%=f.getIdFilm() %></option>
+                                        <%f1=UtilitiesDbFilm.leggiFilm(f.getIdFilm()); %>
+                                        <%} %>
+                                </select>
+                                        </td>
+                            </tr>
+                            <!-- fine nuovo pezzo di form -->
+                        	<tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Titolo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
-                                        value="alessandro" class="text-capitalize"></td>
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="titolo"
+                                        value="<%=f1.getTitolo() %>" class="text-capitalize"></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Genere</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome" value="inga"
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="genere" value="<%=f1.getGenere() %>"
                                         class="text-capitalize"></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Anno di Uscita</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="date" name="datanascita"
-                                        value="">
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="annoDiUscita"
+                                        value="<%=f1.getAnnoDiUscita()%>">
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Durata</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="time" name="datanascita"
-                                        value="">
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="durata"
+                                        value="<%=f1.getDurata()%>">
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Trailer</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="url" name="datanascita" value="">
+                                <td class="col-md-10 col-9"><input class="col-8" type="url" name="urlTrailer" value="<%=f1.getUrlTrailer()%>">
                                 </td>
                             </tr>
 
@@ -682,19 +718,18 @@
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Trama</label></th>
-                                <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto" type="text"
-                                        name="">Bella Chen il Malvagio</textarea></td>
+                                <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto"
+                                        name="trama">Bella Chen il Malvagio</textarea></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Locandina</label></th>
                                 <td class="col-md-10 col-9"><input class="col-md-5 col-8 mr-2" type="url"
-                                        name="datanascita" value=""><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
-                                        type="file" name="datanascita" value=""></td>
+                                        name="fileUrl" placeholder="Url dell'immagine"><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
+                                        type="file" name="file" placeholder="Immagine"></td>
                             </tr>
-
                             <tr class="d-flex">
-                                <td class="col-12"><button type="button" class="btn btn-success mr-2">Salva
+                                <td class="col-12"><button type="submit" class="btn btn-success mr-2">Salva
                                         Modifica</button>
                                     <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
                                         Annulla Modifica
@@ -702,6 +737,7 @@
                             </tr>
                         </tbody>
                     </table>
+                    </form>
                 </div>
             </div>
         </div>
@@ -716,6 +752,7 @@
 
                 <!-- Modal body -->
                 <div class="modal-body p-0 m-0">
+                <form action="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletInserisciFilm" method="post" enctype="multipart/form-data">
                     <table class="table table-bordered table-hover table-dark m-0">
                         <thead>
                             <tr>
@@ -725,33 +762,33 @@
                         <tbody>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Titolo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome" value=""
-                                        class="text-capitalize"></td>
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="titolo"
+                                        placeholder="Titolo" class="text-capitalize"></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Genere</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome" value=""
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="genere" placeholder="Genere"
                                         class="text-capitalize"></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Anno di Uscita</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="date" name="datanascita"
-                                        value="">
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="annoDiUscita"
+                                        placeholder="Anno">
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Durata</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="time" name="datanascita"
-                                        value="">
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="durata"
+                                        placeholder="Inserire i minuti complessivi senza simboli">
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Trailer</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="url" name="datanascita" value="">
+                                <td class="col-md-10 col-9"><input class="col-8" type="url" name="urlTrailer" placeholder="Url del trailer">
                                 </td>
                             </tr>
 
@@ -762,27 +799,26 @@
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Trama</label></th>
-                                <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto" type="text"
-                                        name=""></textarea></td>
+                                <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto"
+                                        name="trama">Bella Chen il Malvagio</textarea></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Locandina</label></th>
                                 <td class="col-md-10 col-9"><input class="col-md-5 col-8 mr-2" type="url"
-                                        name="datanascita" value=""><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
-                                        type="file" name="datanascita" value=""></td>
+                                        name="fileUrl" placeholder="Url dell'immagine"><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
+                                        type="file" name="file" placeholder="Immagine"></td>
                             </tr>
-
                             <tr class="d-flex">
-                                <td class="col-12"><button type="button" class="btn btn-success mr-2">Aggiungi
+                                <td class="col-12"><button type="submit" class="btn btn-success mr-2">Aggiungi
                                         Film</button>
                                     <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
                                         Annulla Inserimento
                                     </button></td>
                             </tr>
-
                         </tbody>
                     </table>
+                    </form>
                 </div>
             </div>
         </div>
@@ -797,10 +833,11 @@
 
                 <!-- Modal body -->
                 <div class="modal-body p-0 m-0">
+                <form action="ServletInserisciProiezione" method="post">
                     <table class="table table-bordered table-hover table-dark m-0">
                         <thead>
                             <tr>
-                                <th>Dati Film</th>
+                                <th>Dati Proiezione</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -808,40 +845,44 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Data E Ora Di Inizio</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="datetime-local"
-                                        name="datanascita" value=""></td>
+                                        name="dataOra" ></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Titolo</label></th>
                                 <td class="col-md-10 col-9"><select class="col-8 mx-auto text-center h-100"
-                                        name="film-prenotati">
-                                        <option value=""></option>
+                                        name="id">
+                                        <% List<Film> films=(List<Film>)request.getAttribute("films");
+                                        for(Film f : films){ %>
+			  							  <option value="<%= f.getIdFilm() %>"><%= f.getTitolo() %></option>
+			  							 <%} %>
                                     </select>
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Intervallo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name=""
-                                        value=""></td>
+                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name="intervallo"
+                                       ></td>
                             </tr>
 
                             <tr class="d-flex">
-                                <th class="col-md-2 col-3"><label>N째 Posti</label></th>
+                                <th class="col-md-2 col-3"><label>N� Posti</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                        name="datanascita" value=""></td>
+                                        name="posti" ></td>
                             </tr>
 
                             <tr class="d-flex">
-                                <td class="col-12"><button type="button" class="btn btn-success mr-2">Aggiungi
+                                <td class="col-12"><button type="submit" class="btn btn-success mr-2">Aggiungi
                                         Proiezione</button>
-                                    <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
+                                    <button type="submit" class="btn btn-danger ml-2" data-dismiss="modal">
                                         Annulla Inserimento
                                     </button></td>
                             </tr>
 
                         </tbody>
                     </table>
+                    </form>
                 </div>
             </div>
         </div>
@@ -854,12 +895,12 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
 
-                <!-- Modal body bellaciao -->
+                <!-- Modal body  -->
                 <div class="modal-body p-0 m-0">
                     <table class="table table-bordered table-hover table-dark m-0">
                         <thead>
                             <tr>
-                                <th>Dati Film</th>
+                                <th>Dati Proiezione</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -867,7 +908,7 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Data E Ora Di Inizio</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="datetime-local"
-                                        name="datanascita" value=""></td>
+                                        name="dataOra" value=""></td>
                             </tr>
 
                             <tr class="d-flex">
@@ -887,7 +928,7 @@
                             </tr>
 
                             <tr class="d-flex">
-                                <th class="col-md-2 col-3"><label>N째 Posti</label></th>
+                                <th class="col-md-2 col-3"><label>N. Posti</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
                                         name="" value=""></td>
                             </tr>
@@ -919,7 +960,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
 
-    <script src="../js/script.js"></script>
+        <script type="text/javascript"><%@include file="../js/script.js"%></script>
 </body>
 
 </html>
