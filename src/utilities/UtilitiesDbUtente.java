@@ -70,14 +70,14 @@ public class UtilitiesDbUtente {
 
 	
 	
-	public static String isUtenteGiaReg(String email) {
+	public static Utente isUtenteGiaReg(String email) {
 		EntityManager em=getManager();
 		EntityTransaction et=em.getTransaction();
 		et.begin();
 		Utente u=em.find(Utente.class, email);
 		et.commit();
 		System.out.println("utente gia' registrato"+" "+u.getIdUtente());
-		 return u.getEmail();
+		 return u;
 
 		
 
@@ -96,20 +96,20 @@ public class UtilitiesDbUtente {
 		}
 		return null;
 		}
-		 
+	
+	public static Utente leggiUtenteByRuolo(int ruolo) {
+		EntityManager em=getManager();
+		EntityTransaction et = em.getTransaction();
+		et.begin();
+		Utente u=em.find(Utente.class, ruolo);
+		et.commit();
+		System.out.println(u.getRuolo()+" "+ ":" +"letto con successo");
+		return u;
+	}
+
 		
 	
 
-	/*ublic static Utente modificaRuolo(int ruolo) {
-		EntityManager em=getManager();
-		EntityTransaction et=em.getTransaction();
-		et.begin();
-		Utente ruoloUtente=em.find(Utente.class, ruolo);
-		et.commit();
-		if()
-												
-		
-	}*/
 }
 
 

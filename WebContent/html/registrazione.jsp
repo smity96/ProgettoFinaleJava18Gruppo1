@@ -27,7 +27,7 @@
        <body class="bg-dark text-center">
 
             <!--Form registrazione dell'utente: -->
-            <form action="#" method="#">
+            <form action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente" method="post">
                 <img class="mb-4 mt-5" src="../src/logocinema.png" alt="Logo" width="72" height="72">
                 <p class="h3 mb-3 text-warning">Registrati:</p>
 
@@ -37,7 +37,7 @@
 
                 <p><input  class="rounded" name="cognome" type="text" placeholder="Cognome" required></p>     
 
-                <p><input class="rounded bottone" id="dataDiNascita" name="dataDiNascita" type="date" required></p>
+                <p><input class="rounded bottone" id="dataDiNascita" name="data_di_nascita" type="date" required></p>
               
                 <p><input class="rounded" name="email" type="email" placeholder="Email" required></p>
 
@@ -58,13 +58,13 @@
                         <div class="collapse navbar-collapse" id="navbarText">
                           <ul class="navbar-nav mr-auto">
                             <li class="nav-item">
-                                <p><input  class="rounded" name="p_iva" type="text" placeholder="Partita Iva"></p>
+                                <p><input  class="rounded" name="P.I." type="text" placeholder="Partita Iva"></p>
                             </li>
                             <li class="nav-item">
                                 <p><input  class="rounded" name="indirizzo" type="text" placeholder="Indirizzo"></p>
                             </li>
                             <li class="nav-item">
-                                <p><input  class="rounded" name="nomeSocieta" type="text" placeholder="Nome Società"></p>
+                                <p><input  class="rounded" name="nomeSoc" type="text" placeholder="Nome Società"></p>
                             </li>
                           </ul>
                         </div>
@@ -77,7 +77,7 @@
 
                 <!--Accedi qui se sei già registrato-->
                 <p class="text-warning">Sei gia' registrato?</p>
-                <a class="text-warning" href="#">Accedi qui!</a>
+                <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Accedi qui!</a>
 
             </form>
         

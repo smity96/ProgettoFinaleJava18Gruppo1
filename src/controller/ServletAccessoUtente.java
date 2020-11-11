@@ -24,30 +24,34 @@ public class ServletAccessoUtente extends HttpServlet {
     }
 
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		//request.getServletContext().getNamedDispatcher("login.jsp");
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		listaU=UtilitiesDbUtente.listaUtenti();
-		String email=request.getParameter("email");
-		String pssw=request.getParameter("password");
-		boolean dentro=false;
-		HttpSession session=request.getSession();
-		for(Utente ut:listaU) {
-			System.out.println(ut.toString());
-			 if(email.equals(ut.getEmail()) && pssw.equals(ut.getPassword())){
-				 session.setAttribute("sessione",ut.getNome());
-				 response.sendRedirect("home.jsp");
-				 dentro=true;
-			 }				 
-			}
-			if(!dentro) {
-				response.sendRedirect("/registrazione.jsp");
-			}
-		}
-	
+    	//request.getServletContext().getNamedDispatcher("login.jsp");
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	listaU=UtilitiesDbUtente.listaUtenti();
+    	String email=request.getParameter("email");
+    	String pssw=request.getParameter("password");
+    	boolean dentro=false;
+    	for(Utente ut:listaU) {
+    		System.out.println(ut.toString());
+    		if(email.equals(ut.getEmail()) && pssw.equals(ut.getPassword())){
+    			HttpSession session=request.getSession();
+    			session.setAttribute("uLog",ut);
+//    			----indirizzo alle varie pagine----
+//    			if(ut.getRuolo()==3) {
+//    			}
+ 				response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
+    				
+    			dentro=true;
+    		}				 
+    	}
+    	if(!dentro) {
+    		response.sendRedirect("/registrazione.jsp");
+    	}
+    }
+
 		//response.sendRedirect("/profilo.jsp");
 	}
 

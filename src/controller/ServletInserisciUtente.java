@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import javax.websocket.SendResult;
 
 import model.Utente;
@@ -38,13 +39,17 @@ public class ServletInserisciUtente extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email=request.getParameter("email");
 		String pi =request.getParameter("P.I.");
+		if(pi.equals("")) {
+			pi=null;
+		}
+		System.out.println(request.getParameter("data_di_nascita"));
 		boolean reg=true;
 		if(!email.equals("")) {
 
 			for(Utente ut:listaU) {
 				if(	email.equals(ut.getEmail())){
 					reg=true;
-					response.sendRedirect("login.jsp");
+					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/login.jsp");
 					break;
 				}
 			}	
@@ -68,6 +73,8 @@ public class ServletInserisciUtente extends HttpServlet {
 				UtilitiesDbUtente.insUtente(utente);
 				System.out.println(utente.getNome());
 				listaU.add(utente);
+				response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/login.jsp");
+			
 			}else {
 				response.sendRedirect("/registrazione.jsp");
 

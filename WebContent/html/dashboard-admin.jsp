@@ -1,3 +1,4 @@
+<%@page import="utilities.UtilitiesDbUtente"%>
 <%@page import="utilities.UtilitiesDbFilm"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -15,7 +16,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="..\css\style-dash.css">
 </head>
-
+      <%
+              						  HttpSession s=request.getSession(false);    
+										//session.getAttribute("utentelog")
+                               			//String mail = (String) s.getAttribute("mailLog");
+                						//String pssw = (String) session.getAttribute("psswLog");
+                						Utente u = (Utente)s.getAttribute("uLog");
+                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
+                						
+                	
+                %>
 <body>
     <!-- navbar in alto-->
     <nav class="navbar navbar-expand-xl">
@@ -73,7 +83,7 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            Nome Utente
+                            <%="BENVENUTO:"+u.getNome() %>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -88,7 +98,7 @@
                         <a class="navbar-brand col-2" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <span class="col-10">Nome Utente</span> 
+                            <span class="col-10"><%=u.getNome() %></span> 
                         </a>
                     </li>
                     <li class="nav-item">
@@ -162,12 +172,14 @@
                 <!-- inizio funzioni main -->
 
                 <!-- inizio gestione profilo -->
+          
                 <div class="row justify-content-center text-uppercase d-none funzione-menu gestione-profilo">
                     <div class="col-12 p-0 text-center">
                         <div class="mb-4">
                             <h1 class="d-inline mr-3">Gestione Profilo</h1>
                         </div>
 
+                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="get">
                         <table class="table table-bordered table-hover table-dark">
                             <thead>
                                 <tr>
@@ -178,19 +190,19 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
-                                            value="alessandro" class="text-capitalize"></td>
+                                            value="<%=u.getNome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Cognome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
-                                            value="inga" class="text-capitalize"></td>
+                                            value="<%=u.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Data di Nascita'</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="date" name="datanascita"
-                                            value="">
+                                    <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
+                                            value="<%=u.getDataDiNascita()%>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -201,26 +213,26 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 colore-icone-scuro"><label>Email</label></th>
                                 <td class="col-md-10 col-9 colore-icone-scuro"><input class="col-8" type="email"
-                                        name="mail" value="alessandro3515@hotmail.it"></td>
+                                        name="email" value="<%=u.getEmail()%>"></td>
                             </tr>
-
-                            <tr class="d-flex">
+                            <!-- 
+                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 colore-icone-scuro"><label>Username</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="text" name="username"
                                         value="ale15">
                                 </td>
                             </tr>
-
+                             -->
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 colore-icone-scuro"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="12345"></td>
+                                        value="<%u.getPassword(); %> "></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 colore-icone-scuro"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="datanascita" value=""></td>
+                                    type="file" name="img" value="<%u.getImmagine(); %>"></td>
                             </tr>
                             </tbody>
                             <thead>
@@ -231,28 +243,31 @@
                             <tbody>
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Partita Iva</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
-                                            value="00000" class="text-capitalize"></td>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="pIva"
+                                            value="<%=u.getPIva() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Indirizzo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
-                                            value="via dei traghetti 96" class="text-capitalize"></td>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="indirizzo"
+                                            value="<%=u.getIndirizzo() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome Societa'</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="datanascita"
-                                            value="alecompany"></td>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
+                                            value="<%u.getNomeSocieta(); %>"></td>
                                 </tr>
-
+									<tr>
+									<td><input type="hidden" name="id" value="<%= u.getIdUtente() %>"></td>
+									</tr> 
                                 <tr class="d-flex">
-                                    <td class="col-12 justify-content-center"> <input class="bg-colore-icone-scuro"
-                                            type="submit" value="Modifica Dati"></td>
+                                    <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"
+                                            type="submit" value="modifica"></td>
                                 </tr>
                             </tbody>
                         </table>
+                            </form>
                     </div>
                 </div>
                 <!-- fine gestione profilo -->
@@ -514,7 +529,7 @@
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 colore-icone-scuro">IdÂ° Utente</th>
+                                        <th class="col-2 colore-icone-scuro">Id° Utente</th>
                                         <th class="col-2 colore-icone-scuro">Nome Utente</th>
                                         <th class="col-2 colore-icone-scuro">Conferma Utente</th>
                                         <th class="col-2 colore-icone-scuro">Cancella Utente</th>
@@ -523,23 +538,30 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <%List<Utente>listaU=UtilitiesDbUtente.listaUtenti();
+                                	for(Utente g:listaU){
+                                %>
                                     <tr class="d-flex colore-icone-scuro">
-                                        <td class="col-2"><label>0</label></td>
-                                        <td class="col-2"><label>Nome</label></td>
-                                        <td class="col-2"><a href=""><i
+                                        <td class="col-2"><label><%=g.getIdUtente() %></label></td>
+                                        <td class="col-2"><label><%=g.getEmail() %></label></td>
+                                        <%if(g.getRuolo()==0){ %>
+                                        <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-check-circle"></i></a>
                                         </td>
-                                        <td class="col-2"><a href=""><i
+                                        <% }%>
+                                        <td class="col-2"><a href="canc"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="col-2"><a href=""><i
+                                        <td class="col-2"><a href="mod"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
                                         </td>
-                                        <td class="col-2"><a href=""><i
+                                        <%if(g.getRuolo()!=3) {%>
+                                        <td class="col-2"><a href="abil"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-users"></i></a>
-
+										<%} %>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
@@ -556,7 +578,7 @@
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2">IdÂ° Utente</th>
+                                        <th class="col-2">Id° Utente</th>
                                         <th class="col-2">Nome Utente</th>
                                         <th class="col-5">Gestisci Utente</th>
                                         <th class="col-3">Conferma Operazione</th>
@@ -568,7 +590,7 @@
                                         <td class="col-2"><label>Nome</label></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
-                                                    <option value="conferma-utente"><a href="">conferma utente</a>
+                                                    <option value="conferma-utente"><a href="ProgettoFinaleJava18Gruppo1/ServletModificaUtente">conferma utente</a>
                                                     </option>
                                                     <option value="cancella-utente">cancella utente</option>
                                                     <option value="modifica-utente">modifica utente</option>

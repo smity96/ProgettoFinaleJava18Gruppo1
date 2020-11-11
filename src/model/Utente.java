@@ -63,18 +63,8 @@ public class Utente implements Serializable {
 		return this.dataDiNascita;
 	}
 
-	public void setDataDiNascita(Date dataDiNascita) {
-
-
-		LocalDate etaMin=dataDiNascita.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
-		Period periodo=Period.between(etaMin,LocalDate.now());
-
-		if(periodo.getYears()>16) {		
-		this.dataDiNascita = dataDiNascita;
-		} else {
-			System.out.println("sei troppo giovane per registrarti");
-		}
-		
+	public void setDataDiNascita(Date dataDiNascita) {		
+		this.dataDiNascita = dataDiNascita;		
 	}
 
 	
