@@ -6,8 +6,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+        
+    <link rel="stylesheet" href="../css/style-dash.css">     
     <!--Bootstrap links-->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <body class="bg-dark">
@@ -17,11 +19,11 @@
 
     <!--Navbar Utente NON loggato: -->
     
-    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
+    <nav class="navbar navbar-expand-lg">
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.html">
         <img src="../src/logocinema.png" alt="Logo" style="width:40px;">
       </a>     
 
@@ -29,7 +31,7 @@
       <div class= "col-3">
         <ul class="navbar-left navbar-nav m-auto d-flex flex-row">
           <li class="nav-item m-auto width: 90%">
-            <a class="nav-link text-warning font-weight-bold" href="#">Home</a>
+            <a class="nav-link text-warning font-weight-bold" href="index.html">Home</a>
           </li>
         </div>
 

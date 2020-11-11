@@ -89,15 +89,15 @@
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="#">Torna Al Sito</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="index.html">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="#">Gestione Profilo</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="profiloUtente.jsp">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="#">Gestione Prenotazioni</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="prenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         </li>
                 </nav>
                 <!-- fine side bar -->
@@ -148,13 +148,14 @@
                                       </select>
                                     </td>
                                     
-                                        <td><button type="button" class="btn btn-outline-warning">Prenota</button></td>
-                                        <td><button type="button" class="btn btn-outline-danger">Cancella</button></td>
+                                        <td><button type="button" onclick="history.back()" class="btn btn-outline-warning">Prenota</button></td>
+                                        <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
                                   </tr>
+                                  
+                                  
+                                 <!--Secondo film-->
                                   <tr>
 
-
-                                    <!--Secondo film-->
                                     <th scope="row">Captain Marvel</th>
                                     <td><img class="immagine" src="../src/captainMarvel.jpg"></td>
                                     <td>Giovedi 16.00</td>
@@ -167,8 +168,8 @@
                                         <option>5</option>
                                       </select>
                                     </td>
-                                    <td><button type="button" class="btn btn-outline-warning">Prenota</button></td>
-                                    <td><button type="button" class="btn btn-outline-danger">Cancella</button></td>
+                                    <td><button type="button" onclick="goBack()" class="btn btn-outline-warning">Prenota</button></td>
+                                    <td><button type="button" onclick="goBack()" class="btn btn-outline-danger">Cancella</button></td>
                                   </tr>
 
                                   <!--Terzo film: -->
@@ -185,8 +186,8 @@
                                         <option>5</option>
                                       </select>
                                     </td>
-                                    <td><button type="button" class="btn btn-outline-warning">Prenota</button></td>
-                                    <td><button type="button" class="btn btn-outline-danger">Cancella</button></td>
+                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-warning">Prenota</button></td>
+                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -240,5 +241,6 @@
             crossorigin="anonymous"></script>
 
         <script src="../js/script.js"></script>
+        <script src="../js/profiloUtente.js"></script>
     </body>
 </html>

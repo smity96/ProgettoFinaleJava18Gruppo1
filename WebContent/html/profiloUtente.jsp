@@ -8,7 +8,7 @@
 
     <style>
             .bottone{
-                width: 11.6rem;    
+                width: 11.8rem !important    
             }
 
             #imageUpload
@@ -39,6 +39,7 @@
 }
 
     </style>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="..\css\fontawesome-free-5.15.0-web\css\all.min.css">
@@ -112,8 +113,7 @@
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
 
-                            <!--METTERE COLLEGAMENTO CON HOME:-->
-                            <div class="col-9 ml-3"><a class="nav-link active" href="#">Torna Al Sito</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="index.html">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
@@ -151,7 +151,7 @@
                                                
                              
                              <!--AVATAR UTENTE--> 
-                             <div id="profile-container" class="mt-3">
+                             <div id="profile-container" class="mt-3 ml-3">
                                 <image id="profileImage" class="img-thumbnail" src="../src/logocinema.png" >
                              
                              <input id="imageUpload" type="file" 
@@ -159,7 +159,7 @@
                         </div>
                         
                         <!--modifica nome-->
-                                    <div class="form-gorup row mt-3">
+                                    <div class="form-gorup row mt-4">
                             <label class="col-sm-2 col-form-label text-warning">Nome: </label>
                             <div class="col-sm-10">
                         <input class="rounded" name="nome" type="text" value="Luigi">
@@ -179,7 +179,7 @@
                 
                 <!--modifica data di nascita:-->
                  <div class="form-gorup row">
-                        <label class="col-sm-2 col-form-label text-warning bottone">Data di Nascita: </label>
+                        <label class="col-sm-2 col-form-label text-warning">Data di Nascita: </label>
                         <div class="col-sm-10">
                     <input  class="rounded bottone" name="dataNascita" type="date" value="10/07/1995">
                 </div>
@@ -225,10 +225,18 @@
 </div>
 </div>            
 
+<!-- bottone: -->
+
+<br>
+<div class="text-center col-6">
+<button type="submit" onclick="goBack()" class=" btn btn-outline-warning text-light">Modifica dati</button>
+</div>
+
+
+
 </form>
 
-
-                    </div>
+                          </div>
                 </div>
 
             </div>

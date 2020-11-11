@@ -1,4 +1,5 @@
 
+//immagine profilo
 
 $("#profileImage").click(function(e) {
     $("#imageUpload").click();
@@ -14,5 +15,10 @@ function fasterPreview( uploader ) {
 $("#imageUpload").change(function(){
     fasterPreview( this );
 });
+
+//vai indietro
+function goBack() {
+  window.history.back();
+}
 
 

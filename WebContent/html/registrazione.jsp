@@ -77,7 +77,7 @@
 
                 <!--Accedi qui se sei già registrato-->
                 <p class="text-warning">Sei gia' registrato?</p>
-                <a class="text-warning" href="#">Accedi qui!</a>
+                <a class="text-warning" href="login.jsp">Accedi qui!</a>
 
             </form>
         
