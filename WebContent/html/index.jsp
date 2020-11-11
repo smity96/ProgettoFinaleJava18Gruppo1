@@ -144,20 +144,19 @@
           <div class="row">
 
               <!-- singolo film -->
-              <% /*List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
+              <% List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
               ArrayList<Film> films = new ArrayList<>();
               for(Proiezione p : proiezioni){ 
               if(films.contains(p.getFilm())){
             	  continue;
               }else{
-            	  films.add(p.getFilm());*/
-            	   //p.getFilm().getLocandina() 
+            	  films.add(p.getFilm());
               %>
               <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films animazione">
                   <div class="card single-film size-custom">
                       <div class="img-container size-custom">
                       <!-- il getlocandina stava qui -->
-                           <img src="#"
+                           <img src="<%=p.getFilm().getLocandina()%>"
                               class=" img-custom" alt="">
                           <span class="film-item-icon mx-0 px-0">
                               <div class="col-12 m-auto">
@@ -168,7 +167,7 @@
                       </div>
                   </div>
               </div>
-              <% //}} %>
+              <% }} %>
               <!-- fine singolo film -->
 
           </div>
