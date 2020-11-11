@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Proiezione;
 import utilities.UtilitiesDbProiezione;
 
-@WebServlet("/ServletEliminaProiezione")
+@WebServlet("/ServletCancellaProiezione")
 public class ServletCancellaProiezione extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class ServletCancellaProiezione extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Proiezione pDaEliminare=UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaEliminare")));
 		UtilitiesDbProiezione.eliminaProiezione(pDaEliminare);
-		response.sendRedirect("ServletLeggiProiezioni");
+		response.sendRedirect("ServletLeggiProiezioniAdmin");
 	}
 
 }

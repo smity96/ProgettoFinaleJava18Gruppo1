@@ -19,10 +19,10 @@ public class ServletLeggiProiezioniAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Proiezione> Proiezioni = UtilitiesDbProiezione.leggiProiezioni();
-		List<Film> Films = UtilitiesDbFilm.leggiFilmAll();
-		request.setAttribute("Proiezioni", Proiezioni);
-		request.setAttribute("Films", Films);
+		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
+		List<Film> films = UtilitiesDbFilm.leggiFilmAll();
+		request.setAttribute("proiezioni", proiezioni);
+		request.setAttribute("films", films);
 		request.getRequestDispatcher("/html/dashboard-admin.jsp").forward(request, response);
 	}
 
