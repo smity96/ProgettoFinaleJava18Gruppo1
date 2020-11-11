@@ -148,20 +148,38 @@
 
             <!-- Inizio main destra -->
 
-            <div class="col-xl-10 col-12 py-3">
-
-                <!-- titolo dashboard -->
-                <div class="row">
-                    <div class="col">
-                        <h3>
-                            <span class="text-uppercase text-danger">Dashboard /</span><span class="text-muted small">
-                                My Dashboard</span>
-                        </h3>
-                    </div>
-                </div>
-                <!-- fine titolo dashboard -->
+            <div class="col-xl-10 col-12 py-3 max-viewport">
 
                 <!-- inizio funzioni main -->
+
+                <!-- messaggio benvenuto -->
+                
+                <div class="row funzione-menu messaggio-benvenuto text-center align-items-center d-flex mt-5">
+                    <div class="col-12 p-0 mb-3"><img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail foto-profilo-benvenuto mr-3"
+                        alt="foto profilo utente"></div>
+                    
+                    <div class="col-12 p-0 mb-3">
+                        <h1 class="text-capitalize">
+                            <i class="fas fa-handshake mr-3"></i>
+                            Benvenuto al Pannello di Controllo di Sorrento Cinema</h1>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h2 class="text-capitalize">Qui potrai interagire con le funzioni di controllo dedicate
+                            all'Admin</h2>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h3 class="text-capitalize">Usa il menu a sinistra per spostarti tra le varie sezioni.</h3>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verrÃ  visualizzato in
+                            alto.</h4>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h4 class="text-capitalize">In caso di dubbi, visualizzare le guide riportate qui sotto.</h4>
+                    </div>
+
+                </div>
+                <!-- fine messaggio benvenuto -->
 
                 <!-- inizio gestione profilo -->
                 <div class="row justify-content-center text-uppercase d-none funzione-menu gestione-profilo">
@@ -452,7 +470,7 @@
                                         <td class="col-4 bordo-trasparente colore-icone-scuro">
                                             <p>Data E Ora:</p> <p class="p-0 m-0"><%= p.getDataOra() %></p>
                                             <p>Intervallo:</p> <p><%= p.getIntervallo() %></p>
-                                            <p>N° Posti:</p> <p><%= p.getPostiMax() %></p>
+                                            <p>Nï¿½ Posti:</p> <p><%= p.getPostiMax() %></p>
                                         </td>
 
                                         <td class="col-2 bordo-trasparente">
@@ -867,7 +885,7 @@
                             </tr>
 
                             <tr class="d-flex">
-                                <th class="col-md-2 col-3"><label>N° Posti</label></th>
+                                <th class="col-md-2 col-3"><label>Nï¿½ Posti</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
                                         name="posti" ></td>
                             </tr>

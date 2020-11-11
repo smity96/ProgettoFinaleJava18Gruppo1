@@ -15,8 +15,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="..\css\stylemain.css">
-    <link rel="stylesheet" href="..\css\style-dash.css">
+    <style type="text/css">
+    	<%@include file="../css/style-dash.css"%>
+    </style>
 </head>
 
 <body>
@@ -136,20 +137,38 @@
 
             <!-- Inizio main destra -->
 
-            <div class="col-xl-10 col-12 py-3 main-bg-dorato">
-
-                <!-- titolo dashboard -->
-                <div class="row">
-                    <div class="col">
-                        <h3>
-                            <span class="text-uppercase text-danger">Dashboard /</span><span class="text-muted small">
-                                My Dashboard</span>
-                        </h3>
-                    </div>
-                </div>
-                <!-- fine titolo dashboard -->
+            <div class="col-xl-10 col-12 py-3 main-bg-dorato max-viewport">
 
                 <!-- inizio funzioni main -->
+
+                <!-- messaggio benvenuto -->
+                
+                <div class="row funzione-menu messaggio-benvenuto text-center align-items-center d-flex mt-5">
+                    <div class="col-12 p-0 mb-3"><img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail foto-profilo-benvenuto mr-3"
+                        alt="foto profilo utente"></div>
+                    
+                    <div class="col-12 p-0 mb-3">
+                        <h1 class="text-capitalize">
+                            <i class="fas fa-handshake mr-3"></i>
+                            Benvenuto al Pannello di Controllo di Sorrento Cinema</h1>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h2 class="text-capitalize">Qui potrai interagire con le funzioni di controllo dedicate
+                            all'Admin</h2>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h3 class="text-capitalize">Usa il menu a sinistra per spostarti tra le varie sezioni.</h3>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verrà visualizzato in
+                            alto.</h4>
+                    </div>
+                    <div class="col-12 p-0 mb-3">
+                        <h4 class="text-capitalize">In caso di dubbi, visualizzare le guide riportate qui sotto.</h4>
+                    </div>
+
+                </div>
+                <!-- fine messaggio benvenuto -->
 
                 <!-- inizio gestione profilo -->
                 <div class="row justify-content-center text-uppercase d-none funzione-menu gestione-profilo">
