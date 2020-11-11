@@ -1,0 +1,110 @@
+body {
+    font-family: "Roboto", sans-serif;
+  }
+
+  
+  /*main styles*/
+
+  .max-viewport {
+    min-height: 100vh;
+    position: relative;
+  }
+
+
+  .list-side-height {
+    position: absolute;
+    top: 5%;
+  }
+
+  .film-custom-height {
+max-height: 10rem;
+  }
+
+  .bordo-trasparente {
+  border: solid 1px transparent!important;
+  }
+
+  .icona-menu-grande {
+font-size: 3rem;  }
+
+.icona-menu-piccolo {
+  font-size: 1.5rem;  }
+
+  /*navbar */
+  
+  .navbar {
+    border-top: 3px solid #f15025;
+    border-bottom: 3px solid #f15025;
+  }
+  
+  .navbar .navbar-brand {
+    color: #f19820;
+  }
+  
+  .navbar {
+    background-color: #000000;
+  }
+  
+  .navbar .nav-link,
+  .navbar .icons {
+    color: #f19820;
+  }
+  
+  .navbar .nav-link:hover,
+  .navbar .icons:hover {
+    color: #fff;
+  }
+  
+  .navbar .icon {
+    position: relative;
+  }
+
+  .nav-size {
+    font-size: 3rem !important;
+  }
+
+  .main-bg-dorato {
+    background-color:  #f19820;
+  }
+  
+  /*sidebar*/
+  
+  .sidebar {
+    background-color: #181a1e;
+  }
+  
+  .sidebar .nav-link,
+  .sidebar .navbar-brand {
+    color: #f19820;
+  }
+  
+  .sidebar .nav-link:hover,
+  .sidebar .navbar-brand:hover {
+    color: #fff;
+  }
+  
+  .colore-icone-scuro {
+    color:#f19820;
+  }
+
+  .colore-icone-scuro:hover {
+    color: #f19820;
+    opacity: 0.5;
+  }
+
+  .bg-colore-icone-scuro {
+    background-color:#f19820;
+  }
+
+  .aggiungi-custom {
+  font-size: 1.5rem;
+  color: #212529;
+  }
+
+  .aggiungi-custom:hover {
+    opacity: 0.5;
+    }
+
+    .table-dark {
+      background-color:#242a33!important;
+    }

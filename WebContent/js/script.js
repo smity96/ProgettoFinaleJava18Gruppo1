@@ -37,3 +37,14 @@ jQuery('.active6').click(function(){
 function prendiDataNascita(){
 	var dataNascita = document.getElementById("dataDiNascita").value;
 }
+
+$( ".scelta" ).change(function() {
+  
+  if ($('select').attr('id') == 'nullo'){
+    jQuery('#info-prenotazione').removeClass('d-flex');
+    jQuery('#info-prenotazione').addClass('d-none');
+  } else {
+  jQuery('#info-prenotazione').removeClass('d-none');
+  jQuery('#info-prenotazione').addClass('d-flex');
+}
+});

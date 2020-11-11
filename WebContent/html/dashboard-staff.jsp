@@ -431,26 +431,49 @@
                             </thead>
                             <tbody>
                                 <tr class="d-flex">
-                                    <td class="col-md-2 col-3 colore-icone-scuro"><label>Utente</label></td>
+                                    <td class="col-md-2 col-3 colore-icone-scuro" rowspan="5"><label>Utente</label></td>
                                     <td class="col-md-8 col-6 colore-icone-scuro"><select
-                                            class="col-12 text-center h-100" name="film-prenotati">
-                                            <option value="film prenotato">film prenotato</option>
-                                            <option value="film prenotato">lorenzo e il concerto di servlet</option>
-                                            <option value="film prenotato">chen il malvagio, re di java</option>
-                                            <option value="film prenotato">leeroy luca vs java web</option>
-                                            <option value="film prenotato">nicola il venditore di jsp</option>
-                                            <option value="film prenotato">federico e le avventure con github
+                                            class="col-12 text-center h-100 scelta" name="film-prenotati">
+                                            <option class="prova" value="2" selected value> -- seleziona un film --
                                             </option>
-                                            <option value="film prenotato">tiziana creatrice di form</option>
-
-
+                                            <option value=""></option>
+ 
                                         </select>
                                         </label>
                                     </td>
-                                    <td class="col-md-2 col-3"><a href=""><i
+                                    <td class="col-md-2 col-3" rowspan="2"><a href=""><i
                                                 class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
+                                <tr class="d-none justify-content-center" id="info-prenotazione">
+                                    <td id="nomeFilmScelta" class="col-md-2 col-2">
+                                        <img class="img-fluid film-custom-height mb-3"
+                                            src="https://static.posters.cz/image/750webp/34925.webp" alt="">
+                                    </td>
+                                    <td class="col-md-2 col-2">
+                                        <p>Data E Ora:</p>
+                                        <p class="p-0 m-0">08/11/2020</p>
+                                        <p>12:00 - 14:00</p>
+                                    </td>
+                                    <td class="col-md-2 col-1">
+                                        <p>Intervallo:</p>
+                                        <p>15 min</p>
+                                    </td>
+                                    <td class="col-md-2 col-1">
+                                        <p>N° Posti Prenotati:</p>
+                                        <p>1 Posti</p>
+                                    </td>
+                                </tr>
+                                <tr class="d-flex justify-content-center">
+
+                                </tr>
+                                <tr class="d-flex justify-content-center">
+
+                                </tr>
+                                <tr class="d-flex justify-content-center">
+
+                                </tr>
+
                             </tbody>
                         </table>
 
@@ -776,21 +799,14 @@
                                 <th class="col-md-2 col-3"><label>Titolo</label></th>
                                 <td class="col-md-10 col-9"><select class="col-8 mx-auto text-center h-100"
                                         name="film-prenotati">
-                                        <option value="film prenotato">film prenotato</option>
-                                        <option value="film prenotato">lorenzo e il concerto di servlet</option>
-                                        <option value="film prenotato">chen il malvagio, re di java</option>
-                                        <option value="film prenotato">leeroy luca vs java web</option>
-                                        <option value="film prenotato">nicola il venditore di jsp</option>
-                                        <option value="film prenotato">federico e le avventure con github
-                                        </option>
-                                        <option value="film prenotato">tiziana creatrice di form</option>
+                                        <option value=""></option>
                                     </select>
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Intervallo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="time" name="datanascita"
+                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name=""
                                         value=""></td>
                             </tr>
 
@@ -822,7 +838,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
 
-                <!-- Modal body -->
+                <!-- Modal body bellaciao -->
                 <div class="modal-body p-0 m-0">
                     <table class="table table-bordered table-hover table-dark m-0">
                         <thead>
@@ -840,30 +856,24 @@
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Titolo</label></th>
-                                <td class="col-md-10 col-9"><select class="col-8 mx-auto text-center h-100"
+                                <td class="col-md-10 col-9">
+                                    <select class="col-8 mx-auto text-center h-100"
                                         name="film-prenotati">
-                                        <option value="film prenotato">film prenotato</option>
-                                        <option value="film prenotato">lorenzo e il concerto di servlet</option>
-                                        <option value="film prenotato">chen il malvagio, re di java</option>
-                                        <option value="film prenotato">leeroy luca vs java web</option>
-                                        <option value="film prenotato">nicola il venditore di jsp</option>
-                                        <option value="film prenotato">federico e le avventure con github
-                                        </option>
-                                        <option value="film prenotato">tiziana creatrice di form</option>
+                                        <option value=""></option>
                                     </select>
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Intervallo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="time" name="datanascita"
+                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name=""
                                         value=""></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>N° Posti</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                        name="datanascita" value=""></td>
+                                        name="" value=""></td>
                             </tr>
 
                             <tr class="d-flex">
