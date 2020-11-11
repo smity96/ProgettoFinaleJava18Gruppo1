@@ -352,6 +352,8 @@
 
 
                 <div class="container-fluid m-0 p-0 d-none funzione-menu gestione-proiezione">
+                
+                <% %>
 
                     <div class="row text-uppercase text-center d-none d-md-flex">
                         <div class="col-12 p-0">

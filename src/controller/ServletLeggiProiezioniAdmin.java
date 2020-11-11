@@ -9,27 +9,26 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Film;
 import model.Proiezione;
+import utilities.UtilitiesDbFilm;
 import utilities.UtilitiesDbProiezione;
 
-
-@WebServlet("/ServletLeggiIndex")
-public class ServletLeggiIndex extends HttpServlet {
+@WebServlet("/ServletLeggiProiezioniAdmin")
+public class ServletLeggiProiezioniAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public ServletLeggiIndex() {
-        super();
-    }
-
+       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
-		request.setAttribute("proiezioni", proiezioni);
-		request.getRequestDispatcher("/html/index.jsp").forward(request, response);
+		List<Proiezione> Proiezioni = UtilitiesDbProiezione.leggiProiezioni();
+		List<Film> Films = UtilitiesDbFilm.leggiFilmAll();
+		request.setAttribute("Proiezioni", Proiezioni);
+		request.setAttribute("Films", Films);
+		request.getRequestDispatcher("/html/dashboard-admin.jsp").forward(request, response);
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		doGet(request, response);
 	}
-
+	
 }
