@@ -56,11 +56,11 @@ public class ServletInserisciProiezione extends HttpServlet {
 			//provasendredirect
 			//TODO controllo? jsp amministratore/staff
 			System.out.println("if");
-			response.sendRedirect("ServletLeggiProiezioni"); 
+			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
 		}else {
 			System.out.println("else");
 			UtilitiesDbProiezione.aggiungiProiezione(pDaAggiungere);
-			response.sendRedirect("ServletLeggiProiezioni"); 
+			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
 		}
 		//doGet(request, response);
 	}

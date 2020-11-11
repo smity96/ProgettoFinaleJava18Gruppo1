@@ -24,7 +24,7 @@ public class ServletLeggiIndex extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
 		request.setAttribute("proiezioni", proiezioni);
-		request.getRequestDispatcher("/index.jsp").forward(request, response);
+		request.getRequestDispatcher("/html/index.jsp").forward(request, response);
 	}
 
 
