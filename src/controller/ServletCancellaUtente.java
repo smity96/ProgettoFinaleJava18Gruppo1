@@ -40,7 +40,6 @@ public class ServletCancellaUtente extends HttpServlet {
 				}
 			}
 		doGet(request, response);
-		//loremipsum
 	}
 
 }

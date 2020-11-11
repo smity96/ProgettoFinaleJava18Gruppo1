@@ -815,21 +815,14 @@
                                 <th class="col-md-2 col-3"><label>Titolo</label></th>
                                 <td class="col-md-10 col-9"><select class="col-8 mx-auto text-center h-100"
                                         name="film-prenotati">
-                                        <option value="film prenotato">film prenotato</option>
-                                        <option value="film prenotato">lorenzo e il concerto di servlet</option>
-                                        <option value="film prenotato">chen il malvagio, re di java</option>
-                                        <option value="film prenotato">leeroy luca vs java web</option>
-                                        <option value="film prenotato">nicola il venditore di jsp</option>
-                                        <option value="film prenotato">federico e le avventure con github
-                                        </option>
-                                        <option value="film prenotato">tiziana creatrice di form</option>
+                                        <option value=""></option>
                                     </select>
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Intervallo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="time" name="datanascita"
+                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name=""
                                         value=""></td>
                             </tr>
 
@@ -861,7 +854,7 @@
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
 
-                <!-- Modal body -->
+                <!-- Modal body bellaciao -->
                 <div class="modal-body p-0 m-0">
                     <table class="table table-bordered table-hover table-dark m-0">
                         <thead>
@@ -879,30 +872,24 @@
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Titolo</label></th>
-                                <td class="col-md-10 col-9"><select class="col-8 mx-auto text-center h-100"
+                                <td class="col-md-10 col-9">
+                                    <select class="col-8 mx-auto text-center h-100"
                                         name="film-prenotati">
-                                        <option value="film prenotato">film prenotato</option>
-                                        <option value="film prenotato">lorenzo e il concerto di servlet</option>
-                                        <option value="film prenotato">chen il malvagio, re di java</option>
-                                        <option value="film prenotato">leeroy luca vs java web</option>
-                                        <option value="film prenotato">nicola il venditore di jsp</option>
-                                        <option value="film prenotato">federico e le avventure con github
-                                        </option>
-                                        <option value="film prenotato">tiziana creatrice di form</option>
+                                        <option value=""></option>
                                     </select>
                                 </td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Intervallo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="time" name="datanascita"
+                                <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name=""
                                         value=""></td>
                             </tr>
 
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>N° Posti</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                        name="datanascita" value=""></td>
+                                        name="" value=""></td>
                             </tr>
 
                             <tr class="d-flex">
