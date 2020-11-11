@@ -17,21 +17,20 @@ import utilities.UtilitiesDbUtente;
 public class ServletModificaUtente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Utente utente;
-	List<Utente>listaUte;
+	List<Utente>listaU;
     public ServletModificaUtente() {
         super();
 
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	listaUte=UtilitiesDbUtente.listaUtenti();
-		if (utente.getRuolo()==3) {
-			for(Utente u:listaUte) {
-				if (u.getRuolo()==0) {
-					System.out.println("utente da confermare");
-					request.setAttribute("utenteDaConfermare","in attesa");
-				} 
-			}
+	
+	String modifica=request.getParameter("modifica");
+		if (modifica!=null) {
+			utente=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("modifica")));
+			UtilitiesDbUtente.modUtente(utente);
+			listaU=UtilitiesDbUtente.listaUtenti();
+			response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-staff.jsp");
 		
 	}
 		response.getWriter().append("Served at: ").append(request.getContextPath());

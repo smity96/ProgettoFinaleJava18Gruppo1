@@ -22,25 +22,21 @@ public class ServletCancellaUtente extends HttpServlet {
   
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	System.out.println(request.getParameter("canc"));
+     	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
+    	if(request.getParameter("canc")!=null) {
+    		System.out.println("sono nell if");
+    		UtilitiesDbUtente.cancUtente(u);
+    		listaU=UtilitiesDbUtente.listaUtenti();
+    		response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-staff.jsp");
+    	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		listaU=UtilitiesDbUtente.listaUtenti();
-		if(request.getParameter("remove")!=null) {
-			//u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("remove")));
-			//Utente u=UtilitiesDbUtente.leggiUtenteById(request.getParameter("remove"));
-			UtilitiesDbUtente.cancUtente(request.getParameter("remove"));
-		}
-			for(Utente ut:listaU) {
-				if(ut.equals(u)) {
-					listaU.remove(u);
-				}
-			}
-		doGet(request, response);
-	}
+    }
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    	doGet(request, response);
+    }
 
 }
 

@@ -28,6 +28,7 @@ public class UtilitiesDbUtente {
 		et.begin();
 		em.persist(u);
 		et.commit();
+		System.out.println(u.getNome()+" "+u.getCognome()+":"+"inserito con successo");
 	}
 
 	public static void modUtente(Utente u) {
@@ -36,7 +37,7 @@ public class UtilitiesDbUtente {
 		et.begin();
 		em.merge(u);
 		et.commit();
-		System.out.println("u modificato con successo");
+		System.out.println(u.getNome()+" "+u.getCognome()+":"+"modificato con successo");
 	}
 
 	public static void cancUtente(Utente u) {
@@ -48,7 +49,7 @@ public class UtilitiesDbUtente {
 		}
 		em.remove(u);
 		et.commit();
-		System.out.println("u eliminato con successo");
+		System.out.println(u.getNome()+" "+u.getCognome()+":"+" eliminato con successo");
 	}
 
 	public static Utente leggiUtenteById(int id) {
@@ -57,7 +58,7 @@ public class UtilitiesDbUtente {
 		et.begin();
 		Utente u=em.find(Utente.class, id);
 		et.commit();
-		System.out.println("u letto con successo");
+		System.out.println(u.getNome()+" "+u.getCognome()+":"+"letto con successo");
 		return u;
 	}
 

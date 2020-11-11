@@ -480,14 +480,23 @@
                                 <%
                                 for(Utente u:listaU){
                                 %>
+                         
                                     <tr class="d-flex colore-icone-scuro">
                                         <td class="col-3"><label><%=u.getIdUtente() %></label></td>
                                         <td class="col-3"><label><%=u.getNome()+","+u.getCognome() %></label></td>
-                                        <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?remove<%=u %>"><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"><button>ELIMINA</button></i></a></td>
-                                        <td class="col-3"><a href=""><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-edit"><button>MODIFICA</button></i></a></td>
+                                        <td class="col-3">
+                                        	<a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=u.getIdUtente()%>">
+                                        		<i class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt" ></i>
+                                          	</a>
+                                         </td>
+                                         
+                                        <td class="col-3">
+                                        	<a href="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente?modifica=<%=u.getIdUtente()%>">
+                                        		<i class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i>
+                                        	</a>
+                                         </td>
                                     </tr>
+                               
                                     <%} %>
                                 </tbody>
                             </table>
