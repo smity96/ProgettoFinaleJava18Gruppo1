@@ -36,8 +36,16 @@ public class ServletCancellaFilm extends HttpServlet {
 				//elimino il film
 				UtilitiesDbFilm.cancellaFilm(f2);
 			}
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
 		}
-		response.sendRedirect("provaFilm.jsp");
+		// TODO da cambiare quando si hanno le sessioni
+		/*if (session.getAttribute("staff") == null) {
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-staff.jsp");
+		}*/
+		/*if (session.getAttribute("admin") == null) {
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
+		}*/
+		
 	}
 }
 
