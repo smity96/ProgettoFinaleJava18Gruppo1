@@ -1,3 +1,5 @@
+<%@page import="utilities.UtilitiesDbFilm"%>
+<%@page import="model.Film"%>
 <%@page import="utilities.UtilitiesDbUtente"%>
 <%@page import="model.Utente"%>
 <%@page import="java.util.List"%>
@@ -261,22 +263,25 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <%List<Film>allFilm=UtilitiesDbFilm.leggiFilmAll();
+                                    for(Film f:allFilm){%>
                                     <tr class="d-flex align-items-center">
+                                    
                                         <td class="col-4 bordo-trasparente"><img class="img-fluid film-custom-height"
-                                                src="https://static.posters.cz/image/750webp/34925.webp" alt=""></td>
+                                                src="<%=f.getLocandina() %>" alt=""></td>
                                         <td class="col-4 text-capitalize bordo-trasparente">
-                                            <p class="colore-icone-scuro colore-icone-scuro">Chen il malvagio, re di
-                                                java web</p>
+                                            <p class="colore-icone-scuro colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
                                             <a data-toggle="modal" data-target=".modifica-film" href="">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         <td class="col-2 bordo-trasparente">
-                                            <a href="#"><i
+                                            <a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletCancellaFilm?id_film=<%=f.getIdFilm() %>"><i
                                                     class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
                                             </a>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
@@ -301,19 +306,21 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <%for(Film f:allFilm){%>
                                     <tr class="d-flex align-items-center">
                                         <td class="col-6 text-capitalize bordo-trasparente">
-                                            <p class="colore-icone-scuro">Chen il malvagio, re di java web</p>
+                                            <p class="colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-3 bordo-trasparente">
                                             <a data-toggle="modal" data-target=".modifica-film" href="">
                                                 <i class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i>
                                             </a>
                                         <td class="col-3 bordo-trasparente">
-                                            <a href="#"><i
+                                            <a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletCancellaFilm?id_film=<%=f.getIdFilm() %>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i>
                                             </a>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>
@@ -595,7 +602,8 @@
                     <button type="button" class="btn btn-primary" data-dismiss="modal">
                         Rimani
                     </button>
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">
+                    
+                    <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
                         Esci
                     </button>
                 </div>
