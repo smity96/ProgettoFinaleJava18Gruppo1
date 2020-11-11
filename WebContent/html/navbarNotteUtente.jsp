@@ -14,7 +14,7 @@
     <link rel = "icon" href ="../src/logocinema.png" type = "image/x-icon"> 
 
     <!--Navbar Utente base loggato: -->
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-lg bg-secondary navbar-dark">
     <div class="container">
         <a class="navbar-brand" href="#">
         <img src="../src/logocinema.png" alt="Logo" style="width:40px;">
@@ -34,7 +34,7 @@
           <div class="col-3">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning font-weight-bold" href="#">Palinsesto</a>
+            <a class="nav-link text-warning font-weight-bold" href="palinsestoBody.jsp">Palinsesto</a>
           </li>
         </div>
 

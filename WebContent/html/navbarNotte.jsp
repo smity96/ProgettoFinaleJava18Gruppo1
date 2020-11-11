@@ -37,7 +37,7 @@
           <div class="col-3">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning font-weight-bold" href="#">Palinsesto</a>
+            <a class="nav-link text-warning font-weight-bold" href="palinsestoBody.jsp">Palinsesto</a>
           </li>
           </ul>
         </div>
@@ -46,7 +46,7 @@
           <div class="col-3">
           <ul class="navbar-nav d-flex flex-row justify-content-end unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="#">Login</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="login.jsp">Login</a>
             </li>
           </div>
 
@@ -54,7 +54,7 @@
             <div class="col-3">
             <ul class="navbar-nav d-flex flex-row justify-content-end">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="#">Registrazione</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="registrazione.jsp">Registrazione</a>
           </li>    
         </ul>
       </div>
