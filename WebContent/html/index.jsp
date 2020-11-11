@@ -1,3 +1,9 @@
+<%@page import="model.Film"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="model.Proiezione"%>
+<%@page import="java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,8 +15,6 @@
     <link rel="stylesheet" href="../css/style3.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="..\css\stylemain.css">
-    <link rel="stylesheet" href="..\css\style3.css">
 </head>
   <body>
 
@@ -136,10 +140,18 @@
           <div class="row">
 
               <!-- singolo film -->
+              <% List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
+              ArrayList<Film> films = new ArrayList<>();
+              for(Proiezione p : proiezioni){ 
+              if(films.contains(p.getFilm())){
+            	  continue;
+              }else{
+            	  films.add(p.getFilm());
+              %>
               <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films animazione">
                   <div class="card single-film size-custom">
                       <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
+                          <img src="<%= p.getFilm().getLocandina() %>   
                               class=" img-custom" alt="">
                           <span class="film-item-icon mx-0 px-0">
                               <div class="col-12 m-auto">
@@ -150,193 +162,7 @@
                       </div>
                   </div>
               </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films animazione">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films animazione text-center justify-content-center">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films commedia">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films fantasy">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films fantascienza">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films guerra">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films horror">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films musical">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films romantico">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films storico">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
-              <!-- fine singolo film -->
-
-              <!-- singolo film -->
-              <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films thriller">
-                  <div class="card single-film size-custom">
-                      <div class="img-container size-custom">
-                          <img src="https://i.pinimg.com/564x/29/6c/ac/296cac5919bf64473d8e36d6e6f23ca9.jpg"
-                              class=" img-custom" alt="">
-                          <span class="film-item-icon mx-0 px-0">
-                              <div class="col-12 m-auto">
-                                  <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                  <span class="pl-2">Clicca per andare alla programmazione</span>
-                              </div>
-                          </span>
-                      </div>
-                  </div>
-              </div>
+              <% }} %>
               <!-- fine singolo film -->
 
           </div>
@@ -391,3 +217,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> 
   </body>
 </html>
+    
