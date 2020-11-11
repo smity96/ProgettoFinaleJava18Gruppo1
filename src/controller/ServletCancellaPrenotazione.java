@@ -7,7 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Prenotazione;
+import model.Utente;
 import utilities.UtilitiesDbPrenotazione;
+import utilities.UtilitiesDbUtente;
 
 @WebServlet("/ServletCancellaPrenotazione")
 
@@ -19,14 +22,17 @@ public class ServletCancellaPrenotazione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("sono nel doGet");
-		int id = Integer.parseInt(request.getParameter("id_prenotazione"));
+		int id_utente = Integer.parseInt(request.getParameter("id_utente"));
+		Utente u = UtilitiesDbUtente.leggiUtenteById(id_utente);
+		int proiezione = Integer.parseInt(request.getParameter("proiezione"));
 		
 		//se l'id della prenotazione e' diverso da null
-		if(request.getParameter("id_prenotazione") != null) {
+		
+			Prenotazione p = UtilitiesDbPrenotazione.leggiPrenotazioneDaUtenteFilm(u, proiezione);
 			//trovato l'id_prenotazione, richiama il metodo rimuovi
-			UtilitiesDbPrenotazione.rimuoviPrenotazione(id);
-		}
+			UtilitiesDbPrenotazione.rimuoviPrenotazione(p.getIdPrenotazione());
+			response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

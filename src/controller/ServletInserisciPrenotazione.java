@@ -30,8 +30,8 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 		int postiPrenotati = Integer.parseInt(request.getParameter("posti_prenotati"));
 		proiez=UtilitiesDbProiezione.leggiProiezioneById(proiezione);
 		u=UtilitiesDbUtente.leggiUtenteById(utente);
-		System.out.println(proiez.getPostiMax());
-		System.out.println(postiPrenotati);
+		/*System.out.println(proiez.getPostiMax());
+		System.out.println(postiPrenotati);*/
 		if(request.getParameter("proiezione") != null && request.getParameter("utente") != null) {
 			//settami la proiezione e l'utente con i parametri mandati
 			Prenotazione pr = new Prenotazione();
@@ -51,7 +51,7 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 				//inserisci la prenotazione
 				UtilitiesDbPrenotazione.inserisciPrenotazione(pr);
 			}
-			System.out.println(proiez.getPostiMax());
+			//System.out.println(proiez.getPostiMax());
 		}
 	}
 }
