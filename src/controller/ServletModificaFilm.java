@@ -78,7 +78,11 @@ public class ServletModificaFilm extends HttpServlet {
 			System.out.println("sto nel catch");
 			e.printStackTrace();
 		}
-		f3.setLocandina("http://127.0.0.1:8887/" + fileName);
+		if(request.getPart("file")!=null) {
+			f3.setLocandina("http://127.0.0.1:8887/" + fileName);
+		}else {
+			f3.setLocandina(request.getParameter("fileUrl"));
+		}
 		// controllo se la sessione esiste
 		if (session.getAttribute("admin") == null) {
 			System.out.println("if della sessione");
@@ -98,7 +102,7 @@ public class ServletModificaFilm extends HttpServlet {
 				UtilitiesDbFilm.inserisciFilm(f3);
 			}
 		}
-		response.sendRedirect("provaFilm.jsp");
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
 	}
 
 	private String getFileName(final Part part) {

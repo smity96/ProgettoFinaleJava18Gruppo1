@@ -77,7 +77,11 @@
 
                 <!--Accedi qui se sei già registrato-->
                 <p class="text-warning">Sei gia' registrato?</p>
+<<<<<<< HEAD
                 <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Accedi qui!</a>
+=======
+                <a class="text-warning" href="login.jsp">Accedi qui!</a>
+>>>>>>> a4b983e6b63f0dd5bc6daadb734b8cc73948b264
 
             </form>
         

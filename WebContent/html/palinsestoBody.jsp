@@ -16,7 +16,6 @@
 <head>
 <meta charset="ISO-8859-1">
 <title></title>
-
         <style>
       .image{
         max-width: 28rem;
@@ -112,37 +111,14 @@
       <div class="col-12 d-flex">
         <p class="text-light text-left font-weight-bold mt-1 mr-2">Trailer:</p> 
 
- <!--MODAL -->
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-warning btn-outline-warning text-light bottone p-0" data-toggle="modal" data-target="#basicExampleModal">
-    Guarda trailer
-    </button>
-    
-    <!-- Modal -->
-    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog  modal-md bg-dark text-warning" role="document">
-    <div class="modal-content bg-dark">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Trailer</h5>
-      <button type="button" class="close bg-dark text-warning btn-outline-warning" data-dismiss="modal" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <!--Trailer film-->
-    <div class="modal-body embed-responsive embed-responsive-16by9">
-      <iframe class="embed-responsive" width="450" height="250"  src="<%=p.getFilm().getUrlTrailer() %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-    
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn text-light btn-outline-warning" data-dismiss="modal">Chiudi</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    
+ 
+          <!--Trailer film MODIFICATO-->
+          
+     <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
+                  
       </div>
+      
+      
       <div class="col-12 d-flex">
         <p class="text-light text-left font-weight-bold mr-2">Data e ora: </p>
        	<p class="text-light text-left"><%= formattedString %></p> 

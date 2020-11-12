@@ -24,7 +24,7 @@ public class Prenotazione implements Serializable {
 		this.id_prenotazione = id_prenotazione;
 	}
 
-	@OneToOne(mappedBy = "id_proiezione")
+	
 	public int getProiezione() {
 		return this.proiezione;
 	}
@@ -33,6 +33,7 @@ public class Prenotazione implements Serializable {
 		this.proiezione = proiezione;
 	}
 
+	
 	public int getUtente() {
 		return this.utente;
 	}
