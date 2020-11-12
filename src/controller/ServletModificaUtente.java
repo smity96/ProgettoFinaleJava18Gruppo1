@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
@@ -46,7 +47,9 @@ public class ServletModificaUtente extends HttpServlet {
     		utente.setCognome(request.getParameter("cognome"));
     		utente.setEmail(request.getParameter("email"));
     		utente.setIndirizzo(request.getParameter("indirizzo"));
-    		utente.setPassword(request.getParameter("password"));
+    		String pssw=request.getParameter("password");
+			String encodedString = Base64.getEncoder().encodeToString(pssw.getBytes());
+			utente.setPassword(encodedString);
     		utente.setNomeSocieta(request.getParameter("nomeSoc"));
     		utente.setPIva(request.getParameter("pIva"));
     		utente.setImmagine(request.getParameter("img"));

@@ -85,7 +85,7 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <%="CIAO"+" "+u.getNome().toUpperCase() %>
+                            <h1>BENVENUTO: <%=u.getNome() %></h1>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -104,7 +104,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="">
+                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="#">
                             <i class="fas fa-sign-out-alt mr-2"></i> <span>Sign Out </span>
                         </a>
                     </li>
@@ -161,107 +161,73 @@
             <div class="col-xl-10 col-12 py-3 max-viewport">
 
                 <!-- inizio funzioni main -->
+                
+                <!-- inizio gestione prenotazione -->
 
-                <!-- inizio gestione profilo -->
-          
-                <div class="row justify-content-center text-uppercase d-none funzione-menu gestione-profilo">
-                    <div class="col-12 p-0 text-center">
+                <div class="row text-uppercase text-center">
+                    <div class="col-12 p-0">
                         <div class="mb-4">
-                            <h1 class="d-inline mr-3">Gestione Profilo</h1>
+                            <h1 class="d-inline mr-3">Gestione Prenotazione</h1>
                         </div>
-
-                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="get">
                         <table class="table table-bordered table-hover table-dark">
                             <thead>
-                                <tr>
-                                    <th class="colore-icone-scuro">Dati Personali</th>
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 colore-icone-scuro">Utente</th>
+                                    <th class="col-md-8 col-6 colore-icone-scuro">Film Prenotato</th>
+                                    <th class="col-md-2 col-3 colore-icone-scuro">Cancella Prenotazione</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
-                                            value="<%=u.getNome() %>" class="text-capitalize"></td>
-                                </tr>
-
-                                <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Cognome</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
-                                            value="<%=u.getCognome() %>" class="text-capitalize"></td>
-                                </tr>
-
-                                <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Data di Nascita'</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
-                                            value="<%=u.getDataDiNascita()%>">
+                                    <td class="col-md-2 col-3 colore-icone-scuro" rowspan="5"><label>Utente</label></td>
+                                    <td class="col-md-8 col-6 colore-icone-scuro"><select
+                                            class="col-12 text-center h-100 scelta" name="film-prenotati">
+                                            <option class="prova" value="2" selected value> -- seleziona un film --
+                                            </option>
+                                            <option value=""></option>
+ 
+                                        </select>
+                                        </label>
+                                    </td>
+                                    <td class="col-md-2 col-3" rowspan="2"><a href=""><i
+                                                class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                     </td>
                                 </tr>
-                            </tbody>
-                            <thead>
-                                <th class="colore-icone-scuro">Dati Account</th>
-                            </thead>
-                            <tbody></tbody>
-                            <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Email</label></th>
-                                <td class="col-md-10 col-9 colore-icone-scuro"><input class="col-8" type="email"
-                                        name="email" value="<%=u.getEmail()%>"></td>
-                            </tr>
-                            <!-- 
-                             <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Username</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="username"
-                                        value="ale15">
-                                </td>
-                            </tr>
-                             -->
-                            <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Password</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%u.getPassword(); %> "></td>
-                            </tr>
-                            <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Immagine Profilo</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
-                                    name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="img" value="<%u.getImmagine(); %>"></td>
-                            </tr>
-                            </tbody>
-                            <thead>
-                                <tr>
-                                    <th class="colore-icone-scuro">Dati Fatturazione</th>
+                                <tr class="d-none justify-content-center" id="info-prenotazione">
+                                    <td id="nomeFilmScelta" class="col-md-2 col-2">
+                                        <img class="img-fluid film-custom-height mb-3"
+                                            src="https://static.posters.cz/image/750webp/34925.webp" alt="">
+                                    </td>
+                                    <td class="col-md-2 col-2">
+                                        <p>Data E Ora:</p>
+                                        <p class="p-0 m-0">08/11/2020</p>
+                                        <p>12:00 - 14:00</p>
+                                    </td>
+                                    <td class="col-md-2 col-1">
+                                        <p>Intervallo:</p>
+                                        <p>15 min</p>
+                                    </td>
+                                    <td class="col-md-2 col-1">
+                                        <p>N° Posti Prenotati:</p>
+                                        <p>1 Posti</p>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Partita Iva</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="pIva"
-                                            value="<%=u.getPIva() %>" class="text-capitalize"></td>
+                                <tr class="d-flex justify-content-center">
+
+                                </tr>
+                                <tr class="d-flex justify-content-center">
+
+                                </tr>
+                                <tr class="d-flex justify-content-center">
+
                                 </tr>
 
-                                <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Indirizzo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="indirizzo"
-                                            value="<%=u.getIndirizzo() %>" class="text-capitalize"></td>
-                                </tr>
-
-                                <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome Societa'</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
-                                            value="<%u.getNomeSocieta(); %>"></td>
-                                </tr>
-									<tr>
-									<td><input type="hidden" name="id" value="<%= u.getIdUtente() %>"></td>
-									</tr> 
-                                <tr class="d-flex">
-                                    <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"
-                                            type="submit" value="modifica"></td>
-                                </tr>
                             </tbody>
                         </table>
-                            </form>
+
                     </div>
                 </div>
-                <!-- fine gestione profilo -->
+                <!-- fine gestione prenotazione -->
 
 
 
@@ -305,6 +271,7 @@
         </div>
     </div>
     <!-- Fine Modal Uscita -->
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

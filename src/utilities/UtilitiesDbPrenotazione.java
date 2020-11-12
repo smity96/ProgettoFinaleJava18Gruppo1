@@ -82,27 +82,5 @@ public class UtilitiesDbPrenotazione {
 		et.commit();
 		return prenotazione;
 	}
-	
-/*--- Metodo per la proiezione collegata all'utente ---*/
-	
-	public static List<Proiezione> leggiProiezioniByUtente(int id){
-		List<Proiezione> listaP = new ArrayList<>();
-		List<Prenotazione> listaPren = leggiPrenotazione();
-		for(Prenotazione p : listaPren) {
-			if(p.getUtente()==id) {
-				listaP.add(UtilitiesDbProiezione.leggiProiezioneById(p.getProiezione()));
-			}
-		}
-		return listaP;
-	}
-	
-/*-- Metodo --*/
-	
-	public static Prenotazione leggiPrenotazioneDaUtenteFilm(Utente utente, int id_p){
-		EntityManager em = getManager();
-		Query q = em.createQuery("SELECT p FROM Prenotazione p WHERE proiezione =:proiezione AND utente =:utente");
-		q.setParameter("proiezione", id_p);
-		q.setParameter("utente", utente.getIdUtente());
-		return (Prenotazione) q.getSingleResult();
-	}
+
 }

@@ -3,57 +3,68 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+
+/**
+ * The persistent class for the prenotazione database table.
+ * 
+ */
 @Entity
+@Table(name="prenotazione")
 @NamedQuery(name="Prenotazione.findAll", query="SELECT p FROM Prenotazione p")
 public class Prenotazione implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
-	@Id
-	@Column(name="id_prenotazione")
-	private int id_prenotazione;
-	private int proiezione;
-	private int utente;
-	private int posti_prenotati;
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_prenotazione", unique=true, nullable=false)
+	private int idPrenotazione;
+
+	@Column(name="posti_prenotati")
+	private int postiPrenotati;
+
+	//bi-directional many-to-one association to Proiezione
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="proiezione", nullable=false)
+	private Proiezione proiezione;
+
+	//bi-directional many-to-one association to Utente
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="utente", nullable=false)
+	private Utente utente;
+
+	public Prenotazione() {
+	}
 
 	public int getIdPrenotazione() {
-		return this.id_prenotazione;
+		return this.idPrenotazione;
 	}
 
-	public void setIdPrenotazione(int id_prenotazione) {
-		this.id_prenotazione = id_prenotazione;
+	public void setIdPrenotazione(int idPrenotazione) {
+		this.idPrenotazione = idPrenotazione;
 	}
 
-	
-	public int getProiezione() {
+	public int getPostiPrenotati() {
+		return this.postiPrenotati;
+	}
+
+	public void setPostiPrenotati(int postiPrenotati) {
+		this.postiPrenotati = postiPrenotati;
+	}
+
+	public Proiezione getProiezione() {
 		return this.proiezione;
 	}
 
-	public void setProiezione(int proiezione) {
+	public void setProiezione(Proiezione proiezione) {
 		this.proiezione = proiezione;
 	}
 
-	
-	public int getUtente() {
+	public Utente getUtente() {
 		return this.utente;
 	}
 
-	public void setUtente(int utente) {
+	public void setUtente(Utente utente) {
 		this.utente = utente;
-	}
-	
-	public int getPosti_prenotati() {
-		return this.posti_prenotati;
-	}
-
-	public void setPosti_prenotati(int posti_prenotati) {
-		this.posti_prenotati = posti_prenotati;
-	}
-
-	@Override
-	public String toString() {
-		return "Prenotazione [id_prenotazione=" + id_prenotazione + ", proiezione=" + proiezione + ", utente=" + utente
-				+ ", posti_prenotati" + posti_prenotati + "]";
 	}
 
 }
