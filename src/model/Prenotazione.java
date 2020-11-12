@@ -51,20 +51,20 @@ public class Prenotazione implements Serializable {
 		this.postiPrenotati = postiPrenotati;
 	}
 
-	public Proiezione getProiezioneBean() {
+	public Proiezione getProiezione() {
 		return this.proiezione;
 	}
 
-	public void setProiezione(Proiezione proiezioneBean) {
-		this.proiezione = proiezioneBean;
+	public void setProiezione(Proiezione proiezione) {
+		this.proiezione = proiezione;
 	}
 
 	public Utente getUtente() {
 		return this.utente;
 	}
 
-	public void setUtenteBean(Utente utenteBean) {
-		this.utente = utenteBean;
+	public void setUtente(Utente utente) {
+		this.utente = utente;
 	}
 
 }

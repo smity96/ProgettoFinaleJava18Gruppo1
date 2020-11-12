@@ -57,7 +57,7 @@ public class Utente implements Serializable {
 	private int ruolo;
 
 	//bi-directional many-to-one association to Prenotazione
-	@OneToMany(mappedBy="utenteBean")
+	@OneToMany(mappedBy="utente")
 	private List<Prenotazione> prenotazioni;
 
 	public Utente() {
@@ -97,14 +97,14 @@ public class Utente implements Serializable {
 
 	public Prenotazione addPrenotazione(Prenotazione prenotazione) {
 		getPrenotazioni().add(prenotazione);
-		prenotazione.setUtenteBean(this);
+		prenotazione.setUtente(this);
 
 		return prenotazione;
 	}
 
 	public Prenotazione removePrenotazione(Prenotazione prenotazione) {
 		getPrenotazioni().remove(prenotazione);
-		prenotazione.setUtenteBean(null);
+		prenotazione.setUtente(null);
 
 		return prenotazione;
 	}

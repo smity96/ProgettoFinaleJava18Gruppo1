@@ -32,7 +32,7 @@ public class Proiezione implements Serializable {
 	private int postiMax;
 
 	//bi-directional many-to-one association to Prenotazione
-	@OneToMany(mappedBy="proiezioneBean")
+	@OneToMany(mappedBy="proiezione")
 	private List<Prenotazione> prenotazioni;
 
 	//bi-directional many-to-one association to Film
@@ -79,20 +79,20 @@ public class Proiezione implements Serializable {
 		return this.prenotazioni;
 	}
 
-	public void setPrenotazioni(List<Prenotazione> prenotaziones) {
-		this.prenotazioni = prenotaziones;
+	public void setPrenotazioni(List<Prenotazione> prenotazione) {
+		this.prenotazioni = prenotazione;
 	}
 
 	public Prenotazione addPrenotazione(Prenotazione prenotazione) {
 		getPrenotazioni().add(prenotazione);
-		prenotazione.setProiezioneBean(this);
+		prenotazione.setProiezione(this);
 
 		return prenotazione;
 	}
 
 	public Prenotazione removePrenotazione(Prenotazione prenotazione) {
 		getPrenotazioni().remove(prenotazione);
-		prenotazione.setProiezioneBean(null);
+		prenotazione.setProiezione(null);
 
 		return prenotazione;
 	}
