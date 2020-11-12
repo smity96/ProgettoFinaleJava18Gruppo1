@@ -28,7 +28,7 @@
 
             <!--Form registrazione dell'utente: -->
             <form action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente" method="post">
-                <img class="mb-4 mt-5" src="../src/logocinema.png" alt="Logo" width="72" height="72">
+                <img class="mb-4 mt-5" src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="Logo" width="72" height="72">
                 <p class="h3 mb-3 text-warning">Registrati:</p>
 
                 <!--Requisiti obbligatori: -->
@@ -66,23 +66,24 @@
                             <li class="nav-item">
                                 <p><input  class="rounded" name="nomeSoc" type="text" placeholder="Nome Società"></p>
                             </li>
+                            
+                            
                           </ul>
                         </div>
                       </nav>
             </div>
+            
+            <br> 
+                    <br>  
 
                 <button onclick="prendiDataNascita()" class="btn text-light btn-outline-warning">Registrati</button>
-                <br>
+                <br>     
                 <br>
 
                 <!--Accedi qui se sei già registrato-->
                 <p class="text-warning">Sei gia' registrato?</p>
-<<<<<<< HEAD
-                <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Accedi qui!</a>
-=======
-                <a class="text-warning" href="login.jsp">Accedi qui!</a>
->>>>>>> a4b983e6b63f0dd5bc6daadb734b8cc73948b264
 
+                <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Accedi qui!</a>
             </form>
         
         <script src="../js/script.js"></script>

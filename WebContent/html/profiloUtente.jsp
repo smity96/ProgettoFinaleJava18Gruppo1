@@ -71,15 +71,15 @@
                         
                         <!-- MANCA HOME -->
                             <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="#">Torna Al Sito</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="profiloUtente.jsp">Gestione Profilo</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="prenotaUtente.jsp">Gestione Prenotazione</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Gestione Prenotazione</a></div>
                         </li>
                     </ul>
 
@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="#">
+                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
                                 <i class="fa fa-sign-out"></i> Sign Out
                             </a>
                         </li>
@@ -113,15 +113,15 @@
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
 
-                            <div class="col-9 ml-3"><a class="nav-link active" href="index.html">Torna alla Home</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="profiloUtente.jsp">Gestione Profilo</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="prenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         </li>
                 </nav>
                 <!-- fine side bar -->
@@ -152,7 +152,7 @@
                              
                              <!--AVATAR UTENTE--> 
                              <div id="profile-container" class="mt-3 ml-3">
-                                <image id="profileImage" class="img-thumbnail" src="../src/logocinema.png" >
+                                <image id="profileImage" class="img-thumbnail" src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" >
                              
                              <input id="imageUpload" type="file" 
                                     name="profile_photo" placeholder="Photo" required="" capture>
