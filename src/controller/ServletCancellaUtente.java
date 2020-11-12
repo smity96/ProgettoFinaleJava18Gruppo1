@@ -29,7 +29,7 @@ public class ServletCancellaUtente extends HttpServlet {
     		System.out.println("sono nell if");
     		UtilitiesDbUtente.cancUtente(u);
     		listaU=UtilitiesDbUtente.listaUtenti();
-    		response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-staff.jsp");
+    		response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp");
     	}
 
     }

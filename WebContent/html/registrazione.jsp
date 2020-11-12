@@ -27,7 +27,7 @@
        <body class="bg-dark text-center">
 
             <!--Form registrazione dell'utente: -->
-            <form action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente" method="post">
+            <form action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente" method="post" enctype="multipart/form-data">
                 <img class="mb-4 mt-5" src="../src/logocinema.png" alt="Logo" width="72" height="72">
                 <p class="h3 mb-3 text-warning">Registrati:</p>
 
@@ -41,6 +41,7 @@
               
                 <p><input class="rounded" name="email" type="email" placeholder="Email" required></p>
 
+                <p><input class="rounded" name="imgP" type="file" placeholder="file" required></p>
                 
                 <p class="text-warning text-center"><input  class="rounded" name="password" type="password" placeholder="Password" required></p>
                
@@ -77,11 +78,9 @@
 
                 <!--Accedi qui se sei già registrato-->
                 <p class="text-warning">Sei gia' registrato?</p>
-<<<<<<< HEAD
+
                 <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Accedi qui!</a>
-=======
-                <a class="text-warning" href="login.jsp">Accedi qui!</a>
->>>>>>> a4b983e6b63f0dd5bc6daadb734b8cc73948b264
+
 
             </form>
         

@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -31,18 +32,29 @@ public class ServletAccessoUtente extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	listaU=UtilitiesDbUtente.listaUtenti();
-    	String email=request.getParameter("email");
-    	String pssw=request.getParameter("password");
+    	String email=request.getParameter("email").trim();
+    	String pssw=request.getParameter("password").trim();
     	boolean dentro=false;
     	for(Utente ut:listaU) {
     		System.out.println(ut.toString());
-    		if(email.equals(ut.getEmail()) && pssw.equals(ut.getPassword())){
+    		byte[] decodedBytes = Base64.getDecoder().decode(ut.getPassword());
+    		String decodedString = new String(decodedBytes);
+    		
+    		if(email.equals(ut.getEmail()) && pssw.equals(decodedString)){
     			HttpSession session=request.getSession();
     			session.setAttribute("uLog",ut);
+    			session.setAttribute("listaU", listaU);
 //    			----indirizzo alle varie pagine----
-//    			if(ut.getRuolo()==3) {
-//    			}
- 				response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
+    			switch(ut.getRuolo()) {
+    			case 0:response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp");
+    				break;
+    			case 1:response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp");
+    				break;
+    			case 2://sendRedirect
+    				break;
+    			case 3://sendRedirect
+    				break;
+    			}
     				
     			dentro=true;
     		}				 

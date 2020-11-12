@@ -13,7 +13,7 @@
 <body class="bg-dark text-center"> 
   
     <!--Form del login: -->
-    <form class="form-signin" action="/ProgettoFinaleJava18Gruppo1/ServletAccessoUtente" method="post">
+    <form class="form-signin" action="<%=request.getContextPath() %>/ServletAccessoUtente" method="post">
         <img class="mb-4 mt-5" src="../src/logocinema.png" alt="Logo" width="72" height="72">
         <p class="h3 mb-3 text-warning">Accedi:</p>
           <p class="text-warning"><input class="rounded" name="email" type="email" placeholder="Email"></p>
@@ -24,11 +24,9 @@
 
         <!--Registrati da questo link: -->
         <p class="text-warning">Non sei registrato?</p>
-<<<<<<< HEAD
+
         <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrati qui!</a>
-=======
-        <a class="text-warning" href="registrazione.jsp">Registrati qui!</a>
->>>>>>> a4b983e6b63f0dd5bc6daadb734b8cc73948b264
+
     </form>
 
         <!--Bootstrap links-->
