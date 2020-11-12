@@ -14,13 +14,13 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
       <%
-                                      HttpSession s=request.getSession(false);    
+                                     /*  HttpSession s=request.getSession(false);    
                                         //session.getAttribute("utentelog")
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                                        
+                                      */   
                     
                 %>
     <style type="text/css">
@@ -84,7 +84,7 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <%="BENVENUTO:"+u.getNome() %>
+                            <%-- <%="BENVENUTO:"+u.getNome() %> --%>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -99,7 +99,7 @@
                         <a class="navbar-brand col-2" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <span class="col-10"><%=u.getNome() %></span> 
+                           <%--  <span class="col-10"><%=u.getNome() %></span>  --%>
                         </a>
                     </li>
                     <li class="nav-item">
