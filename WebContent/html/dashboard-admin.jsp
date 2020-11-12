@@ -565,7 +565,7 @@
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 colore-icone-scuro">Id° Utente</th>
+                                        <th class="col-2 colore-icone-scuro">Idï¿½ Utente</th>
                                         <th class="col-2 colore-icone-scuro">Nome Utente</th>
                                         <th class="col-2 colore-icone-scuro">Conferma Utente</th>
                                         <th class="col-2 colore-icone-scuro">Cancella Utente</th>
@@ -614,7 +614,7 @@
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2">Id° Utente</th>
+                                        <th class="col-2">Idï¿½ Utente</th>
                                         <th class="col-2">Nome Utente</th>
                                         <th class="col-5">Gestisci Utente</th>
                                         <th class="col-3">Conferma Operazione</th>
