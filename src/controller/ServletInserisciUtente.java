@@ -1,8 +1,14 @@
 package controller;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 import javax.websocket.SendResult;
 
 import model.Utente;
@@ -39,6 +46,7 @@ public class ServletInserisciUtente extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String email=request.getParameter("email");
 		String pi =request.getParameter("P.I.");
+		
 		if(pi.equals("")) {
 			pi=null;
 		}
@@ -58,10 +66,31 @@ public class ServletInserisciUtente extends HttpServlet {
 				utente.setPIva(pi);
 				utente.setNome(request.getParameter("nome"));
 				utente.setCognome(request.getParameter("cognome"));
-				utente.setPassword(request.getParameter("password"));
+				String pssw=request.getParameter("password");
+				String encodedString = Base64.getEncoder().encodeToString(pssw.getBytes());
+				utente.setPassword(encodedString);
 				utente.setIndirizzo(request.getParameter("indirizzo"));
 				utente.setNomeSocieta(request.getParameter("nomeSoc"));
-				utente.setImmagine(request.getParameter("urlimmag"));
+				final String path = "C:\\Users\\Fede-\\Desktop\\FotoProfiloProgettoF";
+		        // crea il part
+		        final Part filePart = request.getPart("imgP");
+		        // creiamo il file
+		        System.out.println(filePart);
+		        final String fileName = getFileName(filePart);
+		        System.out.println("fileName: " + fileName);
+		        try (OutputStream out = new FileOutputStream(new File(path + File.separator + fileName));
+		                InputStream fileContent = filePart.getInputStream();) {
+		            int read = 0;
+		            final byte[] bytes = new byte[1024];
+		            while ((read = fileContent.read(bytes)) != -1) {
+		                out.write(bytes, 0, read);
+		            }
+		        } catch (FileNotFoundException e) {
+		            System.out.println("sto nel catch");
+		            e.printStackTrace();
+		        }
+				
+				utente.setImmagine("http://127.0.0.1:8887/" + fileName);
 				String dataDiNascita=(request.getParameter("data_di_nascita"));
 				Date dDn = null;
 				try {
@@ -81,4 +110,14 @@ public class ServletInserisciUtente extends HttpServlet {
 			}
 		}
 	}
+	private String getFileName(final Part part) {
+		System.out.println(part.getHeader("content-disposition"));
+		for (String content : part.getHeader("content-disposition").split(";")) {
+			if (content.trim().startsWith("filename")) {
+				return content.substring(content.indexOf('=') + 1).trim().replace("\"", "");
+			}
+		}
+		return null;
+	}
+
 }

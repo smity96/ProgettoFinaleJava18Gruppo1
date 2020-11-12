@@ -7,7 +7,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.Film;
 import utilities.UtilitiesDbFilm;
@@ -26,18 +25,12 @@ public class ServletCancellaFilm extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Film f2=UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id_film")));
-		//mi prendo la sessione del'admin
-		HttpSession session = request.getSession();
-
-		if (session.getAttribute("admin") == null) {
-			System.out.println("if della sessione");
 			if(f2 instanceof Film) {
 				System.out.println("if dell'instance of");
 				//elimino il film
 				UtilitiesDbFilm.cancellaFilm(f2);
 			}
-			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
-		}
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp");
 		// TODO da cambiare quando si hanno le sessioni
 		/*if (session.getAttribute("staff") == null) {
 			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-staff.jsp");

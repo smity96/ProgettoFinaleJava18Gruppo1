@@ -1,5 +1,5 @@
 .banner {
-  background-image: url(../src/cinema-sala3.jpg);
+  background-image: url(http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/cinema-sala3.jpg);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -18,7 +18,6 @@
   bottom: 5%;
 }
 
-
 .img-banner {
   max-height: 30vh;
 }
@@ -31,7 +30,7 @@
   font-size: 4rem;
 }
 
-.c-image{
+.c-image {
   max-height: 30rem;
   margin: auto;
 }
@@ -39,7 +38,7 @@
 .img-container {
   position: relative;
   overflow: hidden;
-  cursor: pointer ;
+  cursor: pointer;
 }
 
 .size-custom {
@@ -48,16 +47,15 @@
 }
 
 .single-film {
-  border: none; 
+  border: none;
 }
 
 .img-custom {
-height: 100%;
-width: 100%;
-margin: auto;
-display: block;  
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  display: block;
 }
-
 
 .film-item-icon {
   position: absolute;
@@ -75,11 +73,12 @@ display: block;
   transform: translate(0, 0);
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color:black !important;
-    opacity: 1; /* Firefox */
-  }
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black !important;
+  opacity: 1; /* Firefox */
+}
 
-  input:focus {
-    background-color: #f19820 !important;
+input:focus {
+  background-color: #f19820 !important;
 }

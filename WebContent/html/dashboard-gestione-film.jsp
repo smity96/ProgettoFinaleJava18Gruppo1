@@ -19,7 +19,8 @@
 										//session.getAttribute("utentelog")
                                			//String mail = (String) s.getAttribute("mailLog");
                 						//String pssw = (String) session.getAttribute("psswLog");
-                						Utente u = (Utente)s.getAttribute("uLog");
+                						//TODO Sistemare la sessione
+                						//Utente u = (Utente)s.getAttribute("uLog");
                 						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                 						
                 	
@@ -28,7 +29,7 @@
     	<%@include file="../css/style-dash.css"%>
     </style>
     </head>
-<body>
+	<body>
     <!-- navbar in alto-->
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
@@ -85,7 +86,8 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <%="BENVENUTO:"+u.getNome() %>
+                                <!-- TODO Sistemare il get -->
+                            "BENVENUTO:"+u.getNome()
                         </a>
                     </li>
                     <li class="nav-item">
@@ -100,7 +102,8 @@
                         <a class="navbar-brand col-2" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <span class="col-10"><%=u.getNome() %></span> 
+                                <!-- TODO Sistemare il get qui -->
+                            <span class="col-10">u.getNome() </span> 
                         </a>
                     </li>
                     <li class="nav-item">
@@ -175,7 +178,7 @@
                                     <p class="fas fa-plus aggiungi-custom">Aggiungi Film</p>
                                 </a>
                             </div>
-                            <form action="ServletCancellaFilm" method="post">
+                            
                             <%List<Film> tuttiFilm=UtilitiesDbFilm.leggiFilmAll(); %>
                             <table class="table table-hover table-dark">
                                 <thead>
@@ -186,41 +189,20 @@
                                         <th class="col-2 colore-icone-scuro">Cancella Film</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                
-                                <%for(Film f: tuttiFilm){ 
-                                request.setAttribute("id_filmMod", f);%>
-
-
-									<form action="" method="">
-                                        <tr class="d-flex align-items-center">
-                                        <td class="col-4 bordo-trasparente">
-                                                <input type="file" name=""
-                                                    value=""> 
-                                        </td>
-                                        <td class="col-4 bordo-trasparente">
-                                                <input type="text" name=""
-                                                    value=""> 
-                                        </td>       
-                                        <td class="col-2 bordo-trasparente">
-                                            <button type="submit" class="btn btn-secondary">Modifica</button>
-                                        </td>
-                                    </tr>
-                                    </form>
-
-
+                                <tbody>                              
+                                <%for(Film f: tuttiFilm){ %>
                                     <tr class="d-flex align-items-center">
                                         <td class="col-4 bordo-trasparente"><img class="img-fluid film-custom-height"
                                                 src="<%=f.getLocandina() %>" alt=""></td>
-                                        
                                         <td class="col-4 text-capitalize bordo-trasparente">
                                             <p class="colore-icone-scuro colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
-                                            <a data-toggle="modal" data-target=".modifica-film" href="#">
+                                        <input type="hidden" value="<%=f.getIdFilm()%>" name="id_FilmMod">
+                                            <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         <td class="col-2 bordo-trasparente">
-                                            <a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletCancellaFilm?id_film=<%=f.getIdFilm() %>"><i
+                                            <a href="<%=request.getContextPath()%>/ServletCancellaFilm?id_film=<%=f.getIdFilm() %>"><i
                                                     class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
                                             </a>
                                         </td>
@@ -228,7 +210,6 @@
                                     <%} %>
                                 </tbody>
                             </table>
-                            </form>
                         </div>
                     </div>
 
@@ -381,11 +362,6 @@
                                 </td>
                             </tr>
 
-                            <tr class="d-flex">
-                                <th class="col-md-2 col-3"><label>Data E Ora</label></th>
-                                <td class="col-md-10 col-9"><input class="col-8" type="datetime-local"
-                                        name="datanascita" value=""></td>
-                            </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Trama</label></th>
                                 <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto"

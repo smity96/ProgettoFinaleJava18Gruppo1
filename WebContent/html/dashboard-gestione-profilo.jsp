@@ -85,7 +85,7 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <%="BENVENUTO:"+u.getNome() %>
+                            <%="CIAO"+" "+u.getNome().toUpperCase() %>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -104,7 +104,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="#">
+                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="">
                             <i class="fas fa-sign-out-alt mr-2"></i> <span>Sign Out </span>
                         </a>
                     </li>

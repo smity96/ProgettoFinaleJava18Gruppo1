@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -49,6 +51,11 @@
 <body>
 
     <body>
+    <%HttpSession s=request.getSession(false);
+    	Utente u=(Utente)s.getAttribute("uLog");
+    	List<Utente>lU=(List)s.getAttribute("listaU");
+    %>
+    
         <!-- navbar -->
 
         <nav class="navbar navbar-expand-md">
@@ -89,11 +96,11 @@
                             <a class="navbar-brand py-3" href="#">
                                 <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" />
-                                Nome Utente
+                                <%=u.getNome() %>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="#">
+                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
                                 <i class="fa fa-sign-out"></i> Sign Out
                             </a>
                         </li>
@@ -147,12 +154,19 @@
                         <div class="container col-12 bg-dark text-left">
 
                         
-                             <form action="#" method="#" class="bg-dark">
+                             <form action="" method="post" class="bg-dark">
                                                
                              
-                             <!--AVATAR UTENTE--> 
+                             <!--AVATAR UTENTE-->
+                          <%--
+                              <%
+                             	HttpSession s = request.getSession(false);
+
+                             	Utente u = (Utente) s.getAttribute("uLog");
+                             %>
+                           --%>
                              <div id="profile-container" class="mt-3 ml-3">
-                                <image id="profileImage" class="img-thumbnail" src="../src/logocinema.png" >
+                                <image id="profileImage" class="img-thumbnail" src="<%=u.getImmagine() %>" >
                              
                              <input id="imageUpload" type="file" 
                                     name="profile_photo" placeholder="Photo" required="" capture>
@@ -162,7 +176,7 @@
                                     <div class="form-gorup row mt-4">
                             <label class="col-sm-2 col-form-label text-warning">Nome: </label>
                             <div class="col-sm-10">
-                        <input class="rounded" name="nome" type="text" value="Luigi">
+                        <input class="rounded" name="nome" type="text" value="<%=u.getNome()%>">
                     </div>
                  </div>
                  
@@ -172,7 +186,7 @@
                         <div class="form-gorup row">
                             <label class="col-sm-2 col-form-label text-warning">Cognome: </label>
                             <div class="col-sm-10">
-                        <input class="rounded" name="cognome" type="text" value="Rossi">
+                        <input class="rounded" name="cognome" type="text" value="<%=u.getCognome()%>">
                     </div>
                  </div>
 
@@ -181,7 +195,7 @@
                  <div class="form-gorup row">
                         <label class="col-sm-2 col-form-label text-warning">Data di Nascita: </label>
                         <div class="col-sm-10">
-                    <input  class="rounded bottone" name="dataNascita" type="date" value="10/07/1995">
+                    <input  class="rounded bottone" name="data_di_nascita" type="date" value="<%=u.getDataDiNascita()%>">
                 </div>
                 </div>
 
@@ -189,7 +203,7 @@
                 <div class="form-gorup row">
                     <label class="col-sm-2 col-form-label text-warning">Email: </label>
                     <div class="col-sm-10">
-                <input class="rounded" name="email" type="email" placeholder="ciao@gmail.com" disabled>
+                <input class="rounded" name="email" type="email" placeholder="<%=u.getEmail() %>" disabled>
             </div>
             </div>
 
@@ -197,7 +211,7 @@
             <div class="form-gorup row">
                 <label class="col-sm-2 col-form-label text-warning">Password: </label>
                 <div class="col-sm-10">
-            <input  class="rounded" name="password" type="password" value="password">
+            <input  class="rounded" name="password" type="password" value="<%=u.getPassword()%>">
         </div>
         </div>
 
@@ -205,7 +219,7 @@
         <div class="form-gorup row">
             <label class="col-sm-2 col-form-label text-warning">Partita Iva: </label>
             <div class="col-sm-10">
-        <input class="rounded" name="partita_iva" type="text" value="Partita iva">
+        <input class="rounded" name="pIva" type="text" value="<%=u.getPIva()%>">
     </div>
     </div>
                
@@ -213,7 +227,7 @@
     <div class="form-gorup row">
         <label class="col-sm-2 col-form-label text-warning">Indirizzo: </label>
         <div class="col-sm-10">
-    <input class="rounded" name="indirizzo" type="text" value="Indirizzo">
+    <input class="rounded" name="indirizzo" type="text" value="<%=u.getIndirizzo()%>">
 </div>
 </div>
  
@@ -221,7 +235,7 @@
 <div class="form-gorup row">
     <label class="col-sm-2 col-form-label text-warning">Nome società: </label>
     <div class="col-sm-10">
-<input class="rounded" name="societa" type="text" value="Societa'">
+<input class="rounded" name="societa" type="text" value="<%=u.getNomeSocieta()%>">
 </div>
 </div>            
 

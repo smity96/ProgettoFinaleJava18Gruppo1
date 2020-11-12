@@ -29,16 +29,14 @@ public class ServletInserisciFilm extends HttpServlet {
 		// mi prendo la lista completa dei film
 		List<Film> allFilm = UtilitiesDbFilm.leggiFilmAll();
 		boolean check = false;
-		// mi prendo la sessione del'admin
-		HttpSession session = request.getSession();
 		Film f2 = new Film();
 		f2.setTitolo(request.getParameter("titolo"));
 		f2.setGenere(request.getParameter("genere"));
 		try {
-			int anno=Integer.parseInt(request.getParameter("annoDiUscita"));
-			if(anno>2021||anno<1400) {
+			int anno = Integer.parseInt(request.getParameter("annoDiUscita"));
+			if (anno > 2021 || anno < 1400) {
 				response.getWriter().append("Anno sbagliato");
-			}else {
+			} else {
 				f2.setAnnoDiUscita(request.getParameter("annoDiUscita"));
 			}
 		} catch (NumberFormatException e1) {
@@ -69,30 +67,26 @@ public class ServletInserisciFilm extends HttpServlet {
 			System.out.println("sto nel catch");
 			e.printStackTrace();
 		}
-		if(request.getPart("file")!=null) {
+		if (request.getPart("file") != null) {
 			f2.setLocandina("http://127.0.0.1:8887/" + fileName);
-		}else {
+		} else {
 			f2.setLocandina(request.getParameter("fileUrl"));
 		}
 		
-		// controllo se la sessione esiste
-		if (session.getAttribute("admin") == null) {
-			System.out.println("if della sessione");
-			// controllo sul titolo
-			for (Film f : allFilm) {
-				System.out.println(f.getLocandina());
-				if (f.getTitolo().equalsIgnoreCase(f2.getTitolo())) {
-					System.out.println("if check falso");
-					check = true;
-				}
-			}
-			if (check == false) {
-				System.out.println("if aggiunta film");
-				// aggiungo film
-				UtilitiesDbFilm.inserisciFilm(f2);
+		// controllo sul titolo
+		for (Film f : allFilm) {
+			System.out.println(f.getLocandina());
+			if (f.getTitolo().equalsIgnoreCase(f2.getTitolo())) {
+				System.out.println("if check falso");
+				check = true;
 			}
 		}
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
+		if (check == false) {
+			System.out.println("if aggiunta film");
+			// aggiungo film
+			UtilitiesDbFilm.inserisciFilm(f2);
+		}
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp");
 	}
 
 	private String getFileName(final Part part) {
@@ -104,5 +98,4 @@ public class ServletInserisciFilm extends HttpServlet {
 		}
 		return null;
 	}
-
 }
