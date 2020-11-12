@@ -85,7 +85,7 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <%="BENVENUTO:"+u.getNome() %>
+                            <h1>BENVENUTO: <%=u.getNome() %></h1>
                         </a>
                     </li>
                     <li class="nav-item">

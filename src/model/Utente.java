@@ -1,103 +1,66 @@
 package model;
 
 import java.io.Serializable;
-import java.time.LocalDate;
-import java.time.Period;
-import java.time.ZoneId;
-
 import javax.persistence.*;
-
-
 import java.util.Date;
+import java.util.List;
 
 
-
+/**
+ * The persistent class for the utente database table.
+ * 
+ */
 @Entity
-@NamedQueries({
-	
-@NamedQuery(name="Utente.findAll", query="SELECT u FROM Utente u"),
-		@NamedQuery(name="Utente.email",query="SELECT u FROM Utente u WHERE u.email=:email")
-
-})
+@Table(name="utente")
+@NamedQuery(name="Utente.findAll", query="SELECT u FROM Utente u")
 public class Utente implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_utente")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_utente", unique=true, nullable=false)
 	private int idUtente;
+
+	@Column(name="cod_fiscale", nullable=false, length=16)
+	private String codFiscale;
+
+		@Column(nullable=false, length=50)
 	private String cognome;
+
 	@Temporal(TemporalType.DATE)
+	@Column(nullable=false)
 	private Date dataDiNascita;
+
+	@Column(nullable=false, length=100)
 	private String email;
+
+	private int eta;
+
+	@Column(length=500)
+	private String immagine;
+
+	@Column(length=50)
 	private String indirizzo;
+
+	@Column(nullable=false, length=50)
 	private String nome;
+
+	@Column(length=50)
 	private String nomeSocieta;
-	@Column(name="p_iva")
+
+	@Column(name="p_iva", length=100)
 	private String pIva;
+
+	@Column(nullable=false, length=100)
 	private String password;
+
 	private int ruolo;
-	@Column(name="immagine", nullable=true)
-	private String immagine; 
-	
-	
+
+	//bi-directional many-to-one association to Prenotazione
+	@OneToMany(mappedBy="utenteBean")
+	private List<Prenotazione> prenotazioni;
+
 	public Utente() {
-	}
-
-	public int getIdUtente() {
-		return this.idUtente;
-	}
-
-	public void setIdUtente(int idUtente) {
-		this.idUtente = idUtente;
-	}
-
-	public String getCognome() {
-		return this.cognome;
-	}
-
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
-	}
-	
-	public Date getDataDiNascita() {
-		return this.dataDiNascita;
-	}
-
-	public void setDataDiNascita(Date dataDiNascita) {		
-		this.dataDiNascita = dataDiNascita;		
-	}
-
-	
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getIndirizzo() {
-		return this.indirizzo;
-	}
-
-	public void setIndirizzo(String indirizzo) {
-		this.indirizzo = indirizzo;
-	}
-
-	public String getNome() {
-		return this.nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public String getNomeSocieta() {
-		return this.nomeSocieta;
-	}
-
-	public void setNomeSocieta(String nomeSocieta) {
-		this.nomeSocieta = nomeSocieta;
 	}
 
 	public String getPIva() {
@@ -123,35 +86,159 @@ public class Utente implements Serializable {
 	public void setRuolo(int ruolo) {
 		this.ruolo = ruolo;
 	}
-	
+
+	public List<Prenotazione> getPrenotazioni() {
+		return this.prenotazioni;
+	}
+
+	public void setPrenotazioni(List<Prenotazione> prenotaziones) {
+		this.prenotazioni = prenotaziones;
+	}
+
+	public Prenotazione addPrenotazione(Prenotazione prenotazione) {
+		getPrenotazioni().add(prenotazione);
+		prenotazione.setUtenteBean(this);
+
+		return prenotazione;
+	}
+
+	public Prenotazione removePrenotazione(Prenotazione prenotazione) {
+		getPrenotazioni().remove(prenotazione);
+		prenotazione.setUtenteBean(null);
+
+		return prenotazione;
+	}
+
+
+
+	public int getIdUtente() {
+		return idUtente;
+	}
+
+
+
+	public void setIdUtente(int idUtente) {
+		this.idUtente = idUtente;
+	}
+
+
+
+	public String getCodFiscale() {
+		return codFiscale;
+	}
+
+
+
+	public void setCodFiscale(String codFiscale) {
+		this.codFiscale = codFiscale;
+	}
+
+
+
+	public String getCognome() {
+		return cognome;
+	}
+
+
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+
+
+	public Date getDataDiNascita() {
+		return dataDiNascita;
+	}
+
+
+
+	public void setDataDiNascita(Date dataDiNascita) {
+		this.dataDiNascita = dataDiNascita;
+	}
+
+
+
+	public String getEmail() {
+		return email;
+	}
+
+
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+
+
+	public int getEta() {
+		return eta;
+	}
+
+
+
+	public void setEta(int eta) {
+		this.eta = eta;
+	}
+
+
+
 	public String getImmagine() {
 		return immagine;
 	}
+
+
 
 	public void setImmagine(String immagine) {
 		this.immagine = immagine;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Utente other = (Utente) obj;
-		if (idUtente != other.idUtente)
-			return false;
-		return true;
+
+
+	public String getIndirizzo() {
+		return indirizzo;
 	}
 
-	@Override
-	public String toString() {
-		return "Utente: idUtente=" + idUtente + ", cognome=" + cognome + ", dataDiNascita=" + dataDiNascita + ", email="
-				+ email + ", indirizzo=" + indirizzo + ", nome=" + nome + ", nomeSocieta=" + nomeSocieta + ", pIva="
-				+ pIva + ", password=" + password + ", ruolo=" + ruolo + "immagine=" + immagine;
+
+
+	public void setIndirizzo(String indirizzo) {
+		this.indirizzo = indirizzo;
 	}
-	
+
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+
+	public String getNomeSocieta() {
+		return nomeSocieta;
+	}
+
+
+
+	public void setNomeSocieta(String nomeSocieta) {
+		this.nomeSocieta = nomeSocieta;
+	}
+
+
+
+	public String getpIva() {
+		return pIva;
+	}
+
+
+
+	public void setpIva(String pIva) {
+		this.pIva = pIva;
+	}
 
 }
