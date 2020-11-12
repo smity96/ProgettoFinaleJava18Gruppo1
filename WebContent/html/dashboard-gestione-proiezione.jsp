@@ -26,17 +26,7 @@
                 	
                 %>
 <style type="text/css">
-<%@
-include
- 
-file
-="../
-css
-/
-style-dash
-.css
-"%
->
+<%@ include file="../css/style-dash.css"%>
 </style>
 </head>
 <body>
@@ -318,22 +308,26 @@ style-dash
 											<p class="p-0 m-0"><%= p.getDataOra() %></p>
 											<p>Intervallo:</p>
 											<p><%= p.getIntervallo() %></p>
-											<p>N� Posti:</p>
-											<p><%= p.getPostiMax() %></p>
+											<p>N. Posti:</p>
+											<p><%= p.getPostiMax() %></p>	
 										</td>
 
-										<td class="col-2 bordo-trasparente"><a
-											data-toggle="modal" data-target=".modifica-film-proiezione"
-											href=""> <i
-												class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
-										</a></td>
+										<td class="col-2 bordo-trasparente">
+										<!-- TODO change get to post -->
+											<form action="ServletLeggiProiezioneById" method="get">
+												<input type="hidden" name="idDaModificare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
+												</button>
+											</form>
+										</td>
 										<td class="col-2 bordo-trasparente">
 											<form action="ServletCancellaProiezione" method="POST">
 												<input type="hidden" name="idDaEliminare"
 													value="<%= p.getIdProiezione() %>">
 												<button type="submit" class="btn">
-													<i
-														class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
+													<i class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
 												</button>
 											</form>
 										</td>

@@ -162,6 +162,11 @@
                 <!-- inizio funzioni main -->
 
                 <!-- inizio modifica proiezione -->
+                
+                <%
+                List<Film> films=(List<Film>)request.getAttribute("listaFilms");
+                Proiezione pDaModificare=(Proiezione)request.getAttribute("proiezioneDaModificare");
+                %>
           
                 <div class="row justify-content-center text-uppercase">
                     <div class="col-12 p-0 text-center">
@@ -169,7 +174,7 @@
                             <h1 class="d-inline mr-3">Modifica Proiezione</h1>
                         </div>
 
-                      <form action="" method="get">
+                      <form action="ServletModificaProiezione" method="post">
                         <table class="table table-bordered table-hover table-dark m-0">
                             <thead>
                                 <tr>
@@ -179,36 +184,47 @@
                             <tbody>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3"><label>Data E Ora Di Inizio</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="datetime-local"
-                                            name="datanascita" value=""></td>
+                                    <th class="col-md-2 col-3"><label>Data E Ora Di Inizio</label>
+                                    </th>
+	                                    <td class="col-md-10 col-9">
+		                                    <input class="col-8 mx-auto" type="datetime-local"
+		                                            name="dataOra" value="<%= pDaModificare.getDataOra()%>" >
+	                                    </td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3"><label>Titolo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="text"
-                                        name="datanascita" value="">
+                                    <th class="col-md-2 col-3"><label>Films</label></th>
+                                    
+                                    <td class="col-md-10 col-9">
+	                                    <select class="col-8 mx-auto" id="films">
+	                                    <% for(Film f: films){ %>
+										  <option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%} %>
+										</select>
                                     </td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Intervallo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="time" name=""
-                                            value=""></td>
+                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name="intervallo"
+                                            value="<%=pDaModificare.getIntervallo()%>"></td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>N. Posti</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                            name="datanascita" value=""></td>
+                                            name="posti" value="<%=pDaModificare.getPostiMax()%>"></td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <td class="col-12"><button type="button" class="btn btn-success mr-2">Aggiungi
+                                    <td class="col-12"><button type="submit" class="btn btn-success mr-2">Modifica
                                             Proiezione</button>
-                                        <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
-                                            Annulla Inserimento
-                                        </button></td>
+                                        <a href="ServletLeggiProiezioniAdmin">
+	                                        <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
+	                                            Annulla Inserimento
+	                                        </button>
+                                        </a>
+                                    </td>
                                 </tr>
     
                             </tbody>
