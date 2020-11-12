@@ -24,11 +24,7 @@
 
         <!--Registrati da questo link: -->
         <p class="text-warning">Non sei registrato?</p>
-<<<<<<< HEAD
         <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrati qui!</a>
-=======
-        <a class="text-warning" href="registrazione.jsp">Registrati qui!</a>
->>>>>>> a4b983e6b63f0dd5bc6daadb734b8cc73948b264
     </form>
 
         <!--Bootstrap links-->

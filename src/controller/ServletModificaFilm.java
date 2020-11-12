@@ -14,7 +14,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import javax.servlet.http.Part;
 
 import model.Film;
@@ -39,8 +38,6 @@ public class ServletModificaFilm extends HttpServlet {
 			throws ServletException, IOException {
 		// mi prendo la lista completa dei film
 		List<Film> allFilm = UtilitiesDbFilm.leggiFilmAll();
-		// mi prendo la sessione del'admin
-		HttpSession session = request.getSession();
 		// creo l'ogetto dalle risorse ottenute
 		Film f3 = new Film();
 		f3.setIdFilm(Integer.parseInt(request.getParameter("id_filmMod")));
@@ -56,7 +53,7 @@ public class ServletModificaFilm extends HttpServlet {
 		} catch (NumberFormatException e1) {
 			response.getWriter().append("Anno sbagliato");
 			e1.printStackTrace();
-		} 
+		}
 		f3.setDurata(Integer.parseInt(request.getParameter("durata")));
 		f3.setUrlTrailer(request.getParameter("urlTrailer"));
 		f3.setTrama(request.getParameter("trama"));
@@ -78,31 +75,27 @@ public class ServletModificaFilm extends HttpServlet {
 			System.out.println("sto nel catch");
 			e.printStackTrace();
 		}
-		if(request.getPart("file")!=null) {
+		if (request.getPart("file") != null) {
 			f3.setLocandina("http://127.0.0.1:8887/" + fileName);
-		}else {
+		} else {
 			f3.setLocandina(request.getParameter("fileUrl"));
 		}
-		// controllo se la sessione esiste
-		if (session.getAttribute("admin") == null) {
-			System.out.println("if della sessione");
-			// per ogni film contenuto nella lista
-			for (Film f : allFilm) {
-				// controllami se trovi un id uguale
-				if (f3.getIdFilm() == f.getIdFilm()) {
-					System.out.println("if dell'id");
-					// se l'id e' uguale allora cambiami il check e modifica il valore
-					UtilitiesDbFilm.modificaFilm(f3);
-					check = true;
-					break;
-				}
-			}
-			// se il check resta falso allora aggiungi il film
-			if (check == false) {
-				UtilitiesDbFilm.inserisciFilm(f3);
+		// per ogni film contenuto nella lista
+		for (Film f : allFilm) {
+			// controllami se trovi un id uguale
+			if (f3.getIdFilm() == f.getIdFilm()) {
+				System.out.println("if dell'id");
+				// se l'id e' uguale allora cambiami il check e modifica il valore
+				UtilitiesDbFilm.modificaFilm(f3);
+				check = true;
+				break;
 			}
 		}
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
+		// se il check resta falso allora aggiungi il film
+		if (check == false) {
+			UtilitiesDbFilm.inserisciFilm(f3);
+		}
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp");
 	}
 
 	private String getFileName(final Part part) {

@@ -18,7 +18,8 @@
                                         //session.getAttribute("utentelog")
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
-                                        Utente u = (Utente)s.getAttribute("uLog");
+                                        //TODO Sistemare anche qui
+                                        //Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                         
                     
@@ -84,7 +85,8 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <%="BENVENUTO:"+u.getNome() %>
+                                <!-- TODO Rimettere apposto il get -->
+                            <%String sq="BENVENUTO:";//+u.getNome() %>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -99,7 +101,8 @@
                         <a class="navbar-brand col-2" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <span class="col-10"><%=u.getNome() %></span> 
+                                <!-- TODO Sistemare anche qui -->
+                            <span class="col-10">u.getNome()</span> 
                         </a>
                     </li>
                     <li class="nav-item">
@@ -169,7 +172,9 @@
                             <h1 class="d-inline mr-3">Modifica Film</h1>
                         </div>
 
-                      <form action="" method="get">
+                      <form action="<%=request.getContextPath()%>/ServletModificaFilm" method="post" enctype="multipart/form-data">
+                      <%Film f=(Film)request.getAttribute("Film"); %>
+                      <input type="hidden" name="id_filmMod" value="<%=f.getIdFilm() %>">
                         <table class="table table-bordered table-hover table-dark m-0">
                             <thead>
                                 <tr>
@@ -179,64 +184,60 @@
                             <tbody>
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Titolo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
-                                            value="alessandro" class="text-capitalize"></td>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="titolo"
+                                            value="<%=f.getTitolo() %>" class="text-capitalize"></td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Genere</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome" value="inga"
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="genere" value="<%=f.getGenere() %>"
                                             class="text-capitalize"></td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Anno di Uscita</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="date" name="datanascita"
-                                            value="">
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="annoDiUscita"
+                                            value="<%=f.getAnnoDiUscita()%>">
                                     </td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Durata</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="time" name="datanascita"
-                                            value="">
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="durata"
+                                            value="<%=f.getDurata()%>">
                                     </td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Trailer</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="url" name="datanascita" value="">
+                                    <td class="col-md-10 col-9"><input class="col-8" type="url" name="urlTrailer" value="<%=f.getUrlTrailer()%>">
                                     </td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3"><label>Data E Ora</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8" type="datetime-local"
-                                            name="datanascita" value=""></td>
-                                </tr>
-                                <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Trama</label></th>
                                     <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto" type="text"
-                                            name="">Bella Chen il Malvagio</textarea></td>
+                                            name="trama"><%=f.getTrama() %></textarea></td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Locandina</label></th>
                                     <td class="col-md-10 col-9"><input class="col-md-5 col-8 mr-2" type="url"
-                                            name="datanascita" value=""><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
-                                            type="file" name="datanascita" value=""></td>
+                                            name="fileUrl" placeholder="URL"><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
+                                            type="file" name="file"></td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <td class="col-12"><button type="button" class="btn btn-success mr-2">Salva
+                                
+                                    <td class="col-12"><button type="submit" class="btn btn-success mr-2">Salva
                                             Modifica</button>
-                                        <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
+                                        <button type="reset" value="Reset" class="btn btn-danger ml-2">
                                             Annulla Modifica
                                         </button></td>
                                 </tr>
                             </tbody>
                         </table>
-                            </form>
+                        </form>
                     </div>
                 </div>
                 <!-- fine modifica film -->

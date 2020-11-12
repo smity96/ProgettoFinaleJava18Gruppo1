@@ -26,17 +26,7 @@
                 	
                 %>
 <style type="text/css">
-<%@
-include
- 
-file
-="../
-css
-/
-style-dash
-.css
-"%
->
+<%@include file="../css/style-dash.css"%>
 </style>
 </head>
 <body>
