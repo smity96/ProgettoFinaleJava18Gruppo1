@@ -8,11 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Prenotazione;
-import model.Utente;
 import utilities.UtilitiesDbPrenotazione;
-import utilities.UtilitiesDbUtente;
 
-@WebServlet("/ServletCancellaPrenotazione")
+@WebServlet("/ServletLeggiPrenotazioneById")
 
 public class ServletLeggiPrenotazioneById extends HttpServlet {
 	private static final long serialVersionUID = 1L;

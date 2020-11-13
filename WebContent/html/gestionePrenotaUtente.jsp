@@ -1,3 +1,4 @@
+<%@page import="model.Utente"%>
 <%@page import="model.Prenotazione"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -23,7 +24,10 @@
     <link rel="stylesheet" href="..\css\fontawesome-free-5.15.0-web\css\all.min.css">
     <link rel="stylesheet" href="..\css\style-dash.css">
 </head>
-
+<%
+HttpSession s=request.getSession(false); 
+Utente u = (Utente)s.getAttribute("uLog");
+%>
 <body>
 
     <body>
