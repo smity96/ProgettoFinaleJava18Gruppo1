@@ -10,15 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>index</title>
     <!--Bootstrap links-->
-    <style type="text/css">
-    	<%@include file="../css/stylemain.css" %>
-    	<%@include file="../css/style3.css" %>
-    </style>
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style3.css">
   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <style type="text/css"> <%@include file="../css/stylemain.css" %> <%@include file="../css/style3.css" %>
-    </style>
 </head>
   <body>
 
@@ -32,7 +28,7 @@
         <div class="row justify-content-center">
             <div class="col-8 mx-auto justify-content-center d-flex">
                 <div class="col-3 justify-content-end d-flex m-0 p-0"><img class="img-fluid img-banner p-0 m-0"
-                        src="../src/s-logo.png" alt=""></div>
+                        src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/s-logo.png" alt=""></div>
                 <div class="col-5 d-flex my-0 align-items-end m-0 p-0"> <span
                         class="display-1 scritta-dorata">orrento</span>
                 </div>
@@ -44,7 +40,6 @@
             </div>
         </div>
     </div>
-      </div>
       <!-- fine banner -->
   </header>
   <!-- fine heder -->
@@ -144,19 +139,20 @@
           <div class="row">
 
               <!-- singolo film -->
-              <% List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
+              <%  List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
               ArrayList<Film> films = new ArrayList<>();
               for(Proiezione p : proiezioni){ 
               if(films.contains(p.getFilm())){
             	  continue;
               }else{
             	  films.add(p.getFilm());
-              %>
+            	  %>
               <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films animazione">
                   <div class="card single-film size-custom">
                       <div class="img-container size-custom">
                       <!-- il getlocandina stava qui -->
-                           <img src="<%=p.getFilm().getLocandina()%>"
+                      <%// TODO Sistemare questa parte  %>
+                           <img src="<%= p.getFilm().getLocandina()%>"
                               class=" img-custom" alt="">
                           <span class="film-item-icon mx-0 px-0">
                               <div class="col-12 m-auto">
@@ -193,7 +189,7 @@
               data-ride="carousel">
               <div class="carousel-inner">
                   <div class="carousel-item active">
-                      <img class="d-block c-image img-fluid" src="../src/logocinema.png" alt="First slide">
+                      <img class="d-block c-image img-fluid" src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="First slide">
                   </div>
                   <%List<Film> allFilm=UtilitiesDbFilm.leggiFilmAll();
                   for(Film f: allFilm){%>

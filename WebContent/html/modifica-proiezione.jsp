@@ -14,13 +14,13 @@
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
       <%
-                                      HttpSession s=request.getSession(false);    
+                                     /*  HttpSession s=request.getSession(false);    
                                         //session.getAttribute("utentelog")
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                                        
+                                      */   
                     
                 %>
     <style type="text/css">
@@ -84,7 +84,7 @@
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <%="BENVENUTO:"+u.getNome() %>
+                            <%-- <%="BENVENUTO:"+u.getNome() %> --%>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -99,7 +99,7 @@
                         <a class="navbar-brand col-2" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            <span class="col-10"><%=u.getNome() %></span> 
+                           <%--  <span class="col-10"><%=u.getNome() %></span>  --%>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -162,6 +162,11 @@
                 <!-- inizio funzioni main -->
 
                 <!-- inizio modifica proiezione -->
+                
+                <%
+                List<Film> films=(List<Film>)request.getAttribute("listaFilms");
+                Proiezione pDaModificare=(Proiezione)request.getAttribute("proiezioneDaModificare");
+                %>
           
                 <div class="row justify-content-center text-uppercase">
                     <div class="col-12 p-0 text-center">
@@ -169,7 +174,7 @@
                             <h1 class="d-inline mr-3">Modifica Proiezione</h1>
                         </div>
 
-                      <form action="" method="get">
+                      <form action="ServletModificaProiezione" method="post">
                         <table class="table table-bordered table-hover table-dark m-0">
                             <thead>
                                 <tr>
@@ -179,36 +184,53 @@
                             <tbody>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3"><label>Data E Ora Di Inizio</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="datetime-local"
-                                            name="datanascita" value=""></td>
+                                    <th class="col-md-2 col-3"><label>Data E Ora Di Inizio</label>
+                                    </th>
+	                                    <td class="col-md-10 col-9">
+		                                    <input class="col-8 mx-auto" type="datetime-local"
+		                                            name="dataOra" value="<%= pDaModificare.getDataOra()%>" >
+	                                    </td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3"><label>Titolo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="text"
-                                        name="datanascita" value="">
+                                    <th class="col-md-2 col-3"><label>Films</label></th>
+                                    
+                                    <td class="col-md-10 col-9">
+	                                    <select class="col-8 mx-auto" id="films">
+	                                    <% for(Film f: films){ %>
+										  <option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%} %>
+										</select>
                                     </td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Intervallo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="time" name=""
-                                            value=""></td>
+                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name="intervallo"
+                                            value="<%=pDaModificare.getIntervallo()%>"></td>
                                 </tr>
     
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>N. Posti</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                            name="datanascita" value=""></td>
+                                            name="posti" value="<%=pDaModificare.getPostiMax()%>"></td>
+                                </tr>
+
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
+                                            name="posti" value="<%=%>"></td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <td class="col-12"><button type="button" class="btn btn-success mr-2">Aggiungi
+                                    <td class="col-12"><button type="submit" class="btn btn-success mr-2">Modifica
                                             Proiezione</button>
-                                        <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
-                                            Annulla Inserimento
-                                        </button></td>
+                                        <a href="ServletLeggiProiezioniAdmin">
+	                                        <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
+	                                            Annulla Inserimento
+	                                        </button>
+                                        </a>
+                                    </td>
                                 </tr>
     
                             </tbody>

@@ -2,40 +2,60 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import java.util.List;
 
+
+/**
+ * The persistent class for the film database table.
+ * 
+ */
 @Entity
+@Table(name="film")
 @NamedQuery(name="Film.findAll", query="SELECT f FROM Film f")
 public class Film implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@Column(name="id_film")
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id_film", unique=true, nullable=false)
 	private int idFilm;
 
-	@Column(name="anno_di_uscita")
+	@Column(name="anno_di_uscita", nullable=false, length=10)
 	private String annoDiUscita;
 
-	@Column(name="durata")
+	@Column(nullable=false)
 	private int durata;
 
-	@Column(name="genere")
+	@Column(nullable=false, length=100)
 	private String genere;
 
-	@Column(name="locandina")
+	@Column(length=500)
 	private String locandina;
 
-	@Column(name="titolo")
+	@Column(nullable=false, length=100)
 	private String titolo;
 
-	@Column(name="trama")
+	@Lob
 	private String trama;
 
-	@Column(name="url_trailer")
+	@Column(name="url_trailer", nullable=false, length=100)
 	private String urlTrailer;
+
+	//bi-directional many-to-one association to Proiezione
+	@OneToMany(mappedBy="film")
+	private List<Proiezione> proieziones;
 
 	public Film() {
 	}
-	
+
+	public int getIdFilm() {
+		return this.idFilm;
+	}
+
+	public void setIdFilm(int idFilm) {
+		this.idFilm = idFilm;
+	}
+
 	public String getAnnoDiUscita() {
 		return this.annoDiUscita;
 	}
@@ -58,14 +78,6 @@ public class Film implements Serializable {
 
 	public void setGenere(String genere) {
 		this.genere = genere;
-	}
-
-	public int getIdFilm() {
-		return this.idFilm;
-	}
-
-	public void setIdFilm(int idFilm) {
-		this.idFilm = idFilm;
 	}
 
 	public String getLocandina() {
@@ -100,35 +112,26 @@ public class Film implements Serializable {
 		this.urlTrailer = urlTrailer;
 	}
 
-	@Override
-	public String toString() {
-		return "Film [idFilm=" + idFilm + ", annoDiUscita=" + annoDiUscita + ", durata=" + durata + ", genere=" + genere
-				+ ", locandina=" + locandina + ", titolo=" + titolo + ", trama=" + trama + ", urlTrailer=" + urlTrailer
-				+ "]";
+	public List<Proiezione> getProieziones() {
+		return this.proieziones;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Film other = (Film) obj;
-		if (idFilm != other.idFilm)
-			return false;
-		if (locandina == null) {
-			if (other.locandina != null)
-				return false;
-		} else if (!locandina.equals(other.locandina))
-			return false;
-		if (titolo == null) {
-			if (other.titolo != null)
-				return false;
-		} else if (!titolo.equals(other.titolo))
-			return false;
-		return true;
+	public void setProieziones(List<Proiezione> proieziones) {
+		this.proieziones = proieziones;
 	}
-	
+
+	public Proiezione addProiezione(Proiezione proiezione) {
+		getProieziones().add(proiezione);
+		proiezione.setFilm(this);
+
+		return proiezione;
+	}
+
+	public Proiezione removeProiezione(Proiezione proiezione) {
+		getProieziones().remove(proiezione);
+		proiezione.setFilm(null);
+
+		return proiezione;
+	}
+
 }

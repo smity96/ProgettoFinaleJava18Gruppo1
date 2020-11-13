@@ -29,9 +29,9 @@ public class InvioEmail extends HttpServlet {
 	}
 	
 	public static void inviaMail() {
-		String to = "xu.chen.1623@hotmail.com";
+		String to = "iannucci.federico@gmail.com";
 	    String subject = "subject";
-	    String msg ="Somebody once told me";
+	    String msg ="Ciao Federico";
 	    String from ="progettofinalejrm18gruppo1@gmail.com";
 	    String password ="Qwerty123!";
 
@@ -69,6 +69,5 @@ public class InvioEmail extends HttpServlet {
 		   e.printStackTrace();
 	   }
 	}
-	
 }
 

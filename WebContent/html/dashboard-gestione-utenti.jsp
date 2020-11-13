@@ -15,14 +15,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
       <%
-              						  HttpSession s=request.getSession(false);    
-										//session.getAttribute("utentelog")
-                               			//String mail = (String) s.getAttribute("mailLog");
-                						//String pssw = (String) session.getAttribute("psswLog");
-                						Utente u = (Utente)s.getAttribute("uLog");
-                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                						
-                	
+        HttpSession s=request.getSession(false);    
+        Utente u = (Utente)s.getAttribute("uLog");
+              
                 %>
     <style type="text/css">
     	<%@include file="../css/style-dash.css"%>
@@ -84,8 +79,8 @@
                     <li class="nav-item">
                         <a class="navbar-brand" href="#">
                             <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
-                                alt="Logo" style="width:40px;" />
-                            <%="BENVENUTO:"+u.getNome() %>
+                                alt="Logo" style="width:40px;">
+                            <%="CIAO"+" "+u.getNome() %>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -104,7 +99,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="#">
+                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="/ServletLogout">
                             <i class="fas fa-sign-out-alt mr-2"></i> <span>Sign Out </span>
                         </a>
                     </li>
@@ -184,21 +179,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <%List<Utente>listaU=UtilitiesDbUtente.listaUtenti();
-                                	for(Utente g:listaU){
+                                <%List<Utente>lU=(List)s.getAttribute("listaU");
+                                
+                                	for(Utente g:lU){
                                 %>
                                     <tr class="d-flex colore-icone-scuro">
                                         <td class="col-2"><label><%=g.getIdUtente() %></label></td>
                                         <td class="col-2"><label><%=g.getEmail() %></label></td>
-                                        <%if(g.getRuolo()==0){ %>
+                                        <%if(g.getRuolo()!=0){ %>
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-check-circle"></i></a>
                                         </td>
-                                        <% }%>
-                                        <td class="col-2"><a href="canc"><i
+                                        <% }else{%>
+                                        <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
+                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-check"></i></a>
+                                        <%} %>
+                                        
+                                        <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="col-2"><a href="mod"><i
+                                        <td class="col-2"><a href="/modifica-utenti.jsp"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
                                         </td>
                                         <%if(g.getRuolo()!=3) {%>
@@ -231,9 +231,11 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <%for(Utente x:lU) 
+                                					{%>    		
                                     <tr class="d-flex">
-                                        <td class="col-2"><label>0</label></td>
-                                        <td class="col-2"><label>Nome</label></td>
+                                        <td class="col-2"><label><%=x.getIdUtente() %></label></td>
+                                        <td class="col-2"><label><%=x.getNome() %></label></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
                                                     <option value="conferma-utente"><a href="ProgettoFinaleJava18Gruppo1/ServletModificaUtente">conferma utente</a>
@@ -247,6 +249,7 @@
                                             </a>
                                         </td>
                                     </tr>
+                                    <%} %>
                                 </tbody>
                             </table>
                         </div>

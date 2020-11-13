@@ -956,7 +956,9 @@
                                 <td class="col-md-10 col-9">
                                     <select class="col-8 mx-auto text-center h-100"
                                         name="film-prenotati">
-                                        <option value=""></option>
+                                       <!-- 
+                                         <option value="a"></option>
+                                        -->
                                     </select>
                                 </td>
                             </tr>

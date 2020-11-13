@@ -16,27 +16,17 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 <%
-              						  HttpSession s=request.getSession(false);    
+              						  /* HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
                                			//String mail = (String) s.getAttribute("mailLog");
                 						//String pssw = (String) session.getAttribute("psswLog");
                 						Utente u = (Utente)s.getAttribute("uLog");
-                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
+                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2); */
                 						
                 	
                 %>
 <style type="text/css">
-<%@
-include
- 
-file
-="../
-css
-/
-style-dash
-.css
-"%
->
+<%@ include file="../css/style-dash.css"%>
 </style>
 </head>
 <body>
@@ -97,7 +87,7 @@ style-dash
 					<li class="nav-item"><a class="navbar-brand" href="#"> <img
 							src="../src/logocinema.png"
 							class="img-fluid rounded-circle img-thumbnail mr-3" alt="Logo"
-							style="width: 40px;" /> <%="BENVENUTO:"+u.getNome() %>
+							style="width: 40px;" /> <%-- <%="BENVENUTO:"+u.getNome() %> --%>
 					</a></li>
 					<li class="nav-item"><a class="nav-link" data-toggle="modal"
 						data-target="#sign-out" href="#"> <i
@@ -109,7 +99,7 @@ style-dash
 					<li class="nav-item"><a class="navbar-brand col-2" href="#">
 							<img src="../src/logocinema.png"
 							class="img-fluid rounded-circle img-thumbnail mr-3" alt="Logo"
-							style="width: 40px;" /> <span class="col-10"><%=u.getNome() %></span>
+							style="width: 40px;" /> <span class="col-10"><%-- <%=u.getNome() %> --%></span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link col-10 offset-col-2"
 						data-toggle="modal" data-target="#sign-out" href="#"> <i
@@ -318,22 +308,26 @@ style-dash
 											<p class="p-0 m-0"><%= p.getDataOra() %></p>
 											<p>Intervallo:</p>
 											<p><%= p.getIntervallo() %></p>
-											<p>N� Posti:</p>
-											<p><%= p.getPostiMax() %></p>
+											<p>N. Posti:</p>
+											<p><%= p.getPostiMax() %></p>	
 										</td>
 
-										<td class="col-2 bordo-trasparente"><a
-											data-toggle="modal" data-target=".modifica-film-proiezione"
-											href=""> <i
-												class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
-										</a></td>
+										<td class="col-2 bordo-trasparente">
+										<!-- TODO change get to post -->
+											<form action="ServletLeggiProiezioneById" method="get">
+												<input type="hidden" name="idDaModificare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
+												</button>
+											</form>
+										</td>
 										<td class="col-2 bordo-trasparente">
 											<form action="ServletCancellaProiezione" method="POST">
 												<input type="hidden" name="idDaEliminare"
 													value="<%= p.getIdProiezione() %>">
 												<button type="submit" class="btn">
-													<i
-														class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
+													<i class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
 												</button>
 											</form>
 										</td>
@@ -355,9 +349,8 @@ style-dash
 
     </div>
     <!-- Fine Main Content -->
-
+    
     <!-- Modals -->
-
 	<!-- Modal uscita -->
 	<div class="modal fade" id="sign-out">
 		<div class="modal-dialog">
@@ -368,10 +361,8 @@ style-dash
 					<button type="button" class="close" data-dismiss="modal">
 						&times;</button>
 				</div>
-
 				<!-- Modal body -->
 				<div class="modal-body">Premi logout per uscire.</div>
-
 				<!-- Modal footer -->
 				<div class="modal-footer">
 					<button type="button" class="btn btn-primary" data-dismiss="modal">
@@ -385,13 +376,10 @@ style-dash
 		</div>
 	</div>
 	<!-- Fine Modal Uscita -->
-
 	<!-- Modal Aggiungi Film Alla Proiezione -->
-
 	<div class="modal fade aggiungi-film-proiezione text-center">
 		<div class="modal-dialog modal-xl">
 			<div class="modal-content">
-
 				<!-- Modal body -->
 				<div class="modal-body p-0 m-0">
 					<form action="ServletInserisciProiezione" method="post">
@@ -402,14 +390,12 @@ style-dash
 								</tr>
 							</thead>
 							<tbody>
-
 								<tr class="d-flex">
 									<th class="col-md-2 col-3"><label>Data E Ora Di
 											Inizio</label></th>
 									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
 										type="datetime-local" name="dataOra"></td>
 								</tr>
-
 								<tr class="d-flex">
 									<th class="col-md-2 col-3"><label>Titolo</label></th>
 									<td class="col-md-10 col-9"><select
@@ -420,26 +406,26 @@ style-dash
 											<%} %>
 									</select></td>
 								</tr>
-
 								<tr class="d-flex">
 									<th class="col-md-2 col-3"><label>Intervallo</label></th>
 									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
 										type="number" name="intervallo"></td>
 								</tr>
-
 								<tr class="d-flex">
-									<th class="col-md-2 col-3"><label>N� Posti</label></th>
+									<th class="col-md-2 col-3"><label>N. Posti</label></th>
 									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
 										type="number" name="posti"></td>
+										<tr class="d-flex">
+									<th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
+									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
+										type="number" name=""></td>
 								</tr>
-
 								<tr class="d-flex">
 									<td class="col-12"><button type="submit"
 											class="btn btn-success mr-2">Aggiungi Proiezione</button>
 										<button type="submit" class="btn btn-danger ml-2"
 											data-dismiss="modal">Annulla Inserimento</button></td>
 								</tr>
-
 							</tbody>
 						</table>
 					</form>
@@ -448,8 +434,7 @@ style-dash
 		</div>
 	</div>
 	<!-- Fine Modal Aggiungi Film alla Proiezione -->
-
-
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
