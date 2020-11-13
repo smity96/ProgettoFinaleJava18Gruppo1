@@ -200,7 +200,7 @@
 
 
 				<div
-					class="container-fluid m-0 p-0 d-none funzione-menu gestione-proiezione">
+					class="container-fluid m-0 p-0">
 
 
 					<div class="row text-uppercase text-center d-none d-md-flex">
@@ -249,13 +249,15 @@
 											<p><%= p.getPostiMax() %></p>
 										</td>
 										<td class="col-2 bordo-trasparente colore-icone-scuro">
-											<p><%=%></p>
+											<p><%= p.getPrezzo()%></p>
 										</td>
-										<td class="col-1 bordo-trasparente"><a
-											data-toggle="modal" data-target=".modifica-film-proiezione"
-											href=""> <i
-												class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
-										</a></td>
+										<td class="col-1 bordo-trasparente"><form action="ServletLeggiProiezioneById" method="get">
+												<input type="hidden" name="idDaModificare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
+												</button>
+											</form></td>
 
 										<td class="col-1 bordo-trasparente">
 											<form action="ServletCancellaProiezione" method="POST">
@@ -315,7 +317,7 @@
 											<p>N. Posti:</p>
 											<p><%= p.getPostiMax() %></p>
 											<p>Costo Bilietto:</p>
-											<p><%=%></p>
+											<p><%= p.getPrezzo() %> </p>
 										</td>
 
 										<td class="col-2 bordo-trasparente">
@@ -424,7 +426,7 @@
 										<tr class="d-flex">
 									<th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
 									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
-										type="number" name=""></td>
+										type="number" name="prezzo"></td>
 								</tr>
 								<tr class="d-flex">
 									<td class="col-12"><button type="submit"
