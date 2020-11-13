@@ -215,7 +215,7 @@
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3"><label>N. Posti</label></th>
+                                    <th class="col-md-2 col-3"><label>Num. Posti</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
                                             name="posti" value="<%=pDaModificare.getPostiMax()%>"></td>
                                 </tr>
@@ -223,9 +223,9 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                            name="posti" value="<%=%>"></td>
+                                            name="prezzo" value="<%=pDaModificare.getPrezzo()%>"></td>
                                 </tr>
-    
+    							<input type="hidden" name="idDaModificare" value="<%= pDaModificare.getIdProiezione() %>">
                                 <tr class="d-flex">
                                     <td class="col-12"><button type="submit" class="btn btn-success mr-2">Modifica
                                             Proiezione</button>
