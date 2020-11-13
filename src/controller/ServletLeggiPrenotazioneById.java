@@ -14,20 +14,24 @@ import utilities.UtilitiesDbUtente;
 
 @WebServlet("/ServletCancellaPrenotazione")
 
-public class ServletCancellaPrenotazione extends HttpServlet {
+public class ServletLeggiPrenotazioneById extends HttpServlet {
 	private static final long serialVersionUID = 1L;
    
-    public ServletCancellaPrenotazione() {
+    public ServletLeggiPrenotazioneById() {
       
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idPrenotazione = Integer.parseInt("id_prenotazione");
+		doPost(request, response);
 		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		int id_prenotazione = Integer.parseInt("id_prenotazione");
+		Prenotazione prenotazione = UtilitiesDbPrenotazione.leggiPrenotazioneById(id_prenotazione);
+		request.setAttribute("pDaModificare", prenotazione);
+		
+		request.getRequestDispatcher("SevletLeggiPrenotazioneUtente").forward(request, response);
 	}
 
 }

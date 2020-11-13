@@ -116,4 +116,18 @@ public class Proiezione implements Serializable {
 		this.film = film;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Proiezione other = (Proiezione) obj;
+		if (idProiezione != other.idProiezione)
+			return false;
+		return true;
+	}
+
 }

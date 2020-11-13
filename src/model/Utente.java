@@ -21,9 +21,6 @@ public class Utente implements Serializable {
 	@Column(name="id_utente", unique=true, nullable=false)
 	private int idUtente;
 
-	@Column(name="cod_fiscale", nullable=false, length=16)
-	private String codFiscale;
-
 	@Column(nullable=false, length=50)
 	private String cognome;
 
@@ -228,4 +225,20 @@ public class Utente implements Serializable {
 		this.pIva = pIva;
 	}
 
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Utente other = (Utente) obj;
+		if (idUtente != other.idUtente)
+			return false;
+		return true;
+	}
+
+	
 }

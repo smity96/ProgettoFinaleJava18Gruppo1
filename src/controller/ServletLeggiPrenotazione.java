@@ -33,7 +33,7 @@ public class ServletLeggiPrenotazione extends HttpServlet {
 		request.setAttribute("listaProiez", listaProiez);
 		request.setAttribute("listaPreno", listaPreno);
 		
-		request.getRequestDispatcher("/prenotaUtente.jsp").forward(request, response);
+		request.getRequestDispatcher("/html/prenotaUtente.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

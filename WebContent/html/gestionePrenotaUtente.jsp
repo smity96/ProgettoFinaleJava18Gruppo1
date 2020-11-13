@@ -1,3 +1,5 @@
+<%@page import="model.Prenotazione"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -141,30 +143,55 @@
                                     <th scope="col">Cancella Prenotazione</th>
                                   </tr>
                                 </thead>
-
+                               
+								
+									
                                 <tbody>
+                                 <% 
+                                	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
+                                	for(Prenotazione p : listaPreno){
+                                	if(!request.getAttribute("pDaModificare").equals(p)){
+                                	
+                                %>
+                                	<form action="ServletLeggiPrenotazioneById" method="POST">
+										<input type="hidden" name="id_prenotazione">
                                   <tr>
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>1</td>
-                                    <td>20</td>
-                                    <td><button type="button" class="btn btn-outline-warning">Modifica</button>
+                                    <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
+                                    <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
+                                    <td><%= p.getProiezione().getDataOra() %></td>
+                                    <td><%=p.getPostiPrenotati() %></td>
+                                    <td><%=p.getCosto_totale() %></td>
+                                    <td><button type="submit" class="btn btn-outline-warning">Modifica</button>
+                                    </form>
+                                    
+                                    
+                                    
+                                    <form action="ServletCancellaPrenotazione" method="POST">
                                     <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
-                                 
+                                 	</form>
+                                 	<%}else{ %>
+                                 	<form action="ServletModificaPrenotazione" method="POST">
+                                 	<% 
+                                 		int postiDisponibili = p.getProiezione().getPostiMax();
+											for(Prenotazione y : listaPreno){
+	                                    	  	if(y.getProiezione().equals(p.getProiezione()))
+	                                    			postiDisponibili -= y.getPostiPrenotati(); 
+	                                    	}
+                                     %>   	
                                     <!-- Se clicca su modifica si apre questa riga: -->
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
+                                    <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
+                                    <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
+                                   <td><%= p.getProiezione().getDataOra() %></td>
                                     <td><select class="mdb-select md-form colorful-select dropdown-warning">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                       <% for(int i=0; i <= postiDisponibili; i++){ %>
+											<option value="<%= i %>">
+												<%= i %>
+											</option>
+											<%} %>
+                                        
                                       </select>
                                     </td>
-                                    <td>20</td>
+                                    <td><%=p.getCosto_totale() %></td>
                                     <td><button type="button" class="btn btn-outline-warning">Conferma</button>
                                     
                                     
@@ -174,27 +201,12 @@
                                     
                                     <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Torna indietro</button></td>
                                   </tr>
-                                  
-                                  
-                                 <!--Secondo film-->
-                                  <tr>
-
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>1</td>
-                                    <td><button type="button" onclick="goBack()" class="btn btn-outline-danger">Cancella</button></td>
-                                  </tr>
-
-                                  <!--Terzo film: -->
-                                  <tr>
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="../src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>1</td>
-                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
-                                  </tr>
+                                  </form>
+                                <%} 
+                                }%>
+                                
                                 </tbody>
+                                
                               </table>
 
                     </div>

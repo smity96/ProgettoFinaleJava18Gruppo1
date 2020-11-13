@@ -38,6 +38,7 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 		pr.setCosto_totale(costoTotale);
 		
 		UtilitiesDbPrenotazione.inserisciPrenotazione(pr);
+		response.sendRedirect("ServletLeggiPrenotazione");
 		
 		
 	}	
