@@ -43,12 +43,15 @@ public class ServletAccessoUtente extends HttpServlet {
     		if(email.equals(ut.getEmail()) && pssw.equals(decodedString)){
     			HttpSession session=request.getSession();
     			session.setAttribute("uLog",ut);
-    			session.setAttribute("listaU", listaU);
+    		
 //    			----indirizzo alle varie pagine----
     			switch(ut.getRuolo()) {
     			case 0:response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp");
     				break;
-    			case 1:response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp");
+    			case 1:request.setAttribute("listaU", listaU);
+    	        request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
+    			
+    			
     				break;
     			case 2://sendRedirect
     				break;
@@ -60,7 +63,7 @@ public class ServletAccessoUtente extends HttpServlet {
     		}				 
     	}
     	if(!dentro) {
-    		response.sendRedirect("/registrazione.jsp");
+    		response.sendRedirect(request.getContextPath()+"/html/registrazione.jsp");
     	}
     }
 

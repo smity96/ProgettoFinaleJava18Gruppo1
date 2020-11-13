@@ -75,7 +75,7 @@
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-users text-muted mr-3 nav-size col-2 ml-0"></i>
-                        <a class="nav-link active6 col-10" href="#">Gestione Utenti</a>>
+                        <a class="nav-link active6 col-10" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp">Gestione Utenti</a>>
                     </li>
                 </ul>
 
@@ -170,7 +170,7 @@
                             <h1 class="d-inline mr-3">Gestione Profilo</h1>
                         </div>
 
-                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="get">
+                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="post" enctype="multipart/form-data">
                         <table class="table table-bordered table-hover table-dark">
                             <thead>
                                 <tr>

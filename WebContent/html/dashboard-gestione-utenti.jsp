@@ -179,7 +179,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <%List<Utente>lU=(List)s.getAttribute("listaU");
+                                <%
+                                
+                                List<Utente>lU=(List<Utente>)request.getAttribute("listaU");
                                 
                                 	for(Utente g:lU){
                                 %>
@@ -198,7 +200,7 @@
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="col-2"><a href="/modifica-utenti.jsp"><i
+                                        <td class="col-2"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/modifica-utenti.jsp?d=<%=g.getIdUtente() %>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
                                         </td>
                                         <%if(g.getRuolo()!=3) {%>

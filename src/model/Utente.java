@@ -21,10 +21,8 @@ public class Utente implements Serializable {
 	@Column(name="id_utente", unique=true, nullable=false)
 	private int idUtente;
 
-	@Column(name="cod_fiscale", nullable=false, length=16)
-	private String codFiscale;
 
-		@Column(nullable=false, length=50)
+	@Column(nullable=true, length=50)
 	private String cognome;
 
 	@Temporal(TemporalType.DATE)
@@ -34,21 +32,19 @@ public class Utente implements Serializable {
 	@Column(nullable=false, length=100)
 	private String email;
 
-	private int eta;
-
 	@Column(length=500)
 	private String immagine;
 
 	@Column(length=50)
 	private String indirizzo;
 
-	@Column(nullable=false, length=50)
+	@Column(nullable=true, length=50)
 	private String nome;
 
 	@Column(length=50)
 	private String nomeSocieta;
 
-	@Column(name="p_iva", length=100)
+	@Column(name="p_iva", length=100,nullable=true)
 	private String pIva;
 
 	@Column(nullable=false, length=100)
@@ -121,20 +117,7 @@ public class Utente implements Serializable {
 		this.idUtente = idUtente;
 	}
 
-
-
-	public String getCodFiscale() {
-		return codFiscale;
-	}
-
-
-
-	public void setCodFiscale(String codFiscale) {
-		this.codFiscale = codFiscale;
-	}
-
-
-
+	
 	public String getCognome() {
 		return cognome;
 	}
@@ -168,20 +151,6 @@ public class Utente implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-
-	public int getEta() {
-		return eta;
-	}
-
-
-
-	public void setEta(int eta) {
-		this.eta = eta;
-	}
-
-
 
 	public String getImmagine() {
 		return immagine;

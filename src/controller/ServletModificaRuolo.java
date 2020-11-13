@@ -1,12 +1,16 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+
 
 import model.Utente;
 import utilities.UtilitiesDbUtente;
@@ -27,6 +31,10 @@ public class ServletModificaRuolo extends HttpServlet {
     		u.toString();
     		u.setRuolo(1);
     		UtilitiesDbUtente.modUtente(u);
+    		List<Utente>listaU=UtilitiesDbUtente.listaUtenti();
+    		request.setAttribute("listaU", listaU);
+	        request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
+			
 
  }
 		

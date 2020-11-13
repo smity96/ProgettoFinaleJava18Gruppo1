@@ -20,6 +20,8 @@
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
+                                        Utente b=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("d")));
+                                        System.out.println(b.toString());
                                         
                     
                 %>
@@ -169,7 +171,8 @@
                             <h1 class="d-inline mr-3">Modifica Utente</h1>
                         </div>
 
-                      <form action="" method="get">
+                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente?d=<%=b.getIdUtente() %>" method="post" enctype="multipart/form-data"
+                      >
                         <table class="table table-bordered table-hover table-dark">
                             <thead>
                                 <tr>
@@ -180,19 +183,19 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
-                                            value="<%=u.getNome() %>" class="text-capitalize"></td>
+                                            value="<%=b.getNome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Cognome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
-                                            value="<%=u.getCognome() %>" class="text-capitalize"></td>
+                                            value="<%=b.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Data di Nascita'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
-                                            value="<%=u.getDataDiNascita()%>">
+                                            value="<%=b.getDataDiNascita()%>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -203,7 +206,7 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 colore-icone-scuro"><label>Email</label></th>
                                 <td class="col-md-10 col-9 colore-icone-scuro"><input class="col-8" type="email"
-                                        name="email" value="<%=u.getEmail()%>"></td>
+                                        name="email" value="<%=b.getEmail()%>"></td>
                             </tr>
                             <!-- 
                              <tr class="d-flex">
@@ -216,13 +219,13 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 colore-icone-scuro"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%u.getPassword(); %> "></td>
+                                        value="<%b.getPassword(); %> "></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 colore-icone-scuro"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="img" value="<%u.getImmagine(); %>"></td>
+                                    type="file" name="img" value="<%b.getImmagine(); %>"></td>
                             </tr>
                             </tbody>
                             <thead>
@@ -234,22 +237,21 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Partita Iva</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="pIva"
-                                            value="<%=u.getPIva() %>" class="text-capitalize"></td>
+                                            value="<%=b.getPIva() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Indirizzo</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="indirizzo"
-                                            value="<%=u.getIndirizzo() %>" class="text-capitalize"></td>
+                                            value="<%=b.getIndirizzo() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome Societa'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
-                                            value="<%u.getNomeSocieta(); %>"></td>
+                                            value="<%=b.getNomeSocieta() %>"></td>
                                 </tr>
                                     <tr style="visibility: collapse;">
-                                    <td><input type="hidden" name="id" value="<%= u.getIdUtente() %>"></td>
                                     </tr> 
                                 <tr class="d-flex">
                                     <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"

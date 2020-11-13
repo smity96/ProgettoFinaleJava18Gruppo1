@@ -106,8 +106,6 @@ public class UtilitiesDbUtente {
 		System.out.println(u.getRuolo()+" "+ ":" +"letto con successo");
 		return u;
 	}
-
-		
 	
 
 }
