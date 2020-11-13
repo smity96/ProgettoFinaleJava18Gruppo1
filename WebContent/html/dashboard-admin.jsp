@@ -9,7 +9,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+     
+     <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -51,7 +55,7 @@
                 <ul class="navbar-nav links d-flex d-xl-none">
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-folder-open text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link col-10" href="#">Torna Al Sito</a>
+                        <a class="nav-link col-10" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fa fa-home text-muted mr-3 nav-size col-2"></i>
