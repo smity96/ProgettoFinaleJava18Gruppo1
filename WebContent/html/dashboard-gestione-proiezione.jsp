@@ -412,9 +412,13 @@
 										type="number" name="intervallo"></td>
 								</tr>
 								<tr class="d-flex">
-									<th class="col-md-2 col-3"><label>N� Posti</label></th>
+									<th class="col-md-2 col-3"><label>N. Posti</label></th>
 									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
 										type="number" name="posti"></td>
+										<tr class="d-flex">
+									<th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
+									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
+										type="number" name=""></td>
 								</tr>
 								<tr class="d-flex">
 									<td class="col-12"><button type="submit"
