@@ -15,7 +15,7 @@
   <body class="bg-dark">
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="../src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
     <!--Navbar Utente NON loggato: -->
     
@@ -23,40 +23,49 @@
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->
-        <a class="navbar-brand" href="index.html">
-        <img src="../src/logocinema.png" alt="Logo" style="width:40px;">
+        <a class="navbar-brand" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
+        <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="Logo" style="width:40px;">
       </a>     
 
       <!--Vai alla Home: -->
-      <div class= "col-3">
+      <div class= "col-2">
         <ul class="navbar-left navbar-nav m-auto d-flex flex-row">
           <li class="nav-item m-auto width: 90%">
-            <a class="nav-link text-warning font-weight-bold" href="index.html">Home</a>
+            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Home</a>
           </li>
         </div>
 
         <!--Vai al palinsesto-->
-          <div class="col-3">
+          <div class="col-2">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning font-weight-bold" href="palinsestoBody.jsp">Palinsesto</a>
+            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">Palinsesto</a>
+          </li>
+          </ul>
+        </div>
+        
+        <!-- Vai alle prenotazioni -->
+        <div class="col-2">
+          <ul class="navbar-left navbar-nav d-flex flex-row">
+          <li class="nav-item m-auto width:90%">
+            <a class="nav-link text-warning font-weight-bold" href="#">Prenotazioni</a>
           </li>
           </ul>
         </div>
 
         <!--Vai alla pagina di Login: -->
-          <div class="col-3">
+          <div class="col-2">
           <ul class="navbar-nav d-flex flex-row justify-content-end unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="login.jsp">Login</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
             </li>
           </div>
 
           <!--Vai alla pagina di registrazione: -->
-            <div class="col-3">
+            <div class="col-2">
             <ul class="navbar-nav d-flex flex-row justify-content-end">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="registrazione.jsp">Registrazione</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
           </li>    
         </ul>
       </div>

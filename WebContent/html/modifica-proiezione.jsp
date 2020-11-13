@@ -22,12 +22,12 @@
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                       */   
                     
-                %>
+        %>
     <style type="text/css">
         <%@include file="../css/style-dash.css"%>
     </style>
     </head>
-<body>
+    <body>
     <!-- navbar in alto-->
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
@@ -196,7 +196,7 @@
                                     <th class="col-md-2 col-3"><label>Films</label></th>
                                     
                                     <td class="col-md-10 col-9">
-	                                    <select class="col-8 mx-auto" id="films">
+	                                    <select class="col-8 mx-auto" name="film" id="films">
 	                                    <% for(Film f: films){ %>
 										  <option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
 										  <%} %>
@@ -214,6 +214,12 @@
                                     <th class="col-md-2 col-3"><label>N. Posti</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
                                             name="posti" value="<%=pDaModificare.getPostiMax()%>"></td>
+                                </tr>
+
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
+                                            name="posti" value="<%=%>"></td>
                                 </tr>
     
                                 <tr class="d-flex">
