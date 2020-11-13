@@ -48,6 +48,7 @@ public class ServletInserisciProiezione extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}	
+		pDaAggiungere.setPrezzo(Double.parseDouble(request.getParameter("prezzo")));
 		pDaAggiungere.setFilm(UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id"))));
 		pDaAggiungere.setIntervallo(Integer.parseInt(request.getParameter("intervallo")));
 		pDaAggiungere.setPostiMax(Integer.parseInt(request.getParameter("posti")));

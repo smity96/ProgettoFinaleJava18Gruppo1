@@ -49,9 +49,10 @@ public class ServletModificaProiezione extends HttpServlet {
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
+		pDaModificare.setPrezzo(Double.parseDouble(request.getParameter("prezzo")));
 		pDaModificare.setPostiMax(Integer.parseInt(request.getParameter("posti")));
 		pDaModificare.setIntervallo(Integer.parseInt(request.getParameter("intervallo")));
-		Film f=UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("idFilm")));
+		Film f=UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("film")));
 		pDaModificare.setFilm(f);
 		if(UtilitiesDbProiezione.slotOccupato(proiezioni, pDaModificare) || !UtilitiesDbProiezione.slotRegolare(pDaModificare)) {
 			// TODO chiedere come inserire una risposta d'errore
