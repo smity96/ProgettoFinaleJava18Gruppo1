@@ -24,7 +24,7 @@ public class Utente implements Serializable {
 	@Column(name="cod_fiscale", nullable=false, length=16)
 	private String codFiscale;
 
-		@Column(nullable=false, length=50)
+	@Column(nullable=false, length=50)
 	private String cognome;
 
 	@Temporal(TemporalType.DATE)
@@ -120,19 +120,6 @@ public class Utente implements Serializable {
 	public void setIdUtente(int idUtente) {
 		this.idUtente = idUtente;
 	}
-
-
-
-	public String getCodFiscale() {
-		return codFiscale;
-	}
-
-
-
-	public void setCodFiscale(String codFiscale) {
-		this.codFiscale = codFiscale;
-	}
-
 
 
 	public String getCognome() {

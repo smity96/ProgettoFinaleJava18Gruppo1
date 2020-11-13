@@ -24,7 +24,7 @@ pageEncoding="ISO-8859-1"%>
     >
       <img
         class="mb-4 mt-5"
-        src="../src/logocinema.png"
+        src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
         alt="Logo"
         width="72"
         height="72"

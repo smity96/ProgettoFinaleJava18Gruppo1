@@ -17,7 +17,13 @@
 <meta charset="ISO-8859-1">
 <title></title>
         <style>
-      .image{
+     
+      
+      .riempi{
+        overflow : hidden;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
         max-width: 28rem;
         max-height: 28rem;
       }
@@ -32,7 +38,8 @@
       }
     </style>
 
-    <!--Bootstrap links-->
+    <link rel="stylesheet" href="../css/style-dash.css">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
@@ -78,9 +85,10 @@
 	%>
       <!--Immagine della locandina film e informazioni relative al film che cambiano di film in film :-->
       <div class="row text-warning ">
-        <div class="col-xl-4 col-md-3">
-          <img class="image mt-2" src="<%=p.getFilm().getLocandina()%>">
-      </div>
+          
+        <div class="col-lg-4 col-md-4 col-sm-4 riempi" style="background-image: url('<%=p.getFilm().getLocandina()%>');">
+        </div>
+        
 
       <div class="container-fluid col-xl-8 col-md-9">
         <div class="col-12 d-flex">
