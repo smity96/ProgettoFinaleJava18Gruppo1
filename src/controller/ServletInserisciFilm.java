@@ -67,7 +67,7 @@ public class ServletInserisciFilm extends HttpServlet {
 			System.out.println("sto nel catch");
 			e.printStackTrace();
 		}
-		if (request.getParameter("fileUrl").equals("")) {
+		if (request.getParameter("fileUrl").trim().equals("")) {
 			f2.setLocandina("http://127.0.0.1:8887/" + fileName);
 		} else {
 			f2.setLocandina(request.getParameter("fileUrl"));

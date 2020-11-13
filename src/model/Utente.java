@@ -21,9 +21,6 @@ public class Utente implements Serializable {
 	@Column(name="id_utente", unique=true, nullable=false)
 	private int idUtente;
 
-	@Column(name="cod_fiscale", nullable=false, length=16)
-	private String codFiscale;
-
 	@Column(nullable=false, length=50)
 	private String cognome;
 

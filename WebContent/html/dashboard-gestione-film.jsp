@@ -197,7 +197,6 @@
                                         <td class="col-4 text-capitalize bordo-trasparente">
                                             <p class="colore-icone-scuro colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
-                                        <input type="hidden" value="<%=f.getIdFilm()%>" name="id_FilmMod">
                                             <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
@@ -232,20 +231,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                	<form action="" method="">
-                                        <tr class="d-flex align-items-center">
-                                        <td class="col-6 bordo-trasparente">
-                                                <input type="file" name=""
-                                                    value=""> 
-                                                    <input type="text" name=""
-                                                    value="">
-                                        </td>     
-                                        <td class="col-3 bordo-trasparente">
-                                            <button type="submit" class="btn btn-secondary">Modifica</button>
-                                        </td>
-                                    </tr>
-                                    </form>
                                 
                                 <%for(Film f: tuttiFilm){ %>
                                     <tr class="d-flex align-items-center">
@@ -254,11 +239,11 @@
                                                 src="<%=f.getLocandina() %>" alt="">
                                             <p class="colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-3 bordo-trasparente">
-                                            <a data-toggle="modal" data-target=".modifica-film" href="">
+                                            <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         <td class="col-3 bordo-trasparente">
-                                            <a href="#"><i
+                                            <a href="<%=request.getContextPath()%>/ServletCancellaFilm?id_film=<%=f.getIdFilm() %>"><i
                                                     class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
                                             </a>
                                         </td>
