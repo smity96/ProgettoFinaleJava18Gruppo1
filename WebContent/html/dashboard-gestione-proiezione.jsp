@@ -8,7 +8,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Document</title>
+
+ <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+
 <link rel="stylesheet"
 	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
 	integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
@@ -200,7 +204,7 @@
 
 
 				<div
-					class="container-fluid m-0 p-0 d-none funzione-menu gestione-proiezione">
+					class="container-fluid m-0 p-0">
 
 
 					<div class="row text-uppercase text-center d-none d-md-flex">
@@ -221,8 +225,9 @@
 										<th class="col-2 colore-icone-scuro">Film Proiettato</th>
 										<th class="col-2 colore-icone-scuro">Intervallo</th>
 										<th class="col-2 colore-icone-scuro">N. Posti</th>
-										<th class="col-2 colore-icone-scuro">Modifica Proiezione</th>
-										<th class="col-2 colore-icone-scuro">Cancella Proiezione</th>
+										<th class="col-2 colore-icone-scuro">Costo Biglietto</th>
+										<th class="col-1 colore-icone-scuro">Modifica Proiezione</th>
+										<th class="col-1 colore-icone-scuro">Cancella Proiezione</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -247,13 +252,18 @@
 										<td class="col-2 bordo-trasparente colore-icone-scuro">
 											<p><%= p.getPostiMax() %></p>
 										</td>
-										<td class="col-2 bordo-trasparente"><a
-											data-toggle="modal" data-target=".modifica-film-proiezione"
-											href=""> <i
-												class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
-										</a></td>
+										<td class="col-2 bordo-trasparente colore-icone-scuro">
+											<p><%= p.getPrezzo()%></p>
+										</td>
+										<td class="col-1 bordo-trasparente"><form action="ServletLeggiProiezioneById" method="get">
+												<input type="hidden" name="idDaModificare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
+												</button>
+											</form></td>
 
-										<td class="col-2 bordo-trasparente">
+										<td class="col-1 bordo-trasparente">
 											<form action="ServletCancellaProiezione" method="POST">
 												<input type="hidden" name="idDaEliminare"
 													value="<%= p.getIdProiezione() %>">
@@ -309,7 +319,9 @@
 											<p>Intervallo:</p>
 											<p><%= p.getIntervallo() %></p>
 											<p>N. Posti:</p>
-											<p><%= p.getPostiMax() %></p>	
+											<p><%= p.getPostiMax() %></p>
+											<p>Costo Bilietto:</p>
+											<p><%= p.getPrezzo() %> </p>
 										</td>
 
 										<td class="col-2 bordo-trasparente">
@@ -412,9 +424,13 @@
 										type="number" name="intervallo"></td>
 								</tr>
 								<tr class="d-flex">
-									<th class="col-md-2 col-3"><label>N� Posti</label></th>
+									<th class="col-md-2 col-3"><label>N. Posti</label></th>
 									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
 										type="number" name="posti"></td>
+										<tr class="d-flex">
+									<th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
+									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
+										type="number" name="prezzo"></td>
 								</tr>
 								<tr class="d-flex">
 									<td class="col-12"><button type="submit"

@@ -4,7 +4,12 @@ pageEncoding="ISO-8859-1"%>
 <html class="bg-dark">
   <head>
     <meta charset="ISO-8859-1" />
-    <title></title>
+    
+     <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+
+    
 
     <style>
       .bottone {
@@ -15,6 +20,8 @@ pageEncoding="ISO-8859-1"%>
         width: 13rem;
       }
     </style>
+    
+    
 
     <!--Font awesome links-->
     <link
@@ -32,6 +39,15 @@ pageEncoding="ISO-8859-1"%>
   </head>
 
   <body class="bg-dark text-center">
+  <!-- Navbar -->
+      
+      <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+
+  
+<jsp:include page= "navbarNotte.jsp"></jsp:include>
+
     <!--Form registrazione dell'utente: -->
     <form
       action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente"
@@ -40,7 +56,7 @@ pageEncoding="ISO-8859-1"%>
     >
       <img
         class="mb-4 mt-5"
-        src="../src/logocinema.png"
+        src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
         alt="Logo"
         width="72"
         height="72"
@@ -87,19 +103,9 @@ pageEncoding="ISO-8859-1"%>
           placeholder="Email"
           required
         />
-      </p>
+      </p>     
 
       <p>
-        <input
-          class="rounded"
-          name="imgP"
-          type="file"
-          placeholder="file"
-          required
-        />
-      </p>
-
-      <p class="text-warning text-center">
         <input
           class="rounded"
           name="password"
@@ -108,13 +114,22 @@ pageEncoding="ISO-8859-1"%>
           required
         />
       </p>
-
+      
+      <p>
+        <input
+          class="rounded text-warning bottone"
+          name="imgP"
+          type="file"
+          placeholder="Scegli immagine"
+          value="Scegli immagine"
+        />
+      </p>
       <!--Informazioni extra, non obbligatorie:-->
 
       <div
         class="container d-flex justify-content-center text-center col-4 informazioni"
       >
-        <nav class="navbar navbar-dark bg-dark">
+        <nav class="navbar navbar-dark bg-dark border-0">
           <h5 class="text-warning justify-content-end">
             Informazioni aggiuntive:
           </h5>
@@ -169,7 +184,7 @@ pageEncoding="ISO-8859-1"%>
                     class="rounded"
                     name="nomeSoc"
                     type="text"
-                    placeholder="Nome Societ�"
+                    placeholder="Nome Societa'"
                   />
                 </p>
               </li>

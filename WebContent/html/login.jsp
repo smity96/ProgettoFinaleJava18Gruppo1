@@ -4,7 +4,11 @@ pageEncoding="ISO-8859-1"%>
 <html>
   <head>
     <meta charset="ISO-8859-1" />
-    <title></title>
+    
+     <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    
 
     <!--Bootstrap links-->
     <link
@@ -16,6 +20,11 @@ pageEncoding="ISO-8859-1"%>
   </head>
 
   <body class="bg-dark text-center">
+  
+  <!-- Navbar -->
+  
+<jsp:include page= "navbarNotte.jsp"></jsp:include>
+
     <!--Form del login: -->
     <form
       class="form-signin"
@@ -24,7 +33,7 @@ pageEncoding="ISO-8859-1"%>
     >
       <img
         class="mb-4 mt-5"
-        src="../src/logocinema.png"
+        src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
         alt="Logo"
         width="72"
         height="72"

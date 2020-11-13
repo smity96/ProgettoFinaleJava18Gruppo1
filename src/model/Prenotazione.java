@@ -4,10 +4,6 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 
-/**
- * The persistent class for the prenotazione database table.
- * 
- */
 @Entity
 @Table(name="prenotazione")
 @NamedQuery(name="Prenotazione.findAll", query="SELECT p FROM Prenotazione p")
@@ -31,6 +27,9 @@ public class Prenotazione implements Serializable {
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="utente", nullable=false)
 	private Utente utente;
+	
+	@Column(name="costo_totale")
+	private double costo_totale;
 
 	public Prenotazione() {
 	}
@@ -66,5 +65,15 @@ public class Prenotazione implements Serializable {
 	public void setUtente(Utente utente) {
 		this.utente = utente;
 	}
+
+	public double getCosto_totale() {
+		return costo_totale;
+	}
+
+	public void setCosto_totale(double costo_totale) {
+		this.costo_totale = costo_totale;
+	}
+	
+	
 
 }

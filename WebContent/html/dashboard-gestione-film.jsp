@@ -9,7 +9,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+     <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -197,7 +201,6 @@
                                         <td class="col-4 text-capitalize bordo-trasparente">
                                             <p class="colore-icone-scuro colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
-                                        <input type="hidden" value="<%=f.getIdFilm()%>" name="id_FilmMod">
                                             <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
@@ -232,20 +235,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-
-                                	<form action="" method="">
-                                        <tr class="d-flex align-items-center">
-                                        <td class="col-6 bordo-trasparente">
-                                                <input type="file" name=""
-                                                    value=""> 
-                                                    <input type="text" name=""
-                                                    value="">
-                                        </td>     
-                                        <td class="col-3 bordo-trasparente">
-                                            <button type="submit" class="btn btn-secondary">Modifica</button>
-                                        </td>
-                                    </tr>
-                                    </form>
                                 
                                 <%for(Film f: tuttiFilm){ %>
                                     <tr class="d-flex align-items-center">
@@ -254,11 +243,11 @@
                                                 src="<%=f.getLocandina() %>" alt="">
                                             <p class="colore-icone-scuro"><%=f.getTitolo() %></p>
                                         <td class="col-3 bordo-trasparente">
-                                            <a data-toggle="modal" data-target=".modifica-film" href="">
+                                            <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         <td class="col-3 bordo-trasparente">
-                                            <a href="#"><i
+                                            <a href="<%=request.getContextPath()%>/ServletCancellaFilm?id_film=<%=f.getIdFilm() %>"><i
                                                     class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
                                             </a>
                                         </td>

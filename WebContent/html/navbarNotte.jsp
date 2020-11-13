@@ -6,57 +6,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-    <link rel="stylesheet" href="../css/style-dash.css">     
+       
+    
+ 
+    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">     
     <!--Bootstrap links-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark">    <!--Navbar Utente NON loggato: -->
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="../src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
-    <!--Navbar Utente NON loggato: -->
-    
     <nav class="navbar navbar-expand-lg">
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->
-        <a class="navbar-brand" href="index.html">
-        <img src="../src/logocinema.png" alt="Logo" style="width:40px;">
+        <a class="navbar-brand" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
+        <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="Logo" style="width:40px;">
       </a>     
 
       <!--Vai alla Home: -->
-      <div class= "col-3">
+      <div class= "col-2">
         <ul class="navbar-left navbar-nav m-auto d-flex flex-row">
           <li class="nav-item m-auto width: 90%">
-            <a class="nav-link text-warning font-weight-bold" href="index.html">Home</a>
+            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Home</a>
           </li>
         </div>
 
         <!--Vai al palinsesto-->
-          <div class="col-3">
+          <div class="col-2">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning font-weight-bold" href="palinsestoBody.jsp">Palinsesto</a>
+            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">Palinsesto</a>
+          </li>
+          </ul>
+        </div>
+        
+        <!-- Vai alle prenotazioni -->
+        <div class="col-2">
+          <ul class="navbar-left navbar-nav d-flex flex-row">
+          <li class="nav-item m-auto width:90%">
+            <a class="nav-link text-warning font-weight-bold" href="#">Prenotazione</a>
           </li>
           </ul>
         </div>
 
         <!--Vai alla pagina di Login: -->
-          <div class="col-3">
+          <div class="col-2">
           <ul class="navbar-nav d-flex flex-row justify-content-end unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="login.jsp">Login</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
             </li>
           </div>
 
           <!--Vai alla pagina di registrazione: -->
-            <div class="col-3">
+            <div class="col-2">
             <ul class="navbar-nav d-flex flex-row justify-content-end">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="registrazione.jsp">Registrazione</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
           </li>    
         </ul>
       </div>

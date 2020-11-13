@@ -1,2 +1,4 @@
-/controller/
 /META-INF/
+/controller/
+/model/
+/utilities/

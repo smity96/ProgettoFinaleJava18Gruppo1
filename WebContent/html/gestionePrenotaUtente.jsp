@@ -1,65 +1,40 @@
-<%@page import="java.util.List"%>
 <%@page import="model.Utente"%>
+<%@page import="model.Prenotazione"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
+   
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
    
 
     <style>
-            .bottone{
-                width: 11.8rem !important    
-            }
+        .bottone{
+            width:12rem;
+        }
 
-            #imageUpload
-{
-    display: none;
-}
-
-#profileImage
-{
-    cursor: pointer;
-}
-
-#profile-container {
-    width: 150px;
-    height: 150px;
-    overflow: hidden;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
-    border-radius: 50%;
-
-}
-
-#profile-container img {
-    width: 150px;
-    height: 150px;
-}
-
+        .immagine{
+            width:7rem;
+            height: 11rem;
+        }
     </style>
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
-
+<%
+HttpSession s=request.getSession(false); 
+Utente u = (Utente)s.getAttribute("uLog");
+%>
 <body>
 
     <body>
-    <%HttpSession s=request.getSession(false);
-    	Utente u=(Utente)s.getAttribute("uLog");
-    	List<Utente>lU=(List)s.getAttribute("listaU");
-    %>
-    
         <!-- navbar -->
 
         <nav class="navbar navbar-expand-lg">
@@ -78,31 +53,32 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <ul class="navbar-nav links d-lg-none">
-                        <li class="nav-item">                            
+                        <li class="nav-item">
                             <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
-                        <li class="nav-item">       
+                        
+                        <li class="nav-item">
                             <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
-                        <li class="nav-item">                            
+                        <li class="nav-item">
                             <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item">        
                             <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
                         </li>
-                    </ul>
+                      </ul>
 
                     <!-- nav icons -->
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
-                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
+                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
                                 <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
-                                    alt="Logo" style="width:40px;" >
-                                 "BENVENUTO:"+u.getNome() 
+                                    alt="Logo" style="width:40px;" />
+                                Nome Utente
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
+                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href=""<%=request.getContextPath() %>/ServletLogout">
                                 <i class="fa fa-sign-out"></i> Sign Out
                             </a>
                         </li>
@@ -121,7 +97,6 @@
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
@@ -130,8 +105,13 @@
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
                         </li>
+                        <li class="nav-item d-flex align-items-center my-3">
+                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                        </li>
+
                 </nav>
                 <!-- fine side bar -->
                 <div class="col-lg-9 col-xl-10 py-5 bg-dark">
@@ -141,125 +121,106 @@
                             <div>
                             <h3>
                                 <span class="text-uppercase text-danger">Dashboard /</span><span
-                                    class="text-muted small"> Gestione Utente</span>
+                                    class="text-muted small"> Gestione Prenotazioni Film</span>
                             </h3>
-                        </div>
+                            </div>
                     
                     <!-- fine titolo dashboard -->
                     <!-- inizio funzioni pannello -->
                     <div class="row text-center text-uppercase bg-warning">
                         <div class="col-12 m-0 p-0 text-center">
-                            <h1 class="text-dark">Profilo Utente</h1>
-                        </div>                   
-                        
-
-                        <!--FORM UTENTE MODIFICA DATI PROFILO-->
-
-                        
-                             <form action="" method="post" class="bg-dark">
-                                               
-                             
-                             <!--AVATAR UTENTE-->
-                          <%--
-                              <%
-                             	HttpSession s = request.getSession(false);
-
-                             	Utente u = (Utente) s.getAttribute("uLog");
-                             %>
-                           --%>
-                             <div id="profile-container" class="mt-3 ml-3">
-                                <img id="profileImage" class="img-thumbnail" src="<%=u.getImmagine() %>" >
-                             
-                             <input id="imageUpload" type="file" 
-                                    name="profile_photo" placeholder="Photo" required="" capture>
+                            <h1 class="text-dark">Film prenotati</h1>
                         </div>
-                        
-                        <!--modifica nome-->
-                                    <div class="form-gorup row mt-4">
-                            <label class="col-sm-2 col-form-label text-warning">Nome: </label>
-                            <div class="col-sm-10">
-                        <input class="rounded" name="nome" type="text" value="<%=u.getNome()%>">
+
+                       
+                            <!--Mettere nome attuale dell'utente: -->
+                            <table class="table table-hover table-dark">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Titolo film</th>
+                                    <th scope="col">Locandina</th>
+                                    <th scope="col">Orario e data</th>
+                                    <th scope="col">Posti prenotati</th>
+                                    <th scope="col">Prezzo totale</th>
+                                    <th scope="col">Modifica Prenotazione</th>
+                                    <th scope="col">Cancella Prenotazione</th>
+                                  </tr>
+                                </thead>
+                               
+								
+									
+                                <tbody>
+                                 <% 
+                                	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
+                                	for(Prenotazione p : listaPreno){
+                                	if(!request.getAttribute("pDaModificare").equals(p)){
+                                	
+                                %>
+                                	<form action="ServletLeggiPrenotazioneById" method="POST">
+										<input type="hidden" name="id_prenotazione">
+                                  <tr>
+                                    <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
+                                    <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
+                                    <td><%= p.getProiezione().getDataOra() %></td>
+                                    <td><%=p.getPostiPrenotati() %></td>
+                                    <td><%=p.getCosto_totale() %></td>
+                                    <td><button type="submit" class="btn btn-outline-warning">Modifica</button>
+                                    </form>
+                                    
+                                    
+                                    
+                                    <form action="ServletCancellaPrenotazione" method="POST">
+                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
+                                 	</form>
+                                 	<%}else{ %>
+                                 	<form action="ServletModificaPrenotazione" method="POST">
+                                 	<% 
+                                 		int postiDisponibili = p.getProiezione().getPostiMax();
+											for(Prenotazione y : listaPreno){
+	                                    	  	if(y.getProiezione().equals(p.getProiezione()))
+	                                    			postiDisponibili -= y.getPostiPrenotati(); 
+	                                    	}
+                                     %>   	
+                                    <!-- Se clicca su modifica si apre questa riga: -->
+                                    <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
+                                    <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
+                                   <td><%= p.getProiezione().getDataOra() %></td>
+                                    <td><select class="mdb-select md-form colorful-select dropdown-warning">
+                                       <% for(int i=0; i <= postiDisponibili; i++){ %>
+											<option value="<%= i %>">
+												<%= i %>
+											</option>
+											<%} %>
+                                        
+                                      </select>
+                                    </td>
+                                    <td><%=p.getCosto_totale() %></td>
+                                    <td><button type="button" class="btn btn-outline-warning">Conferma</button>
+                                    
+                                    
+                                    
+                                    </td>
+                                 
+                                    
+                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Torna indietro</button></td>
+                                  </tr>
+                                  </form>
+                                <%} 
+                                }%>
+                                
+                                </tbody>
+                                
+                              </table>
+
                     </div>
-                 </div>
-                 
-                     
-                 <!--modifica cognome: -->
+                    
 
-                        <div class="form-gorup row">
-                            <label class="col-sm-2 col-form-label text-warning">Cognome: </label>
-                            <div class="col-sm-10">
-                        <input class="rounded" name="cognome" type="text" value="<%=u.getCognome()%>">
+
                     </div>
-                 </div>
-
-                
-                <!--modifica data di nascita:-->
-                 <div class="form-gorup row">
-                        <label class="col-sm-2 col-form-label text-warning">Data di Nascita: </label>
-                        <div class="col-sm-10">
-                    <input  class="rounded bottone" name="data_di_nascita" type="date" value="<%=u.getDataDiNascita()%>">
-                </div>
-                </div>
-
-                <!--modifica email NON abilitato-->
-                <div class="form-gorup row">
-                    <label class="col-sm-2 col-form-label text-warning">Email: </label>
-                    <div class="col-sm-10">
-                <input class="rounded" name="email" type="email" placeholder="<%=u.getEmail() %>" disabled>
-            </div>
-            </div>
-
-            <!--modifica password-->
-            <div class="form-gorup row">
-                <label class="col-sm-2 col-form-label text-warning">Password: </label>
-                <div class="col-sm-10">
-            <input  class="rounded" name="password" type="password" value="<%=u.getPassword()%>">
-        </div>
-        </div>
-
-        <!--modifica partita iva-->
-        <div class="form-gorup row">
-            <label class="col-sm-2 col-form-label text-warning">Partita Iva: </label>
-            <div class="col-sm-10">
-        <input class="rounded" name="pIva" type="text" value="<%=u.getPIva()%>">
-    </div>
-    </div>
-               
-    <!--modifica indirizzo-->
-    <div class="form-gorup row">
-        <label class="col-sm-2 col-form-label text-warning">Indirizzo: </label>
-        <div class="col-sm-10">
-    <input class="rounded" name="indirizzo" type="text" value="<%=u.getIndirizzo()%>">
-</div>
-</div>
- 
-<!--modifica nome societ�-->
-<div class="form-gorup row">
-    <label class="col-sm-2 col-form-label text-warning">Nome societ�: </label>
-    <div class="col-sm-10">
-<input class="rounded" name="societa" type="text" value="<%=u.getNomeSocieta()%>">
-</div>
-</div>            
-
-<!-- bottone: -->
-
-<br>
-<div class="text-center col-6">
-<button type="submit" onclick="goBack()" class=" btn btn-outline-warning text-light">Modifica dati</button>
-</div>
-
-
-
-</form>
-
-                          </div>
                 </div>
 
             </div>
         </div>
-</div>
-
-
         <!-- Modal -->
         <div class="modal fade bg-dark" id="sign-out">
             <div class="modal-dialog">
@@ -289,9 +250,6 @@
                 </div>
             </div>
         </div>
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
             crossorigin="anonymous"></script>
@@ -303,9 +261,6 @@
             crossorigin="anonymous"></script>
 
         <script src="/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
-        
-
         <script src="/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
     </body>
-
 </html>

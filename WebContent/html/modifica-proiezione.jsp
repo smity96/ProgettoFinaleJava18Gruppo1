@@ -9,7 +9,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+   
+    <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -22,12 +26,12 @@
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                       */   
                     
-                %>
+        %>
     <style type="text/css">
         <%@include file="../css/style-dash.css"%>
     </style>
     </head>
-<body>
+    <body>
     <!-- navbar in alto-->
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
@@ -196,7 +200,7 @@
                                     <th class="col-md-2 col-3"><label>Films</label></th>
                                     
                                     <td class="col-md-10 col-9">
-	                                    <select class="col-8 mx-auto" id="films">
+	                                    <select class="col-8 mx-auto" name="film" id="films">
 	                                    <% for(Film f: films){ %>
 										  <option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
 										  <%} %>
@@ -211,11 +215,17 @@
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3"><label>N. Posti</label></th>
+                                    <th class="col-md-2 col-3"><label>Num. Posti</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
                                             name="posti" value="<%=pDaModificare.getPostiMax()%>"></td>
                                 </tr>
-    
+
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3"><label>Costo Biglietto</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
+                                            name="prezzo" value="<%=pDaModificare.getPrezzo()%>"></td>
+                                </tr>
+    							<input type="hidden" name="idDaModificare" value="<%= pDaModificare.getIdProiezione() %>">
                                 <tr class="d-flex">
                                     <td class="col-12"><button type="submit" class="btn btn-success mr-2">Modifica
                                             Proiezione</button>

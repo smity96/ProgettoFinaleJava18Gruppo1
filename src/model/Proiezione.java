@@ -39,6 +39,17 @@ public class Proiezione implements Serializable {
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="id_film", nullable=false)
 	private Film film;
+	
+	@Column(nullable=false)
+	private Double prezzo;
+
+	public Double getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(Double prezzo) {
+		this.prezzo = prezzo;
+	}
 
 	public Proiezione() {
 	}
@@ -103,6 +114,20 @@ public class Proiezione implements Serializable {
 
 	public void setFilm(Film film) {
 		this.film = film;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Proiezione other = (Proiezione) obj;
+		if (idProiezione != other.idProiezione)
+			return false;
+		return true;
 	}
 
 }
