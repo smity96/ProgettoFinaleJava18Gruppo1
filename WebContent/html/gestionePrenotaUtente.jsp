@@ -1,6 +1,3 @@
-<%@page import="model.Prenotazione"%>
-<%@page import="model.Proiezione"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title></title>
 
-        <style>
+    <style>
         .bottone{
             width:12rem;
         }
@@ -59,7 +56,11 @@
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Gestione Prenotazione</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
+                        </li>
+                        <li class="nav-item d-flex align-items-center my-3">
+                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="#">Gestione Prenotazioni</a></div>
                         </li>
                       </ul>
 
@@ -106,6 +107,7 @@
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         </li>
+
                 </nav>
                 <!-- fine side bar -->
                 <div class="col-md-9 col-lg-10 py-5 bg-dark">
@@ -114,7 +116,7 @@
                         <div class="col">
                             <h3>
                                 <span class="text-uppercase text-danger">Dashboard /</span><span
-                                    class="text-muted small"> Prenotazione Film</span>
+                                    class="text-muted small"> Gestione Prenotazioni Film</span>
                             </h3>
                         </div>
                     </div>
@@ -122,7 +124,7 @@
                     <!-- inizio funzioni pannello -->
                     <div class="row text-center text-uppercase bg-warning">
                         <div class="col-12 m-0 p-0 text-center">
-                            <h1 class="text-dark">Prenota film</h1>
+                            <h1 class="text-dark">Film prenotati</h1>
                         </div>
 
                         <div class="container col-12 bg-dark text-left">
@@ -133,61 +135,65 @@
                                     <th scope="col">Titolo film</th>
                                     <th scope="col">Locandina</th>
                                     <th scope="col">Orario e data</th>
-                                    <th scope="col">Posti disponibili</th>
-                                    <th scope="col">Numero posti prenotazione</th>
-                                    <th scoper="col">Prezzo biglietto singolo</th>
-                                    <th scope="col">Prenota film</th>
-                                    </tr>
+                                    <th scope="col">Posti prenotati</th>
+                                    <th scope="col">Prezzo totale</th>
+                                    <th scope="col">Modifica Prenotazione</th>
+                                    <th scope="col">Cancella Prenotazione</th>
+                                  </tr>
                                 </thead>
 
                                 <tbody>
-                                  <%                                   
-	                                  List<Proiezione> listaProiez = (List<Proiezione>) request.getAttribute("listaProiez");
-	                                  List<Prenotazione> listaPreno = (List<Prenotazione>) request.getAttribute("listaPreno");
-                                  		
-	                                  for(Proiezione x : listaProiez ){
-                                  
-                                  
-                                  %>
                                   <tr>
-                                    <th scope="row"><%= x.getFilm().getTitolo() %></th>
-                                    <td><img class="immagine" src="<%= x.getFilm().getLocandina()%>"></td>
-                                    <td><%= x.getDataOra()%></td>
-                                    <td><%= x.getIntervallo() + x.getFilm().getDurata() %></td>
-                                    <td>
-                                      <select class="mdb-select md-form colorful-select dropdown-warning">
-                                        <%
-                                            int postiOccupati;
-                                        	int postiDisponibili = x.getPostiMax();
-                                        	for(Prenotazione y : listaPreno){
-                                        	  	if(y.getProiezione().equals(x))
-                                        			postiDisponibili -= y.getPostiPrenotati(); 
-                                        	}
-                                        	for(int i=0; i <= postiDisponibili; i++){
-                                        %>
-                                        
-                                        <option> <%= i %> </option>
-                                        <% } %>
+                                    <th scope="row">Captain Marvel</th>
+                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
+                                    <td>Giovedi 16.00</td>
+                                    <td>1</td>
+                                    <td>20</td>
+                                    <td><button type="button" class="btn btn-outline-warning">Modifica</button>
+                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
+                                 
+                                    <!-- Se clicca su modifica si apre questa riga: -->
+                                    <th scope="row">Captain Marvel</th>
+                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
+                                    <td>Giovedi 16.00</td>
+                                    <td><select class="mdb-select md-form colorful-select dropdown-warning">
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        <option>4</option>
+                                        <option>5</option>
                                       </select>
                                     </td>
-                                    <td><%= x.getPrezzo() %></td>
-                                    	<% 
-                                    		if(postiDisponibili!=0){ 
-                                    	%>
-                                    	
-                                        <td><button type="submit" onclick="history.back()" class="btn btn-outline-warning">Prenota</button></td>
-                                  <% } else {%>
-                                  	 <td><button type="submit" onclick="history.back()" class="btn btn-outline-warning" disabled>Posti Esauriti</button></td>
-                                  <%} %>
-                                  </tr>
-                                  <% } %>
-                                  
-                                <td>    
-                                    <!-- se prenotato diventa cosi: -->
-                                    <button type="button" class="btn btn-outline-warning" disabled>Prenotato</button>                                        
+                                    <td>20</td>
+                                    <td><button type="button" class="btn btn-outline-warning">Conferma</button>
                                     
-                                </td>
+                                    
+                                    
+                                    </td>
+                                 
+                                    
+                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Torna indietro</button></td>
+                                  </tr>
+                                  
+                                  
+                                 <!--Secondo film-->
+                                  <tr>
 
+                                    <th scope="row">Captain Marvel</th>
+                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
+                                    <td>Giovedi 16.00</td>
+                                    <td>1</td>
+                                    <td><button type="button" onclick="goBack()" class="btn btn-outline-danger">Cancella</button></td>
+                                  </tr>
+
+                                  <!--Terzo film: -->
+                                  <tr>
+                                    <th scope="row">Captain Marvel</th>
+                                    <td><img class="immagine" src="../src/captainMarvel.jpg"></td>
+                                    <td>Giovedi 16.00</td>
+                                    <td>1</td>
+                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
+                                  </tr>
                                 </tbody>
                               </table>
 
