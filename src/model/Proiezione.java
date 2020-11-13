@@ -39,6 +39,17 @@ public class Proiezione implements Serializable {
 	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="id_film", nullable=false)
 	private Film film;
+	
+	@Column(nullable=false)
+	private Double prezzo;
+
+	public Double getPrezzo() {
+		return prezzo;
+	}
+
+	public void setPrezzo(Double prezzo) {
+		this.prezzo = prezzo;
+	}
 
 	public Proiezione() {
 	}
