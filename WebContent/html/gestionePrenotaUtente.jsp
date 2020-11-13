@@ -1,10 +1,17 @@
+<%@page import="model.Utente"%>
+<%@page import="model.Prenotazione"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title></title>
+   
+    <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+   
 
     <style>
         .bottone{
@@ -18,63 +25,60 @@
     </style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="..\css\fontawesome-free-5.15.0-web\css\all.min.css">
-    <link rel="stylesheet" href="..\css\style-dash.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
-
+<%
+HttpSession s=request.getSession(false); 
+Utente u = (Utente)s.getAttribute("uLog");
+%>
 <body>
 
     <body>
         <!-- navbar -->
 
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="navbar-brand text-uppercase" href="#">
+                <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
                     <h1>Dashboard Utente</h1>
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
-                <button class="navbar-toggler btn-primary" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <button class="navbar-toggler btn-warning" type="button" data-toggle="collapse" data-target="#myNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <!-- Navbar links -->
 
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
-                    <ul class="navbar-nav links d-md-none">
-                        <li class="nav-item d-flex align-items-center my-3">
-                        
-                        <!-- MANCA HOME -->
-                            <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a></div>
+                    <ul class="navbar-nav links d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         
-                        <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
-                        <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
-                        <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="#">Gestione Prenotazioni</a></div>
+                        <li class="nav-item">        
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
                         </li>
                       </ul>
 
                     <!-- nav icons -->
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
-                            <a class="navbar-brand py-3" href="#">
-                                <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
+                                <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" />
                                 Nome Utente
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="#">
+                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href=""<%=request.getContextPath() %>/ServletLogout">
                                 <i class="fa fa-sign-out"></i> Sign Out
                             </a>
                         </li>
@@ -89,7 +93,7 @@
         <div class="container-fluid p-0 bg-dark">
             <div class="row">
                 <nav
-                    class="col-md-4 col-lg-3 col-xl-2 d-none d-md-flex sidebar align-items-center justify-content-center right-padding max-viewport">
+                    class="col-lg-3 col-xl-2 d-none d-lg-flex sidebar align-items-center justify-content-center right-padding max-viewport">
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
@@ -110,16 +114,17 @@
 
                 </nav>
                 <!-- fine side bar -->
-                <div class="col-md-9 col-lg-10 py-5 bg-dark">
+                <div class="col-lg-9 col-xl-10 py-5 bg-dark">
                     <!-- titolo dashboard -->
                     <div class="row">
-                        <div class="col">
+                        <div class="col-12">
+                            <div>
                             <h3>
                                 <span class="text-uppercase text-danger">Dashboard /</span><span
                                     class="text-muted small"> Gestione Prenotazioni Film</span>
                             </h3>
-                        </div>
-                    </div>
+                            </div>
+                    
                     <!-- fine titolo dashboard -->
                     <!-- inizio funzioni pannello -->
                     <div class="row text-center text-uppercase bg-warning">
@@ -127,7 +132,7 @@
                             <h1 class="text-dark">Film prenotati</h1>
                         </div>
 
-                        <div class="container col-12 bg-dark text-left">
+                       
                             <!--Mettere nome attuale dell'utente: -->
                             <table class="table table-hover table-dark">
                                 <thead>
@@ -141,30 +146,55 @@
                                     <th scope="col">Cancella Prenotazione</th>
                                   </tr>
                                 </thead>
-
+                               
+								
+									
                                 <tbody>
+                                 <% 
+                                	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
+                                	for(Prenotazione p : listaPreno){
+                                	if(!request.getAttribute("pDaModificare").equals(p)){
+                                	
+                                %>
+                                	<form action="ServletLeggiPrenotazioneById" method="POST">
+										<input type="hidden" name="id_prenotazione">
                                   <tr>
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>1</td>
-                                    <td>20</td>
-                                    <td><button type="button" class="btn btn-outline-warning">Modifica</button>
+                                    <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
+                                    <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
+                                    <td><%= p.getProiezione().getDataOra() %></td>
+                                    <td><%=p.getPostiPrenotati() %></td>
+                                    <td><%=p.getCosto_totale() %></td>
+                                    <td><button type="submit" class="btn btn-outline-warning">Modifica</button>
+                                    </form>
+                                    
+                                    
+                                    
+                                    <form action="ServletCancellaPrenotazione" method="POST">
                                     <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
-                                 
+                                 	</form>
+                                 	<%}else{ %>
+                                 	<form action="ServletModificaPrenotazione" method="POST">
+                                 	<% 
+                                 		int postiDisponibili = p.getProiezione().getPostiMax();
+											for(Prenotazione y : listaPreno){
+	                                    	  	if(y.getProiezione().equals(p.getProiezione()))
+	                                    			postiDisponibili -= y.getPostiPrenotati(); 
+	                                    	}
+                                     %>   	
                                     <!-- Se clicca su modifica si apre questa riga: -->
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
+                                    <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
+                                    <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
+                                   <td><%= p.getProiezione().getDataOra() %></td>
                                     <td><select class="mdb-select md-form colorful-select dropdown-warning">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                       <% for(int i=0; i <= postiDisponibili; i++){ %>
+											<option value="<%= i %>">
+												<%= i %>
+											</option>
+											<%} %>
+                                        
                                       </select>
                                     </td>
-                                    <td>20</td>
+                                    <td><%=p.getCosto_totale() %></td>
                                     <td><button type="button" class="btn btn-outline-warning">Conferma</button>
                                     
                                     
@@ -174,27 +204,12 @@
                                     
                                     <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Torna indietro</button></td>
                                   </tr>
-                                  
-                                  
-                                 <!--Secondo film-->
-                                  <tr>
-
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="/ProgettoFinaleJava18Gruppo1/src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>1</td>
-                                    <td><button type="button" onclick="goBack()" class="btn btn-outline-danger">Cancella</button></td>
-                                  </tr>
-
-                                  <!--Terzo film: -->
-                                  <tr>
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="../src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>1</td>
-                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
-                                  </tr>
+                                  </form>
+                                <%} 
+                                }%>
+                                
                                 </tbody>
+                                
                               </table>
 
                     </div>
@@ -245,7 +260,7 @@
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
 
-        <script src="../js/script.js"></script>
-        <script src="../js/profiloUtente.js"></script>
+        <script src="/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
+        <script src="/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
     </body>
 </html>

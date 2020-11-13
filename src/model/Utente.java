@@ -225,4 +225,20 @@ public class Utente implements Serializable {
 		this.pIva = pIva;
 	}
 
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Utente other = (Utente) obj;
+		if (idUtente != other.idUtente)
+			return false;
+		return true;
+	}
+
+	
 }

@@ -6,19 +6,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-    <link rel="stylesheet" href="../css/style-dash.css">     
+       
+    
+ 
+    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">     
     <!--Bootstrap links-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark">    <!--Navbar Utente NON loggato: -->
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
-    <!--Navbar Utente NON loggato: -->
-    
     <nav class="navbar navbar-expand-lg">
            <div class="container">
 
@@ -48,7 +48,7 @@
         <div class="col-2">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning font-weight-bold" href="#">Prenotazioni</a>
+            <a class="nav-link text-warning font-weight-bold" href="#">Prenotazione</a>
           </li>
           </ul>
         </div>

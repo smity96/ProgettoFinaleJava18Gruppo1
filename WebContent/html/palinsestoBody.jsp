@@ -15,7 +15,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title></title>
+
+ <!--Titolo e logo barra ricerca-->
+    <title>Sorrento Cinema</title>
+    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+
         <style>
      
       
@@ -38,7 +42,7 @@
       }
     </style>
 
-    <link rel="stylesheet" href="../css/style-dash.css">
+    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
