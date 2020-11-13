@@ -349,6 +349,88 @@
 
     </div>
     <!-- Fine Main Content -->
+    
+    <!-- Modals -->
+	<!-- Modal uscita -->
+	<div class="modal fade" id="sign-out">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<!-- Modal Header -->
+				<div class="modal-header">
+					<h4 class="modal-title">Vuoi fare il logout?</h4>
+					<button type="button" class="close" data-dismiss="modal">
+						&times;</button>
+				</div>
+				<!-- Modal body -->
+				<div class="modal-body">Premi logout per uscire.</div>
+				<!-- Modal footer -->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" data-dismiss="modal">
+						Rimani</button>
+					<button
+						onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';"
+						type="button" class="btn btn-danger" data-dismiss="modal">
+						Esci</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Fine Modal Uscita -->
+	<!-- Modal Aggiungi Film Alla Proiezione -->
+	<div class="modal fade aggiungi-film-proiezione text-center">
+		<div class="modal-dialog modal-xl">
+			<div class="modal-content">
+				<!-- Modal body -->
+				<div class="modal-body p-0 m-0">
+					<form action="ServletInserisciProiezione" method="post">
+						<table class="table table-bordered table-hover table-dark m-0">
+							<thead>
+								<tr>
+									<th>Dati Proiezione</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="d-flex">
+									<th class="col-md-2 col-3"><label>Data E Ora Di
+											Inizio</label></th>
+									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
+										type="datetime-local" name="dataOra"></td>
+								</tr>
+								<tr class="d-flex">
+									<th class="col-md-2 col-3"><label>Titolo</label></th>
+									<td class="col-md-10 col-9"><select
+										class="col-8 mx-auto text-center h-100" name="id">
+											<% List<Film> films=(List<Film>)request.getAttribute("films");
+                                        for(Film f : films){ %>
+											<option value="<%= f.getIdFilm() %>"><%= f.getTitolo() %></option>
+											<%} %>
+									</select></td>
+								</tr>
+								<tr class="d-flex">
+									<th class="col-md-2 col-3"><label>Intervallo</label></th>
+									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
+										type="number" name="intervallo"></td>
+								</tr>
+								<tr class="d-flex">
+									<th class="col-md-2 col-3"><label>N� Posti</label></th>
+									<td class="col-md-10 col-9"><input class="col-8 mx-auto"
+										type="number" name="posti"></td>
+								</tr>
+								<tr class="d-flex">
+									<td class="col-12"><button type="submit"
+											class="btn btn-success mr-2">Aggiungi Proiezione</button>
+										<button type="submit" class="btn btn-danger ml-2"
+											data-dismiss="modal">Annulla Inserimento</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- Fine Modal Aggiungi Film alla Proiezione -->
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
