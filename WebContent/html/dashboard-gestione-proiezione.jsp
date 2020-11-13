@@ -221,8 +221,9 @@
 										<th class="col-2 colore-icone-scuro">Film Proiettato</th>
 										<th class="col-2 colore-icone-scuro">Intervallo</th>
 										<th class="col-2 colore-icone-scuro">N. Posti</th>
-										<th class="col-2 colore-icone-scuro">Modifica Proiezione</th>
-										<th class="col-2 colore-icone-scuro">Cancella Proiezione</th>
+										<th class="col-2 colore-icone-scuro">Costo Biglietto</th>
+										<th class="col-1 colore-icone-scuro">Modifica Proiezione</th>
+										<th class="col-1 colore-icone-scuro">Cancella Proiezione</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -247,13 +248,16 @@
 										<td class="col-2 bordo-trasparente colore-icone-scuro">
 											<p><%= p.getPostiMax() %></p>
 										</td>
-										<td class="col-2 bordo-trasparente"><a
+										<td class="col-2 bordo-trasparente colore-icone-scuro">
+											<p><%=%></p>
+										</td>
+										<td class="col-1 bordo-trasparente"><a
 											data-toggle="modal" data-target=".modifica-film-proiezione"
 											href=""> <i
 												class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
 										</a></td>
 
-										<td class="col-2 bordo-trasparente">
+										<td class="col-1 bordo-trasparente">
 											<form action="ServletCancellaProiezione" method="POST">
 												<input type="hidden" name="idDaEliminare"
 													value="<%= p.getIdProiezione() %>">
@@ -309,7 +313,9 @@
 											<p>Intervallo:</p>
 											<p><%= p.getIntervallo() %></p>
 											<p>N. Posti:</p>
-											<p><%= p.getPostiMax() %></p>	
+											<p><%= p.getPostiMax() %></p>
+											<p>Costo Bilietto:</p>
+											<p><%=%></p>
 										</td>
 
 										<td class="col-2 bordo-trasparente">
