@@ -1,3 +1,6 @@
+<%@page import="model.Prenotazione"%>
+<%@page import="model.Proiezione"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -138,61 +141,47 @@
                                 </thead>
 
                                 <tbody>
-                                  <tr>
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="../src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>120</td>
-                                    <td><select class="mdb-select md-form colorful-select dropdown-warning">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                      </select>
-                                    </td>
-                                    <td>10</td>
-                                    
-                                        <td><button type="button" onclick="history.back()" class="btn btn-outline-warning">Prenota</button></td>
-                                  </tr>
+                                  <%                                   
+	                                  List<Proiezione> listaProiez = (List<Proiezione>) request.getAttribute("listaProiez");
+	                                  List<Prenotazione> listaPreno = (List<Prenotazione>) request.getAttribute("listaPreno");
+                                  		
+	                                  for(Proiezione x : listaProiez ){
                                   
                                   
-                                 <!--Secondo film-->
+                                  %>
                                   <tr>
-
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="../src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>120</td>
-                                    <td><select class="mdb-select md-form colorful-select dropdown-warning">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
+                                    <th scope="row"><%= x.getFilm().getTitolo() %></th>
+                                    <td><img class="immagine" src="<%= x.getFilm().getLocandina()%>"></td>
+                                    <td><%= x.getDataOra()%></td>
+                                    <td><%= x.getIntervallo() + x.getFilm().getDurata() %></td>
+                                    <td>
+                                      <select class="mdb-select md-form colorful-select dropdown-warning">
+                                        <%
+                                            int postiOccupati;
+                                        	int postiDisponibili = x.getPostiMax();
+                                        	for(Prenotazione y : listaPreno){
+                                        	  	if(y.getProiezione().equals(x))
+                                        			postiDisponibili -= y.getPostiPrenotati(); 
+                                        	}
+                                        	for(int i=0; i <= postiDisponibili; i++){
+                                        %>
+                                        
+                                        <option> <%= i %> </option>
+                                        <% } %>
                                       </select>
                                     </td>
-                                    <td>10</td>
-                                    <td><button type="button" onclick="goBack()" class="btn btn-outline-warning">Prenota</button></td>
+                                    <td><%= x.getPrezzo() %></td>
+                                    	<% 
+                                    		if(postiDisponibili!=0){ 
+                                    	%>
+                                    	
+                                        <td><button type="submit" onclick="history.back()" class="btn btn-outline-warning">Prenota</button></td>
+                                  <% } else {%>
+                                  	 <td><button type="submit" onclick="history.back()" class="btn btn-outline-warning" disabled>Posti Esauriti</button></td>
+                                  <%} %>
                                   </tr>
-
-                                  <!--Terzo film: -->
-                                  <tr>
-                                    <th scope="row">Captain Marvel</th>
-                                    <td><img class="immagine" src="../src/captainMarvel.jpg"></td>
-                                    <td>Giovedi 16.00</td>
-                                    <td>120</td>
-                                    <td><select class="mdb-select md-form colorful-select dropdown-warning">
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                        <option>5</option>
-                                      </select>
-                                    </td>
-                                    <td>10</td>
-                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-warning">Prenota</button></td>
-                                  </tr>
+                                  <% } %>
+                                  
                                 </tbody>
                               </table>
 
