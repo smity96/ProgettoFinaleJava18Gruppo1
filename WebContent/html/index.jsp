@@ -9,6 +9,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
+    <style>
+       .titolo{
+       font-family: 
+       }
+    </style>
+    
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
@@ -38,13 +44,13 @@
                 <div class="col-3 justify-content-end d-flex m-0 p-0"><img class="img-fluid img-banner p-0 m-0"
                         src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/s-logo.png" alt=""></div>
                 <div class="col-5 d-flex my-0 align-items-end m-0 p-0"> <span
-                        class="display-1 scritta-dorata">orrento</span>
+                        class="display-1 scritta-dorata titolo">orrento</span>
                 </div>
             </div>
         </div>
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-12 mx-auto mt-0 mb-5 px-3 justify-content-center d-flex">
-                <h1 class="display-1 scritta-dorata">   Cinema   </h1>
+                <h1 class="display-1 scritta-dorata titolo">   Cinema   </h1>
             </div>
         </div>
     </div>

@@ -30,7 +30,7 @@
     />
 
 </head>
-<body>
+<body style="font-family: 'Monserrat', sans-serif">
     <!-- Navbar -->
   
 <jsp:include page= "navbarNotte.jsp"></jsp:include>

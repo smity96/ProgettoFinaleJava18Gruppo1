@@ -133,7 +133,7 @@
 							<i class="fas fa-folder-open text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a>
+							<a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna Al Sito</a>
 						</div>
 					</li>
 					<li

@@ -62,7 +62,7 @@
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
 
-<body>
+<body style="font-family: 'Monserrat', sans-serif">
 
     <body>
     <%HttpSession s=request.getSession(false);

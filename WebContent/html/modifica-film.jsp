@@ -14,6 +14,9 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -33,7 +36,8 @@
         <%@include file="../css/style-dash.css"%>
     </style>
     </head>
-<body>
+    
+    <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
@@ -56,7 +60,7 @@
                 <ul class="navbar-nav links d-flex d-xl-none">
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-folder-open text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link col-10" href="#">Torna Al Sito</a>
+                        <a class="nav-link col-10" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna Al Sito</a>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fa fa-home text-muted mr-3 nav-size col-2"></i>
@@ -133,7 +137,7 @@
                 <ul class="navbar-nav flex-column list-side-height">
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link" href="#">Torna Al Sito</a></div>
+                        <div class="col-6 m-0"><a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna Al Sito</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fa fa-home text-muted mr-3 nav-size"></i></div>

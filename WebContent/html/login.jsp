@@ -31,7 +31,7 @@ pageEncoding="ISO-8859-1"%>
     />
   </head>
 
-  <body class="bg-dark text-center">
+  <body class="bg-dark text-center" style="font-family: 'Monserrat', sans-serif">
   
   <!-- Navbar -->
   

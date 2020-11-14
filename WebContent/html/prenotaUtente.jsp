@@ -45,7 +45,7 @@ HttpSession s=request.getSession(false);
 Utente u = (Utente)s.getAttribute("uLog");
 %>
 
-<body>
+<body style="font-family: 'Monserrat', sans-serif">
 <!-- navbar -->
 
         <nav class="navbar navbar-expand-lg">
