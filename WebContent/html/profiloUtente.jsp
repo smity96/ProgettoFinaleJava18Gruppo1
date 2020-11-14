@@ -128,15 +128,14 @@
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>
-                            Prenota film</a>
+                        <li class="nav-item d-flex align-items-center my-3">
+                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
                         </li>
-                         <li>                            
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>
-                            Gestione 
-                            
-                            <br>Prenotazioni</a>
+                        <li class="nav-item d-flex align-items-center my-3">
+                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                        
                         </li>
                 </nav>
                 <!-- fine side bar -->

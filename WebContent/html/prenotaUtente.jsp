@@ -36,7 +36,7 @@ Utente u = (Utente)s.getAttribute("uLog");
 <body>
 	<!-- navbar -->
 
-	<nav class="navbar navbar-expand-md">
+	<nav class="navbar navbar-expand-lg">
 		<div class="container-fluid">
 			<!-- Brand -->
 			<a class="navbar-brand text-uppercase" href="#">
@@ -99,7 +99,8 @@ Utente u = (Utente)s.getAttribute("uLog");
                             <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
                                 <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" />
-                                Nome Utente
+                                    BENVENUTO:<%= u.getNome()%>
+                     
                             </a>
                         </li>
                         <li class="nav-item">
