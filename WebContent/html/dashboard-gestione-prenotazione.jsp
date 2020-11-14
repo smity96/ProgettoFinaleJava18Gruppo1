@@ -179,39 +179,80 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <% 
+                            	ArrayList<Utente> listaPrenDiUtente = new ArrayList<>(); 
+                            	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
+                            	for(Prenotazione p : listaPreno){
+                            		ArrayList<Proiezione> listaProiezUtente = new ArrayList<>();
+                            		if(listaPrenDiUtente.contains(p.getUtente())){
+                            			continue;
+                            			}else{
+                            				for(Prenotazione p2 : listaPreno){
+                            					if(p2.getUtente().equals(p.getUtente())){
+                            						listaProiezUtente.add(p2.getProiezione());
+                            					}
+                            				}
+                            				listaPrenDiUtente.add(p.getUtente());
+                            			}
+                            %>
                                 <tr class="d-flex">
-                                    <td class="col-md-2 col-3 colore-icone-scuro" rowspan="5"><label>Utente</label></td>
+                                    <td class="col-md-2 col-3 colore-icone-scuro" rowspan="5"><label><%=p.getUtente().getEmail() %></label></td>
                                     <td class="col-md-8 col-6 colore-icone-scuro"><select
                                             class="col-12 text-center h-100 scelta" name="film-prenotati">
-                                            <option class="prova" value="2" selected value> -- seleziona un film --
-                                            </option>
-                                            <option value=""></option>
- 
+                                            
+                                            <option class="prova" value="2" selected value> -- seleziona un film --</option>
+                                            
+                                            <%	
+                                            	
+                                            	for(Proiezione x : listaProiezUtente){
+                                            	
+                                            %>
+                                            <option value=""> <%= x.getFilm().getTitolo() + " " + x.getDataOra()%></option>
+ 										<%} %>
                                         </select>
                                         </label>
                                     </td>
-                                    <td class="col-md-2 col-3" rowspan="2"><a href=""><i
-                                                class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
+                                    <td class="col-md-2 col-3" rowspan="2">
                                     </td>
                                 </tr>
+                               <%
+                                	for(Proiezione x : listaProiezUtente){
+                                 %>
                                 <tr class="d-none justify-content-center" id="info-prenotazione">
                                     <td id="nomeFilmScelta" class="col-md-2 col-2">
                                         <img class="img-fluid film-custom-height mb-3"
-                                            src="https://static.posters.cz/image/750webp/34925.webp" alt="">
+                                            src="<%=x.getFilm().getLocandina() %>" alt="">
                                     </td>
+                                    
                                     <td class="col-md-2 col-2">
                                         <p>Data E Ora:</p>
-                                        <p class="p-0 m-0">08/11/2020</p>
-                                        <p>12:00 - 14:00</p>
+                                        <p class="p-0 m-0"><%=x.getDataOra() %></p>
                                     </td>
                                     <td class="col-md-2 col-1">
                                         <p>Intervallo:</p>
-                                        <p>15 min</p>
+                                        <p><%=x.getIntervallo() %></p>
                                     </td>
                                     <td class="col-md-2 col-1">
-                                        <p>NÂ° Posti Prenotati:</p>
-                                        <p>1 Posti</p>
+                                    
+                                    <%
+                                    	Prenotazione preno = new Prenotazione();
+                                    	for(Prenotazione y : listaPreno){
+                                    		if(y.getUtente().equals(p.getUtente()) && y.getProiezione().equals(x)){
+                                    			preno = y;
+                                    		}
+                                    	}
+                                    %>
+                                        <p>N° Posti Prenotati:</p>
+                                        <p><%=preno.getPostiPrenotati() %></p>
                                     </td>
+                                    <form action="ServletCancellaPrenotazioneAdmin" method="POST">
+                                    	<td class="col-md-2 col-3" rowspan="2">
+                                    <input type="hidden" name="id_prenotazione" value="<%=preno.getIdPrenotazione() %>">
+                                    
+                                    
+                                    	<button type="submit" ><i class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></button>
+                                	</td>
+                                	</form>
                                 </tr>
                                 <tr class="d-flex justify-content-center">
 
@@ -222,7 +263,8 @@
                                 <tr class="d-flex justify-content-center">
 
                                 </tr>
-
+						 <%} 
+						 }%>
                             </tbody>
                         </table>
 

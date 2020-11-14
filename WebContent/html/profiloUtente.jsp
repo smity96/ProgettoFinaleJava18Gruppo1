@@ -44,7 +44,17 @@
     height: 150px;
 }
 
+.stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
     </style>
+    
+     <!-- Google fonts link -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -66,7 +76,7 @@
             <div class="container-fluid">
                 <!-- Brand -->
                 <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
-                    <h1>Dashboard Utente</h1>
+                    <h1 class="stile">Dashboard Utente</h1>
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
@@ -79,16 +89,16 @@
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <ul class="navbar-nav links d-lg-none">
                         <li class="nav-item">                            
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         <li class="nav-item">       
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
                         <li class="nav-item">                            
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
                         </li>
                     </ul>
 
@@ -102,7 +112,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
+                            <a class="nav-link stile" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
                                 <i class="fa fa-sign-out"></i> Sign Out
                             </a>
                         </li>
@@ -120,21 +130,21 @@
                     class="col-lg-3 col-xl-2 d-none d-lg-flex sidebar align-items-center justify-content-center right-padding max-viewport">
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
+                            <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size ml-4"></i></div>
 
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
+                            <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
+                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         
                         </li>
                 </nav>
@@ -145,8 +155,8 @@
                         <div class="col-12">
                             <div>
                             <h3>
-                                <span class="text-uppercase text-danger">Dashboard /</span><span
-                                    class="text-muted small"> Gestione Utente</span>
+                                <span class="text-uppercase text-danger stile">Dashboard /</span><span
+                                    class="text-muted small stile"> Gestione Utente</span>
                             </h3>
                         </div>
                     
@@ -154,7 +164,7 @@
                     <!-- inizio funzioni pannello -->
                     <div class="row text-center text-uppercase bg-warning">
                         <div class="col-12 m-0 p-0 text-center">
-                            <h1 class="text-dark">Profilo Utente</h1>
+                            <h1 class="text-dark stile">Profilo Utente</h1>
                         </div>                   
                         
 
@@ -181,9 +191,9 @@
                         
                         <!--modifica nome-->
                                     <div class="form-gorup row mt-4">
-                            <label class="col-sm-2 col-form-label text-warning">Nome: </label>
+                            <label class="col-sm-2 col-form-label text-warning stile">Nome: </label>
                             <div class="col-sm-10">
-                        <input class="rounded" name="nome" type="text" value="<%=u.getNome()%>">
+                        <input class="rounded stile" name="nome" type="text" value="<%=u.getNome()%>">
                     </div>
                  </div>
                  
@@ -191,16 +201,16 @@
                  <!--modifica cognome: -->
 
                         <div class="form-gorup row">
-                            <label class="col-sm-2 col-form-label text-warning">Cognome: </label>
+                            <label class="col-sm-2 col-form-label text-warning stile">Cognome: </label>
                             <div class="col-sm-10">
-                        <input class="rounded" name="cognome" type="text" value="<%=u.getCognome()%>">
+                        <input class="rounded stile" name="cognome" type="text" value="<%=u.getCognome()%>">
                     </div>
                  </div>
 
                 
                 <!--modifica data di nascita:-->
                  <div class="form-gorup row">
-                        <label class="col-sm-2 col-form-label text-warning">Data di Nascita: </label>
+                        <label class="col-sm-2 col-form-label text-warning stile">Data di Nascita: </label>
                         <div class="col-sm-10">
                     <input  class="rounded bottone" name="data_di_nascita" type="date" value="<%=u.getDataDiNascita()%>">
                 </div>
@@ -208,41 +218,41 @@
 
                 <!--modifica email NON abilitato-->
                 <div class="form-gorup row">
-                    <label class="col-sm-2 col-form-label text-warning">Email: </label>
+                    <label class="col-sm-2 col-form-label text-warning stile">Email: </label>
                     <div class="col-sm-10">
-                <input class="rounded" name="email" type="email" placeholder="<%=u.getEmail() %>" disabled>
+                <input class="rounded stile" name="email" type="email" placeholder="<%=u.getEmail() %>" disabled>
             </div>
             </div>
 
             <!--modifica password-->
             <div class="form-gorup row">
-                <label class="col-sm-2 col-form-label text-warning">Password: </label>
+                <label class="col-sm-2 col-form-label text-warning stile">Password: </label>
                 <div class="col-sm-10">
-            <input  class="rounded" name="password" type="password" value="<%=u.getPassword()%>">
+            <input  class="rounded stile" name="password" type="password" value="<%=u.getPassword()%>">
         </div>
         </div>
 
         <!--modifica partita iva-->
         <div class="form-gorup row">
-            <label class="col-sm-2 col-form-label text-warning">Partita Iva: </label>
+            <label class="col-sm-2 col-form-label text-warning stile">Partita Iva: </label>
             <div class="col-sm-10">
-        <input class="rounded" name="pIva" type="text" value="<%=u.getPIva()%>">
+        <input class="rounded stile" name="pIva" type="text" value="<%=u.getPIva()%>">
     </div>
     </div>
                
     <!--modifica indirizzo-->
     <div class="form-gorup row">
-        <label class="col-sm-2 col-form-label text-warning">Indirizzo: </label>
+        <label class="col-sm-2 col-form-label text-warning stile">Indirizzo: </label>
         <div class="col-sm-10">
-    <input class="rounded" name="indirizzo" type="text" value="<%=u.getIndirizzo()%>">
+    <input class="rounded stile" name="indirizzo" type="text" value="<%=u.getIndirizzo()%>">
 </div>
 </div>
  
 <!--modifica nome societ�-->
 <div class="form-gorup row">
-    <label class="col-sm-2 col-form-label text-warning">Nome societa': </label>
+    <label class="col-sm-2 col-form-label text-warning stile">Nome societa': </label>
     <div class="col-sm-10">
-<input class="rounded" name="societa" type="text" value="<%=u.getNomeSocieta()%>">
+<input class="rounded stile" name="societa" type="text" value="<%=u.getNomeSocieta()%>">
 </div>
 </div>            
 
@@ -250,7 +260,7 @@
 
 <br>
 <div class="text-center col-6">
-<button type="submit" onclick="goBack()" class=" btn btn-outline-warning text-light">Modifica dati</button>
+<button type="submit" onclick="goBack()" class=" btn btn-outline-warning text-light stile">Modifica dati</button>
 </div>
 
 
@@ -272,19 +282,19 @@
                 <div class="modal-content">
                     <!-- Modal Header -->
                     <div class="modal-header">
-                        <h4 class="modal-title">Vuoi fare il logout?</h4>
+                        <h4 class="modal-title stile">Vuoi fare il logout?</h4>
                         <button type="button" class="close" data-dismiss="modal">
                             &times;
                         </button>
                     </div>
 
                     <!-- Modal body -->
-                    <div class="modal-body">
+                    <div class="modal-body stile">
                         Premi logout per uscire.
                     </div>
 
                     <!-- Modal footer -->
-                    <div class="modal-footer">
+                    <div class="modal-footer stile">
                         <button type="button" class="btn btn-primary" data-dismiss="modal">
                             Rimani
                         </button>

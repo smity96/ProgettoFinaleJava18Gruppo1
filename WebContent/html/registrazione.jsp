@@ -13,7 +13,7 @@ pageEncoding="ISO-8859-1"%>
 
     <style>
       .bottone {
-        width: 11.7rem;
+        width: 12.1rem;
       }
 
       .informazioni {
@@ -25,9 +25,18 @@ pageEncoding="ISO-8859-1"%>
         heigth: 20rem;
         }
       
+            .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
       
     </style>
-    
+     
+     <!-- Google fonts link -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     
 
     <!--Font awesome links-->
@@ -69,7 +78,7 @@ pageEncoding="ISO-8859-1"%>
         width="72"
         height="72"
       />
-      <p class="h3 mb-3 text-warning">Registrati:</p>
+      <p class="h3 mb-3 text-warning stile">Registrati:</p>
 
        
     
@@ -78,7 +87,7 @@ pageEncoding="ISO-8859-1"%>
       
       <p >
         <input
-          class="rounded"
+          class="rounded stile"
           id="Nome"
           name="nome"
           type="text"
@@ -89,7 +98,7 @@ pageEncoding="ISO-8859-1"%>
 
       <p>
         <input
-          class="rounded"
+          class="rounded stile"
           id="Cognome"
           name="cognome"
           type="text"
@@ -110,7 +119,7 @@ pageEncoding="ISO-8859-1"%>
 
       <p>
         <input
-          class="rounded"
+          class="rounded stile"
           id="Email"
           name="email"
           type="email"
@@ -121,7 +130,7 @@ pageEncoding="ISO-8859-1"%>
 
       <p>
         <input
-          class="rounded"
+          class="rounded stile"
           id="Password"
           name="password"
           type="password"
@@ -138,7 +147,7 @@ pageEncoding="ISO-8859-1"%>
         class="container d-flex justify-content-center text-center col-4 informazioni"
       >
         <nav class="navbar navbar-dark bg-dark border-0">
-          <h5 class="text-warning justify-content-end">
+          <h5 class="text-warning justify-content-end stile">
             Informazioni aggiuntive:
           </h5>
           <button
@@ -170,7 +179,7 @@ pageEncoding="ISO-8859-1"%>
        <li class="nav-item">
         <p>
         <input
-          class="rounded text-warning bottone"
+          class="rounded text-warning bottone stile"
           name="imgP"
           type="file"
           placeholder="Scegli immagine"
@@ -182,7 +191,7 @@ pageEncoding="ISO-8859-1"%>
        <li class="nav-item"> 
        <p>    
                   <input
-                    class="rounded"
+                    class="rounded stile"
                     id="PartitaIva"
                     name="P.I."
                     type="text"
@@ -194,7 +203,7 @@ pageEncoding="ISO-8859-1"%>
               <li class="nav-item">
                 <p>
                   <input
-                    class="rounded"
+                    class="rounded stile"
                     name="indirizzo"
                     id="Indirizzo"
                     type="text"
@@ -206,7 +215,7 @@ pageEncoding="ISO-8859-1"%>
               <li class="nav-item">
                 <p>
                   <input
-                    class="rounded"
+                    class="rounded stile"
                     name="nomeSoc"
                     type="text"
                     placeholder="Nome Societa'"
@@ -219,21 +228,21 @@ pageEncoding="ISO-8859-1"%>
       </div>
       
     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-    <label class="form-check-label text-light" for="exampleCheck1" required>Accetta i nostri
-    <a class="text-warning style-decoration-none" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
+    <label class="form-check-label text-light stile" for="exampleCheck1" required>Accetta i nostri
+    <a class="text-warning style-decoration-none stile" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
     
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog bg-dark" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header bg-dark">
-        <h5 class="modal-title text-warning" id="exampleModalLabel">Termini e Condizioni</h5>
+        <h5 class="modal-title text-warning stile" id="exampleModalLabel">Termini e Condizioni</h5>
         <button type="button" class="close bg-dark text-warning" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-dark text-warning">
-        I nostri termini e condizioni sono in conformità con l'articolo 13 del Regolamento UE 2016/679, che dichiara:
+      <div class="modal-body bg-dark text-warning stile">
+        I nostri termini e condizioni sono in conformitï¿½ con l'articolo 13 del Regolamento UE 2016/679, che dichiara:
         
         - Articolo 13 -
 
@@ -241,11 +250,11 @@ Informazioni da fornire qualora i dati personali siano raccolti presso l'interes
 
 1. In caso di raccolta presso l'interessato di dati che lo riguardano, il titolare del trattamento fornisce all'interessato, nel momento in cui i dati personali sono ottenuti, le seguenti informazioni:
 
-a) l'identità e i dati di contatto del titolare del trattamento e, ove applicabile, del suo rappresentante;
+a) l'identitï¿½ e i dati di contatto del titolare del trattamento e, ove applicabile, del suo rappresentante;
 
 b) i dati di contatto del responsabile della protezione dei dati, ove applicabile;
 
-c) le finalità del trattamento cui sono destinati i dati personali nonché la base giuridica del trattamento;
+c) le finalitï¿½ del trattamento cui sono destinati i dati personali nonchï¿½ la base giuridica del trattamento;
 
 d) qualora il trattamento si basi sull'articolo 6, paragrafo 1, lettera f), i legittimi interessi perseguiti dal titolare del trattamento o da terzi;
 
@@ -255,26 +264,26 @@ f) ove applicabile, l'intenzione del titolare del trattamento di trasferire dati
 
 2. In aggiunta alle informazioni di cui al paragrafo 1, nel momento in cui i dati personali sono ottenuti, il titolare del trattamento fornisce all'interessato le seguenti ulteriori informazioni necessarie per garantire un trattamento corretto e trasparente:
 
-a) il periodo di conservazione dei dati personali oppure, se non è possibile, i criteri utilizzati per determinare tale periodo;
+a) il periodo di conservazione dei dati personali oppure, se non ï¿½ possibile, i criteri utilizzati per determinare tale periodo;
 
-b) l'esistenza del diritto dell'interessato di chiedere al titolare del trattamento l'accesso ai dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento dei dati personali che lo riguardano o di opporsi al loro trattamento, oltre al diritto alla portabilità dei dati; (1)
+b) l'esistenza del diritto dell'interessato di chiedere al titolare del trattamento l'accesso ai dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento dei dati personali che lo riguardano o di opporsi al loro trattamento, oltre al diritto alla portabilitï¿½ dei dati; (1)
 
-c) qualora il trattamento sia basato sull'articolo 6, paragrafo 1, lettera a), oppure sull'articolo 9, paragrafo 2, lettera a), l'esistenza del diritto di revocare il consenso in qualsiasi momento senza pregiudicare la liceità del trattamento basata sul consenso prestato prima della revoca;
+c) qualora il trattamento sia basato sull'articolo 6, paragrafo 1, lettera a), oppure sull'articolo 9, paragrafo 2, lettera a), l'esistenza del diritto di revocare il consenso in qualsiasi momento senza pregiudicare la liceitï¿½ del trattamento basata sul consenso prestato prima della revoca;
 
-d) il diritto di proporre reclamo a un'autorità di controllo;
+d) il diritto di proporre reclamo a un'autoritï¿½ di controllo;
 
-e) se la comunicazione di dati personali è un obbligo legale o contrattuale oppure un requisito necessario per la conclusione di un contratto, e se l'interessato ha l'obbligo di fornire i dati personali nonché le possibili conseguenze della mancata comunicazione di tali dati;
+e) se la comunicazione di dati personali ï¿½ un obbligo legale o contrattuale oppure un requisito necessario per la conclusione di un contratto, e se l'interessato ha l'obbligo di fornire i dati personali nonchï¿½ le possibili conseguenze della mancata comunicazione di tali dati;
 
-f) l'esistenza di un processo decisionale automatizzato, compresa la profilazione di cui all'articolo 22, paragrafi 1 e 4, e, almeno in tali casi, informazioni significative sulla logica utilizzata, nonché l'importanza e le conseguenze previste di tale trattamento per l'interessato.
+f) l'esistenza di un processo decisionale automatizzato, compresa la profilazione di cui all'articolo 22, paragrafi 1 e 4, e, almeno in tali casi, informazioni significative sulla logica utilizzata, nonchï¿½ l'importanza e le conseguenze previste di tale trattamento per l'interessato.
 
-3. Qualora il titolare del trattamento intenda trattare ulteriormente i dati personali per una finalità diversa da quella per cui essi sono stati raccolti, prima di tale ulteriore trattamento fornisce all'interessato informazioni in merito a tale diversa finalità e ogni ulteriore informazione pertinente di cui al paragrafo 2.
+3. Qualora il titolare del trattamento intenda trattare ulteriormente i dati personali per una finalitï¿½ diversa da quella per cui essi sono stati raccolti, prima di tale ulteriore trattamento fornisce all'interessato informazioni in merito a tale diversa finalitï¿½ e ogni ulteriore informazione pertinente di cui al paragrafo 2.
 
-4. I paragrafi 1, 2 e 3 non si applicano se e nella misura in cui l'interessato dispone già delle informazioni.
+4. I paragrafi 1, 2 e 3 non si applicano se e nella misura in cui l'interessato dispone giï¿½ delle informazioni.
 
-(1) Lettera così corretta da Rettifica pubblicata nella G.U.U.E. 23 maggio 2018, n. 127 Serie L.
+(1) Lettera cosï¿½ corretta da Rettifica pubblicata nella G.U.U.E. 23 maggio 2018, n. 127 Serie L.
       </div>
       <div class="modal-footer bg-dark text-warning">
-        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">Chiudi</button>
+        <button type="button" class="btn btn-outline-warning text-light stile" data-dismiss="modal">Chiudi</button>
       </div>
     </div>
   </div>
@@ -286,7 +295,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
        
       <button
         onclick="prendiDataNascita()"
-        class="btn text-light btn-outline-warning"
+        class="btn text-light btn-outline-warning stile"
       >
         Registrati
       </button>
@@ -294,9 +303,9 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <br />
       <br />
 
-      <!--Accedi qui se sei gia' registrato-->
-      <p class="text-warning">Sei gia' registrato?</p>
-      <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
+      <!--Accedi qui se sei giï¿½ registrato-->
+      <p class="text-warning stile">Sei gia' registrato?</p>
+      <a class="text-warning stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
         >Accedi qui!</a
       >
     <br>

@@ -60,7 +60,7 @@
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
           <% if(s.getAttribute("uLog")!=null){%> 
-            <a class="nav-link text-warning font-weight-bold" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenotazione</a>
+            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenotazione</a>
             <%}else{ %>      
             <a class="nav-link text-warning font-weight-bold" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/login.jsp">Prenotazione</a>
             <%} %>
