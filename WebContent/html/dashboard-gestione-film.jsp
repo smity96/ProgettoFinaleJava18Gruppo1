@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
       <%
               						  HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -29,9 +29,6 @@
                 						
                 	
                 %>
-    <style type="text/css">
-    	<%@include file="../css/style-dash.css"%>
-    </style>
     </head>
 	<body>
     <!-- navbar in alto-->
@@ -39,9 +36,7 @@
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
-            <a class="navbar-brand text-uppercase" href="#">
-                <h1>Admin Dashboard</h1>
-            </a>
+                <h1 class="navbar-brand text-uppercase">Admin Dashboard</h1>
             <!-- Fine Navbar Brand -->
 
             <!-- Toggler/collapse Button -->
@@ -56,31 +51,31 @@
                 <ul class="navbar-nav links d-flex d-xl-none">
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-folder-open text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link col-10" href="#">Torna Al Sito</a>
+                        <a class="nav-link col-10" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fa fa-home text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active1 col-10" href="#">Dashboard</a>
+                        <a class="nav-link active1 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-user text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active2 col-10" href="#">Gestione Profilo</a>
+                        <a class="nav-link active2 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a>
                     </li>
                     <li class="nav-item d-flex align-items-center my-3">
                         <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
-                        <div class="col-9 ml-3"><a class="nav-link active3" href="#">Gestisci Prenotazioni</a></div>
+                        <div class="col-9 ml-3"><a class="nav-link active3" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp">Gestisci Prenotazioni</a></div>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-film text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active4 col-10" href="#">Gestione Film</a>
+                        <a class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fas fa-calendar-alt text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active5 col-10" href="#">Gestione Proiezioni</a>
+                        <a class="nav-link active5 col-10" href="/ProgettoFinaleJava18Gruppo1/html/gestione-proiezione.jsp">Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-users text-muted mr-3 nav-size col-2 ml-0"></i>
-                        <a class="nav-link active6 col-10" href="#">Gestione Utenti</a>>
+                        <a class="nav-link active6 col-10" href="/ProgettoFinaleJava18Gruppo1/gestione-utenti/index.jsp">Gestione Utenti</a>>
                     </li>
                 </ul>
 
@@ -133,31 +128,31 @@
                 <ul class="navbar-nav flex-column list-side-height">
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link" href="#">Torna Al Sito</a></div>
+                        <div class="col-6 m-0"><a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fa fa-home text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active1" href="#">Dashboard</a></div>
+                        <div class="col-6 m-0"><a class="nav-link active1" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active2" href="#">Gestione Profilo</a></div>
+                        <div class="col-6 m-0"><a class="nav-link active2" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active3" href="#">Gestisci Prenotazioni</a></div>
+                        <div class="col-6 m-0"><a class="nav-link active3" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp">Gestisci Prenotazioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active4" href="#">Gestione Film</a></div>
+                        <div class="col-6 m-0"><a class="nav-link active4" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active5" href="#">Gestione Proiezioni</a></div>
+                        <div class="col-6 m-0"><a class="nav-link active5" href="/ProgettoFinaleJava18Gruppo1/html/gestione-proiezione.jsp">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active6" href="#">Gestione Utenti</a></div>
+                        <div class="col-6 m-0"><a class="nav-link active6" href="/ProgettoFinaleJava18Gruppo1/html/gestione-utenti.jsp">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -173,7 +168,6 @@
                 <!-- sono due, il primo primo parte da schermo medio mentre il secondo da quello piccolo fino al medio-->
 
 
-                <div class="container-fluid m-0 p-0 d-none funzione-menu gestione-film">
                     <div class="row text-uppercase text-center d-none d-md-flex">
                         <div class="col-12 p-0">
                             <div class="mb-2 align-items-center justify-content-center">
@@ -216,7 +210,7 @@
                         </div>
                     </div>
 
-                <!-- inizio gestione film in programmazione parte 2 -->
+                  <!-- inizio gestione film in programmazione parte 2 -->
 
                     <div class="row text-uppercase text-center d-flex d-md-none">
                         <div class="col-12 p-0">
@@ -257,7 +251,6 @@
                             </table>
                         </div>
                     </div>
-                </div>
                 <!-- fine gestione film in programmazione -->
 
 
