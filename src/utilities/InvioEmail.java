@@ -94,7 +94,7 @@ public class InvioEmail extends HttpServlet {
 		case 1:
 			subject = "Benvenuto";
 		    msg ="Gentile utente, \n"+
-		    	"Ti ringrazio per la tua iscrizione al cinema Sorrento, per favore attendi che l'amministratore confermi la tua richiesta e ti abiliti alla prenotazione dei biglietti. \n"+
+		    	"\n Ti ringrazio per la tua iscrizione al cinema Sorrento, per favore attendi che l'amministratore confermi la tua richiesta e ti abiliti alla prenotazione dei biglietti. \n"+
 		    	"Cordiali saluti. \n"+
 		    	"Lo Staff del cinema Sorrento.";
 			break;
@@ -102,7 +102,7 @@ public class InvioEmail extends HttpServlet {
 		case 2:
 			subject = "Ora sei abilitato";
 		    msg ="Gentile utente, \n"+
-		    	"L'amministratore ha approvato la tua registrazione, ora puoi iniziare ad effettuare le tue prenotazioni!"+
+		    	"\n L'amministratore ha approvato la tua registrazione, ora puoi iniziare ad effettuare le tue prenotazioni!"+
 		    	"Cordiali saluti. \n"+
 		    	"Lo Staff del cinema Sorrento.";
 			break;
@@ -110,7 +110,7 @@ public class InvioEmail extends HttpServlet {
 		case 3:
 			subject = "Dettagli account";
 			msg ="Gentile utente, \n"+
-				"Questa mail ti e' stata inviata perche' hai scordato i tuoi dati di accesso, i tuoi dati di accesso sono: \n"+
+				"\n Questa mail ti e' stata inviata perche' hai scordato i tuoi dati di accesso, i tuoi dati di accesso sono: \n"+
 				"Email: "+u.getEmail()+" \n"+
 				"Password: "+pssw+" \n"+
 				"Cordiali saluti. \n"+
@@ -120,7 +120,7 @@ public class InvioEmail extends HttpServlet {
 		case 4:
 			subject = "Dettagli prenotazione";
 			msg ="Gentile utente, \n"+
-				"In seguito i dettagli della prenotazione da te effettuata: \n";
+				"\n In seguito i dettagli della prenotazione da te effettuata: \n";
 			//creo un complicato sistema di concat e un controllo per avere tutte le prenotazioni in una stringa
 			if(prenotAll!=null) {
 				for(Prenotazione p:prenotAll) {
