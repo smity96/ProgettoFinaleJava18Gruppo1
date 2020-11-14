@@ -46,7 +46,7 @@ public class ServletAccessoUtente extends HttpServlet {
     		
 //    			----indirizzo alle varie pagine----
     			switch(ut.getRuolo()) {
-    			case 0:response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp");
+    			case 0:response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
     				break;
     			case 1:request.setAttribute("listaU", listaU);
     	        request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);

@@ -295,6 +295,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       >
         Registrati
       </button>
+    </form>
       <br />
       <br />
 
@@ -303,7 +304,6 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
         >Accedi qui!</a
       >
-    </form>
     <br>
     <br>
     <br>
