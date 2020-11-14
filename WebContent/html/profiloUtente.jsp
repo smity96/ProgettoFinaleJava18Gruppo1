@@ -98,7 +98,7 @@
                             <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
                                 <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" >
-                                 "BENVENUTO:"+u.getNome() 
+                                <%="BENVENUTO:"+u.getNome()%>
                             </a>
                         </li>
                         <li class="nav-item">

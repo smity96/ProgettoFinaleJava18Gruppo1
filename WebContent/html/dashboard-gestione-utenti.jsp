@@ -59,7 +59,7 @@
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-user text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active2 col-10" href="#">Gestione Profilo</a>
+                        <a class="nav-link active2 col-10" href="/dashboard-gestione-profilo.jsp">Gestione Profilo</a>
                     </li>
                     <li class="nav-item d-flex align-items-center my-3">
                         <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>

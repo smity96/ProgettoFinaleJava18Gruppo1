@@ -80,7 +80,7 @@
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-users text-muted mr-3 nav-size col-2 ml-0"></i>
-                        <a class="nav-link active6 col-10" href="#">Gestione Utenti</a>>
+                        <a class="nav-link active6 col-10" href="">Gestione Utenti</a>>
                     </li>
                 </ul>
 
