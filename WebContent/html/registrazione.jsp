@@ -13,7 +13,7 @@ pageEncoding="ISO-8859-1"%>
 
     <style>
       .bottone {
-        width: 11.7rem;
+        width: 12.1rem;
       }
 
       .informazioni {
@@ -25,9 +25,18 @@ pageEncoding="ISO-8859-1"%>
         heigth: 20rem;
         }
       
+            .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
       
     </style>
-    
+     
+     <!-- Google fonts link -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     
 
     <!--Font awesome links-->
@@ -69,7 +78,7 @@ pageEncoding="ISO-8859-1"%>
         width="72"
         height="72"
       />
-      <p class="h3 mb-3 text-warning">Registrati:</p>
+      <p class="h3 mb-3 text-warning stile">Registrati:</p>
 
        
     
@@ -78,7 +87,7 @@ pageEncoding="ISO-8859-1"%>
       
       <p >
         <input
-          class="rounded"
+          class="rounded stile"
           id="Nome"
           name="nome"
           type="text"
@@ -89,7 +98,7 @@ pageEncoding="ISO-8859-1"%>
 
       <p>
         <input
-          class="rounded"
+          class="rounded stile"
           id="Cognome"
           name="cognome"
           type="text"
@@ -110,7 +119,7 @@ pageEncoding="ISO-8859-1"%>
 
       <p>
         <input
-          class="rounded"
+          class="rounded stile"
           id="Email"
           name="email"
           type="email"
@@ -121,7 +130,7 @@ pageEncoding="ISO-8859-1"%>
 
       <p>
         <input
-          class="rounded"
+          class="rounded stile"
           id="Password"
           name="password"
           type="password"
@@ -138,7 +147,7 @@ pageEncoding="ISO-8859-1"%>
         class="container d-flex justify-content-center text-center col-4 informazioni"
       >
         <nav class="navbar navbar-dark bg-dark border-0">
-          <h5 class="text-warning justify-content-end">
+          <h5 class="text-warning justify-content-end stile">
             Informazioni aggiuntive:
           </h5>
           <button
@@ -170,7 +179,7 @@ pageEncoding="ISO-8859-1"%>
        <li class="nav-item">
         <p>
         <input
-          class="rounded text-warning bottone"
+          class="rounded text-warning bottone stile"
           name="imgP"
           type="file"
           placeholder="Scegli immagine"
@@ -182,7 +191,7 @@ pageEncoding="ISO-8859-1"%>
        <li class="nav-item"> 
        <p>    
                   <input
-                    class="rounded"
+                    class="rounded stile"
                     id="PartitaIva"
                     name="P.I."
                     type="text"
@@ -194,7 +203,7 @@ pageEncoding="ISO-8859-1"%>
               <li class="nav-item">
                 <p>
                   <input
-                    class="rounded"
+                    class="rounded stile"
                     name="indirizzo"
                     id="Indirizzo"
                     type="text"
@@ -206,7 +215,7 @@ pageEncoding="ISO-8859-1"%>
               <li class="nav-item">
                 <p>
                   <input
-                    class="rounded"
+                    class="rounded stile"
                     name="nomeSoc"
                     type="text"
                     placeholder="Nome Societa'"
@@ -224,20 +233,20 @@ pageEncoding="ISO-8859-1"%>
    
        
     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-    <label class="form-check-label text-light" for="exampleCheck1" required>Accetta i nostri
-    <a class="text-warning style-decoration-none" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
+    <label class="form-check-label text-light stile" for="exampleCheck1" required>Accetta i nostri
+    <a class="text-warning style-decoration-none stile" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
     
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog bg-dark" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header bg-dark">
-        <h5 class="modal-title text-warning" id="exampleModalLabel">Termini e Condizioni</h5>
+        <h5 class="modal-title text-warning stile" id="exampleModalLabel">Termini e Condizioni</h5>
         <button type="button" class="close bg-dark text-warning" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-dark text-warning">
+      <div class="modal-body bg-dark text-warning stile">
         I nostri termini e condizioni sono in conformità con l'articolo 13 del Regolamento UE 2016/679, che dichiara:
         
         - Articolo 13 -
@@ -279,7 +288,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
 (1) Lettera così corretta da Rettifica pubblicata nella G.U.U.E. 23 maggio 2018, n. 127 Serie L.
       </div>
       <div class="modal-footer bg-dark text-warning">
-        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">Chiudi</button>
+        <button type="button" class="btn btn-outline-warning text-light stile" data-dismiss="modal">Chiudi</button>
       </div>
     </div>
   </div>
@@ -291,7 +300,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
        
       <button
         onclick="prendiDataNascita()"
-        class="btn text-light btn-outline-warning"
+        class="btn text-light btn-outline-warning stile"
       >
         Registrati
       </button>
@@ -299,8 +308,8 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <br />
 
       <!--Accedi qui se sei giï¿½ registrato-->
-      <p class="text-warning">Sei gia' registrato?</p>
-      <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
+      <p class="text-warning stile">Sei gia' registrato?</p>
+      <a class="text-warning stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
         >Accedi qui!</a
       >
     </form>

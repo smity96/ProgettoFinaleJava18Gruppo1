@@ -22,7 +22,19 @@
             width:7rem;
             height: 11rem;
         }
+        
+        .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
     </style>
+    
+     <!-- Google fonts link -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -40,7 +52,7 @@ Utente u = (Utente)s.getAttribute("uLog");
             <div class="container-fluid">
                 <!-- Brand -->
                 <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
-                    <h1>Dashboard Utente</h1>
+                    <h1 class="stile">Dashboard Utente</h1>
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
@@ -53,30 +65,30 @@ Utente u = (Utente)s.getAttribute("uLog");
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <ul class="navbar-nav links d-lg-none">
                         <li class="nav-item">                            
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         <li class="nav-item">       
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
                         <li class="nav-item">                            
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
                         </li>
                     </ul>
 
                     <!-- nav icons -->
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
-                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
+                            <a class="navbar-brand py-3 stile" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
                                 <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" >
                                 <%="BENVENUTO:"+u.getNome()%>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
+                            <a class="nav-link stile" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
                                 <i class="fa fa-sign-out"></i> Sign Out
                             </a>
                         </li>
@@ -94,20 +106,20 @@ Utente u = (Utente)s.getAttribute("uLog");
                     class="col-lg-3 col-xl-2 d-none d-lg-flex sidebar align-items-center justify-content-center right-padding max-viewport">
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
+                            <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
+                            <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
+                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         </li>
                 </nav>
                 <!-- fine side bar -->
@@ -118,8 +130,8 @@ Utente u = (Utente)s.getAttribute("uLog");
                         <div class="col-12">
                             <div >
                             <h3>
-                                <span class="text-uppercase text-danger">Dashboard /</span><span
-                                    class="text-muted small"> Prenotazione Film</span>
+                                <span class="text-uppercase text-danger stile">Dashboard /</span><span
+                                    class="text-muted small stile"> Prenotazione Film</span>
                             </h3>
                             </div>
                         
@@ -130,7 +142,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                     <!-- inizio funzioni pannello -->
                     <div class="row text-center text-uppercase bg-warning">
                         <div class="col-12 m-0 p-0 text-center">
-                            <h1 class="text-dark">Prenota film</h1>
+                            <h1 class="text-dark stile">Prenota film</h1>
                         </div>
 
                         
@@ -138,13 +150,13 @@ Utente u = (Utente)s.getAttribute("uLog");
                             <table class="table table-hover table-dark">
                                 <thead>
                                   <tr>
-                                    <th scope="col">Titolo film</th>
-                                    <th scope="col">Locandina</th>
-                                    <th scope="col">Orario e data</th>
-                                    <th scope="col">Posti disponibili</th>
-                                    <th scope="col">Numero posti prenotazione</th>
-                                    <th scoper="col">Prezzo biglietto singolo</th>
-                                    <th scope="col">Prenota film</th>
+                                    <th class="stile" scope="col">Titolo film</th>
+                                    <th class="stile" scope="col">Locandina</th>
+                                    <th class="stile" scope="col">Orario e data</th>
+                                    <th class="stile" scope="col">Posti disponibili</th>
+                                    <th class="stile" scope="col">Numero posti prenotazione</th>
+                                    <th class="stile" scoper="col">Prezzo biglietto singolo</th>
+                                    <th class="stile" scope="col">Prenota film</th>
                                     </tr>
                                 </thead>
 
@@ -173,12 +185,12 @@ Utente u = (Utente)s.getAttribute("uLog");
 										value="<%=u.getIdUtente() %>"> <input type="hidden"
 										name="id_proiezione" value="<%=x.getIdProiezione() %>">
 								<tr>
-									<th scope="row"><%= x.getFilm().getTitolo() %></th>
+									<th class="stile" scope="row"><%= x.getFilm().getTitolo() %></th>
 									<td><img class="immagine"
 										src="<%= x.getFilm().getLocandina()%>"></td>
-									<td><%= x.getDataOra()%></td>
-									<td><%= x.getIntervallo() + x.getFilm().getDurata() %></td>
-									<td>
+									<td class="stile"><%= x.getDataOra()%></td>
+									<td class="stile"><%= x.getIntervallo() + x.getFilm().getDurata() %></td>
+									<td class="stile">
 										<%	
                                         	
 											int postiDisponibili = x.getPostiMax();
@@ -206,26 +218,26 @@ Utente u = (Utente)s.getAttribute("uLog");
 											Prenotazione gi�' effettuata
 											<%} %>
 									</td>
-									<td><%= x.getPrezzo() %></td>
+									<td class="stile" ><%= x.getPrezzo() %></td>
 
 									<% 
                                     		if(postiDisponibili!=0 && prenotato == false){ 
                                     	%>
 
 									<td><button type="submit" onclick="history.back()"
-											class="btn btn-outline-warning">Prenota</button></td>
+											class="btn btn-outline-warning stile">Prenota</button></td>
 
 									<% } else if(postiDisponibili == 0 && prenotato == false){%>
 
 									<td><button type="submit" onclick="history.back()"
-											class="btn btn-outline-warning" disabled>Posti
+											class="btn btn-outline-warning stile" disabled>Posti
 											Esauriti</button></td>
 
 									<%} else if(prenotato == true){ %>
 
 									<td>
 										<!-- se prenotato diventa cosi: -->
-										<button type="button" class="btn btn-outline-warning" disabled>Prenotato</button>
+										<button type="button" class="btn btn-outline-warning stile" disabled>Prenotato</button>
 
 									</td>
 									<% } %>
@@ -251,19 +263,19 @@ Utente u = (Utente)s.getAttribute("uLog");
 			<div class="modal-content">
 				<!-- Modal Header -->
 				<div class="modal-header">
-					<h4 class="modal-title">Vuoi fare il logout?</h4>
+					<h4 class="modal-title stile">Vuoi fare il logout?</h4>
 					<button type="button" class="close" data-dismiss="modal">
 						&times;</button>
 				</div>
 
 				<!-- Modal body -->
-				<div class="modal-body">Premi logout per uscire.</div>
+				<div class="modal-body stile">Premi logout per uscire.</div>
 
 				<!-- Modal footer -->
 				<div class="modal-footer">
-					<button type="button" class="btn btn-primary" data-dismiss="modal">
+					<button type="button" class="btn btn-primary stile" data-dismiss="modal">
 						Rimani</button>
-					<button type="button" class="btn btn-danger" data-dismiss="modal">
+					<button type="button" class="btn btn-danger stile" data-dismiss="modal">
 						Esci</button>
 				</div>
 			</div>

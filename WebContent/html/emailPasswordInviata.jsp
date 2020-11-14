@@ -8,7 +8,19 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
-
+     <style>
+        .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
+        
+     </style>
+     
+     <!-- Google fonts link -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     <!--Bootstrap links-->
     <link
       rel="stylesheet"
@@ -28,17 +40,9 @@
     <form action="#" method="#">
     <br>
     <br>
+        
     <br>
-    <img
-        class="mb-4 mt-5"
-        src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
-        alt="Logo"
-        width="72"
-        height="72"
-      />
-    
-    <br>
-    <p class="text-warning text-center mt-4">Abbiamo inviato la tua vecchia password al tuo indirizzo di posta elettronica.
+    <p class="text-warning text-center mt-4 stile">Abbiamo inviato la tua vecchia password al tuo indirizzo di posta elettronica.
     <br>
     Ti invitiamo ad accedere di nuovo al sito. 
     <br>
@@ -46,7 +50,7 @@
     <br>
     <br>
     <br>
-    <button class="btn btn-outline-warning text-center text-light"><a href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"></a>
+    <button class="btn btn-outline-warning text-center text-light stile"><a href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"></a>
     Accedi
     </button>
     </p>
