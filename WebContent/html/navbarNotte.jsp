@@ -25,7 +25,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
   <%HttpSession s=request.getSession(); %>
-  <body class="bg-dark">    <!--Navbar Utente NON loggato: -->
+  <body class="bg-dark" style="font-family: 'Montserrat', sans-serif">    
+  
+  <!--Navbar Utente NON loggato: -->
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
