@@ -19,6 +19,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+	<link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 <%
               						  /* HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -29,9 +30,6 @@
                 						
                 	
                 %>
-<style type="text/css">
-<%@ include file="../css/style-dash.css"%>
-</style>
 </head>
 <body>
 	<!-- navbar in alto-->
@@ -59,31 +57,31 @@
 				<ul class="navbar-nav links d-flex d-xl-none">
 					<li class="nav-item d-flex my-3"><i
 						class="fas fa-folder-open text-muted mr-3 nav-size col-2"></i> <a
-						class="nav-link col-10" href="#">Torna Al Sito</a></li>
+						class="nav-link col-10" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a></li>
 					<li class="nav-item d-flex my-3"><i
 						class="fa fa-home text-muted mr-3 nav-size col-2"></i> <a
-						class="nav-link active1 col-10" href="#">Dashboard</a></li>
+						class="nav-link active1 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></li>
 					<li class="nav-item d-flex my-3"><i
 						class="fas fa-user text-muted mr-3 nav-size col-2"></i> <a
-						class="nav-link active2 col-10" href="#">Gestione Profilo</a></li>
+						class="nav-link active2 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></li>
 					<li class="nav-item d-flex align-items-center my-3">
 						<div class="col-3">
 							<i class="fas fa-video text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-9 ml-3">
-							<a class="nav-link active3" href="#">Gestisci Prenotazioni</a>
+							<a class="nav-link active3" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp">Gestisci Prenotazioni</a>
 						</div>
 					</li>
 					<li class="nav-item d-flex my-3"><i
 						class="fas fa-film text-muted mr-3 nav-size col-2"></i> <a
-						class="nav-link active4 col-10" href="#">Gestione Film</a></li>
+						class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a></li>
 					<li class="nav-item d-flex my-3"><i
 						class="fas fas fa-calendar-alt text-muted mr-3 nav-size col-2"></i>
-						<a class="nav-link active5 col-10" href="#">Gestione
+						<a class="nav-link active5 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione
 							Proiezioni</a></li>
 					<li class="nav-item d-flex my-3"><i
 						class="fas fa-users text-muted mr-3 nav-size col-2 ml-0"></i> <a
-						class="nav-link active6 col-10" href="#">Gestione Utenti</a>></li>
+						class="nav-link active6 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp">Gestione Utenti</a>></li>
 				</ul>
 
 				<!-- nav icons -->
@@ -132,7 +130,7 @@
 							<i class="fas fa-folder-open text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link" href="#">Torna Al Sito</a>
+							<a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a>
 						</div>
 					</li>
 					<li
@@ -141,7 +139,7 @@
 							<i class="fa fa-home text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link active1" href="#">Dashboard</a>
+							<a class="nav-link active1" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a>
 						</div>
 					</li>
 					<li
@@ -150,7 +148,7 @@
 							<i class="fas fa-user text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link active2" href="#">Gestione Profilo</a>
+							<a class="nav-link active2" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilojsp">Gestione Profilo</a>
 						</div>
 					</li>
 					<li
@@ -159,7 +157,7 @@
 							<i class="fas fa-video text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link active3" href="#">Gestisci Prenotazioni</a>
+							<a class="nav-link active3" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp">Gestisci Prenotazioni</a>
 						</div>
 					</li>
 					<li
@@ -168,7 +166,7 @@
 							<i class="fas fa-film text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link active4" href="#">Gestione Film</a>
+							<a class="nav-link active4" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a>
 						</div>
 					</li>
 					<li
@@ -177,7 +175,7 @@
 							<i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link active5" href="#">Gestione Proiezioni</a>
+							<a class="nav-link active5" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione Proiezioni</a>
 						</div>
 					</li>
 					<li
@@ -186,7 +184,7 @@
 							<i class="fas fa-users text-muted mr-3 nav-size"></i>
 						</div>
 						<div class="col-6 m-0">
-							<a class="nav-link active6" href="#">Gestione Utenti</a>
+							<a class="nav-link active6" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utentijsp">Gestione Utenti</a>
 						</div>
 					</li>
 				</ul>
@@ -201,11 +199,6 @@
                 
  <!-- inizio gestione proiezione -->
 				<!-- come sopra, sono sempre due, uno parte dallo schermo medio, l'altro dal piccolo -->
-
-
-				<div
-					class="container-fluid m-0 p-0">
-
 
 					<div class="row text-uppercase text-center d-none d-md-flex">
 						<div class="col-12 p-0">
@@ -349,7 +342,6 @@
 							</table>
 						</div>
 					</div>
-				</div>
 				<!-- fine gestione proiezione -->
 
 
