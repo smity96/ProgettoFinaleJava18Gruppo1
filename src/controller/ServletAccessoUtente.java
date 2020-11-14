@@ -26,8 +26,7 @@ public class ServletAccessoUtente extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		// request.getServletContext().getNamedDispatcher("login.jsp");
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -48,25 +47,34 @@ public class ServletAccessoUtente extends HttpServlet {
 //    			----indirizzo alle varie pagine----
 				switch (ut.getRuolo()) {
 				case 0:
-					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp");
+					//registrazione non approvata
+					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
 					break;
 				case 1:
+					//utente normale
+					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp");
+					break;
+				case 2:
+					//staff
+					request.setAttribute("listaU", listaU);
+					request.getRequestDispatcher("html/dashboard-staff-gestione-utenti.jsp").forward(request, response);
+					break;
+				case 3:
+					//admin
 					request.setAttribute("listaU", listaU);
 					request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
-					break;
-				case 2:// sendRedirect
-					break;
-				case 3:// sendRedirect
 					break;
 				default:
 					System.out.println("Non dovresti essere qui");
 					break;
 				}
-				dentro=true;
-		if (!dentro) {
-			response.sendRedirect(request.getContextPath() + "/html/registrazione.jsp");
+				dentro = true;
+			}
 		}
-	}
+		if (!dentro) {
+			request.getRequestDispatcher("html/registrazione.jsp").forward(request, response);
+		}
 
-	// response.sendRedirect("/profilo.jsp");
+		// response.sendRedirect("/profilo.jsp");
+	}
 }

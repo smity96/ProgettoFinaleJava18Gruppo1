@@ -28,14 +28,14 @@
   <body class="bg-dark">    <!--Navbar Utente NON loggato: -->
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
     <nav class="navbar navbar-expand-lg">
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->
         <a class="navbar-brand" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">
-        <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="Logo" style="width:40px;">
+        <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="Logo" style="width:40px;">
       </a>     
 
       <!--Vai alla Home: -->

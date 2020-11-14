@@ -10,7 +10,7 @@
    
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
    
 
     <style>
@@ -78,7 +78,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href=""<%=request.getContextPath() %>/ServletLogout">
+                            <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
                                 <i class="fa fa-sign-out"></i> Sign Out
                             </a>
                         </li>
@@ -248,9 +248,9 @@ Utente u = (Utente)s.getAttribute("uLog");
                         <button type="button" class="btn btn-primary" data-dismiss="modal">
                             Rimani
                         </button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">
-                            Esci
-                        </button>
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
+                        Esci
+                    </button>
                     </div>
                 </div>
             </div>

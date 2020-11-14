@@ -9,7 +9,7 @@
 
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
    
 
     <style>
@@ -96,7 +96,7 @@
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
                             <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">
-                                <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                                <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" >
                                 <%="BENVENUTO:"+u.getNome()%>
                             </a>
@@ -288,9 +288,9 @@
                         <button type="button" class="btn btn-primary" data-dismiss="modal">
                             Rimani
                         </button>
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">
-                            Esci
-                        </button>
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
+                        Esci
+                    </button>
                     </div>
                 </div>
             </div>

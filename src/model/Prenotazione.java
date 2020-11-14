@@ -30,6 +30,9 @@ public class Prenotazione implements Serializable {
 	
 	@Column(name="costo_totale")
 	private double costo_totale;
+	
+	@Column(name="codice_biglietto")
+	private int codice_biglietto;
 
 	public Prenotazione() {
 	}
@@ -73,7 +76,14 @@ public class Prenotazione implements Serializable {
 	public void setCosto_totale(double costo_totale) {
 		this.costo_totale = costo_totale;
 	}
+	
+	public int getCodice_biglietto() {
+		return codice_biglietto;
+	}
 
+	public void setCodice_biglietto(int codice_biglietto) {
+		this.codice_biglietto = codice_biglietto;
+	}
 
 	@Override
 	public boolean equals(Object obj) {

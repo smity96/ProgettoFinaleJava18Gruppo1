@@ -198,11 +198,20 @@
                       <img class="d-block c-image img-fluid" src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="First slide">
                   </div>
                   <%List<Film> allFilm=UtilitiesDbFilm.leggiFilmAll();
-                  for(Film f: allFilm){%>
-                  <div class="carousel-item">
-                      <img class="d-block img-fluid c-image" src="<%=f.getLocandina() %>" alt="Second slide">
-                  </div>
-                  <%} %>
+                  List<Film> toRemove = new ArrayList<Film>();
+                  for (Proiezione p : proiezioni) {
+                	  for(Film f:allFilm){
+                		  if (f.getIdFilm()==p.getFilm().getIdFilm()) {
+                              toRemove.add(f);
+                          }
+                	  }
+                  }
+                  allFilm.removeAll(toRemove);
+                  for(Film f: allFilm){%>  
+                		<div class="carousel-item">
+                      	<img class="d-block img-fluid c-image" src="<%=f.getLocandina() %>" alt="Second slide">
+                  		</div>
+                  	<%} %>
               </div>
               <a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>

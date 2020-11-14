@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
 
     <!--Bootstrap links-->
@@ -30,7 +30,7 @@
     <br>
     <img
         class="mb-4 mt-5"
-        src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
+        src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
         alt="Logo"
         width="72"
         height="72"

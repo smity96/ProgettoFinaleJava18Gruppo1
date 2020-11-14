@@ -14,7 +14,7 @@
     
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -83,7 +83,7 @@
                 <ul class="navbar-nav icons align-items-center">
                     <li class="nav-item mr-5">
                         <a class="navbar-brand py-3" href="#">
-                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                            <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
                             Nome Utente
                         </a>
