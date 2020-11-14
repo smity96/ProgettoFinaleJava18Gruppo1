@@ -79,7 +79,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <ul class="navbar-nav links d-lg-none">
                         <li class="nav-item">                            
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         <li class="nav-item">       
                             <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
@@ -95,7 +95,7 @@
                     <!-- nav icons -->
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
-                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
+                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">
                                 <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" >
                                 <%="BENVENUTO:"+u.getNome()%>
@@ -122,7 +122,7 @@
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
 
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>

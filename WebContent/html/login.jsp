@@ -5,12 +5,24 @@ pageEncoding="ISO-8859-1"%>
   <head>
     <meta charset="ISO-8859-1" />
     
+    <style>
+        
+        .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
+        
+     </style>
+    
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
 
     <!--Bootstrap links-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -38,11 +50,11 @@ pageEncoding="ISO-8859-1"%>
         width="72"
         height="72"
       />
-      <p class="h3 mb-3 text-warning">Accedi:</p>
-      <p class="text-warning">
+      <p class="h3 mb-3 text-warning stile">Accedi:</p>
+      <p class="text-warning stile">
         <input class="rounded" name="email" type="email" placeholder="Email" />
       </p>
-      <p class="text-warning mr-0">
+      <p class="text-warning mr-0 stile">
         <input
           class="rounded"
           name="password"
@@ -50,25 +62,33 @@ pageEncoding="ISO-8859-1"%>
           placeholder="Password"
         />
       </p>
-      <button class="btn text-light btn-outline-warning">Accedi</button>
+      
+      
+      
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label text-warning" for="exampleCheck1">Ricordami!</label>
+   
+      <br>
+      <br>
+      <button class="btn text-light btn-outline-warning stile">Accedi</button>
       <br />
       <br />
       
       <!-- Password dimenticata -->
-      <p class="text-warning">Password dimenticata?
+      <p class="text-warning stile">Password dimenticata?
 
       <a
-        class="text-warning"
+        class="text-warning stile"
         href="/ProgettoFinaleJava18Gruppo1/html/emailRecuperaPassword.jsp"
         >Recupera password.</a
       >
       </p>
 <br>
       <!--Registrati da questo link: -->
-      <p class="text-warning">Non sei registrato?</p>
+      <p class="text-warning stile">Non sei registrato?</p>
 
       <a
-        class="text-warning"
+        class="text-warning stile"
         href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp"
         >Registrati qui!</a
       >
