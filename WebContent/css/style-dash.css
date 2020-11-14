@@ -1,5 +1,5 @@
 body {
-    font-family: "Roboto", sans-serif;
+    font-family: 'Monserrat', sans-serif;
   }
 
   
@@ -33,8 +33,8 @@ font-size: 3rem;  }
   /*navbar */
   
   .navbar {
-    border-top: 3px solid #f15025;
-    border-bottom: 3px solid #f15025;
+    border-top: 3px solid #e68a00;
+    border-bottom: 3px solid #e68a00;
   }
   
   .navbar .navbar-brand {

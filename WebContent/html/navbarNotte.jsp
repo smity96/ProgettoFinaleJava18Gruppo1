@@ -62,9 +62,9 @@
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
           <% if(s.getAttribute("uLog")!=null){%> 
-            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenotazione</a>
+            <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenotazione</a>
             <%}else{ %>      
-            <a class="nav-link text-warning font-weight-bold" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/login.jsp">Prenotazione</a>
+            <a class="nav-link text-warning font-weight-bold stile" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/login.jsp">Prenotazione</a>
             <%} %>
           </li>
           </ul>
@@ -76,9 +76,9 @@
             <li class="nav-item m-auto width:90%">
             <%
             if(s.getAttribute("uLog")!=null){%>
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout">Logout</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="#">Logout</a>
             <%} else{%>
-             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
+             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
             <%} %>
             </li>
           </div>
@@ -87,12 +87,50 @@
             <div class="col-2">
             <ul class="navbar-nav d-flex flex-row justify-content-end">
             <li class="nav-item m-auto width:90%">
+            <%
+            if(s.getAttribute("uLog")!=null){%> 
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Profilo</a>
+            <%} else{%>
             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
+            <%} %>
           </li>    
         </ul>
       </div>
     </nav>
 </div>
+
+
+<!-- Modal uscita -->
+
+<!-- Modal -->
+        <div class="modal fade bg-dark text-warning" id="sign-out">
+            <div class="modal-dialog bg-dark text-warning">
+                <div class="modal-content bg-dark text-warning">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-dark text-warning">
+                        <h4 class="modal-title stile text-warning">Vuoi fare il logout?</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body stile bg-dark text-warning">
+                        Premi logout per uscire.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer stile">
+                        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
+                            Rimani
+                        </button>
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-outline-danger text-light" data-dismiss="modal">
+                        Logout
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     <!--Bootstrap links-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

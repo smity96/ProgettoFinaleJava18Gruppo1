@@ -87,7 +87,7 @@
                 <ul class="navbar-nav icons d-xl-flex d-none align-items-center">
                     <li class="nav-item">
                         <a class="navbar-brand" href="#">
-                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                            <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
                                 <!-- TODO Sistemare il get -->
                             "BENVENUTO:"+u.getNome()
@@ -95,7 +95,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="#">
-                            <i class="fas fa-sign-out-alt mr-2"></i>Sign Out 
+                            <i class="fas fa-sign-out-alt mr-2"></i>Logout 
                         </a>
                     </li>
                 </ul>
@@ -103,7 +103,7 @@
                 <ul class="navbar-nav icons d-flex d-xl-none justify-content-end">
                     <li class="nav-item">
                         <a class="navbar-brand col-2" href="#">
-                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                            <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
                                 <!-- TODO Sistemare il get qui -->
                             <span class="col-10">u.getNome() </span> 
@@ -111,7 +111,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="#">
-                            <i class="fas fa-sign-out-alt mr-2"></i> <span>Sign Out </span>
+                            <i class="fas fa-sign-out-alt mr-2"></i> <span>Logout </span>
                         </a>
                     </li>
                 </ul>
@@ -270,35 +270,37 @@
     <!-- Modals -->
 
     <!-- Modal uscita -->
-    <div class="modal fade" id="sign-out">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Vuoi fare il logout?</h4>
-                    <button type="button" class="close" data-dismiss="modal">
-                        &times;
-                    </button>
-                </div>
+    <!-- Modal -->
+        <div class="modal fade bg-dark text-warning" id="sign-out">
+            <div class="modal-dialog bg-dark text-warning">
+                <div class="modal-content bg-dark text-warning">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-dark text-warning">
+                        <h4 class="modal-title stile text-warning">Vuoi fare il logout?</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
 
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Premi logout per uscire.
-                </div>
+                    <!-- Modal body -->
+                    <div class="modal-body stile bg-dark text-warning">
+                        Premi logout per uscire.
+                    </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Rimani
+                    <!-- Modal footer -->
+                    <div class="modal-footer stile">
+                        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
+                            Rimani
+                        </button>
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-outline-danger text-light" data-dismiss="modal">
+                        Logout
                     </button>
-                    <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
-                        Esci
-                    </button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- Fine Modal Uscita -->
+        </div>    
+        
+   <!-- Fine Modal Uscita -->
 
     <!-- Modal Aggiungi Film -->
 

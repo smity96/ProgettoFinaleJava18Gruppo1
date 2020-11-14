@@ -74,7 +74,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
                         <li class="nav-item">        
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
@@ -85,14 +85,14 @@ Utente u = (Utente)s.getAttribute("uLog");
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
                             <a class="navbar-brand py-3 stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
-                                <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                                <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" />
                                <%="BENVENUTO:"+u.getNome()%>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link stile" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
-                                <i class="fa fa-sign-out"></i> Sign Out
+                                <i class="fa fa-sign-out"></i> Logout
                             </a>
                         </li>
                     </ul>
@@ -118,7 +118,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenota film</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size ml-4"></i></div>
@@ -152,7 +152,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                                   <tr>
                                     <th scope="col stile">Titolo film</th>
                                     <th scope="col stile">Locandina</th>
-                                    <th scope="col stile">Orario e data</th>
+                                    <th scope="col stile">Orario e data / Codice biglietto</th>
                                     <th scope="col stile">Posti prenotati</th>
                                     <th scope="col stile">Prezzo totale</th>
                                     <th scope="col stile">Modifica Prenotazione</th>
@@ -176,7 +176,11 @@ Utente u = (Utente)s.getAttribute("uLog");
                                     
                                     <th scope="row" class="stile"><%=p.getProiezione().getFilm().getTitolo() %></th>
                                     <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
-                                    <td class="stile"><%= p.getProiezione().getDataOra() %></td>
+                                    <td class="stile"><%= p.getProiezione().getDataOra() %>
+                                    
+                                    <br>
+                                    
+                                    codice biglietto???</td>
                                     <td class="stile"><%=p.getPostiPrenotati() %></td>
                                     <td class="stile"><%=p.getCosto_totale() %></td>
                                     <td><button type="submit" class="btn btn-outline-warning stile">Modifica</button></td>
@@ -240,9 +244,9 @@ Utente u = (Utente)s.getAttribute("uLog");
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade bg-dark" id="sign-out">
-            <div class="modal-dialog">
-                <div class="modal-content">
+        <div class="modal fade bg-dark text-warning" id="sign-out">
+            <div class="modal-dialog bg-dark text-warning">
+                <div class="modal-content bg-dark text-warning">
                     <!-- Modal Header -->
                     <div class="modal-header bg-dark text-warning">
                         <h4 class="modal-title stile text-warning">Vuoi fare il logout?</h4>
@@ -252,17 +256,17 @@ Utente u = (Utente)s.getAttribute("uLog");
                     </div>
 
                     <!-- Modal body -->
-                    <div class="modal-body stile text-warning bg-dark">
+                    <div class="modal-body stile bg-dark text-warning">
                         Premi logout per uscire.
                     </div>
 
                     <!-- Modal footer -->
-                    <div class="modal-footer bg-dark">
-                        <button type="button" class="btn btn-warning stile" data-dismiss="modal">
+                    <div class="modal-footer stile">
+                        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
                             Rimani
                         </button>
-                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
-                        Esci
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-outline-danger text-light" data-dismiss="modal">
+                        Logout
                     </button>
                     </div>
                 </div>

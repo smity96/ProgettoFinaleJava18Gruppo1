@@ -92,6 +92,10 @@ pageEncoding="ISO-8859-1"%>
         href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp"
         >Registrati qui!</a
       >
+      
+      <br>
+      <br>
+      
     </form>
 
     <!--Bootstrap links-->
