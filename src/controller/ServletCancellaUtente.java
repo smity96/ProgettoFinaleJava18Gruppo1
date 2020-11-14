@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Utente;
 import utilities.UtilitiesDbUtente;
@@ -23,21 +24,27 @@ public class ServletCancellaUtente extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	//creo sessione admin
+    	HttpSession s=request.getSession(false); 
+    	//creo admin
+    	Utente uAdm = (Utente)s.getAttribute("uLog");
     	System.out.println(request.getParameter("canc"));
-     	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
-    	if(request.getParameter("canc")!=null) {
+    	if(!request.getParameter("canc").trim().equals("")) {
+    		//creo l'utente che devo cancellare
+         	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
     		System.out.println("sono nell if");
-    		UtilitiesDbUtente.cancUtente(u);
-    		listaU=UtilitiesDbUtente.listaUtenti();
-    		if(u.getRuolo()==3) {
-    			
-    			response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp");
+    		if(uAdm.getRuolo()==3) {
+    			UtilitiesDbUtente.cancUtente(u);
+        		listaU=UtilitiesDbUtente.listaUtenti();
+    			request.setAttribute("listaU", listaU);
+    	        request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
     		}
+    	}else {
+    		response.sendRedirect("html/dashboard-gestione-utenti.jsp");
     	}
-
     }
+    
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     	doGet(request, response);
     }
 
