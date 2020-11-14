@@ -41,10 +41,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
-<%
+<!-- 
 HttpSession s=request.getSession(false); 
 Utente u = (Utente)s.getAttribute("uLog");
-%>
+%>-->
 <body>
 
     <body>
@@ -166,40 +166,48 @@ Utente u = (Utente)s.getAttribute("uLog");
                                  <% 
                                 	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
                                 	for(Prenotazione p : listaPreno){
-                                	if(!request.getAttribute("pDaModificare").equals(p)){
+                                	if(request.getAttribute("pDaModificare") == null || !request.getAttribute("pDaModificare").equals(p)){
                                 	
                                 %>
-                                	<form action="ServletLeggiPrenotazioneById" method="POST">
-										<input type="hidden" name="id_prenotazione">
+                                	
                                   <tr>
+                                  	<form action="ServletLeggiPrenotazioneById" method="POST">
+										<input type="hidden" name="id_prenotazione" value="<%=p.getIdPrenotazione() %>">
+                                    
                                     <th scope="row" class="stile"><%=p.getProiezione().getFilm().getTitolo() %></th>
                                     <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
                                     <td class="stile"><%= p.getProiezione().getDataOra() %></td>
                                     <td class="stile"><%=p.getPostiPrenotati() %></td>
                                     <td class="stile"><%=p.getCosto_totale() %></td>
-                                    <td><button class="stile" type="submit" class="btn btn-outline-warning">Modifica</button>
+                                    <td><button type="submit" class="btn btn-outline-warning stile">Modifica</button></td>
                                     </form>
                                     
                                     
                                     
                                     <form action="ServletCancellaPrenotazione" method="POST">
-                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
+                                    <input type="hidden" name="id_prenotazione" value="<%=p.getIdPrenotazione() %>">
+                                    <td><button type="submit" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
                                  	</form>
+                                 	</tr>
                                  	<%}else{ %>
+                                 	<tr>
                                  	<form action="ServletModificaPrenotazione" method="POST">
+                                 	<input type="hidden" name="id_prenotazione" value="<%=p.getIdPrenotazione() %>">
+                                 	
                                  	<% 
                                  		int postiDisponibili = p.getProiezione().getPostiMax();
 											for(Prenotazione y : listaPreno){
 	                                    	  	if(y.getProiezione().equals(p.getProiezione()))
 	                                    			postiDisponibili -= y.getPostiPrenotati(); 
 	                                    	}
+											postiDisponibili += p.getPostiPrenotati();
                                      %>   	
                                     <!-- Se clicca su modifica si apre questa riga: -->
                                     <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
                                     <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
                                    <td><%= p.getProiezione().getDataOra() %></td>
-                                    <td><select class="mdb-select md-form colorful-select dropdown-warning">
-                                       <% for(int i=0; i <= postiDisponibili; i++){ %>
+                                    <td><select name="postiModificati" class="mdb-select md-form colorful-select dropdown-warning">
+                                       <% for(int i=1; i <= postiDisponibili; i++){ %>
 											<option value="<%= i %>">
 												<%= i %>
 											</option>
@@ -208,16 +216,13 @@ Utente u = (Utente)s.getAttribute("uLog");
                                       </select>
                                     </td>
                                     <td><%=p.getCosto_totale() %></td>
-                                    <td><button class="stile" type="button" class="btn btn-outline-warning">Conferma</button>
-                                    
-                                    
-                                    
-                                    </td>
+                                    <td><button type="submit" class="btn btn-outline-warning stile">Conferma</button></td>
                                  
                                     
-                                    <td><button class="stile" type="button" onclick="history.back()" class="btn btn-outline-danger">Torna indietro</button></td>
+                                    <td><a href="ServletLeggiPrenotazioneUtente"><button type="button" onclick="history.back()" class="btn btn-outline-danger stile">Torna indietro</button></a></td>
+                                 </form>
                                   </tr>
-                                  </form>
+                                  
                                 <%} 
                                 }%>
                                 

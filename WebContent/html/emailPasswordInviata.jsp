@@ -37,7 +37,6 @@
 
       <!-- Abbiamo inviato email di recupero, vai su accedi -->
 
-    <form action="#" method="#">
     <br>
     <br>
         
@@ -53,8 +52,8 @@
     <button class="btn btn-outline-warning text-center text-light stile"><a href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"></a>
     Accedi
     </button>
+    </a>
     </p>
-    </form>
 
     <!--Bootstrap links-->
     <script

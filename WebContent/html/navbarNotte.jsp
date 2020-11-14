@@ -24,6 +24,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
+  <%HttpSession s=request.getSession(); %>
   <body class="bg-dark">    <!--Navbar Utente NON loggato: -->
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
@@ -58,7 +59,11 @@
         <div class="col-2">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning font-weight-bold stile" href="#">Prenotazione</a>
+          <% if(s.getAttribute("uLog")!=null){%> 
+            <a class="nav-link text-warning font-weight-bold" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenotazione</a>
+            <%}else{ %>      
+            <a class="nav-link text-warning font-weight-bold" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/login.jsp">Prenotazione</a>
+            <%} %>
           </li>
           </ul>
         </div>
@@ -67,7 +72,12 @@
           <div class="col-2">
           <ul class="navbar-nav d-flex flex-row justify-content-end unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
+            <%
+            if(s.getAttribute("uLog")!=null){%>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout">Logout</a>
+            <%} else{%>
+             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
+            <%} %>
             </li>
           </div>
 

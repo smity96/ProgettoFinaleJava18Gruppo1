@@ -206,7 +206,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                                         %> <select
 										name="posti_prenotati"
 										class="mdb-select md-form colorful-select dropdown-warning">
-											<% for(int i=0; i <= postiDisponibili; i++){ %>
+											<% for(int i=1; i <= postiDisponibili; i++){ %>
 											<option value="<%= i %>">
 												<%= i %>
 											</option>
