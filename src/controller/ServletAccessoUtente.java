@@ -63,10 +63,12 @@ public class ServletAccessoUtente extends HttpServlet {
 					break;
 				}
 				dentro=true;
-		if (!dentro) {
+			}
+			if (!dentro) {
 			response.sendRedirect(request.getContextPath() + "/html/registrazione.jsp");
-		}
-	}
+			}
 
 	// response.sendRedirect("/profilo.jsp");
+		}
+	}
 }
