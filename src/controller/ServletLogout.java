@@ -15,7 +15,7 @@ public class ServletLogout extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session=request.getSession();
 		session.invalidate();
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/index.jsp");
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

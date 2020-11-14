@@ -27,7 +27,7 @@
 
     <!-- Inserisci email per il recupero password -->
 
-    <form action="#" method="#">
+    <form action="<%=request.getContextPath() %>/ServletRecuperoPassword" method="post">
     <br>
     <br>
     <br>
@@ -40,7 +40,7 @@
     <input type="email" name="email" class="btn rounded text-center bg-light" placeholder="Email">
     <br>
     <br>
-    <button class="btn btn-outline-warning text-center text-light"><a href="/ProgettoFinaleJava18Gruppo1/html/emailPasswordInviata.jsp"></a>
+    <button class="btn btn-outline-warning text-center text-light" type="submit">
     Invia
     </button>
     </p>

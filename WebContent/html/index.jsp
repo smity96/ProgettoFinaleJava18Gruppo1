@@ -25,12 +25,12 @@
   <jsp:include page= "navbarNotte.jsp"></jsp:include>
 
     <header>
-      <div class="container-fluid banner">
+       <div class="container-fluid banner">
         <div class="row d-flex justify-content-center">
             <div class="col-8 mx-auto mt-5 justify-content-center d-flex">
-                <img class="img-fluid img-banner mr-5 pr-5" src="../src/logocinema.png" alt="banner">
+                <!--<img class="img-fluid img-banner mr-5 pr-5" src="../src/logocinema.png" alt="banner">-->
             </div>
-        </div>
+        </div> 
         <div class="row justify-content-center">
             <div class="col-8 mx-auto justify-content-center d-flex">
                 <div class="col-3 justify-content-end d-flex m-0 p-0"><img class="img-fluid img-banner p-0 m-0"

@@ -207,17 +207,12 @@ pageEncoding="ISO-8859-1"%>
                     placeholder="Nome Societa'"
                   />
                 </p>
-
               </li>
-             
-             
             </ul>
           </div>
         </nav>
       </div>
-   
-   
-       
+      
     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
     <label class="form-check-label text-light" for="exampleCheck1" required>Accetta i nostri
     <a class="text-warning style-decoration-none" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
@@ -298,7 +293,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <br />
       <br />
 
-      <!--Accedi qui se sei gi� registrato-->
+      <!--Accedi qui se sei gia' registrato-->
       <p class="text-warning">Sei gia' registrato?</p>
       <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
         >Accedi qui!</a

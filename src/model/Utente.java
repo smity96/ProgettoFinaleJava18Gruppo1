@@ -14,6 +14,7 @@ import java.util.List;
 @Table(name="utente")
 @NamedQuery(name="Utente.findAll", query="SELECT u FROM Utente u")
 public class Utente implements Serializable {
+	
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -211,7 +212,14 @@ public class Utente implements Serializable {
 		this.pIva = pIva;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Utente [idUtente=" + idUtente + ", cognome=" + cognome + ", dataDiNascita=" + dataDiNascita + ", email="
+				+ email + ", immagine=" + immagine + ", indirizzo=" + indirizzo + ", nome=" + nome + ", nomeSocieta="
+				+ nomeSocieta + ", pIva=" + pIva + ", password=" + password + ", ruolo=" + ruolo + ", prenotazioni="
+				+ prenotazioni + "]";
+	}
+	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
