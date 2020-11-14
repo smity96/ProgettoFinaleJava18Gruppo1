@@ -19,6 +19,8 @@ pageEncoding="ISO-8859-1"%>
       .informazioni {
         width: 13rem;
       }
+      
+      
     </style>
     
     
@@ -47,13 +49,14 @@ pageEncoding="ISO-8859-1"%>
 
   
 <jsp:include page= "navbarNotte.jsp"></jsp:include>
-
-    <!--Form registrazione dell'utente: -->
+ <!--Form registrazione dell'utente: -->
     <form
       action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente"
       method="post"
       enctype="multipart/form-data"
     >
+
+    
       <img
         class="mb-4 mt-5"
         src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
@@ -63,11 +66,15 @@ pageEncoding="ISO-8859-1"%>
       />
       <p class="h3 mb-3 text-warning">Registrati:</p>
 
+       
+    
+    
       <!--Requisiti obbligatori: -->
-
-      <p>
+      
+      <p >
         <input
           class="rounded"
+          id="Nome"
           name="nome"
           type="text"
           placeholder="Nome"
@@ -78,6 +85,7 @@ pageEncoding="ISO-8859-1"%>
       <p>
         <input
           class="rounded"
+          id="Cognome"
           name="cognome"
           type="text"
           placeholder="Cognome"
@@ -86,7 +94,7 @@ pageEncoding="ISO-8859-1"%>
       </p>
 
       <p>
-        <input
+       <input
           class="rounded bottone"
           id="dataDiNascita"
           name="data_di_nascita"
@@ -98,6 +106,7 @@ pageEncoding="ISO-8859-1"%>
       <p>
         <input
           class="rounded"
+          id="Email"
           name="email"
           type="email"
           placeholder="Email"
@@ -108,6 +117,7 @@ pageEncoding="ISO-8859-1"%>
       <p>
         <input
           class="rounded"
+          id="Password"
           name="password"
           type="password"
           placeholder="Password"
@@ -115,15 +125,8 @@ pageEncoding="ISO-8859-1"%>
         />
       </p>
       
-      <p>
-        <input
-          class="rounded text-warning bottone"
-          name="imgP"
-          type="file"
-          placeholder="Scegli immagine"
-          value="Scegli immagine"
-        />
-      </p>
+   
+      
       <!--Informazioni extra, non obbligatorie:-->
 
       <div
@@ -158,26 +161,43 @@ pageEncoding="ISO-8859-1"%>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <p>
+              
+       <li class="nav-item">
+        <p>
+        <input
+          class="rounded text-warning bottone"
+          name="imgP"
+          type="file"
+          placeholder="Scegli immagine"
+          value="Scegli immagine"
+        />
+      </p>
+      </li>
+       
+       <li class="nav-item"> 
+       <p>    
                   <input
                     class="rounded"
+                    id="PartitaIva"
                     name="P.I."
                     type="text"
                     placeholder="Partita Iva"
                   />
                 </p>
               </li>
+              
               <li class="nav-item">
                 <p>
                   <input
                     class="rounded"
                     name="indirizzo"
+                    id="Indirizzo"
                     type="text"
                     placeholder="Indirizzo"
                   />
                 </p>
               </li>
+              
               <li class="nav-item">
                 <p>
                   <input
@@ -187,12 +207,88 @@ pageEncoding="ISO-8859-1"%>
                     placeholder="Nome Societa'"
                   />
                 </p>
+
               </li>
+             
+             
             </ul>
           </div>
         </nav>
       </div>
+   
+   
+       
+    <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
+    <label class="form-check-label text-light" for="exampleCheck1" required>Accetta i nostri
+    <a class="text-warning style-decoration-none" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
+    
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog bg-dark" role="document">
+    <div class="modal-content bg-dark">
+      <div class="modal-header bg-dark">
+        <h5 class="modal-title text-warning" id="exampleModalLabel">Termini e Condizioni</h5>
+        <button type="button" class="close bg-dark text-warning" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body bg-dark text-warning">
+        I nostri termini e condizioni sono in conformità con l'articolo 13 del Regolamento UE 2016/679, che dichiara:
+        
+        - Articolo 13 -
 
+Informazioni da fornire qualora i dati personali siano raccolti presso l'interessato
+
+1. In caso di raccolta presso l'interessato di dati che lo riguardano, il titolare del trattamento fornisce all'interessato, nel momento in cui i dati personali sono ottenuti, le seguenti informazioni:
+
+a) l'identità e i dati di contatto del titolare del trattamento e, ove applicabile, del suo rappresentante;
+
+b) i dati di contatto del responsabile della protezione dei dati, ove applicabile;
+
+c) le finalità del trattamento cui sono destinati i dati personali nonché la base giuridica del trattamento;
+
+d) qualora il trattamento si basi sull'articolo 6, paragrafo 1, lettera f), i legittimi interessi perseguiti dal titolare del trattamento o da terzi;
+
+e) gli eventuali destinatari o le eventuali categorie di destinatari dei dati personali;
+
+f) ove applicabile, l'intenzione del titolare del trattamento di trasferire dati personali a un paese terzo o a un'organizzazione internazionale e l'esistenza o l'assenza di una decisione di adeguatezza della Commissione o, nel caso dei trasferimenti di cui all'articolo 46 o 47, o all'articolo 49, paragrafo 1, secondo comma, il riferimento alle garanzie appropriate o opportune e i mezzi per ottenere una copia di tali garanzie o il luogo dove sono state rese disponibili. (1)
+
+2. In aggiunta alle informazioni di cui al paragrafo 1, nel momento in cui i dati personali sono ottenuti, il titolare del trattamento fornisce all'interessato le seguenti ulteriori informazioni necessarie per garantire un trattamento corretto e trasparente:
+
+a) il periodo di conservazione dei dati personali oppure, se non è possibile, i criteri utilizzati per determinare tale periodo;
+
+b) l'esistenza del diritto dell'interessato di chiedere al titolare del trattamento l'accesso ai dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento dei dati personali che lo riguardano o di opporsi al loro trattamento, oltre al diritto alla portabilità dei dati; (1)
+
+c) qualora il trattamento sia basato sull'articolo 6, paragrafo 1, lettera a), oppure sull'articolo 9, paragrafo 2, lettera a), l'esistenza del diritto di revocare il consenso in qualsiasi momento senza pregiudicare la liceità del trattamento basata sul consenso prestato prima della revoca;
+
+d) il diritto di proporre reclamo a un'autorità di controllo;
+
+e) se la comunicazione di dati personali è un obbligo legale o contrattuale oppure un requisito necessario per la conclusione di un contratto, e se l'interessato ha l'obbligo di fornire i dati personali nonché le possibili conseguenze della mancata comunicazione di tali dati;
+
+f) l'esistenza di un processo decisionale automatizzato, compresa la profilazione di cui all'articolo 22, paragrafi 1 e 4, e, almeno in tali casi, informazioni significative sulla logica utilizzata, nonché l'importanza e le conseguenze previste di tale trattamento per l'interessato.
+
+3. Qualora il titolare del trattamento intenda trattare ulteriormente i dati personali per una finalità diversa da quella per cui essi sono stati raccolti, prima di tale ulteriore trattamento fornisce all'interessato informazioni in merito a tale diversa finalità e ogni ulteriore informazione pertinente di cui al paragrafo 2.
+
+4. I paragrafi 1, 2 e 3 non si applicano se e nella misura in cui l'interessato dispone già delle informazioni.
+
+(1) Lettera così corretta da Rettifica pubblicata nella G.U.U.E. 23 maggio 2018, n. 127 Serie L.
+      </div>
+      <div class="modal-footer bg-dark text-warning">
+        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">Chiudi</button>
+      </div>
+    </div>
+  </div>
+</div>
+        
+    
+    <br>
+    <br>
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label text-warning" for="exampleCheck1">Ricordami!</label>
+   
+   <br>
+   <br>
+       
       <button
         onclick="prendiDataNascita()"
         class="btn text-light btn-outline-warning"
@@ -208,6 +304,9 @@ pageEncoding="ISO-8859-1"%>
         >Accedi qui!</a
       >
     </form>
+    <br>
+    <br>
+    <br>
 
     <script src="../js/script.js"></script>
     <!--Bootstrap links-->

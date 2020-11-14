@@ -53,7 +53,17 @@ pageEncoding="ISO-8859-1"%>
       <button class="btn text-light btn-outline-warning">Accedi</button>
       <br />
       <br />
+      
+      <!-- Password dimenticata -->
+      <p class="text-warning">Password dimenticata?
 
+      <a
+        class="text-warning"
+        href="/ProgettoFinaleJava18Gruppo1/html/emailRecuperaPassword.jsp"
+        >Recupera password.</a
+      >
+      </p>
+<br>
       <!--Registrati da questo link: -->
       <p class="text-warning">Non sei registrato?</p>
 

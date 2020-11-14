@@ -96,7 +96,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                     class="col-lg-3 col-xl-2 d-none d-lg-flex sidebar align-items-center justify-content-center right-padding max-viewport">
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
+                            <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
@@ -108,7 +108,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Prenota film</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
+                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         </li>
 

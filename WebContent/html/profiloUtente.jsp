@@ -98,7 +98,7 @@
                             <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
                                 <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" >
-                                 "BENVENUTO:"+u.getNome() 
+                                 BENVENUTO:<%= u.getNome()%>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -120,7 +120,7 @@
                     class="col-lg-3 col-xl-2 d-none d-lg-flex sidebar align-items-center justify-content-center right-padding max-viewport">
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
+                            <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
 
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
                         </li>
@@ -128,9 +128,15 @@
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
                         </li>
-                        <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>
+                            Prenota film</a>
+                        </li>
+                         <li>                            
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>
+                            Gestione 
+                            
+                            <br>Prenotazioni</a>
                         </li>
                 </nav>
                 <!-- fine side bar -->
@@ -155,7 +161,7 @@
 
                         <!--FORM UTENTE MODIFICA DATI PROFILO-->
 
-                        
+                        <div class="bg-dark col-12 text-left">
                              <form action="" method="post" class="bg-dark">
                                                
                              
@@ -235,7 +241,7 @@
  
 <!--modifica nome societ�-->
 <div class="form-gorup row">
-    <label class="col-sm-2 col-form-label text-warning">Nome societ�: </label>
+    <label class="col-sm-2 col-form-label text-warning">Nome societa': </label>
     <div class="col-sm-10">
 <input class="rounded" name="societa" type="text" value="<%=u.getNomeSocieta()%>">
 </div>
@@ -252,6 +258,7 @@
 
 </form>
 
+              </div>
                           </div>
                 </div>
 
