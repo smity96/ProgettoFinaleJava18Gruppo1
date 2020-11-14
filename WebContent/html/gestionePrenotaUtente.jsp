@@ -54,7 +54,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <ul class="navbar-nav links d-lg-none">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         
                         <li class="nav-item">
@@ -97,7 +97,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
