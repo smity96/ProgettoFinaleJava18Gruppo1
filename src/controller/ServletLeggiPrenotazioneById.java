@@ -25,11 +25,11 @@ public class ServletLeggiPrenotazioneById extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id_prenotazione = Integer.parseInt("id_prenotazione");
+		int id_prenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
 		Prenotazione prenotazione = UtilitiesDbPrenotazione.leggiPrenotazioneById(id_prenotazione);
 		request.setAttribute("pDaModificare", prenotazione);
 		
-		request.getRequestDispatcher("SevletLeggiPrenotazioneUtente").forward(request, response);
+		request.getRequestDispatcher("ServletLeggiPrenotazioneUtente").forward(request, response);
 	}
 
 }

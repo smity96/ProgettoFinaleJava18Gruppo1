@@ -6,9 +6,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+       <style>
        
+        .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
+          
+       </style>
     
- 
+ <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">     
     <!--Bootstrap links-->
 
@@ -24,7 +34,7 @@
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->
-        <a class="navbar-brand" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
+        <a class="navbar-brand" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">
         <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="Logo" style="width:40px;">
       </a>     
 
@@ -32,7 +42,7 @@
       <div class= "col-2">
         <ul class="navbar-left navbar-nav m-auto d-flex flex-row">
           <li class="nav-item m-auto width: 90%">
-            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Home</a>
+            <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Home</a>
           </li>
         </div>
 
@@ -40,7 +50,7 @@
           <div class="col-2">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">Palinsesto</a>
+            <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">Palinsesto</a>
           </li>
           </ul>
         </div>
@@ -75,7 +85,7 @@
             <div class="col-2">
             <ul class="navbar-nav d-flex flex-row justify-content-end">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
           </li>    
         </ul>
       </div>

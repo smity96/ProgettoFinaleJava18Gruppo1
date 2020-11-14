@@ -19,10 +19,19 @@ public class ServletModificaPrenotazione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		int id_prenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
+		Prenotazione prenotazione = UtilitiesDbPrenotazione.leggiPrenotazioneById(id_prenotazione);
 		
+		int postiModificati = Integer.parseInt(request.getParameter("postiModificati"));
+		prenotazione.setPostiPrenotati(postiModificati);
+		prenotazione.setCosto_totale(prenotazione.getProiezione().getPrezzo() * postiModificati);
+		
+		UtilitiesDbPrenotazione.modificaPrenotazione(prenotazione);
+		
+		response.sendRedirect("ServletLeggiPrenotazioneUtente");
 	}
 }

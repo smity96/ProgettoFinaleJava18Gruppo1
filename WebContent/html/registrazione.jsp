@@ -20,6 +20,11 @@ pageEncoding="ISO-8859-1"%>
         width: 13rem;
       }
       
+      .grandezza{
+        width: 20rem;
+        heigth: 20rem;
+        }
+      
       
     </style>
     
@@ -282,11 +287,6 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
         
     
     <br>
-    <br>
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label text-warning" for="exampleCheck1">Ricordami!</label>
-   
-   <br>
    <br>
        
       <button
