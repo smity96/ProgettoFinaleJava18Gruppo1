@@ -32,75 +32,47 @@
 HttpSession s=request.getSession(false); 
 Utente u = (Utente)s.getAttribute("uLog");
 %>
-<body>
-<body>
-	<!-- navbar -->
 
-	<nav class="navbar navbar-expand-lg">
-		<div class="container-fluid">
-			<!-- Brand -->
-			<a class="navbar-brand text-uppercase" href="#">
-				<h1>Dashboard Utente</h1>
-			</a>
+<body>
+<!-- navbar -->
 
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/profiloUtente.jsp">
+                <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
                     <h1>Dashboard Utente</h1>
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
-                <button class="navbar-toggler bg-warning" type="button" data-toggle="collapse" data-target="#myNavbar">
+                <button class="navbar-toggler btn-warning" type="button" data-toggle="collapse" data-target="#myNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-			<div class="collapse navbar-collapse justify-content-end"
-				id="myNavbar">
-				<ul class="navbar-nav links d-md-none">
-					<li class="nav-item d-flex align-items-center my-3">
-						<!-- MANCA HOME -->
-						<div class="col-3">
-							<i class="fas fa-folder-open text-muted mr-3 nav-size"></i>
-						</div>
-						<div class="col-9 ml-3">
-							<a class="nav-link active"
-								href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al
-								Sito</a>
-						</div>
-					</li>
+                <!-- Navbar links -->
 
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <ul class="navbar-nav links d-lg-none">
-                        <li class="nav-item">
-                        
-                        
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp"><i class="fas fa-home text-muted mr-3 nav-size"></i>
-                            Torna Al Sito</a>
+                        <li class="nav-item">                            
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
-                        
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>
-                            Gestione Profilo</a>
+                        <li class="nav-item">       
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
+                        </li>
+                        <li class="nav-item">                            
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/prenotaUtente.jsp"><i class="fas fa-film text-muted mr-3 nav-size"></i>
-                            Prenota film</a>
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>
-                            Gestione Prenotazioni</a>
-                        </li>
-                      </ul>
+                    </ul>
 
                     <!-- nav icons -->
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
-                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
+                            <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">
                                 <img src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
-                                    alt="Logo" style="width:40px;" />
-                                    BENVENUTO:<%= u.getNome()%>
-                     
+                                    alt="Logo" style="width:40px;" >
+                                <%="BENVENUTO:"+u.getNome()%>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -123,7 +95,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
@@ -139,6 +111,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                         </li>
                 </nav>
                 <!-- fine side bar -->
+                
                 <div class="col-lg-9 col-xl-10 py-5 bg-dark">
                     <!-- titolo dashboard -->
                     <div class="row">
@@ -152,6 +125,8 @@ Utente u = (Utente)s.getAttribute("uLog");
                         
                     
                     <!-- fine titolo dashboard -->
+                    
+                    
                     <!-- inizio funzioni pannello -->
                     <div class="row text-center text-uppercase bg-warning">
                         <div class="col-12 m-0 p-0 text-center">
@@ -219,7 +194,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                                         %> <select
 										name="posti_prenotati"
 										class="mdb-select md-form colorful-select dropdown-warning">
-											<% for(int i=0; i <= postiDisponibili; i++){ %>
+											<% for(int i=1; i <= postiDisponibili; i++){ %>
 											<option value="<%= i %>">
 												<%= i %>
 											</option>

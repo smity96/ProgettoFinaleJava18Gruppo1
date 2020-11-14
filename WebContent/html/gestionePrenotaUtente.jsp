@@ -28,10 +28,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
-<%
+<!-- 
 HttpSession s=request.getSession(false); 
 Utente u = (Utente)s.getAttribute("uLog");
-%>
+%>-->
 <body>
 
     <body>
@@ -54,7 +54,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                 <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
                     <ul class="navbar-nav links d-lg-none">
                         <li class="nav-item">
-                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
+                            <a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         
                         <li class="nav-item">
@@ -97,7 +97,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                     <ul class="navbar-nav flex-column">
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna alla Home</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
@@ -153,40 +153,48 @@ Utente u = (Utente)s.getAttribute("uLog");
                                  <% 
                                 	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
                                 	for(Prenotazione p : listaPreno){
-                                	if(!request.getAttribute("pDaModificare").equals(p)){
+                                	if(request.getAttribute("pDaModificare") == null || !request.getAttribute("pDaModificare").equals(p)){
                                 	
                                 %>
-                                	<form action="ServletLeggiPrenotazioneById" method="POST">
-										<input type="hidden" name="id_prenotazione">
+                                	
                                   <tr>
+                                  	<form action="ServletLeggiPrenotazioneById" method="POST">
+										<input type="hidden" name="id_prenotazione" value="<%=p.getIdPrenotazione() %>">
+                                    
                                     <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
                                     <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
                                     <td><%= p.getProiezione().getDataOra() %></td>
                                     <td><%=p.getPostiPrenotati() %></td>
                                     <td><%=p.getCosto_totale() %></td>
-                                    <td><button type="submit" class="btn btn-outline-warning">Modifica</button>
+                                    <td><button type="submit" class="btn btn-outline-warning">Modifica</button></td>
                                     </form>
                                     
                                     
                                     
                                     <form action="ServletCancellaPrenotazione" method="POST">
-                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
+                                    <input type="hidden" name="id_prenotazione" value="<%=p.getIdPrenotazione() %>">
+                                    <td><button type="submit" onclick="history.back()" class="btn btn-outline-danger">Cancella</button></td>
                                  	</form>
+                                 	</tr>
                                  	<%}else{ %>
+                                 	<tr>
                                  	<form action="ServletModificaPrenotazione" method="POST">
+                                 	<input type="hidden" name="id_prenotazione" value="<%=p.getIdPrenotazione() %>">
+                                 	
                                  	<% 
                                  		int postiDisponibili = p.getProiezione().getPostiMax();
 											for(Prenotazione y : listaPreno){
 	                                    	  	if(y.getProiezione().equals(p.getProiezione()))
 	                                    			postiDisponibili -= y.getPostiPrenotati(); 
 	                                    	}
+											postiDisponibili += p.getPostiPrenotati();
                                      %>   	
                                     <!-- Se clicca su modifica si apre questa riga: -->
                                     <th scope="row"><%=p.getProiezione().getFilm().getTitolo() %></th>
                                     <td><img class="immagine" src="<%=p.getProiezione().getFilm().getLocandina() %>"></td>
                                    <td><%= p.getProiezione().getDataOra() %></td>
-                                    <td><select class="mdb-select md-form colorful-select dropdown-warning">
-                                       <% for(int i=0; i <= postiDisponibili; i++){ %>
+                                    <td><select name="postiModificati" class="mdb-select md-form colorful-select dropdown-warning">
+                                       <% for(int i=1; i <= postiDisponibili; i++){ %>
 											<option value="<%= i %>">
 												<%= i %>
 											</option>
@@ -195,16 +203,13 @@ Utente u = (Utente)s.getAttribute("uLog");
                                       </select>
                                     </td>
                                     <td><%=p.getCosto_totale() %></td>
-                                    <td><button type="button" class="btn btn-outline-warning">Conferma</button>
-                                    
-                                    
-                                    
-                                    </td>
+                                    <td><button type="submit" class="btn btn-outline-warning">Conferma</button></td>
                                  
                                     
-                                    <td><button type="button" onclick="history.back()" class="btn btn-outline-danger">Torna indietro</button></td>
+                                    <td><a href="ServletLeggiPrenotazioneUtente"><button type="button" onclick="history.back()" class="btn btn-outline-danger">Torna indietro</button></a></td>
+                                 </form>
                                   </tr>
-                                  </form>
+                                  
                                 <%} 
                                 }%>
                                 

@@ -73,7 +73,22 @@ public class Prenotazione implements Serializable {
 	public void setCosto_totale(double costo_totale) {
 		this.costo_totale = costo_totale;
 	}
-	
-	
 
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Prenotazione other = (Prenotazione) obj;
+		if (idPrenotazione != other.idPrenotazione)
+			return false;
+		return true;
+	}
+	
+	
+	
 }

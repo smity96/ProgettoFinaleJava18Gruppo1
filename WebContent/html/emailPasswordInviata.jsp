@@ -28,6 +28,14 @@
     <br>
     <br>
     <br>
+    <img
+        class="mb-4 mt-5"
+        src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
+        alt="Logo"
+        width="72"
+        height="72"
+      />
+    
     <br>
     <p class="text-warning text-center mt-4">Abbiamo inviato la tua vecchia password al tuo indirizzo di posta elettronica.
     <br>

@@ -62,10 +62,7 @@ public class ServletAccessoUtente extends HttpServlet {
 					System.out.println("Non dovresti essere qui");
 					break;
 				}
-
-				dentro = true;
-			}
-		}
+				dentro=true;
 		if (!dentro) {
 			response.sendRedirect(request.getContextPath() + "/html/registrazione.jsp");
 		}

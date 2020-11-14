@@ -20,6 +20,11 @@ pageEncoding="ISO-8859-1"%>
         width: 13rem;
       }
       
+      .grandezza{
+        width: 20rem;
+        heigth: 20rem;
+        }
+      
       
     </style>
     
@@ -277,11 +282,6 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
         
     
     <br>
-    <br>
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label text-warning" for="exampleCheck1">Ricordami!</label>
-   
-   <br>
    <br>
        
       <button
@@ -290,6 +290,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       >
         Registrati
       </button>
+    </form>
       <br />
       <br />
 
@@ -298,7 +299,6 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
         >Accedi qui!</a
       >
-    </form>
     <br>
     <br>
     <br>
