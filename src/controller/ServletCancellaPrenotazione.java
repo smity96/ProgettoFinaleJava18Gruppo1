@@ -22,12 +22,15 @@ public class ServletCancellaPrenotazione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idPrenotazione = Integer.parseInt("id_prenotazione");
+		doPost(request, response);
 		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		int idPrenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
+		UtilitiesDbPrenotazione.rimuoviPrenotazione(idPrenotazione);
+	
+		response.sendRedirect("ServletLeggiPrenotazioneUtente");
 	}
 
 }
