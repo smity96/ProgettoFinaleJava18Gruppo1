@@ -274,6 +274,10 @@
             </div>
         </div>
     <!-- Fine Modal Uscita -->
+    
+     <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

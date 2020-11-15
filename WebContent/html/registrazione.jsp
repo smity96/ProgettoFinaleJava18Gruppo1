@@ -321,6 +321,10 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
     <br>
     <br>
     <br>
+    
+    
+<jsp:include page= "footer.jsp"></jsp:include>
+
 
     <script src="../js/script.js"></script>
     <!--Bootstrap links-->

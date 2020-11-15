@@ -305,6 +305,10 @@
                 </div>
             </div>
         </div>
+        
+         <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
+        
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 

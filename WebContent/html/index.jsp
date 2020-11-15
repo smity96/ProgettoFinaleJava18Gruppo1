@@ -229,26 +229,8 @@
     </section>
     <!-- fine sezione film prossimamente -->
 
-    <footer>
-        <div class="container-fluid custom-footer bg-nero">
-            <div class="row">
-                <div class="col-6">
-                <h2 class="p-2 text-uppercase justify-content-start scritta-dorata footer-copy">Sorrento Cinema
-                    &copy;copyright 2020</h2></div>
-                <div class="col-6 d-flex justify-content-end flex-wrap">
-                    <h1 class="mr-3 scritta-dorata footer-copy pt-2">Seguici Su</h1>
-                    <div class="info-icons mt-3"> 
-                        <a href="#" class="scritta-dorata scritta-click-scuro pt-sm-5 col-sm-4 col-6">
-                            <i class="fab fa-facebook fa-2x footer-copy"></i>
-                        </a>
-                        <a href="#" class="scritta-dorata scritta-click-scuro pt-sm-5 col-sm-4 col-6">
-                            <i class="fab fa-instagram fa-2x footer-copy"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+     <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
 
     <!--Bootstrap links-->
 
