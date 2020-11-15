@@ -1,5 +1,7 @@
-/* TEMA SCURO */
-
+html, body {
+    overflow-x:hidden;
+  }
+  
 /* colore sfondo nero */
 .bg-nero {
  background-color: #000000;
@@ -32,9 +34,15 @@
 }
 /* fine scritte dorate */
 
-/* FINE TEMA SCURO */
+.colore-icone-scuro {
+    color:#f19820;
+  }
 
-/* TEMA CHIARO */
+  .colore-icone-scuro:hover {
+    color: #f19820;
+    opacity: 0.5;
+  }
+
 
 /* colore sfondo nero */
 .bg-bianco {
@@ -54,11 +62,6 @@
    }
    /* fine colore corpo sezione */
    
-   /* scritte dorate */
-   .scritta-dorata {
-       color: #f19820;
-   }
-   
    .scritta-nera {
        color: #000000;
    }
@@ -68,4 +71,10 @@
    }
    /* fine scritte dorate */
    
-   /* FINE TEMA CHIARO */
+   .table-dark {
+    background-color:#242a33!important;
+    }
+
+    .table-light {
+      background-color:#242a33!important;
+      }
