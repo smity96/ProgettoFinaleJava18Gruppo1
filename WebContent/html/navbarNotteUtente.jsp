@@ -13,13 +13,13 @@
     
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="../src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
     <!--Navbar Utente base loggato: -->
     <nav class="navbar navbar-expand-lg">
     <div class="container">
         <a class="navbar-brand" href="index.html">
-        <img src="../src/logocinema.png" alt="Logo" style="width:40px;">
+        <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" alt="Logo" style="width:40px;">
       </a>     
      
       <!--Vai alla Home:-->

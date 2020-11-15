@@ -3,6 +3,11 @@
 <%@page import="utilities.UtilitiesDbUtente"%>
 <%@page import="model.Utente"%>
 <%@page import="java.util.List"%>
+
+<%@page import="utilities.*"%>
+<%@page import="model.*"%>
+<%@page import="java.util.*"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -14,7 +19,11 @@
     
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -25,7 +34,7 @@
     </style>
 </head>
 
-<body>
+<body style="font-family: 'Monserrat', sans-serif">
 <%
 	List<Utente>listaU=UtilitiesDbUtente.listaUtenti();
 %>
@@ -51,7 +60,7 @@
                 <ul class="navbar-nav links d-md-none">
                     <li class="nav-item d-flex align-items-center my-3">
                         <div class="col-3"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                        <div class="col-9 ml-3"><a class="nav-link" href="#">Torna Al Sito</a></div>
+                        <div class="col-9 ml-3"><a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna Al Sito</a></div>
                     </li>
                     <li class="nav-item d-flex align-items-center my-3">
                         <div class="col-3"><i class="fa fa-home text-muted mr-3 nav-size"></i></div>
@@ -79,25 +88,42 @@
                     </li>
                 </ul>
 
-                <!-- nav icons -->
-                <ul class="navbar-nav icons align-items-center">
-                    <li class="nav-item mr-5">
-                        <a class="navbar-brand py-3" href="#">
-                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                               <!-- nav icons -->
+                <ul class="navbar-nav icons d-xl-flex d-none align-items-center">
+                    <li class="nav-item">
+                        <a class="navbar-brand" href="#">
+                            <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
-                            Nome Utente
+                            Benvenuto
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="#">
-                            <i class="fa fa-sign-out"></i> Sign Out
+                            <i class="fas fa-sign-out-alt mr-2"></i>Logout 
                         </a>
                     </li>
                 </ul>
+
+                <ul class="navbar-nav icons d-flex d-xl-none justify-content-end">
+                    <li class="nav-item">
+                        <a class="navbar-brand col-2" href="#">
+                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                                alt="Logo" style="width:40px;" />
+                            <span class="col-10">Benvenuto</span> 
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="#">
+                            <i class="fas fa-sign-out-alt mr-2"></i> <span>Logout </span>
+                        </a>
+                    </li>
+                </ul>
+
             </div>
         </div>
     </nav>
     <!-- fine nav -->
+
 
     <!-- main content -->
 
@@ -110,7 +136,7 @@
                 <ul class="navbar-nav flex-column list-side-height">
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link" href="#">Torna Al Sito</a></div>
+                        <div class="col-6 m-0"><a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna Al Sito</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fa fa-home text-muted mr-3 nav-size"></i></div>
@@ -614,35 +640,35 @@
     <!-- Modals -->
 
         <!-- Modal uscita -->
-    <div class="modal fade" id="sign-out">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Vuoi fare il logout?</h4>
-                    <button type="button" class="close" data-dismiss="modal">
-                        &times;
-                    </button>
-                </div>
+    <!-- Modal -->
+        <div class="modal fade text-warning" id="sign-out">
+            <div class="modal-dialog bg-dark text-warning">
+                <div class="modal-content bg-dark text-warning">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-dark text-warning">
+                        <h4 class="modal-title stile text-warning">Vuoi fare il logout?</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
 
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Premi logout per uscire.
-                </div>
+                    <!-- Modal body -->
+                    <div class="modal-body stile bg-dark text-warning">
+                        Premi logout per uscire.
+                    </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Rimani
+                    <!-- Modal footer -->
+                    <div class="modal-footer stile">
+                        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
+                            Rimani
+                        </button>
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-outline-danger text-light" data-dismiss="modal">
+                        Logout
                     </button>
-                    
-                    <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
-                        Esci
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
         <!-- Fine Modal Uscita -->
 
     <!-- Modal Modifica Film -->
@@ -923,6 +949,10 @@
         </div>
     </div>
     <!-- Fine Modal Modifica Proiezione -->
+    
+     <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

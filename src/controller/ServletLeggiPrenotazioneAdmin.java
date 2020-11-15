@@ -9,27 +9,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Proiezione;
+import model.Prenotazione;
+import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbProiezione;
 
-
-@WebServlet("/ServletLeggiIndex")
-public class ServletLeggiIndex extends HttpServlet {
+@WebServlet("/ServletLeggiPrenotazioneAdmin")
+public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public ServletLeggiIndex() {
+	private List<Prenotazione> listaPreno;
+	
+    public ServletLeggiPrenotazioneAdmin() {
         super();
+        
     }
 
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
-		request.setAttribute("proiezioni", proiezioni);
-		request.getRequestDispatcher("html/index.jsp").forward(request, response);
+		doPost(request, response);
 	}
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
+		
+		request.setAttribute("listaPreno", listaPreno);
+		
+		request.getRequestDispatcher("/html/dashboard-gestione-prenotazione.jsp").forward(request, response);
 	}
 
 }

@@ -18,7 +18,7 @@
 
  <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
         <style>
      
@@ -40,14 +40,25 @@
         max-width: 20rem;
         max-height: 15rem;
       }
+      
+      .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
     </style>
+    
+     
 
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
-    
+    <!-- Google fonts link -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body class="bg-dark">
+<body class="bg-dark" style="font-family: 'Monserrat', sans-serif">
 <jsp:include page= "navbarNotte.jsp"></jsp:include>
   <br>
   <br>
@@ -55,7 +66,7 @@
   <div class="container bg-dark">
       <!--Palinsesto titolo fisso-->
       <div>
-        <h2 class="text-warning text-center font-weight-bold">Palinsesto</h2>
+        <h2 class="text-warning text-center font-weight-bold stile">Palinsesto</h2>
       </div>
 	<%
 	List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("Proiezioni");
@@ -96,49 +107,49 @@
 
       <div class="container-fluid col-xl-8 col-md-9">
         <div class="col-12 d-flex">
-        <p class="text-light text-left mt-4 font-weight-bold mr-2">Titolo - 
-          <p class="text-light text-left mt-4"><%= p.getFilm().getTitolo() %></p>
+        <p class="text-light text-left mt-4 font-weight-bold mr-2 stile">Titolo - 
+          <p class="text-light text-left mt-4 stile"><%= p.getFilm().getTitolo() %></p>
         </p>
       </div>
 
 
       
       <div class="col-12 d-flex">
-        <p class="text-light text-left font-weight-bold mr-2">Genere -  
-          <p class="text-light text-left"><%= p.getFilm().getGenere() %></p>
+        <p class="text-light text-left font-weight-bold mr-2 stile">Genere -  
+          <p class="text-light text-left stile"><%= p.getFilm().getGenere() %></p>
         </p>
       </div>
 
 
       <div class="col-12 d-flex">
-        <p class="text-light text-left font-weight-bold mr-2">Anno di uscita - </p>
-        <p class="text-light text-left"><%= p.getFilm().getAnnoDiUscita() %></p>
+        <p class="text-light text-left font-weight-bold mr-2 stile">Anno di uscita - </p>
+        <p class="text-light text-left stile"><%= p.getFilm().getAnnoDiUscita() %></p>
       </div>
 
       <div class="col-12 d-flex">
-        <p class="text-light text-left font-weight-bold mr-2">Durata - </p>
-        <p class="text-light text-left"><%if(DurataH!=0){%><%=DurataH%>h<%}%><%=DurataM%>'</p>
+        <p class="text-light text-left font-weight-bold mr-2 stile">Durata - </p>
+        <p class="text-light text-left stile"><%if(DurataH!=0){%><%=DurataH%>h<%}%><%=DurataM%>'</p>
       </div>
 
       <div class="col-12 d-flex">
-        <p class="text-light text-left font-weight-bold mt-1 mr-2">Trailer:</p> 
+        <p class="text-light text-left font-weight-bold mt-1 mr-2 stile">Trailer:</p> 
 
  
           <!--Trailer film MODIFICATO-->
           
-     <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
+     <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1 stile" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
                   
       </div>
       
       
       <div class="col-12 d-flex">
-        <p class="text-light text-left font-weight-bold mr-2">Data e ora: </p>
-       	<p class="text-light text-left"><%= formattedString %></p> 
+        <p class="text-light text-left font-weight-bold mr-2 stile">Data e ora: </p>
+       	<p class="text-light text-left stile"><%= formattedString %></p> 
        </div>    
        
        <div class="col-12 d-flex">
-        <p class="text-light text-left font-weight-bold mr-1">Trama: </p>
-        <p class="text-light"><%=p.getFilm().getTrama() %></p>
+        <p class="text-light text-left font-weight-bold mr-1 stile">Trama: </p>
+        <p class="text-light stile"><%=p.getFilm().getTrama() %></p>
       </div>
 
       </div>
@@ -215,6 +226,7 @@
     
   </div>
     
+    <jsp:include page= "footer.jsp"></jsp:include>
 
     <!--Bootstrap links-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

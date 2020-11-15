@@ -28,23 +28,24 @@ import javax.websocket.SendResult;
 
 import model.Utente;
 import utilities.UtilitiesDbFilm;
+import utilities.InvioEmail;
 import utilities.UtilitiesDbUtente;
-
 
 @WebServlet("/ServletInserisciUtente")
 @MultipartConfig
 public class ServletInserisciUtente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	Utente utente=new Utente();
+	Utente utente = new Utente();
 	List<Utente> listaU;
 
 	public ServletInserisciUtente() {
 		super();
-		listaU =UtilitiesDbUtente.listaUtenti();
+		listaU = UtilitiesDbUtente.listaUtenti();
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doPost(request, response);
 	}
 
@@ -81,7 +82,7 @@ public class ServletInserisciUtente extends HttpServlet {
 				utente.setIndirizzo(request.getParameter("indirizzo"));
 				utente.setNomeSocieta(request.getParameter("nomeSoc"));
 //-------GESTIONE INSERIMENTO IMMAGINE DI PROFILO------------------------------------------				
-				final String path = "C:\\Users\\Fede-\\Desktop\\FotoProfiloProgettoF";
+				final String path = "C:\\FotoProfiloProgettoF";
 		        // crea il part
 		        final Part filePart = request.getPart("imgP");
 		        // creiamo il file
@@ -118,6 +119,8 @@ public class ServletInserisciUtente extends HttpServlet {
 				System.out.println(utente.toString());
 //-----------AGGIORNO LA LISTA E REINDIRIZZO ALLA HOME PAGE --------------------------------------
 				listaU.add(utente);
+				//invio la mail di attesa conferma, consultare il metodo per capire perche' ci sono 3 valori
+				InvioEmail.inviaMail(utente, 1, null);
 				response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
 			
 			}else {

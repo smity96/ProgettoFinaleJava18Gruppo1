@@ -134,4 +134,11 @@ public class Film implements Serializable {
 		return proiezione;
 	}
 
+	@Override
+	public String toString() {
+		return "Film [idFilm=" + idFilm + ", annoDiUscita=" + annoDiUscita + ", durata=" + durata + ", genere=" + genere
+				+ ", locandina=" + locandina + ", titolo=" + titolo + ", trama=" + trama + ", urlTrailer=" + urlTrailer
+				+ ", proieziones=" + proieziones + "]";
+	}
+	
 }

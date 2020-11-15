@@ -7,13 +7,13 @@ pageEncoding="ISO-8859-1"%>
     
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
     
 
     <style>
       .bottone {
-        width: 11.7rem;
+        width: 12.1rem;
       }
 
       .informazioni {
@@ -25,9 +25,18 @@ pageEncoding="ISO-8859-1"%>
         heigth: 20rem;
         }
       
+            .stile{
+        
+        font-family: 'Montserrat', sans-serif;
+        
+        }
       
     </style>
-    
+     
+     <!-- Google fonts link -->
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     
 
     <!--Font awesome links-->
@@ -45,12 +54,12 @@ pageEncoding="ISO-8859-1"%>
     />
   </head>
 
-  <body class="bg-dark text-center">
+  <body class="bg-dark text-center" style="font-family: 'Monserrat', sans-serif">
   <!-- Navbar -->
       
       <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
   
 <jsp:include page= "navbarNotte.jsp"></jsp:include>
@@ -62,73 +71,78 @@ pageEncoding="ISO-8859-1"%>
     >
 
     
-      <img
+      <img 
         class="mb-4 mt-5"
         src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
         alt="Logo"
         width="72"
         height="72"
       />
-      <p class="h3 mb-3 text-warning">Registrati:</p>
+      <p class="h3 mb-3 text-warning stile">Registrati:</p>
 
        
     
     
       <!--Requisiti obbligatori: -->
       
-      <p >
+      <div class="form-group">
+      <label for="Nome" class="text-warning text-center control-label">Nome
         <input
-          class="rounded"
+          class="rounded stile bottone form-control"
           id="Nome"
           name="nome"
           type="text"
           placeholder="Nome"
           required
-        />
-      </p>
+        /></label>
+      </div>
 
-      <p>
+      <div class="form-group">
+      <label for="Cognome" class="text-warning text-center control-label">Cognome
         <input
-          class="rounded"
+          class="rounded stile bottone form-control"
           id="Cognome"
           name="cognome"
           type="text"
           placeholder="Cognome"
           required
-        />
-      </p>
+        /></label>
+      </div>
 
-      <p>
+      <div class="form-group">
+      <label for="dataDiNascita" class="text-warning text-center control-label">Data di Nascita
        <input
-          class="rounded bottone"
+          class="rounded bottone stile form-control"
           id="dataDiNascita"
           name="data_di_nascita"
           type="date"
           required
-        />
-      </p>
+        /></label>
+      </div>
 
-      <p>
+      <div class="form-group">
+      <label for="Email" class="text-warning text-center control-label">Email
         <input
-          class="rounded"
+          class="rounded stile bottone form-control"
           id="Email"
           name="email"
           type="email"
           placeholder="Email"
           required
-        />
-      </p>     
+        /></label>
+      </div>     
 
-      <p>
+      <div class="form-group">
+      <label for="Password" class="text-warning text-center control-label">Password
         <input
-          class="rounded"
+          class="rounded stile bottone form-control"
           id="Password"
           name="password"
           type="password"
           placeholder="Password"
           required
-        />
-      </p>
+        /></label>
+      </div>
       
    
       
@@ -138,7 +152,7 @@ pageEncoding="ISO-8859-1"%>
         class="container d-flex justify-content-center text-center col-4 informazioni"
       >
         <nav class="navbar navbar-dark bg-dark border-0">
-          <h5 class="text-warning justify-content-end">
+          <h5 class="text-warning justify-content-end stile">
             Informazioni aggiuntive:
           </h5>
           <button
@@ -166,79 +180,79 @@ pageEncoding="ISO-8859-1"%>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-              
+        <br>      
        <li class="nav-item">
-        <p>
+      <div class="form-group">
+      <label for="Immagine" class="text-warning text-center control-label">Immagine del Profilo
         <input
-          class="rounded text-warning bottone"
+          class="rounded form-control bottone stile"
           name="imgP"
           type="file"
           placeholder="Scegli immagine"
           value="Scegli immagine"
-        />
-      </p>
+        /></label>
+      </div>
       </li>
        
        <li class="nav-item"> 
-       <p>    
+       <div class="form-group">
+      <label for="PartitaIva" class="text-warning text-center control-label">Partita Iva    
                   <input
-                    class="rounded"
+                    class="rounded stile bottone form-control"
                     id="PartitaIva"
                     name="P.I."
                     type="text"
                     placeholder="Partita Iva"
-                  />
-                </p>
+                  /></label>
+                </div>
               </li>
               
               <li class="nav-item">
-                <p>
+           <div class="form-group">
+           <label for="Indirizzo" class="text-warning text-center control-label">Indirizzo
                   <input
-                    class="rounded"
+                    class="rounded stile bottone form-control"
                     name="indirizzo"
                     id="Indirizzo"
                     type="text"
                     placeholder="Indirizzo"
-                  />
-                </p>
+                  /></label>
+                </div>
               </li>
               
               <li class="nav-item">
-                <p>
+                <div class="form-group">
+                <label for="NomeSocieta" class="text-warning text-center control-label">Nome Societa'
                   <input
-                    class="rounded"
+                    class="rounded stile bottone form-control"
                     name="nomeSoc"
+                    id="NomeSocieta"
                     type="text"
                     placeholder="Nome Societa'"
-                  />
-                </p>
-
+                  /></label>
+                </div>
               </li>
-             
-             
             </ul>
           </div>
         </nav>
       </div>
-   
-   
-       
+      
     <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-    <label class="form-check-label text-light" for="exampleCheck1" required>Accetta i nostri
-    <a class="text-warning style-decoration-none" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
+    <label class="form-check-label text-light stile" for="exampleCheck1" required>Accetta i nostri
+    <a class="text-warning style-decoration-none stile" data-toggle="modal" data-target="#exampleModal">Termini e Condizioni. </a></label>
     
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog bg-dark" role="document">
+  <div class="modal-dialog bg-dark modal-dialog-scrollable" role="document">
     <div class="modal-content bg-dark">
       <div class="modal-header bg-dark">
-        <h5 class="modal-title text-warning" id="exampleModalLabel">Termini e Condizioni</h5>
+        <h5 class="modal-title text-warning stile" id="exampleModalLabel">Termini e Condizioni</h5>
         <button type="button" class="close bg-dark text-warning" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body bg-dark text-warning">
-        I nostri termini e condizioni sono in conformità con l'articolo 13 del Regolamento UE 2016/679, che dichiara:
+      <div class="modal-body bg-dark text-warning stile">
+        I nostri termini e condizioni sono in conformita' con l'articolo 13 del Regolamento UE 2016/679, che dichiara:
         
         - Articolo 13 -
 
@@ -246,11 +260,11 @@ Informazioni da fornire qualora i dati personali siano raccolti presso l'interes
 
 1. In caso di raccolta presso l'interessato di dati che lo riguardano, il titolare del trattamento fornisce all'interessato, nel momento in cui i dati personali sono ottenuti, le seguenti informazioni:
 
-a) l'identità e i dati di contatto del titolare del trattamento e, ove applicabile, del suo rappresentante;
+a) l'identita' e i dati di contatto del titolare del trattamento e, ove applicabile, del suo rappresentante;
 
 b) i dati di contatto del responsabile della protezione dei dati, ove applicabile;
 
-c) le finalità del trattamento cui sono destinati i dati personali nonché la base giuridica del trattamento;
+c) le finalita' del trattamento cui sono destinati i dati personali nonche' la base giuridica del trattamento;
 
 d) qualora il trattamento si basi sull'articolo 6, paragrafo 1, lettera f), i legittimi interessi perseguiti dal titolare del trattamento o da terzi;
 
@@ -260,26 +274,26 @@ f) ove applicabile, l'intenzione del titolare del trattamento di trasferire dati
 
 2. In aggiunta alle informazioni di cui al paragrafo 1, nel momento in cui i dati personali sono ottenuti, il titolare del trattamento fornisce all'interessato le seguenti ulteriori informazioni necessarie per garantire un trattamento corretto e trasparente:
 
-a) il periodo di conservazione dei dati personali oppure, se non è possibile, i criteri utilizzati per determinare tale periodo;
+a) il periodo di conservazione dei dati personali oppure, se non e' possibile, i criteri utilizzati per determinare tale periodo;
 
-b) l'esistenza del diritto dell'interessato di chiedere al titolare del trattamento l'accesso ai dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento dei dati personali che lo riguardano o di opporsi al loro trattamento, oltre al diritto alla portabilità dei dati; (1)
+b) l'esistenza del diritto dell'interessato di chiedere al titolare del trattamento l'accesso ai dati personali e la rettifica o la cancellazione degli stessi o la limitazione del trattamento dei dati personali che lo riguardano o di opporsi al loro trattamento, oltre al diritto alla portabilitï¿½ dei dati; (1)
 
-c) qualora il trattamento sia basato sull'articolo 6, paragrafo 1, lettera a), oppure sull'articolo 9, paragrafo 2, lettera a), l'esistenza del diritto di revocare il consenso in qualsiasi momento senza pregiudicare la liceità del trattamento basata sul consenso prestato prima della revoca;
+c) qualora il trattamento sia basato sull'articolo 6, paragrafo 1, lettera a), oppure sull'articolo 9, paragrafo 2, lettera a), l'esistenza del diritto di revocare il consenso in qualsiasi momento senza pregiudicare la liceita' del trattamento basata sul consenso prestato prima della revoca;
 
-d) il diritto di proporre reclamo a un'autorità di controllo;
+d) il diritto di proporre reclamo a un'autorita' di controllo;
 
-e) se la comunicazione di dati personali è un obbligo legale o contrattuale oppure un requisito necessario per la conclusione di un contratto, e se l'interessato ha l'obbligo di fornire i dati personali nonché le possibili conseguenze della mancata comunicazione di tali dati;
+e) se la comunicazione di dati personali e' un obbligo legale o contrattuale oppure un requisito necessario per la conclusione di un contratto, e se l'interessato ha l'obbligo di fornire i dati personali nonche' le possibili conseguenze della mancata comunicazione di tali dati;
 
-f) l'esistenza di un processo decisionale automatizzato, compresa la profilazione di cui all'articolo 22, paragrafi 1 e 4, e, almeno in tali casi, informazioni significative sulla logica utilizzata, nonché l'importanza e le conseguenze previste di tale trattamento per l'interessato.
+f) l'esistenza di un processo decisionale automatizzato, compresa la profilazione di cui all'articolo 22, paragrafi 1 e 4, e, almeno in tali casi, informazioni significative sulla logica utilizzata, nonche' l'importanza e le conseguenze previste di tale trattamento per l'interessato.
 
-3. Qualora il titolare del trattamento intenda trattare ulteriormente i dati personali per una finalità diversa da quella per cui essi sono stati raccolti, prima di tale ulteriore trattamento fornisce all'interessato informazioni in merito a tale diversa finalità e ogni ulteriore informazione pertinente di cui al paragrafo 2.
+3. Qualora il titolare del trattamento intenda trattare ulteriormente i dati personali per una finalita' diversa da quella per cui essi sono stati raccolti, prima di tale ulteriore trattamento fornisce all'interessato informazioni in merito a tale diversa finalita' e ogni ulteriore informazione pertinente di cui al paragrafo 2.
 
-4. I paragrafi 1, 2 e 3 non si applicano se e nella misura in cui l'interessato dispone già delle informazioni.
+4. I paragrafi 1, 2 e 3 non si applicano se e nella misura in cui l'interessato dispone gia' delle informazioni.
 
-(1) Lettera così corretta da Rettifica pubblicata nella G.U.U.E. 23 maggio 2018, n. 127 Serie L.
+(1) Lettera cosi' corretta da Rettifica pubblicata nella G.U.U.E. 23 maggio 2018, n. 127 Serie L.
       </div>
       <div class="modal-footer bg-dark text-warning">
-        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">Chiudi</button>
+        <button type="button" class="btn btn-outline-warning text-light stile" data-dismiss="modal">Chiudi</button>
       </div>
     </div>
   </div>
@@ -291,7 +305,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
        
       <button
         onclick="prendiDataNascita()"
-        class="btn text-light btn-outline-warning"
+        class="btn text-light btn-outline-warning stile"
       >
         Registrati
       </button>
@@ -300,13 +314,17 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <br />
 
       <!--Accedi qui se sei giï¿½ registrato-->
-      <p class="text-warning">Sei gia' registrato?</p>
-      <a class="text-warning" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
+      <p class="text-warning stile">Sei gia' registrato?</p>
+      <a class="text-warning stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
         >Accedi qui!</a
       >
     <br>
     <br>
     <br>
+    
+    
+<jsp:include page= "footer.jsp"></jsp:include>
+
 
     <script src="../js/script.js"></script>
     <!--Bootstrap links-->
