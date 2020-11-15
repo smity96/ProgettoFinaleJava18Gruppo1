@@ -69,9 +69,6 @@
                         class="fas fa-user text-muted mr-3 nav-size col-2"></i> <a
                         class="nav-link active2 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></li>
                     <li class="nav-item d-flex my-3"><i
-                        class="fas fa-film text-muted mr-3 nav-size col-2"></i> <a
-                        class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a></li>
-                    <li class="nav-item d-flex my-3"><i
                         class="fas fas fa-calendar-alt text-muted mr-3 nav-size col-2"></i>
                         <a class="nav-link active5 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione
                             Proiezioni</a></li>
@@ -145,15 +142,6 @@
                         </div>
                         <div class="col-6 m-0">
                             <a class="nav-link active2" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilojsp">Gestione Profilo</a>
-                        </div>
-                    </li>
-                    <li
-                        class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0">
-                            <i class="fas fa-film text-muted mr-3 nav-size"></i>
-                        </div>
-                        <div class="col-6 m-0">
-                            <a class="nav-link active4" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a>
                         </div>
                     </li>
                     <li
