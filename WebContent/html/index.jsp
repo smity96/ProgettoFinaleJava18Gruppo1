@@ -77,55 +77,55 @@
               <div class="col-12 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                   <div class="col-12 mx-auto d-flex justify-content-around sortBtn flex-wrap"><a
                           class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="all"><h5>tutti</h5></a></div>
+                          data-filter="all"><h5 class="text-warning">tutti</h5></a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="animazione"><h5>animazione</h5></a></div>
+                          data-filter="animazione"><h5 class="text-warning">animazione</h5></a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="azione"><h5>azione</h5> </a></div>
+                          data-filter="azione"><h5 class="text-warning">azione</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="azione"><h5>avventura</h5> </a></div>
+                          data-filter="azione"><h5 class="text-warning">avventura</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="commedia"><h5>commedia</h5> </a></div>
+                          data-filter="commedia"><h5 class="text-warning">commedia</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="fantasy"><h5>fantasy</h5> </a></div>
+                          data-filter="fantasy"><h5 class="text-warning">fantasy</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="fantascienza"><h5>fantascienza</h5> </a></div>
+                          data-filter="fantascienza"><h5 class="text-warning">fantascienza</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="guerra"><h5>guerra</h5> </a></div>
+                          data-filter="guerra"><h5 class="text-warning">guerra</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="horror"><h5>horror</h5> </a></div>
+                          data-filter="horror"><h5 class="text-warning">horror</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="musical"><h5>musical</h5> </a></div>
+                          data-filter="musical"><h5 class="text-warning">musical</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="romantico"><h5>romantico</h5> </a></div>
+                          data-filter="romantico"><h5 class="text-warning">romantico</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="storico"><h5>storico</h5> </a></div>
+                          data-filter="storico"><h5 class="text-warning">storico</h5> </a></div>
                   <div
                       class="col-lg-2 col-md-3 col-sm-4 col-6 mx-auto d-flex justify-content-around sortBtn flex-wrap">
                       <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                          data-filter="thriller"><h5>thriller</h5> </a></div>
+                          data-filter="thriller"><h5 class="text-warning">thriller</h5> </a></div>
 
               </div>
           </div>

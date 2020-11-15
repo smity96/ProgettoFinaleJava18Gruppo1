@@ -244,7 +244,7 @@ Utente u = (Utente)s.getAttribute("uLog");
             </div>
         </div>
         <!-- Modal -->
-        <div class="modal fade bg-dark text-warning" id="sign-out">
+        <div class="modal fade text-warning" id="sign-out">
             <div class="modal-dialog bg-dark text-warning">
                 <div class="modal-content bg-dark text-warning">
                     <!-- Modal Header -->

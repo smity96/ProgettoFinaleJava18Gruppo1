@@ -69,6 +69,20 @@
           </li>
           </ul>
         </div>
+        
+        <!--Vai alla pagina di registrazione: -->
+            <div class="col-2">
+            <ul class="navbar-nav d-flex flex-row justify-content-end">
+            <li class="nav-item m-auto width:90%">
+            <%
+            if(s.getAttribute("uLog")!=null){%> 
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Profilo</a>
+            <%} else{%>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
+            <%} %>
+          </li>    
+        </ul>
+      </div>
 
         <!--Vai alla pagina di Login: -->
           <div class="col-2">
@@ -82,20 +96,6 @@
             <%} %>
             </li>
           </div>
-
-          <!--Vai alla pagina di registrazione: -->
-            <div class="col-2">
-            <ul class="navbar-nav d-flex flex-row justify-content-end">
-            <li class="nav-item m-auto width:90%">
-            <%
-            if(s.getAttribute("uLog")!=null){%> 
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Profilo</a>
-            <%} else{%>
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
-            <%} %>
-          </li>    
-        </ul>
-      </div>
     </nav>
 </div>
 
@@ -103,7 +103,7 @@
 <!-- Modal uscita -->
 
 <!-- Modal -->
-        <div class="modal fade bg-dark text-warning" id="sign-out">
+        <div class="modal fade text-warning" id="sign-out">
             <div class="modal-dialog bg-dark text-warning">
                 <div class="modal-content bg-dark text-warning">
                     <!-- Modal Header -->
