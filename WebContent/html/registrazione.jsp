@@ -71,7 +71,7 @@ pageEncoding="ISO-8859-1"%>
     >
 
     
-      <img
+      <img 
         class="mb-4 mt-5"
         src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
         alt="Logo"
@@ -86,7 +86,7 @@ pageEncoding="ISO-8859-1"%>
       <!--Requisiti obbligatori: -->
       
       <div class="form-group">
-      <label for="Nome" class="text-warning text-center control-label">
+      <label for="Nome" class="text-warning text-center control-label">Nome
         <input
           class="rounded stile bottone form-control"
           id="Nome"
