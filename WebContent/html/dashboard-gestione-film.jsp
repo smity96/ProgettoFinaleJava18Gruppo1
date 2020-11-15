@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
       <%
               						  HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -40,18 +41,18 @@
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
-                <h1 class="navbar-brand text-uppercase">Admin Dashboard</h1>
+                <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Admin Dashboard</h1>
             <!-- Fine Navbar Brand -->
 
             <!-- Toggler/collapse Button -->
-            <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#myNavbar"
-                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler bg-oro" type="button" data-toggle="collapse" data-target="#myNavbar">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+              </button>
 
             <!-- Navbar links collapse -->
 
             <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+                
                 <ul class="navbar-nav links d-flex d-xl-none">
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-folder-open text-muted mr-3 nav-size col-2"></i>
