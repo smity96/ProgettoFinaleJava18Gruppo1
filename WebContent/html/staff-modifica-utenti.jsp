@@ -3,7 +3,7 @@
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,15 +18,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
    
     
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
-        HttpSession s=request.getSession(false);    
-        Utente u = (Utente)s.getAttribute("uLog");
-              
+                                      HttpSession s=request.getSession(false);    
+                                        //session.getAttribute("utentelog")
+                                        //String mail = (String) s.getAttribute("mailLog");
+                                        //String pssw = (String) session.getAttribute("psswLog");
+                                        Utente u = (Utente)s.getAttribute("uLog");
+                                        //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
+                                        Utente b=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("d")));
+                                        System.out.println(b.toString());
+                                        
+                    
                 %>
     </head>
 <body style="font-family: 'Monserrat', sans-serif">
@@ -35,7 +43,7 @@
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
-            <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Admin Dashboard</h1>
+                <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Admin Dashboard</h1>
             <!-- Fine Navbar Brand -->
 
             <!-- Toggler/collapse Button -->
@@ -46,6 +54,7 @@
             <!-- Navbar links collapse -->
 
             <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+                
                 <ul class="navbar-nav links d-xl-none">
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
@@ -58,12 +67,6 @@
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
-                    </li>
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm"><i class="fas fa-film mr-3 text-muted"></i>Gestione Film</a>
-                    </li>
-                    <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
@@ -72,7 +75,7 @@
                   </ul>
 
                 <!-- nav icons -->
-                
+
                 <ul class="navbar-nav icons">
                     <li class="nav-item mr-5">
                       <a class="nav-link" href="#">
@@ -83,7 +86,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
-                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
+                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logout
                       </a>
                     </li>
                 </ul>
@@ -119,16 +122,6 @@
                                 href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp">Gestisci Prenotazioni</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro "
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
                                 href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
@@ -147,108 +140,107 @@
             <div class="col-xl-10 col-12 py-3 max-viewport">
 
                 <!-- inizio funzioni main -->
-                
-                <!-- inizio gestione utenti -->
-                <!-- sono due come sopra -->
 
-
-                    <div class="row text-uppercase text-center d-none d-md-flex">
-                        <div class="col-12 p-0">
-                            <div class="mb-4">
-                                <h1 class="d-inline mr-3">Gestione Utenti</h1>
-                            </div>
-                            <table class="table table-bordered table-dark">
-                                <thead>
-                                    <tr class="d-flex">
-                                        <th class="col-2 scritta-dorata">Id° Utente</th>
-                                        <th class="col-2 scritta-dorata">Nome Utente</th>
-                                        <th class="col-2 scritta-dorata">Conferma Utente</th>
-                                        <th class="col-2 scritta-dorata">Cancella Utente</th>
-                                        <th class="col-2 scritta-dorata">Modifica Utente</th>
-                                        <th class="col-2 scritta-dorata">Abilita A Staff</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <%
-                                
-                                List<Utente>lU=(List<Utente>)request.getAttribute("listaU");
-                                
-                                	for(Utente g:lU){
-                                %>
-                                    <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><label><%=g.getIdUtente() %></label></td>
-                                        <td class="col-2 scritta-dorata"><label><%=g.getEmail() %></label></td>
-                                        <%if(g.getRuolo()!=0){ %>
-                                        <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-check-circle"></i></a>
-                                        </td>
-                                        <% }else{%>
-                                        <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-check"></i></a>
-                                        <%} %>
-                                        
-                                        <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
-                                        </td>
-                                        <td class="col-2"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/modifica-utenti.jsp?d=<%=g.getIdUtente() %>"><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
-                                        </td>
-                                        <%if(g.getRuolo()!=3) {%>
-                                        <td class="col-2"><a href="abil"><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-users"></i></a>
-										<%} %>
-                                        </td>
-                                    </tr>
-                                    <%} %>
-                                </tbody>
-                            </table>
+                <!-- inizio modifica utenti -->
+          
+                <div class="row justify-content-center text-uppercase">
+                    <div class="col-12 p-0 text-center">
+                        <div class="mb-4">
+                            <h1 class="d-inline mr-3">Modifica Utente</h1>
                         </div>
+
+                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente?d=<%=b.getIdUtente() %>" method="post" enctype="multipart/form-data"
+                      >
+                        <table class="table table-bordered table-dark">
+                            <thead>
+                                <tr>
+                                    <th class="scritta-dorata">Dati Personali</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Nome</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
+                                            value="<%=b.getNome() %>" class="text-capitalize"></td>
+                                </tr>
+
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Cognome</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
+                                            value="<%=b.getCognome() %>" class="text-capitalize"></td>
+                                </tr>
+
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita'</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
+                                            value="<%=b.getDataDiNascita()%>">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <thead>
+                                <th class="scritta-dorata">Dati Account</th>
+                            </thead>
+                            <tbody></tbody>
+                            <tr class="d-flex">
+                                <th class="col-md-2 col-3 scritta-dorata"><label>Email</label></th>
+                                <td class="col-md-10 col-9"><input class="col-8" type="email"
+                                        name="email" value="<%=b.getEmail()%>"></td>
+                            </tr>
+                            <!-- 
+                             <tr class="d-flex">
+                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Username</label></th>
+                                <td class="col-md-10 col-9"><input class="col-8" type="text" name="username"
+                                        value="ale15">
+                                </td>
+                            </tr>
+                             -->
+                            <tr class="d-flex">
+                                <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
+                                <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
+                                        value="<%b.getPassword(); %> "></td>
+                            </tr>
+                            <tr class="d-flex">
+                                <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>
+                                <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
+                                    name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
+                                    type="file" name="img" value="<%b.getImmagine(); %>"></td>
+                            </tr>
+                            </tbody>
+                            <thead>
+                                <tr>
+                                    <th class="cscritta-dorata">Dati Fatturazione</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Partita Iva</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="pIva"
+                                            value="<%=b.getPIva() %>" class="text-capitalize"></td>
+                                </tr>
+
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Indirizzo</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="indirizzo"
+                                            value="<%=b.getIndirizzo() %>" class="text-capitalize"></td>
+                                </tr>
+
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Nome Societa'</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
+                                            value="<%=b.getNomeSocieta() %>"></td>
+                                </tr>
+                                    <tr style="visibility: collapse;">
+                                    </tr> 
+                                <tr class="d-flex">
+                                    <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"
+                                            type="submit" value="modifica"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                            </form>
                     </div>
-
-                  <!-- inizio gestione utenti parte 2-->
-
-
-                    <div class="row text-uppercase text-center d-flex d-md-none">
-                        <div class="col-12 p-0">
-                            <div class="mb-4">
-                                <h1 class="d-inline mr-3 titolo-custom">Gestione Utenti</h1>
-                            </div>
-                            <table class="table table-bordered table-dark">
-                                <thead>
-                                    <tr class="d-flex">
-                                        <th class="col-2 scritta-dorata">Id° Utente</th>
-                                        <th class="col-2 scritta-dorata">Nome Utente</th>
-                                        <th class="col-5 scritta-dorata">Gestisci Utente</th>
-                                        <th class="col-3 scritta-dorata">Conferma Operazione</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                <%for(Utente x:lU) 
-                                					{%>    		
-                                    <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><label><%=x.getIdUtente() %></label></td>
-                                        <td class="col-2 scritta-dorata"><label><%=x.getNome() %></label></td>
-                                        <td class="col-5"><label><select class="col-12 text-center h-100"
-                                                    name="gestici-utente">
-                                                    <option value="conferma-utente"><a href="ProgettoFinaleJava18Gruppo1/ServletModificaUtente">conferma utente</a>
-                                                    </option>
-                                                    <option value="cancella-utente">cancella utente</option>
-                                                    <option value="modifica-utente">modifica utente</option>
-                                                    <option value="abilita-staff">abilita a staff</option>
-                                                </select></label></td>
-                                        <td class="col-3"><a href=""><i
-                                                    class="fas fa-check-circle icona-menu-piccolo colore-icone-scuro"></i>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <%} %>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                <!-- fine gestione utenti -->
-
-
+                </div>
+                <!-- fine modifica utenti -->
 
             </div>
             <!-- fine main destra -->
@@ -291,10 +283,6 @@
             </div>
         </div>
     <!-- Fine Modal Uscita -->
-    
-     <!-- Footer: -->
-    <jsp:include page= "footer.jsp"></jsp:include>
-    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -306,7 +294,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"><%@include file="../js/script.js"%></script>
 </body>
 
 </html>

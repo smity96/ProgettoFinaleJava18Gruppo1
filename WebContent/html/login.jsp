@@ -17,9 +17,10 @@ pageEncoding="ISO-8859-1"%>
     
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
 
+<link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css"> 
     <!--Bootstrap links-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -31,7 +32,7 @@ pageEncoding="ISO-8859-1"%>
     />
   </head>
 
-  <body class="bg-dark text-center">
+  <body class="bg-dark text-center" style="font-family: 'Monserrat', sans-serif">
   
   <!-- Navbar -->
   
@@ -45,7 +46,7 @@ pageEncoding="ISO-8859-1"%>
     >
       <img
         class="mb-4 mt-5"
-        src="/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
+        src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
         alt="Logo"
         width="72"
         height="72"
@@ -66,7 +67,7 @@ pageEncoding="ISO-8859-1"%>
       
       
       <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label text-warning" for="exampleCheck1">Ricordami!</label>
+    <label class="form-check-label text-warning stile" for="exampleCheck1">Ricordami!</label>
    
       <br>
       <br>
@@ -92,7 +93,13 @@ pageEncoding="ISO-8859-1"%>
         href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp"
         >Registrati qui!</a
       >
+      
+      <br>
+      <br>
+      
     </form>
+    
+    <jsp:include page= "footer.jsp"></jsp:include>
 
     <!--Bootstrap links-->
     <script

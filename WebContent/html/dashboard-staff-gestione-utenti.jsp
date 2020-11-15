@@ -12,94 +12,74 @@
     
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+   
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
         HttpSession s=request.getSession(false);    
         Utente u = (Utente)s.getAttribute("uLog");
               
                 %>/ProgettoFinaleJava18Gruppo1/html/index.jsp
     </head>
-<body>
+
+<body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
     <nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
-            <a class="navbar-brand text-uppercase" href="#">
-                <h1>Dashboard Staff</h1>
-            </a>
+            <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Dashboard Staff</h1>
             <!-- Fine Navbar Brand -->
 
             <!-- Toggler/collapse Button -->
-            <button class="navbar-toggler btn-danger" type="button" data-toggle="collapse" data-target="#myNavbar"
-                aria-controls="myNavbar" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler bg-oro" type="button" data-toggle="collapse" data-target="#myNavbar">
                 <span class="navbar-toggler-icon"></span>
-            </button>
+              </button>
 
             <!-- Navbar links collapse -->
 
             <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
-                <ul class="navbar-nav links d-flex d-xl-none">
-                    <li class="nav-item d-flex my-3">
-                        <i class="fas fa-folder-open text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link col-10" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a>
+                <ul class="navbar-nav links d-xl-none">
+                    <li class="nav-item nav-item-custom">
+                      <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
-                    <li class="nav-item d-flex my-3">
-                        <i class="fa fa-home text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active1 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a>
+                    <li class="nav-item nav-item-custom">
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
-                    <li class="nav-item d-flex my-3">
-                        <i class="fas fa-user text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active2 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a>
+          
+                    <li class="nav-item nav-item-custom">
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
-                    <li class="nav-item d-flex my-3">
-                        <i class="fas fa-film text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a>
+                    <li class="nav-item nav-item-custom">
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
-                    <li class="nav-item d-flex my-3">
-                        <i class="fas fas fa-calendar-alt text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active5 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione Proiezioni</a>
+                    <li class="nav-item nav-item-custom">
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
-                    <li class="nav-item d-flex my-3">
-                        <i class="fas fa-users text-muted mr-3 nav-size col-2 ml-0"></i>
-                        <a class="nav-link active6 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp">Gestione Utenti</a>>
-                    </li>
-                </ul>
+                  </ul>
 
                 <!-- nav icons -->
-                <ul class="navbar-nav icons d-xl-flex d-none align-items-center">
-                    <li class="nav-item">
-                        <a class="navbar-brand" href="#">
-                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
-                                alt="Logo" style="width:40px;">
-                            <%="CIAO"+" "+u.getNome() %>
-                        </a>
+                
+                <ul class="navbar-nav icons">
+                    <li class="nav-item mr-5">
+                      <a class="nav-link" href="#">
+                        <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
+                          style="width:30px;">
+                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                      </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#sign-out" href="#">
-                            <i class="fas fa-sign-out-alt mr-2"></i>Sign Out 
-                        </a>
-                    </li>
-                </ul>
-
-                <ul class="navbar-nav icons d-flex d-xl-none justify-content-end">
-                    <li class="nav-item">
-                        <a class="navbar-brand col-2" href="#">
-                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
-                                alt="Logo" style="width:40px;" />
-                            <span class="col-10"><%=u.getNome() %></span> 
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link col-10 offset-col-2" data-toggle="modal" data-target="#sign-out" href="/ServletLogout">
-                            <i class="fas fa-sign-out-alt mr-2"></i> <span>Sign Out </span>
-                        </a>
+                      <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
+                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
+                      </a>
                     </li>
                 </ul>
 
@@ -110,7 +90,7 @@
 
     <!-- main content -->
 
-    <div class="container-fluid main-bg-dorato">
+    <div class="container-fluid bg-oro">
         <div class="row">
 
             <!-- Inizio Sidebar sinistra -->
@@ -118,28 +98,30 @@
             <nav class="col-xl-2 d-none d-xl-flex sidebar justify-content-center max-viewport">
                 <ul class="navbar-nav flex-column list-side-height">
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link" href="/ProgettoFinaleJava18Gruppo1/html/index.jsp">Torna Al Sito</a></div>
+                        <div class="col-2 m-0"><i class="fa fa-home text-muted mr-3 nav-size"></i></div>
+                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro" 
+                            href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna Al
+                                Sito</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fa fa-home text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active1" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></div>
+                        <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
+                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active2" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active4" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a></div>
+                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active5" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
+                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link active6" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp">Gestione Utenti</a></div>
+                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-utenti.jsp">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -163,10 +145,10 @@
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-3 colore-icone-scuro">Id° Utente</th>
-                                        <th class="col-3 colore-icone-scuro">Nome Utente</th>
-                                        <th class="col-3 colore-icone-scuro">Cancella Utente</th>
-                                        <th class="col-3 colore-icone-scuro">Modifica Utente</th>
+                                        <th class="col-3 scritta-dorata">Id° Utente</th>
+                                        <th class="col-3 scritta-dorata">Nome Utente</th>
+                                        <th class="col-3 scritta-dorata">Cancella Utente</th>
+                                        <th class="col-3 scritta-dorata">Modifica Utente</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -176,9 +158,9 @@
                                 
                                     for(Utente g:lU){
                                 %>
-                                    <tr class="d-flex colore-icone-scuro">
-                                        <td class="col-3"><label><%=g.getIdUtente() %></label></td>
-                                        <td class="col-3"><label><%=g.getEmail() %></label></td>
+                                    <tr class="d-flex">
+                                        <td class="col-3 scritta-dorata"><label><%=g.getIdUtente() %></label></td>
+                                        <td class="col-3 scritta-dorata"><label><%=g.getEmail() %></label></td>
                                         <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
@@ -198,23 +180,23 @@
                     <div class="row text-uppercase text-center d-flex d-md-none">
                         <div class="col-12 p-0">
                             <div class="mb-4">
-                                <h1 class="d-inline mr-3">Gestione Utenti</h1>
+                                <h1 class="d-inline mr-3 titolo-custom">Gestione Utenti</h1>
                             </div>
                             <table class="table table-bordered table-hover table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2">Id° Utente</th>
-                                        <th class="col-2">Nome Utente</th>
-                                        <th class="col-5">Gestisci Utente</th>
-                                        <th class="col-3">Conferma Operazione</th>
+                                        <th class="col-2 scritta-dorata">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata">Nome Utente</th>
+                                        <th class="col-5 scritta-dorata">Gestisci Utente</th>
+                                        <th class="col-3 scritta-dorata">Conferma Operazione</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <%for(Utente x:lU) 
                                                     {%>         
                                     <tr class="d-flex">
-                                        <td class="col-2"><label><%=x.getIdUtente() %></label></td>
-                                        <td class="col-2"><label><%=x.getNome() %></label></td>
+                                        <td class="col-2 scritta-dorata"><label><%=x.getIdUtente() %></label></td>
+                                        <td class="col-2 scritta-dorata"><label><%=x.getNome() %></label></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
                                                     <option value="cancella-utente">cancella utente</option>
@@ -245,35 +227,41 @@
     <!-- Modals -->
 
     <!-- Modal uscita -->
-    <div class="modal fade" id="sign-out">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 class="modal-title">Vuoi fare il logout?</h4>
-                    <button type="button" class="close" data-dismiss="modal">
-                        &times;
-                    </button>
-                </div>
+    <!-- Modal -->
+        <div class="modal fade text-warning" id="sign-out">
+            <div class="modal-dialog bg-dark text-warning">
+                <div class="modal-content bg-dark text-warning">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-dark text-warning">
+                        <h4 class="modal-title stile text-warning">Vuoi fare il logout?</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
 
-                <!-- Modal body -->
-                <div class="modal-body">
-                    Premi logout per uscire.
-                </div>
+                    <!-- Modal body -->
+                    <div class="modal-body stile bg-dark text-warning">
+                        Premi logout per uscire.
+                    </div>
 
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">
-                        Rimani
+                    <!-- Modal footer -->
+                    <div class="modal-footer stile">
+                        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
+                            Rimani
+                        </button>
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-outline-danger text-light" data-dismiss="modal">
+                        Logout
                     </button>
-                    <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-danger" data-dismiss="modal">
-                        Esci
-                    </button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <!-- Fine Modal Uscita -->
+    
+    
+     <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

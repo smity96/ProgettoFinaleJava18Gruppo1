@@ -29,21 +29,24 @@ public class ServletInserisciFilm extends HttpServlet {
 		// mi prendo la lista completa dei film
 		List<Film> allFilm = UtilitiesDbFilm.leggiFilmAll();
 		boolean check = false;
+		//creo un nuovo oggetto film
 		Film f2 = new Film();
+		//setto i primi parametri
 		f2.setTitolo(request.getParameter("titolo"));
 		f2.setGenere(request.getParameter("genere"));
+		//
 		try {
 			int anno = Integer.parseInt(request.getParameter("annoDiUscita"));
-			if (anno > 2021 || anno < 1400) {
-				response.getWriter().append("Anno sbagliato");
+			if (anno >= 2021 || anno < 1896) {
+				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
 			} else {
 				f2.setAnnoDiUscita(request.getParameter("annoDiUscita"));
 			}
 		} catch (NumberFormatException e1) {
-			response.getWriter().append("Anno sbagliato");
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
 			e1.printStackTrace();
 		} catch (IOException e1) {
-			response.getWriter().append("Anno sbagliato");
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
 			e1.printStackTrace();
 		}
 		f2.setDurata(Integer.parseInt(request.getParameter("durata")));
@@ -69,8 +72,10 @@ public class ServletInserisciFilm extends HttpServlet {
 		}
 		if (request.getParameter("fileUrl").trim().equals("")) {
 			f2.setLocandina("http://127.0.0.1:8887/" + fileName);
-		} else {
+		} else if(fileName==null) {
 			f2.setLocandina(request.getParameter("fileUrl"));
+		}else {
+			f2.setLocandina("https://thumbs.dreamstime.com/b/pellicola-di-film-di-colore-di-35mm-3995550.jpg");
 		}
 		
 		// controllo sul titolo
@@ -86,7 +91,7 @@ public class ServletInserisciFilm extends HttpServlet {
 			// aggiungo film
 			UtilitiesDbFilm.inserisciFilm(f2);
 		}
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp");
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
 	}
 
 	private String getFileName(final Part part) {

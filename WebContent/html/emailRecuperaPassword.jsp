@@ -7,7 +7,7 @@
 
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
      <style>
         .stile{
@@ -38,12 +38,11 @@
 <jsp:include page= "navbarNotte.jsp"></jsp:include>
 
     <!-- Inserisci email per il recupero password -->
-
+<br>
+    <br>
+    <br> 
     <form action="<%=request.getContextPath() %>/ServletRecuperoPassword" method="post">
-    <br>
-    <br>
-    <br>    
-    <br>
+    
     <p class="text-warning text-center mt-4 stile">Inserisci qui il tuo indirizzo di posta elettronica. 
     <br>
     Ti invieremo un'email con la tua vecchia password. 
@@ -52,11 +51,22 @@
     <input type="email" name="email" class="btn rounded text-center bg-light" placeholder="Email">
     <br>
     <br>
-    <button class="btn btn-outline-warning text-center text-light stile" type="submit">
+    <button class="btn btn-outline-warning text-center text-light stile" type="submit"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/emailPasswordInviata.jsp"></a>
     Invia
     </button>
     </p>
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+     <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
+    
 
     <!--Bootstrap links-->
     <script

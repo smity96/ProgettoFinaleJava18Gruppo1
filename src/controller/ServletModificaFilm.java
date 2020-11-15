@@ -45,13 +45,13 @@ public class ServletModificaFilm extends HttpServlet {
 		f3.setGenere(request.getParameter("genere"));
 		try {
 			int anno = Integer.parseInt(request.getParameter("annoDiUscita"));
-			if (anno > 2021 || anno < 1400) {
-				response.getWriter().append("Anno sbagliato");
+			if (anno >= 2021 || anno < 1896) {
+				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
 			} else {
 				f3.setAnnoDiUscita(request.getParameter("annoDiUscita"));
 			}
 		} catch (NumberFormatException e1) {
-			response.getWriter().append("Anno sbagliato");
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
 			e1.printStackTrace();
 		}
 		f3.setDurata(Integer.parseInt(request.getParameter("durata")));
@@ -95,7 +95,7 @@ public class ServletModificaFilm extends HttpServlet {
 		if (check == false) {
 			UtilitiesDbFilm.inserisciFilm(f3);
 		}
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp");
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
 	}
 
 	private String getFileName(final Part part) {

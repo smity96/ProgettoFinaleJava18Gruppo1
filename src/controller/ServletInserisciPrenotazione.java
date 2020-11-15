@@ -36,7 +36,9 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 		pr.setProiezione(proiezione);
 		pr.setPostiPrenotati(postiPrenotati);
 		pr.setCosto_totale(costoTotale);
-		
+		//creo il codice prenotazione
+		int ticket=(int)((Math.random() * (2147483646 - 1000000000)) + 1000000000);
+		pr.setCodice_biglietto(ticket);
 		UtilitiesDbPrenotazione.inserisciPrenotazione(pr);
 		response.sendRedirect("ServletLeggiPrenotazione");
 		

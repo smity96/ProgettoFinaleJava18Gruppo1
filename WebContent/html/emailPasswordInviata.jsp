@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
+    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
      <style>
         .stile{
@@ -30,7 +30,7 @@
     />
 
 </head>
-<body>
+<body style="font-family: 'Monserrat', sans-serif">
     <!-- Navbar -->
   
 <jsp:include page= "navbarNotte.jsp"></jsp:include>
@@ -49,11 +49,25 @@
     <br>
     <br>
     <br>
-    <button class="btn btn-outline-warning text-center text-light stile"><a href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"></a>
+    <a class="btn btn-outline-warning text-center text-light stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">
     Accedi
-    </button>
     </a>
+    
     </p>
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+ <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
+
 
     <!--Bootstrap links-->
     <script
