@@ -30,7 +30,7 @@
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         //TODO Sistemare la sessione
-                                        //Utente u = (Utente)s.getAttribute("uLog");
+                                        Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                         
                     

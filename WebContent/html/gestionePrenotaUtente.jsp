@@ -14,7 +14,7 @@
    <%
      HttpSession s=request.getSession(false);        
      //TODO Sistemare anche qui
-     //Utente u = (Utente)s.getAttribute("uLog");
+     Utente u = (Utente)s.getAttribute("uLog");
                             
    %>
 
@@ -44,10 +44,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
-<% 
-HttpSession s=request.getSession(false); 
-Utente u = (Utente)s.getAttribute("uLog");
-%>
+
 <body>
 
     <body>
@@ -125,7 +122,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneUtente">Gestione Prenotazioni</a></div>
                         </li>
 
                 </nav>
