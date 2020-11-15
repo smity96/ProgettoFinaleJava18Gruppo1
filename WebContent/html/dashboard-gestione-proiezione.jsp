@@ -210,6 +210,16 @@
 											Film Alla Proiezione</i>
 									</a>
 								</p>
+								<% 
+								boolean errore=false;
+								if(request.getAttribute("errore")!=null){
+									 errore=(boolean)request.getAttribute("errore");
+								}
+								if (errore){
+								%>
+								<p>Attenzione! La proiezione che hai inserito o modificato va in conflitto con altre
+								 proiezioni o e' antecedente alla data e ora attuale.</p>
+								 <%} %>
 							</div>
 							<table class="table table-hover table-dark">
 								<thead>

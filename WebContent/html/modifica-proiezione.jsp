@@ -1,4 +1,5 @@
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -191,8 +192,11 @@
                                     <th class="col-md-2 col-3"><label>Data E Ora Di Inizio</label>
                                     </th>
 	                                    <td class="col-md-10 col-9">
+	                                    <% SimpleDateFormat tFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+	                                     String date= tFormat.format(pDaModificare.getDataOra());
+	                                    %>
 		                                    <input class="col-8 mx-auto" type="datetime-local"
-		                                            name="dataOra" value="<%= pDaModificare.getDataOra()%>" >
+		                                            name="dataOra" value="<%=date %>" >
 	                                    </td>
                                 </tr>
     
@@ -201,9 +205,18 @@
                                     
                                     <td class="col-md-10 col-9">
 	                                    <select class="col-8 mx-auto" name="film" id="films">
-	                                    <% for(Film f: films){ %>
-										  <option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
-										  <%} %>
+	                                    <% for(Film f: films){
+	                                    		if(f.equals(pDaModificare.getFilm())){%>
+										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%
+	                                    		}
+	                                    	} %>
+	                                     <% for(Film f: films){
+	                                   			if(!f.equals(pDaModificare.getFilm())){%>
+										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%
+	                                    		}
+	                                    	} %>
 										</select>
                                     </td>
                                 </tr>
