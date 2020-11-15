@@ -26,7 +26,6 @@ public class ServletCancellaUtente extends HttpServlet {
     	System.out.println(request.getParameter("canc"));
      	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
     	if(request.getParameter("canc")!=null) {
-    		System.out.println("sono nell if");
     		UtilitiesDbUtente.cancUtente(u);
     		listaU=UtilitiesDbUtente.listaUtenti();
     		if(u.getRuolo()==3) {
