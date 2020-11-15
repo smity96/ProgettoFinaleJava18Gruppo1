@@ -52,7 +52,6 @@ public class ServletModificaUtente extends HttpServlet {
     		pIva=null;
     	}
 //---------GESTIONE DATA DI NASCITA----------------------------------    	
-    	System.out.println(request.getParameter("data_di_nascita"));
     	String dDn=request.getParameter("data_di_nascita");
     	if(!dDn.equals("")) {
     		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");		
@@ -100,8 +99,9 @@ public class ServletModificaUtente extends HttpServlet {
     		utente.setImmagine("http://127.0.0.1:8887/" + fileName);
     		System.out.println(utente.toString());
     		UtilitiesDbUtente.modUtente(utente);
+//---------AGGIORNAMENTO LISTA -----------------------------------------------    		
     		listaU=UtilitiesDbUtente.listaUtenti();
-//---------    		
+//--------- GESTIONE REINDIRIZZAMENTO IN FUNZIONE DEL RUOLO NELLA SESSION-----   		
     		HttpSession s=request.getSession(false);
     		Utente inSessione=(Utente)s.getAttribute("uLog");    		
     		switch(inSessione.getRuolo()) {

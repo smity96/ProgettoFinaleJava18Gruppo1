@@ -234,5 +234,14 @@ public class Utente implements Serializable {
 		return true;
 	}
 
+	@Override
+	public String toString() {
+		return "Utente [idUtente=" + idUtente + ", cognome=" + cognome + ", dataDiNascita=" + dataDiNascita + ", email="
+				+ email + ", indirizzo=" + indirizzo + ", nome=" + nome + ", nomeSocieta=" + nomeSocieta + ", pIva="
+				+ pIva + ", password=" + password + ", ruolo=" + ruolo + "]";
+	}
+
+
+
 	
 }

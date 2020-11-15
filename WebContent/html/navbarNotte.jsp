@@ -41,15 +41,16 @@
       </a>     
 
       <!--Vai alla Home: -->
-      <div class= "col-2">
+      <div class= "col-sm">
         <ul class="navbar-left navbar-nav m-auto d-flex flex-row">
           <li class="nav-item m-auto width: 90%">
             <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Home</a>
           </li>
+          </ul>
         </div>
 
         <!--Vai al palinsesto-->
-          <div class="col-2">
+          <div class="col-sm">
           <ul class="navbar-left navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
             <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">Palinsesto</a>
@@ -58,7 +59,7 @@
         </div>
         
         <!-- Vai alle prenotazioni -->
-        <div class="col-2">
+        <div class="col-sm">
           <ul class="navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
           <% if(s.getAttribute("uLog")!=null){%> 
@@ -71,8 +72,8 @@
         </div>
         
         <!--Vai alla pagina di registrazione: -->
-            <div class="col-2">
-            <ul class="navbar-left navbar-nav d-flex flex-row">
+            <div class="col-sm">
+            <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
             <%
             if(s.getAttribute("uLog")!=null){%> 
@@ -85,7 +86,7 @@
       </div>
 
         <!--Vai alla pagina di Login: -->
-          <div class="col-2">
+          <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
             <%
@@ -95,9 +96,12 @@
              <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
             <%} %>
             </li>
+            </ul>
           </div>
-    </nav>
-</div>
+          
+      </div>
+    </nav>  
+
 
 
 <!-- Modal uscita -->

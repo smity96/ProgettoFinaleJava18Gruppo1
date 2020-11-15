@@ -74,7 +74,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneUtente"><i class="fas fa-video text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
                         </li>
                     </ul>
 
@@ -89,7 +89,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                         </li>
                         <li class="nav-item">
                             <a class="nav-link stile" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
-                                <i class="fa fa-sign-out"></i> Logout
+                                <i class="fa fa-sign-out-alt mr-2"></i> Logout
                             </a>
                         </li>
                     </ul>
@@ -118,9 +118,10 @@ Utente u = (Utente)s.getAttribute("uLog");
                             <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenota film</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size ml-4"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         </li>
+                        </ul>
                 </nav>
                 <!-- fine side bar -->
                 
@@ -215,7 +216,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                                         <% }else if(postiDisponibili == 0 && prenotato == false){%>
 											Non disponibili 
 										<%}else if(prenotato == true){ %>
-											Prenotazione gi�' effettuata
+											Prenotazione gia' effettuata
 											<%} %>
 									</td>
 									<td class="stile" ><%= x.getPrezzo() %></td>
@@ -256,6 +257,7 @@ Utente u = (Utente)s.getAttribute("uLog");
 			</div>
 
 		</div>
+	</div>
 	</div>
 	<!-- Modal -->
 	<!-- Modal -->
