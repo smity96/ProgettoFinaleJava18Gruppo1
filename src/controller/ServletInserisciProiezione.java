@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -41,7 +42,7 @@ public class ServletInserisciProiezione extends HttpServlet {
 		boolean errore=false;
 		Proiezione pDaAggiungere = new Proiezione();
 		String dataEora2  = request.getParameter("dataOra");
-		SimpleDateFormat formatter6 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+		SimpleDateFormat formatter6 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
 		try {
 			Date dataEora = formatter6.parse(dataEora2);
 			pDaAggiungere.setDataOra(dataEora);

@@ -140,5 +140,21 @@ public class Film implements Serializable {
 				+ ", locandina=" + locandina + ", titolo=" + titolo + ", trama=" + trama + ", urlTrailer=" + urlTrailer
 				+ ", proieziones=" + proieziones + "]";
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Film other = (Film) obj;
+		if (idFilm != other.idFilm)
+			return false;
+		return true;
+	}
+	
+	
 	
 }

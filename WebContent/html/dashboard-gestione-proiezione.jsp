@@ -1,3 +1,5 @@
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -198,7 +200,11 @@
                                 %>
 									<tr class="d-flex align-items-center justify-content-center">
 										<td class="col-2 bordo-trasparente scritta-dorata">
-											<p><%= p.getDataOra() %></p>
+										<%
+										SimpleDateFormat ita=new SimpleDateFormat("E dd MMM yyyy HH:mm",Locale.ITALY);
+										String dateIta=ita.format(p.getDataOra());
+										%>
+											<p><%= dateIta %></p>
 										</td>
 										<td
 											class="col-2 bordo-trasparente text-capitalize scritta-dorata">

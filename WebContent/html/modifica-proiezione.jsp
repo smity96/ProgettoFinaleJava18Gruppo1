@@ -181,7 +181,7 @@
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Data E Ora Di Inizio</label>
                                     </th>
 	                                    <td class="col-md-10 col-9">
-	                                    <% SimpleDateFormat tFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+	                                    <% SimpleDateFormat tFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
 	                                     String date= tFormat.format(pDaModificare.getDataOra());
 	                                    %>
 		                                    <input class="col-8 mx-auto" type="datetime-local"
