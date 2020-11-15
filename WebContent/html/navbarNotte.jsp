@@ -59,7 +59,7 @@
         
         <!-- Vai alle prenotazioni -->
         <div class="col-2">
-          <ul class="navbar-left navbar-nav d-flex flex-row">
+          <ul class="navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
           <% if(s.getAttribute("uLog")!=null){%> 
             <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenotazione</a>
@@ -72,7 +72,7 @@
         
         <!--Vai alla pagina di registrazione: -->
             <div class="col-2">
-            <ul class="navbar-nav d-flex flex-row justify-content-end">
+            <ul class="navbar-left navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
             <%
             if(s.getAttribute("uLog")!=null){%> 
@@ -86,7 +86,7 @@
 
         <!--Vai alla pagina di Login: -->
           <div class="col-2">
-          <ul class="navbar-nav d-flex flex-row justify-content-end unstyled">
+          <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
             <%
             if(s.getAttribute("uLog")!=null){%>
