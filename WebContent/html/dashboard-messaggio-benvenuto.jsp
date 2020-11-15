@@ -72,7 +72,7 @@
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fa-film text-muted mr-3 nav-size col-2"></i>
-                        <a class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a>
+                        <a class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm">Gestione Film</a>
                     </li>
                     <li class="nav-item d-flex my-3">
                         <i class="fas fas fa-calendar-alt text-muted mr-3 nav-size col-2"></i>
@@ -103,7 +103,7 @@
                 <ul class="navbar-nav icons d-flex d-xl-none justify-content-end">
                     <li class="nav-item">
                         <a class="navbar-brand col-2" href="#">
-                            <img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                            <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                 alt="Logo" style="width:40px;" />
                             <span class="col-10"><%=u.getNome() %></span> 
                         </a>

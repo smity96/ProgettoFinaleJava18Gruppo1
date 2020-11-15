@@ -77,7 +77,7 @@
 					</li>
 					<li class="nav-item d-flex my-3"><i
 						class="fas fa-film text-muted mr-3 nav-size col-2"></i> <a
-						class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp">Gestione Film</a></li>
+						class="nav-link active4 col-10" href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm">Gestione Film</a></li>
 					<li class="nav-item d-flex my-3"><i
 						class="fas fas fa-calendar-alt text-muted mr-3 nav-size col-2"></i>
 						<a class="nav-link active5 col-10" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione

@@ -1,0 +1,17 @@
+logo del cinema
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png 
+
+script JS
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script-filter.js
+
+CSS
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style.css
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style3.css
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-index.css
+http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css
+
+Path per le immagini
+http://127.0.0.1:8887/nomeFile

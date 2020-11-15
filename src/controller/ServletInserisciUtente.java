@@ -90,7 +90,11 @@ public class ServletInserisciUtente extends HttpServlet {
 					System.out.println("sto nel catch");
 					e.printStackTrace();
 				}
-				utente.setImmagine("http://127.0.0.1:8887/" + fileName);
+				if(fileName!=null) {
+					utente.setImmagine("http://127.0.0.1:8887/" + fileName);
+				}else {
+					utente.setImmagine("https://mpng.subpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg");
+				}
 				String dataDiNascita = (request.getParameter("data_di_nascita"));
 				Date dDn = null;
 				try {

@@ -14,31 +14,21 @@ import utilities.UtilitiesDbFilm;
 @WebServlet("/ServletCancellaFilm")
 public class ServletCancellaFilm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    public ServletCancellaFilm() {
-        super();
-    }
 
-	
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public ServletCancellaFilm() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doPost(request, response);
 	}
-	
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Film f2=UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id_film")));
-			if(f2 instanceof Film) {
-				System.out.println("if dell'instance of");
-				//elimino il film
-				UtilitiesDbFilm.cancellaFilm(f2);
-			}
-			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp");
-		// TODO da cambiare quando si hanno le sessioni
-		/*if (session.getAttribute("staff") == null) {
-			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-staff.jsp");
-		}*/
-		/*if (session.getAttribute("admin") == null) {
-			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp");
-		}*/
-		
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		Film f2 = UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id_film")));
+		// elimino il film
+		UtilitiesDbFilm.cancellaFilm(f2);
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
 	}
 }
-
