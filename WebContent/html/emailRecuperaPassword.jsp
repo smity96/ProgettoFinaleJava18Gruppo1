@@ -56,6 +56,11 @@
     </button>
     </p>
     </form>
+    
+    
+     <!-- Footer: -->
+    <jsp:include page= "footer.jsp"></jsp:include>
+    
 
     <!--Bootstrap links-->
     <script
