@@ -85,59 +85,64 @@ pageEncoding="ISO-8859-1"%>
     
       <!--Requisiti obbligatori: -->
       
-      <p >
+      <div class="form-group">
+      <label for="Nome" class="text-warning text-center control-label">
         <input
-          class="rounded stile"
+          class="rounded stile bottone form-control"
           id="Nome"
           name="nome"
           type="text"
           placeholder="Nome"
           required
-        />
-      </p>
+        /></label>
+      </div>
 
-      <p>
+      <div class="form-group">
+      <label for="Cognome" class="text-warning text-center control-label">Cognome
         <input
-          class="rounded stile"
+          class="rounded stile bottone form-control"
           id="Cognome"
           name="cognome"
           type="text"
           placeholder="Cognome"
           required
-        />
-      </p>
+        /></label>
+      </div>
 
-      <p>
+      <div class="form-group">
+      <label for="dataDiNascita" class="text-warning text-center control-label">Data di Nascita
        <input
-          class="rounded bottone"
+          class="rounded bottone stile form-control"
           id="dataDiNascita"
           name="data_di_nascita"
           type="date"
           required
-        />
-      </p>
+        /></label>
+      </div>
 
-      <p>
+      <div class="form-group">
+      <label for="Email" class="text-warning text-center control-label">Email
         <input
-          class="rounded stile"
+          class="rounded stile bottone form-control"
           id="Email"
           name="email"
           type="email"
           placeholder="Email"
           required
-        />
-      </p>     
+        /></label>
+      </div>     
 
-      <p>
+      <div class="form-group">
+      <label for="Password" class="text-warning text-center control-label">Password
         <input
-          class="rounded stile"
+          class="rounded stile bottone form-control"
           id="Password"
           name="password"
           type="password"
           placeholder="Password"
           required
-        />
-      </p>
+        /></label>
+      </div>
       
    
       
@@ -175,52 +180,57 @@ pageEncoding="ISO-8859-1"%>
           </button>
           <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav mr-auto">
-              
+        <br>      
        <li class="nav-item">
-        <p>
+      <div class="form-group">
+      <label for="Immagine" class="text-warning text-center control-label">Immagine del Profilo
         <input
-          class="rounded text-warning bottone stile"
+          class="rounded form-control bottone stile"
           name="imgP"
           type="file"
           placeholder="Scegli immagine"
           value="Scegli immagine"
-        />
-      </p>
+        /></label>
+      </div>
       </li>
        
        <li class="nav-item"> 
-       <p>    
+       <div class="form-group">
+      <label for="PartitaIva" class="text-warning text-center control-label">Partita Iva    
                   <input
-                    class="rounded stile"
+                    class="rounded stile bottone form-control"
                     id="PartitaIva"
                     name="P.I."
                     type="text"
                     placeholder="Partita Iva"
-                  />
-                </p>
+                  /></label>
+                </div>
               </li>
               
               <li class="nav-item">
-                <p>
+           <div class="form-group">
+           <label for="Indirizzo" class="text-warning text-center control-label">Indirizzo
                   <input
-                    class="rounded stile"
+                    class="rounded stile bottone form-control"
                     name="indirizzo"
                     id="Indirizzo"
                     type="text"
                     placeholder="Indirizzo"
-                  />
-                </p>
+                  /></label>
+                </div>
               </li>
               
               <li class="nav-item">
-                <p>
+                <div class="form-group">
+                <label for="NomeSocieta" class="text-warning text-center control-label">Nome Societa'
                   <input
-                    class="rounded stile"
+                    class="rounded stile bottone form-control"
                     name="nomeSoc"
+                    id="NomeSocieta"
                     type="text"
                     placeholder="Nome Societa'"
-                  />
-                </p>
+                  /></label>
+                </div>
               </li>
             </ul>
           </div>
