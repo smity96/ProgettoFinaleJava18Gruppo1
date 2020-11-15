@@ -26,7 +26,7 @@
         HttpSession s=request.getSession(false);    
         Utente u = (Utente)s.getAttribute("uLog");
               
-                %>/ProgettoFinaleJava18Gruppo1/html/index.jsp
+                %>
     </head>
 <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->

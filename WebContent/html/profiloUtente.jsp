@@ -95,10 +95,10 @@
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
                         <li class="nav-item">                            
-                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/ServletLeggiPrenotazione"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp"><i class="fas fa-file-signature text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneUtente"><i class="fas fa-video text-muted mr-3 nav-size"></i>Gestione Prenotazioni</a>
                         </li>
                     </ul>
 
@@ -113,7 +113,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link stile" data-toggle="modal" data-target="#sign-out" href="<%=request.getContextPath() %>/ServletLogout">
-                                <i class="fa fa-sign-out"></i> Logout
+                                <i class="fa fa-sign-out-alt mr-2"></i> Logout
                             </a>
                         </li>
                     </ul>
@@ -143,10 +143,11 @@
                             <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenota film</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
-                            <div class="col-3"><i class="fas fa-file-signature text-muted mr-3 nav-size ml-4"></i></div>
+                            <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size ml-4"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
                         
                         </li>
+                        </ul>
                 </nav>
                 <!-- fine side bar -->
                 <div class="col-lg-9 col-xl-10 py-5 bg-dark">
@@ -274,7 +275,7 @@
             </div>
         </div>
 </div>
-
+</div>
 
         <!-- Modal -->
         <div class="modal fade text-warning" id="sign-out">
