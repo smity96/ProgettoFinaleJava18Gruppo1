@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
               						  HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -155,63 +156,63 @@
 
                 <!-- inizio gestione profilo -->
           
-                <div class="row justify-content-center text-uppercase d-none funzione-menu gestione-profilo">
+                <div class="row justify-content-center text-uppercase">
                     <div class="col-12 p-0 text-center">
                         <div class="mb-4">
-                            <h1 class="d-inline mr-3">Gestione Profilo</h1>
+                            <h1 class="d-inline mr-3 titolo-custom">Gestione Profilo</h1>
                         </div>
 
                       <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="post" enctype="multipart/form-data">
-                        <table class="table table-bordered table-hover table-dark">
+                        <table class="table table-bordered table-dark">
                             <thead>
                                 <tr>
-                                    <th class="colore-icone-scuro">Dati Personali</th>
+                                    <th class="scritta-dorata">Dati Personali</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome</label></th>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Nome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
                                             value="<%=u.getNome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Cognome</label></th>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Cognome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
                                             value="<%=u.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Data di Nascita'</label></th>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
                                             value="<%=u.getDataDiNascita()%>">
                                     </td>
                                 </tr>
                             </tbody>
                             <thead>
-                                <th class="colore-icone-scuro">Dati Account</th>
+                                <th class="scritta-dorata">Dati Account</th>
                             </thead>
                             <tbody></tbody>
                             <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Email</label></th>
-                                <td class="col-md-10 col-9 colore-icone-scuro"><input class="col-8" type="email"
+                                <th class="col-md-2 col-3 scritta-dorata"><label>Email</label></th>
+                                <td class="col-md-10 col-9 scritta-dorata"><input class="col-8" type="email"
                                         name="email" value="<%=u.getEmail()%>"></td>
                             </tr>
                             <!-- 
                              <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Username</label></th>
+                                <th class="col-md-2 col-3 scritta-dorata"><label>Username</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="text" name="username"
                                         value="ale15">
                                 </td>
                             </tr>
                              -->
                             <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Password</label></th>
+                                <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
                                         value="<%u.getPassword(); %> "></td>
                             </tr>
                             <tr class="d-flex">
-                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Immagine Profilo</label></th>
+                                <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
                                     type="file" name="img" value="<%u.getImmagine(); %>"></td>
@@ -219,24 +220,24 @@
                             </tbody>
                             <thead>
                                 <tr>
-                                    <th class="colore-icone-scuro">Dati Fatturazione</th>
+                                    <th class="scritta-dorata">Dati Fatturazione</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Partita Iva</label></th>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Partita Iva</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="pIva"
                                             value="<%=u.getPIva() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Indirizzo</label></th>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Indirizzo</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="indirizzo"
                                             value="<%=u.getIndirizzo() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro"><label>Nome Societa'</label></th>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Nome Societa'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
                                             value="<%u.getNomeSocieta(); %>"></td>
                                 </tr>
@@ -244,7 +245,7 @@
 									<td><input type="hidden" name="id" value="<%= u.getIdUtente() %>"></td>
 									</tr> 
                                 <tr class="d-flex">
-                                    <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"
+                                    <td class="col-12 justify-content-center"><input class="bg-oro"
                                             type="submit" value="modifica"></td>
                                 </tr>
                             </tbody>

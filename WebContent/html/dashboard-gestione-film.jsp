@@ -21,8 +21,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
               						  HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -171,13 +171,13 @@
                             </div>
                             
                             <%List<Film> tuttiFilm=UtilitiesDbFilm.leggiFilmAll(); %>
-                            <table class="table table-hover table-dark">
+                            <table class="table table-dark">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
-                                        <th class="col-4 colore-icone-scuro">Locandina</th>
-                                        <th class="col-4 colore-icone-scuro">Titolo</th>
-                                        <th class="col-2 colore-icone-scuro">Modifica Info Film</th>
-                                        <th class="col-2 colore-icone-scuro">Cancella Film</th>
+                                        <th class="col-4 scritta-dorata">Locandina</th>
+                                        <th class="col-4 scritta-dorata">Titolo</th>
+                                        <th class="col-2 scritta-dorata">Modifica Info Film</th>
+                                        <th class="col-2 scritta-dorata">Cancella Film</th>
                                     </tr>
                                 </thead>
                                 <tbody>                              
@@ -186,7 +186,7 @@
                                         <td class="col-4 bordo-trasparente"><img class="img-fluid film-custom-height"
                                                 src="<%=f.getLocandina() %>" alt=""></td>
                                         <td class="col-4 text-capitalize bordo-trasparente">
-                                            <p class="colore-icone-scuro colore-icone-scuro"><%=f.getTitolo() %></p>
+                                            <p class="scritta-dorata"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
                                             <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
@@ -208,17 +208,17 @@
                     <div class="row text-uppercase text-center d-flex d-md-none">
                         <div class="col-12 p-0">
                             <div class="mb-3 align-items-center justify-content-center">
-                                <h1 class="mb-2">Lista Film In Programmazione</h1>
+                                <h1 class="mb-2 titolo-custom">Lista Film In Programmazione</h1>
                                 <p><a data-toggle="modal" data-target=".aggiungi-film" href="">
                                         <i class="fas fa-plus aggiungi-custom">Aggiungi Film</i>
                                     </a></p>
                             </div>
-                            <table class="table table-hover table-dark">
+                            <table class="table table-dark">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
-                                        <th class="col-6 colore-icone-scuro">Titolo</th>
-                                        <th class="col-3 colore-icone-scuro">Modifica Info Film</th>
-                                        <th class="col-3 colore-icone-scuro">Cancella Film</th>
+                                        <th class="col-6 scritta-dorata">Titolo</th>
+                                        <th class="col-3 scritta-dorata">Modifica Info Film</th>
+                                        <th class="col-3 scritta-dorata">Cancella Film</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -228,7 +228,7 @@
                                         <td class="col-6 text-capitalize bordo-trasparente">
                                             <img class="img-fluid film-custom-height mb-3"
                                                 src="<%=f.getLocandina() %>" alt="">
-                                            <p class="colore-icone-scuro"><%=f.getTitolo() %></p>
+                                            <p class="scritta-dorata"><%=f.getTitolo() %></p>
                                         <td class="col-3 bordo-trasparente">
                                             <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>

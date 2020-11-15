@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
               						  HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -154,10 +155,11 @@
                 
                 <!-- messaggio benvenuto -->
                 
-                <div class="row text-center align-items-center d-flex mt-5">
-                    <div class="col-12 p-0 mb-3"><img src="../src/logocinema.png" class="img-fluid rounded-circle img-thumbnail foto-profilo-benvenuto mr-3"
-                        alt="foto profilo utente"></div>
-                    
+                <div class="row funzione-menu messaggio-benvenuto text-center align-items-center d-flex mt-5">
+                    <div class="col-12 p-0 mb-3"><img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
+                            class="img-fluid rounded-circle img-thumbnail foto-profilo-benvenuto mr-3"
+                            alt="foto profilo utente"></div>
+
                     <div class="col-12 p-0 mb-3">
                         <h1 class="text-capitalize">
                             <i class="fas fa-handshake mr-3"></i>
@@ -173,9 +175,6 @@
                     <div class="col-12 p-0 mb-3">
                         <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verrà visualizzato in
                             alto.</h4>
-                    </div>
-                    <div class="col-12 p-0 mb-3">
-                        <h4 class="text-capitalize">In caso di dubbi, visualizzare le guide riportate qui sotto.</h4>
                     </div>
 
                 </div>
@@ -240,7 +239,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"><%@include file="../js/script.js"%></script>
 </body>
 
 </html>

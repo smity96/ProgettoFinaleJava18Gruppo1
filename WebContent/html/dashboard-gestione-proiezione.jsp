@@ -22,7 +22,8 @@
 	crossorigin="anonymous">
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-	<link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+	<link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
 <%
               						  /* HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -159,7 +160,7 @@
 					<div class="row text-uppercase text-center d-none d-md-flex">
 						<div class="col-12 p-0">
 							<div class="mb-3 align-items-center justify-content-center">
-								<h1 class="mb-2">Gestione Programmazione</h1>
+								<h1 class="mb-2">Gestione Proiezioni</h1>
 								<p>
 									<a data-toggle="modal" data-target=".aggiungi-film-proiezione"
 										href=""> <i class="fas fa-plus aggiungi-custom">Aggiungi
@@ -167,16 +168,16 @@
 									</a>
 								</p>
 							</div>
-							<table class="table table-hover table-dark">
+							<table class="table table-dark">
 								<thead>
 									<tr class="d-flex justify-content-center">
-										<th class="col-2 colore-icone-scuro">Data e Ora</th>
-										<th class="col-2 colore-icone-scuro">Film Proiettato</th>
-										<th class="col-2 colore-icone-scuro">Intervallo</th>
-										<th class="col-2 colore-icone-scuro">N. Posti</th>
-										<th class="col-2 colore-icone-scuro">Costo Biglietto</th>
-										<th class="col-1 colore-icone-scuro">Modifica Proiezione</th>
-										<th class="col-1 colore-icone-scuro">Cancella Proiezione</th>
+										<th class="col-2 scritta-dorata">Data e Ora</th>
+										<th class="col-2 scritta-dorata">Film Proiettato</th>
+										<th class="col-2 scritta-dorata">Intervallo</th>
+										<th class="col-2 scritta-dorata">N. Posti</th>
+										<th class="col-2 scritta-dorata">Costo Biglietto</th>
+										<th class="col-1 scritta-dorata">Modifica Proiezione</th>
+										<th class="col-1 scritta-dorata">Cancella Proiezione</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -186,22 +187,22 @@
                                 for(Proiezione p : proiezioni){ 
                                 %>
 									<tr class="d-flex align-items-center justify-content-center">
-										<td class="col-2 bordo-trasparente colore-icone-scuro">
+										<td class="col-2 bordo-trasparente scritta-dorata">
 											<p><%= p.getDataOra() %></p>
 										</td>
 										<td
-											class="col-2 bordo-trasparente text-capitalize colore-icone-scuro">
+											class="col-2 bordo-trasparente text-capitalize scritta-dorata">
 											<img class="img-fluid film-custom-height mb-3"
 											src="<%= p.getFilm().getLocandina() %>" alt="">
 											<p><%= p.getFilm().getTitolo() %></p>
 										</td>
-										<td class="col-2 bordo-trasparente colore-icone-scuro">
+										<td class="col-2 bordo-trasparente scritta-dorata">
 											<p><%= p.getIntervallo() %></p>
 										</td>
-										<td class="col-2 bordo-trasparente colore-icone-scuro">
+										<td class="col-2 bordo-trasparente scritta-dorata">
 											<p><%= p.getPostiMax() %></p>
 										</td>
-										<td class="col-2 bordo-trasparente colore-icone-scuro">
+										<td class="col-2 bordo-trasparente scritta-dorata">
 											<p><%= p.getPrezzo()%></p>
 										</td>
 										<td class="col-1 bordo-trasparente"><form action="ServletLeggiProiezioneById" method="get">
@@ -236,7 +237,7 @@
 					<div class="row text-uppercase text-center d-md-none d-flex">
 						<div class="col-12 p-0">
 							<div class="mb-4">
-								<h1 class="d-inline mr-3">Gestione Proiezione</h1>
+								<h1 class="d-inline mr-3 titolo-custom">Gestione Proiezione</h1>
 								<p>
 									<a data-toggle="modal" data-target=".aggiungi-film-proiezione"
 										href=""> <i class="fas fa-plus aggiungi-custom">Aggiungi
@@ -244,25 +245,25 @@
 									</a>
 								</p>
 							</div>
-							<table class="table table-hover table-dark">
+							<table class="table table-dark">
 								<thead>
 									<tr class="d-flex justify-content-center">
-										<th class="col-4 colore-icone-scuro">Film Proiettato</th>
-										<th class="col-4 colore-icone-scuro">Info Film</th>
-										<th class="col-2 colore-icone-scuro">Modifica Proiezione</th>
-										<th class="col-2 colore-icone-scuro">Cancella Proiezione</th>
+										<th class="col-4 scritta-dorata">Film Proiettato</th>
+										<th class="col-4 scritta-dorata">Info Film</th>
+										<th class="col-2 scritta-dorata">Modifica Proiezione</th>
+										<th class="col-2 scritta-dorata">Cancella Proiezione</th>
 									</tr>
 								</thead>
 								<tbody>
 									<%for(Proiezione p : proiezioni){  %>
 									<tr class="d-flex align-items-center justify-content-center">
 										<td
-											class="col-4 bordo-trasparente text-capitalize colore-icone-scuro">
+											class="col-4 bordo-trasparente text-capitalize scritta-dorata">
 											<img class="img-fluid film-custom-height mb-3"
 											src="<%= p.getFilm().getLocandina() %>" alt="">
 											<p><%= p.getFilm().getTitolo() %></p>
 										</td>
-										<td class="col-4 bordo-trasparente colore-icone-scuro">
+										<td class="col-4 bordo-trasparente scritta-dorata">
 											<p>Data E Ora:</p>
 											<p class="p-0 m-0"><%= p.getDataOra() %></p>
 											<p>Intervallo:</p>

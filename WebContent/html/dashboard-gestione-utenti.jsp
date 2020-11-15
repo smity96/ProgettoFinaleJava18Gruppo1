@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
         HttpSession s=request.getSession(false);    
         Utente u = (Utente)s.getAttribute("uLog");
@@ -156,15 +157,15 @@
                             <div class="mb-4">
                                 <h1 class="d-inline mr-3">Gestione Utenti</h1>
                             </div>
-                            <table class="table table-bordered table-hover table-dark">
+                            <table class="table table-bordered table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 colore-icone-scuro">Id° Utente</th>
-                                        <th class="col-2 colore-icone-scuro">Nome Utente</th>
-                                        <th class="col-2 colore-icone-scuro">Conferma Utente</th>
-                                        <th class="col-2 colore-icone-scuro">Cancella Utente</th>
-                                        <th class="col-2 colore-icone-scuro">Modifica Utente</th>
-                                        <th class="col-2 colore-icone-scuro">Abilita A Staff</th>
+                                        <th class="col-2 scritta-dorata">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata">Nome Utente</th>
+                                        <th class="col-2 scritta-dorata">Conferma Utente</th>
+                                        <th class="col-2 scritta-dorata">Cancella Utente</th>
+                                        <th class="col-2 scritta-dorata">Modifica Utente</th>
+                                        <th class="col-2 scritta-dorata">Abilita A Staff</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -174,9 +175,9 @@
                                 
                                 	for(Utente g:lU){
                                 %>
-                                    <tr class="d-flex colore-icone-scuro">
-                                        <td class="col-2"><label><%=g.getIdUtente() %></label></td>
-                                        <td class="col-2"><label><%=g.getEmail() %></label></td>
+                                    <tr class="d-flex">
+                                        <td class="col-2 scritta-dorata"><label><%=g.getIdUtente() %></label></td>
+                                        <td class="col-2 scritta-dorata"><label><%=g.getEmail() %></label></td>
                                         <%if(g.getRuolo()!=0){ %>
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-check-circle"></i></a>
@@ -210,23 +211,23 @@
                     <div class="row text-uppercase text-center d-flex d-md-none">
                         <div class="col-12 p-0">
                             <div class="mb-4">
-                                <h1 class="d-inline mr-3">Gestione Utenti</h1>
+                                <h1 class="d-inline mr-3 titolo-custom">Gestione Utenti</h1>
                             </div>
-                            <table class="table table-bordered table-hover table-dark">
+                            <table class="table table-bordered table-dark">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2">Id° Utente</th>
-                                        <th class="col-2">Nome Utente</th>
-                                        <th class="col-5">Gestisci Utente</th>
-                                        <th class="col-3">Conferma Operazione</th>
+                                        <th class="col-2 scritta-dorata">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata">Nome Utente</th>
+                                        <th class="col-5 scritta-dorata">Gestisci Utente</th>
+                                        <th class="col-3 scritta-dorata">Conferma Operazione</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 <%for(Utente x:lU) 
                                 					{%>    		
                                     <tr class="d-flex">
-                                        <td class="col-2"><label><%=x.getIdUtente() %></label></td>
-                                        <td class="col-2"><label><%=x.getNome() %></label></td>
+                                        <td class="col-2 scritta-dorata"><label><%=x.getIdUtente() %></label></td>
+                                        <td class="col-2 scritta-dorata"><label><%=x.getNome() %></label></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
                                                     <option value="conferma-utente"><a href="ProgettoFinaleJava18Gruppo1/ServletModificaUtente">conferma utente</a>

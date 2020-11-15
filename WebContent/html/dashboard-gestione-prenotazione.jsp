@@ -22,7 +22,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
               						  HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
@@ -155,17 +156,17 @@
                 
                 <!-- inizio gestione prenotazione -->
 
-                <div class="row text-uppercase text-center">
+                <div class="row text-uppercase text-center d-none funzione-menu gestione-prenotazione">
                     <div class="col-12 p-0">
                         <div class="mb-4">
-                            <h1 class="d-inline mr-3">Gestione Prenotazione</h1>
+                            <h1 class="d-inline mr-3 titolo-custom">Gestione Prenotazione</h1>
                         </div>
-                        <table class="table table-bordered table-hover table-dark">
+                        <table class="table table-bordered table-dark">
                             <thead>
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 colore-icone-scuro">Utente</th>
-                                    <th class="col-md-8 col-6 colore-icone-scuro">Film Prenotato</th>
-                                    <th class="col-md-2 col-3 colore-icone-scuro">Cancella Prenotazione</th>
+                                    <th class="col-md-2 col-3 scritta-dorata">Utente</th>
+                                    <th class="col-md-8 col-6 scritta-dorata">Film Prenotato</th>
+                                    <th class="col-md-2 col-3 scritta-dorata">Cancella Prenotazione</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -186,8 +187,8 @@
                             			}
                             %>
                                 <tr class="d-flex">
-                                    <td class="col-md-2 col-3 colore-icone-scuro" rowspan="5"><label><%=p.getUtente().getEmail() %></label></td>
-                                    <td class="col-md-8 col-6 colore-icone-scuro"><select
+                                    <td class="col-md-2 col-3 scritta-dorata" rowspan="5"><label><%=p.getUtente().getEmail() %></label></td>
+                                    <td class="col-md-8 col-6 scritta-dorata"><select
                                             class="col-12 text-center h-100 scelta" name="film-prenotati">
                                             
                                             <option class="prova" value="2" selected value> -- seleziona un film --</option>
@@ -244,15 +245,7 @@
                                 	</td>
                                 	</form>
                                 </tr>
-                                <tr class="d-flex justify-content-center">
 
-                                </tr>
-                                <tr class="d-flex justify-content-center">
-
-                                </tr>
-                                <tr class="d-flex justify-content-center">
-
-                                </tr>
 						 <%} 
 						 }%>
                             </tbody>
