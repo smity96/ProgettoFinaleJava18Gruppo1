@@ -229,6 +229,7 @@
                                             value="<%=b.getNomeSocieta() %>"></td>
                                 </tr>
                                     <tr style="visibility: collapse;">
+                                    <input type="hidden"name="red" value="<%=u.getRuolo()%>">
                                     </tr> 
                                 <tr class="d-flex">
                                     <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"
