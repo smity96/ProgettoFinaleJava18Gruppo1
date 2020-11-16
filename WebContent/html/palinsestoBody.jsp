@@ -1,3 +1,4 @@
+<%@page import="model.Utente"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.text.DateFormat"%>
 <%@page import="java.util.Comparator"%>
@@ -50,7 +51,7 @@
     
      
 
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
     <!-- Google fonts link -->
      <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -59,7 +60,18 @@
 </head>
 
 <body class="bg-dark" style="font-family: 'Monserrat', sans-serif">
-<jsp:include page= "navbarNotte.jsp"></jsp:include>
+<% 
+HttpSession s=request.getSession(false);
+Utente u=(Utente)s.getAttribute("uLog");
+	if(u==null){  %>
+    <jsp:include page="navbarNonLog.jsp"></jsp:include>
+<%} else if(u.getRuolo()==3){%>
+	<jsp:include page="NavbarAdmin.jsp"></jsp:include>
+<%} else if(u.getRuolo()==2){%>
+	<jsp:include page="NavbarStaff.jsp"></jsp:include>
+<%} else if(u.getRuolo()==1){%>
+	<jsp:include page="navbarNotte.jsp"></jsp:include>
+<%} %>
   <br>
   <br>
 

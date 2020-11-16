@@ -33,12 +33,15 @@ public class ServletCancellaUtente extends HttpServlet {
     		//creo l'utente che devo cancellare
          	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
     		System.out.println("sono nell if");
+    		UtilitiesDbUtente.cancUtente(u);
+    		listaU=UtilitiesDbUtente.listaUtenti();
+    		request.setAttribute("listaU", listaU);
     		if(uAdm.getRuolo()==3) {
-    			UtilitiesDbUtente.cancUtente(u);
-        		listaU=UtilitiesDbUtente.listaUtenti();
-    			request.setAttribute("listaU", listaU);
     	        request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
+    		}else if(uAdm.getRuolo()==2){
+    			request.getRequestDispatcher("html/dashboard-staff-gestione-utenti.jsp").forward(request, response);
     		}
+    			
     	}else {
     		response.sendRedirect("html/dashboard-gestione-utenti.jsp");
     	}

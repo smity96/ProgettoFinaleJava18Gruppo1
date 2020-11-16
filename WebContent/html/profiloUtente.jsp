@@ -59,7 +59,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
 
 <body style="font-family: 'Monserrat', sans-serif">
@@ -144,7 +144,7 @@
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneUtente">Gestione Prenotazioni</a></div>
                         
                         </li>
                         </ul>
@@ -172,22 +172,17 @@
                         <!--FORM UTENTE MODIFICA DATI PROFILO-->
 
                         <div class="bg-dark col-12 text-left">
-                             <form action="" method="post" class="bg-dark">
-                                               
+                             <form action="<%=request.getContextPath() %>/ServletModificaUtente" method="post" class="bg-dark" enctype="multipart/form-data">
+                             <input type="hidden" name="d" value="<%=u.getIdUtente()%>">  
+                             <input type="hidden" name="red" value="1">    
                              
                              <!--AVATAR UTENTE-->
-                          <%--
-                              <%
-                             	HttpSession s = request.getSession(false);
-
-                             	Utente u = (Utente) s.getAttribute("uLog");
-                             %>
-                           --%>
+                              
                              <div id="profile-container" class="mt-3 ml-3">
                                 <img id="profileImage" class="img-thumbnail" src="<%=u.getImmagine() %>" >
                              
                              <input id="imageUpload" type="file" 
-                                    name="profile_photo" placeholder="Photo" required="" capture>
+                                    name="img" placeholder="Photo" required="" capture>
                         </div>
                         
                         <!--modifica nome-->
@@ -221,7 +216,7 @@
                 <div class="form-gorup row">
                     <label class="col-sm-2 col-form-label text-warning stile">Email: </label>
                     <div class="col-sm-10">
-                <input class="rounded stile" name="email" type="email" placeholder="<%=u.getEmail() %>" disabled>
+                <input class="rounded stile" name="email" type="email" value="<%=u.getEmail() %>">
             </div>
             </div>
 
@@ -261,7 +256,7 @@
 
 <br>
 <div class="text-center col-6">
-<button type="submit" onclick="goBack()" class=" btn btn-outline-warning text-light stile">Modifica dati</button>
+<button type="submit" class=" btn btn-outline-warning text-light stile">Modifica dati</button>
 </div>
 
 
@@ -323,10 +318,10 @@
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
 
-        <script src="/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
         
 
-        <script src="/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
     </body>
 
 </html>

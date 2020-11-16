@@ -62,7 +62,7 @@ pageEncoding="ISO-8859-1"%>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
   
-<jsp:include page= "navbarNotte.jsp"></jsp:include>
+ <jsp:include page= "navbarNonLog.jsp"></jsp:include>
  <!--Form registrazione dell'utente: -->
     <form
       action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente"
@@ -326,7 +326,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
 <jsp:include page= "footer.jsp"></jsp:include>
 
 
-    <script src="../js/script.js"></script>
+    <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
     <!--Bootstrap links-->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

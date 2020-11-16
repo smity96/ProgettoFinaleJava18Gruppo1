@@ -98,7 +98,13 @@ public class Prenotazione implements Serializable {
 			return false;
 		return true;
 	}
-	
+
+	@Override
+	public String toString() {
+		return "Prenotazione [idPrenotazione=" + idPrenotazione + ", postiPrenotati=" + postiPrenotati + ", proiezione="
+				+ proiezione.getIdProiezione() + ", utente=" + utente.getCognome() + ", costo_totale=" + costo_totale + ", codice_biglietto="
+				+ codice_biglietto + "]";
+	}
 	
 	
 }

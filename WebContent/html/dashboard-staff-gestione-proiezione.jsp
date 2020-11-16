@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -65,10 +66,10 @@
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
                   </ul>
 
@@ -79,7 +80,7 @@
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="CIAO:"+u.getNome()%></span>
                       </a>
                     </li>
                     <li class="nav-item">
@@ -122,12 +123,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-utenti.jsp">Gestione Utenti</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -135,156 +136,170 @@
 
             <!-- Inizio main destra -->
 
-            <div class="col-xl-10 col-12 py-3 max-viewport">
+			<div class="col-xl-10 col-12 py-3 max-viewport">
 
-                <!-- inizio funzioni main -->
+				<!-- inizio funzioni main -->
                 
  <!-- inizio gestione proiezione -->
-                <!-- come sopra, sono sempre due, uno parte dallo schermo medio, l'altro dal piccolo -->
+				<!-- come sopra, sono sempre due, uno parte dallo schermo medio, l'altro dal piccolo -->
 
-                    <div class="row text-uppercase text-center d-none d-md-flex">
-                        <div class="col-12 p-0">
-                            <div class="mb-3 align-items-center justify-content-center">
-                                <h1 class="mb-2">Gestione Proiezioni</h1>
-                                <p>
-                                    <a data-toggle="modal" data-target=".aggiungi-film-proiezione"
-                                        href=""> <i class="fas fa-plus aggiungi-custom">Aggiungi
-                                            Film Alla Proiezione</i>
-                                    </a>
-                                </p>
-                            </div>
-                            <table class="table table-dark">
-                                <thead>
-                                    <tr class="d-flex justify-content-center">
-                                        <th class="col-2 scritta-dorata">Data e Ora</th>
-                                        <th class="col-2 scritta-dorata">Film Proiettato</th>
-                                        <th class="col-2 scritta-dorata">Intervallo</th>
-                                        <th class="col-2 scritta-dorata">N. Posti</th>
-                                        <th class="col-2 scritta-dorata">Costo Biglietto</th>
-                                        <th class="col-1 scritta-dorata">Modifica Proiezione</th>
-                                        <th class="col-1 scritta-dorata">Cancella Proiezione</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
+					<div class="row text-uppercase text-center d-none d-md-flex">
+						<div class="col-12 p-0">
+							<div class="mb-3 align-items-center justify-content-center">
+								<h1 class="mb-2">Gestione Proiezioni</h1>
+								<p>
+									<a data-toggle="modal" data-target=".aggiungi-film-proiezione"
+										href=""> <i class="fas fa-plus aggiungi-custom">Aggiungi
+											Film Alla Proiezione</i>
+									</a>
+								</p>
+								<% 
+								boolean errore=false;
+								if(request.getAttribute("errore")!=null){
+									 errore=(boolean)request.getAttribute("errore");
+								}
+								if (errore){
+								%>
+								<p>Attenzione! La proiezione che hai inserito o modificato va in conflitto con altre
+								 proiezioni o e' antecedente alla data e ora attuale.</p>
+								 <%} %>
+							</div>
+							<table class="table table-dark">
+								<thead>
+									<tr class="d-flex justify-content-center">
+										<th class="col-2 scritta-dorata">Data e Ora</th>
+										<th class="col-2 scritta-dorata">Film Proiettato</th>
+										<th class="col-2 scritta-dorata">Intervallo</th>
+										<th class="col-2 scritta-dorata">N. Posti</th>
+										<th class="col-2 scritta-dorata">Costo Biglietto</th>
+										<th class="col-1 scritta-dorata">Modifica Proiezione</th>
+										<th class="col-1 scritta-dorata">Cancella Proiezione</th>
+									</tr>
+								</thead>
+								<tbody>
 
-                                    <%
+									<%
                                 List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
                                 for(Proiezione p : proiezioni){ 
                                 %>
-                                    <tr class="d-flex align-items-center justify-content-center">
-                                        <td class="col-2 bordo-trasparente scritta-dorata">
-                                            <p><%= p.getDataOra() %></p>
-                                        </td>
-                                        <td
-                                            class="col-2 bordo-trasparente text-capitalize scritta-dorata">
-                                            <img class="img-fluid film-custom-height mb-3"
-                                            src="<%= p.getFilm().getLocandina() %>" alt="">
-                                            <p><%= p.getFilm().getTitolo() %></p>
-                                        </td>
-                                        <td class="col-2 bordo-trasparente scritta-dorata">
-                                            <p><%= p.getIntervallo() %></p>
-                                        </td>
-                                        <td class="col-2 bordo-trasparente scritta-dorata">
-                                            <p><%= p.getPostiMax() %></p>
-                                        </td>
-                                        <td class="col-2 bordo-trasparente scritta-dorata">
-                                            <p><%= p.getPrezzo()%></p>
-                                        </td>
-                                        <td class="col-1 bordo-trasparente"><form action="ServletLeggiProiezioneById" method="get">
-                                                <input type="hidden" name="idDaModificare"
-                                                    value="<%= p.getIdProiezione() %>">
-                                                <button type="submit" class="btn">
-                                                    <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
-                                                </button>
-                                            </form></td>
+									<tr class="d-flex align-items-center justify-content-center">
+										<td class="col-2 bordo-trasparente scritta-dorata">
+										<%
+										SimpleDateFormat ita=new SimpleDateFormat("E dd MMM yyyy HH:mm",Locale.ITALY);
+										String dateIta=ita.format(p.getDataOra());
+										%>
+											<p><%= dateIta %></p>
+										</td>
+										<td
+											class="col-2 bordo-trasparente text-capitalize scritta-dorata">
+											<img class="img-fluid film-custom-height mb-3"
+											src="<%= p.getFilm().getLocandina() %>" alt="">
+											<p><%= p.getFilm().getTitolo() %></p>
+										</td>
+										<td class="col-2 bordo-trasparente scritta-dorata">
+											<p><%= p.getIntervallo() %></p>
+										</td>
+										<td class="col-2 bordo-trasparente scritta-dorata">
+											<p><%= p.getPostiMax() %></p>
+										</td>
+										<td class="col-2 bordo-trasparente scritta-dorata">
+											<p><%= p.getPrezzo()%></p>
+										</td>
+										<td class="col-1 bordo-trasparente"><form action="ServletLeggiProiezioneByIdStaff" method="get">
+												<input type="hidden" name="idDaModificare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
+												</button>
+											</form></td>
 
-                                        <td class="col-1 bordo-trasparente">
-                                            <form action="ServletCancellaProiezione" method="POST">
-                                                <input type="hidden" name="idDaEliminare"
-                                                    value="<%= p.getIdProiezione() %>">
-                                                <button type="submit" class="btn">
-                                                    <i
-                                                        class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
-                                                </button>
-                                            </form>
-                                        </td>
+										<td class="col-1 bordo-trasparente">
+											<form action="ServletCancellaProiezioneStaff" method="POST">
+												<input type="hidden" name="idDaEliminare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i
+														class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
+												</button>
+											</form>
+										</td>
 
-                                    </tr>
-                                    <%} %>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
+									</tr>
+									<%} %>
+								</tbody>
+							</table>
+						</div>
+					</div>
 
-                    <!-- inizio gestione proiezione parte 2 -->
+					<!-- inizio gestione proiezione parte 2 -->
 
 
-                    <div class="row text-uppercase text-center d-md-none d-flex">
-                        <div class="col-12 p-0">
-                            <div class="mb-4">
-                                <h1 class="d-inline mr-3 titolo-custom">Gestione Proiezione</h1>
-                                <p>
-                                    <a data-toggle="modal" data-target=".aggiungi-film-proiezione"
-                                        href=""> <i class="fas fa-plus aggiungi-custom">Aggiungi
-                                            Film Alla Proiezione</i>
-                                    </a>
-                                </p>
-                            </div>
-                            <table class="table table-dark">
-                                <thead>
-                                    <tr class="d-flex justify-content-center">
-                                        <th class="col-4 scritta-dorata">Film Proiettato</th>
-                                        <th class="col-4 scritta-dorata">Info Film</th>
-                                        <th class="col-2 scritta-dorata">Modifica Proiezione</th>
-                                        <th class="col-2 scritta-dorata">Cancella Proiezione</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <%for(Proiezione p : proiezioni){  %>
-                                    <tr class="d-flex align-items-center justify-content-center">
-                                        <td
-                                            class="col-4 bordo-trasparente text-capitalize scritta-dorata">
-                                            <img class="img-fluid film-custom-height mb-3"
-                                            src="<%= p.getFilm().getLocandina() %>" alt="">
-                                            <p><%= p.getFilm().getTitolo() %></p>
-                                        </td>
-                                        <td class="col-4 bordo-trasparente scritta-dorata">
-                                            <p>Data E Ora:</p>
-                                            <p class="p-0 m-0"><%= p.getDataOra() %></p>
-                                            <p>Intervallo:</p>
-                                            <p><%= p.getIntervallo() %></p>
-                                            <p>N. Posti:</p>
-                                            <p><%= p.getPostiMax() %></p>
-                                            <p>Costo Bilietto:</p>
-                                            <p><%= p.getPrezzo() %> </p>
-                                        </td>
+					<div class="row text-uppercase text-center d-md-none d-flex">
+						<div class="col-12 p-0">
+							<div class="mb-4">
+								<h1 class="d-inline mr-3 titolo-custom">Gestione Proiezione</h1>
+								<p>
+									<a data-toggle="modal" data-target=".aggiungi-film-proiezione"
+										href=""> <i class="fas fa-plus aggiungi-custom">Aggiungi
+											Film Alla Proiezione</i>
+									</a>
+								</p>
+							</div>
+							<table class="table table-dark">
+								<thead>
+									<tr class="d-flex justify-content-center">
+										<th class="col-4 scritta-dorata">Film Proiettato</th>
+										<th class="col-4 scritta-dorata">Info Film</th>
+										<th class="col-2 scritta-dorata">Modifica Proiezione</th>
+										<th class="col-2 scritta-dorata">Cancella Proiezione</th>
+									</tr>
+								</thead>
+								<tbody>
+									<%for(Proiezione p : proiezioni){  %>
+									<tr class="d-flex align-items-center justify-content-center">
+										<td
+											class="col-4 bordo-trasparente text-capitalize scritta-dorata">
+											<img class="img-fluid film-custom-height mb-3"
+											src="<%= p.getFilm().getLocandina() %>" alt="">
+											<p><%= p.getFilm().getTitolo() %></p>
+										</td>
+										<td class="col-4 bordo-trasparente scritta-dorata">
+											<p>Data E Ora:</p>
+											<p class="p-0 m-0"><%= p.getDataOra() %></p>
+											<p>Intervallo:</p>
+											<p><%= p.getIntervallo() %></p>
+											<p>N. Posti:</p>
+											<p><%= p.getPostiMax() %></p>
+											<p>Costo Bilietto:</p>
+											<p><%= p.getPrezzo() %> </p>
+										</td>
 
-                                        <td class="col-2 bordo-trasparente">
-                                        <!-- TODO change get to post -->
-                                            <form action="ServletLeggiProiezioneById" method="get">
-                                                <input type="hidden" name="idDaModificare"
-                                                    value="<%= p.getIdProiezione() %>">
-                                                <button type="submit" class="btn">
-                                                    <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                        <td class="col-2 bordo-trasparente">
-                                            <form action="ServletCancellaProiezione" method="POST">
-                                                <input type="hidden" name="idDaEliminare"
-                                                    value="<%= p.getIdProiezione() %>">
-                                                <button type="submit" class="btn">
-                                                    <i class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
-                                                </button>
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    <%} %>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                <!-- fine gestione proiezione -->
+										<td class="col-2 bordo-trasparente">
+										<!-- TODO change get to post -->
+											<form action="ServletLeggiProiezioneByIdStaff" method="get">
+												<input type="hidden" name="idDaModificare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
+												</button>
+											</form>
+										</td>
+										<td class="col-2 bordo-trasparente">
+											<form action="ServletCancellaProiezioneStaff" method="POST">
+												<input type="hidden" name="idDaEliminare"
+													value="<%= p.getIdProiezione() %>">
+												<button type="submit" class="btn">
+													<i class="colore-icone-scuro icona-menu-grande fas fa-trash-alt"></i>
+												</button>
+											</form>
+										</td>
+									</tr>
+									<%} %>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				<!-- fine gestione proiezione -->
 
 
 
@@ -334,7 +349,7 @@
             <div class="modal-content">
                 <!-- Modal body -->
                 <div class="modal-body p-0 m-0">
-                    <form action="ServletInserisciProiezione" method="post">
+                    <form action="ServletInserisciProiezioneStaff" method="post">
                         <table class="table table-bordered table-hover table-dark m-0">
                             <thead>
                                 <tr>
@@ -401,7 +416,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"><%@include file="../js/script.js"%></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

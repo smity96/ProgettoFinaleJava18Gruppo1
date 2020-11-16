@@ -33,7 +33,19 @@
 </head>
 
 <body style="font-family: 'Montserrat', sans-serif">
-    <jsp:include page="navbarNotte.jsp"></jsp:include>
+<% 
+HttpSession s=request.getSession(false);
+Utente u=(Utente)s.getAttribute("uLog");
+	if(u==null){  %>
+    <jsp:include page="navbarNonLog.jsp"></jsp:include>
+<%} else if(u.getRuolo()==3){%>
+	<jsp:include page="NavbarAdmin.jsp"></jsp:include>
+<%} else if(u.getRuolo()==2){%>
+	<jsp:include page="NavbarStaff.jsp"></jsp:include>
+<%} else if(u.getRuolo()==1){%>
+	<jsp:include page="navbarNotte.jsp"></jsp:include>
+<%} %>
+
 
     <header>
         <div class="container-fluid banner align-items-center">
@@ -161,10 +173,12 @@
                         <%// TODO Sistemare questa parte  %>
                         <img src="<%= p.getFilm().getLocandina()%>" class=" img-custom" alt="">
                         <span class="film-item-icon mx-0 px-0">
+                        	<a style="color: #000000" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">
                             <div class="col-12 m-auto">
                                 <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                <span class="pl-2">Clicca per andare alla programmazione</span>
+                                	<span class="pl-2">Clicca per andare alla programmazione</span>
                             </div>
+                            </a>
                         </span>
                     </div>
                 </div>

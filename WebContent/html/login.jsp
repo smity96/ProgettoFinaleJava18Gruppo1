@@ -20,7 +20,7 @@ pageEncoding="ISO-8859-1"%>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
     
 
-<link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css"> 
+<link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css"> 
     <!--Bootstrap links-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@ pageEncoding="ISO-8859-1"%>
   
   <!-- Navbar -->
   
-<jsp:include page= "navbarNotte.jsp"></jsp:include>
+ <jsp:include page= "navbarNonLog.jsp"></jsp:include>
   <!--Form del login: -->
     <form
       class="form-signin"

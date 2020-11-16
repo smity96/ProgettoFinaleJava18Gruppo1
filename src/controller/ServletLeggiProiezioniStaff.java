@@ -9,35 +9,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Prenotazione;
+import model.Film;
 import model.Proiezione;
-import model.Utente;
-import utilities.InvioEmail;
-import utilities.UtilitiesDbPrenotazione;
+import utilities.UtilitiesDbFilm;
 import utilities.UtilitiesDbProiezione;
 
-
-@WebServlet("/ServletLeggiPrenotazione")
-public class ServletLeggiPrenotazione extends HttpServlet {
+@WebServlet("/ServletLeggiProiezioniStaff")
+public class ServletLeggiProiezioniStaff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	List<Proiezione> listaProiez;
-	List<Prenotazione> listaPreno;
-    
-	public ServletLeggiPrenotazione() {
-        super();
-        
-    }
-
+       
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		listaProiez = UtilitiesDbProiezione.leggiProiezioni();
-		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
-		request.setAttribute("listaProiez", listaProiez);
-		request.setAttribute("listaPreno", listaPreno);
-		request.getRequestDispatcher("/html/prenotaUtente.jsp").forward(request, response);
+		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
+		List<Film> films = UtilitiesDbFilm.leggiFilmAll();
+		request.setAttribute("proiezioni", proiezioni);
+		request.setAttribute("films", films);
+		request.getRequestDispatcher("/html/dashboard-staff-gestione-proiezione.jsp")
+		.forward(request, response);
 	}
+
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
 	}
-
+	
 }
