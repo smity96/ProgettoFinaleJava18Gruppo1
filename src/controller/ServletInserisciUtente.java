@@ -114,10 +114,11 @@ public class ServletInserisciUtente extends HttpServlet {
 				if(periodo>16) {		
 				Date dNa=UtilitiesDbFilm.convertiLocalDate(d1);
 				utente.setDataDiNascita(dNa);
-				/*}else {
-					response.sendRedirect("");
+				}else {
+					request.setAttribute("error", true);
+					request.getRequestDispatcher("").forward(request, response);
 					
-				}*/
+				}
 //----------INSERIMENTO UETENTE NEL DATABASE-----------------------------------------------------				
 				UtilitiesDbUtente.insUtente(utente);
 				System.out.println(utente.toString());

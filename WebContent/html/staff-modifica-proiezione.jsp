@@ -1,4 +1,5 @@
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -132,7 +133,7 @@
             </nav>
             <!-- fine sidebar -->
 
-            <!-- Inizio main destra -->
+             <!-- Inizio main destra -->
 
             <div class="col-xl-10 col-12 py-3 max-viewport">
 
@@ -151,7 +152,7 @@
                             <h1 class="d-inline mr-3">Modifica Proiezione</h1>
                         </div>
 
-                      <form action="ServletModificaProiezione" method="post">
+                      <form action="ServletModificaProiezioneStaff" method="post">
                         <table class="table table-bordered table-dark m-0">
                             <thead>
                                 <tr>
@@ -164,8 +165,11 @@
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Data E Ora Di Inizio</label>
                                     </th>
 	                                    <td class="col-md-10 col-9">
+	                                    <% SimpleDateFormat tFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
+	                                     String date= tFormat.format(pDaModificare.getDataOra());
+	                                    %>
 		                                    <input class="col-8 mx-auto" type="datetime-local"
-		                                            name="dataOra" value="<%= pDaModificare.getDataOra()%>" >
+		                                            name="dataOra" value="<%=date %>" >
 	                                    </td>
                                 </tr>
     
@@ -174,9 +178,18 @@
                                     
                                     <td class="col-md-10 col-9">
 	                                    <select class="col-8 mx-auto" name="film" id="films">
-	                                    <% for(Film f: films){ %>
-										  <option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
-										  <%} %>
+	                                    <% for(Film f: films){
+	                                    		if(f.equals(pDaModificare.getFilm())){%>
+										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%
+	                                    		}
+	                                    	} %>
+	                                     <% for(Film f: films){
+	                                   			if(!f.equals(pDaModificare.getFilm())){%>
+										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%
+	                                    		}
+	                                    	} %>
 										</select>
                                     </td>
                                 </tr>

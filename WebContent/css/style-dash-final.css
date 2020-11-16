@@ -73,6 +73,10 @@ font-size: 2rem;  }
   .aggiungi-custom:hover {
     opacity: 0.5;
     }
+    
+  .film{
+  	display: none;
+  }
 
     @media screen and (max-width: 550px) {
 

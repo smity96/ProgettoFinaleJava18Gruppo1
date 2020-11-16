@@ -33,7 +33,19 @@
 </head>
 
 <body style="font-family: 'Montserrat', sans-serif">
-    <jsp:include page="navbarNotte.jsp"></jsp:include>
+<% 
+HttpSession s=request.getSession(false);
+Utente u=(Utente)s.getAttribute("uLog");
+	if(u==null){  %>
+    <jsp:include page="navbarNonLog.jsp"></jsp:include>
+<%} else if(u.getRuolo()==3){%>
+	<jsp:include page="NavbarAdmin.jsp"></jsp:include>
+<%} else if(u.getRuolo()==2){%>
+	<jsp:include page="NavbarStaff.jsp"></jsp:include>
+<%} else if(u.getRuolo()==1){%>
+	<jsp:include page="navbarNotte.jsp"></jsp:include>
+<%} %>
+
 
     <header>
         <div class="container-fluid banner align-items-center">

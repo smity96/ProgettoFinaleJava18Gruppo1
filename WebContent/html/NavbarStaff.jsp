@@ -71,19 +71,13 @@
           </ul>
         </div>
         
-     <%--    <!--Vai alla pagina di registrazione: -->
             <div class="col-sm">
             <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
-            <%
-            if(s.getAttribute("uLog")!=null){%> 
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp">DashBoard</a>
-            <%} else{%>
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
-            <%} %>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">DashBoard</a>
           </li>    
         </ul>
-      </div> --%>
+      </div>
       
        <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
