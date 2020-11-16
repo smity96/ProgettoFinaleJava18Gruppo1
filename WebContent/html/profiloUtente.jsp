@@ -59,7 +59,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
 
 <body style="font-family: 'Monserrat', sans-serif">
@@ -318,10 +318,10 @@
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
 
-        <script src="/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
         
 
-        <script src="/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
     </body>
 
 </html>

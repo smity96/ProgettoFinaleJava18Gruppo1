@@ -134,7 +134,6 @@ public class ServletInserisciUtente extends HttpServlet {
 			}
 		}
 	}
-	}
 //-----------METODO GESTIONE IMMAGINI---------------------------------------------	
 	private String getFileName(final Part part) {
 		System.out.println(part.getHeader("content-disposition"));

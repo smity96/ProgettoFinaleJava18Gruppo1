@@ -173,10 +173,12 @@ Utente u=(Utente)s.getAttribute("uLog");
                         <%// TODO Sistemare questa parte  %>
                         <img src="<%= p.getFilm().getLocandina()%>" class=" img-custom" alt="">
                         <span class="film-item-icon mx-0 px-0">
+                        	<a style="color: #000000" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">
                             <div class="col-12 m-auto">
                                 <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                <span class="pl-2">Clicca per andare alla programmazione</span>
+                                	<span class="pl-2">Clicca per andare alla programmazione</span>
                             </div>
+                            </a>
                         </span>
                     </div>
                 </div>

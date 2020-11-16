@@ -326,7 +326,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
 <jsp:include page= "footer.jsp"></jsp:include>
 
 
-    <script src="../js/script.js"></script>
+    <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
     <!--Bootstrap links-->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
