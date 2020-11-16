@@ -127,7 +127,7 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp">Gestisci Prenotazioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/html/ServletLeggiPrenotazioneAdmin">Gestisci Prenotazioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
@@ -156,7 +156,7 @@
                 
                 <!-- inizio gestione prenotazione -->
 
-                <div class="row text-uppercase text-center d-none funzione-menu gestione-prenotazione">
+                <div class="row text-uppercase text-center">
                     <div class="col-12 p-0">
                         <div class="mb-4">
                             <h1 class="d-inline mr-3 titolo-custom">Gestione Prenotazione</h1>
@@ -191,14 +191,15 @@
                                     <td class="col-md-8 col-6 scritta-dorata"><select
                                             class="col-12 text-center h-100 scelta" name="film-prenotati">
                                             
-                                            <option class="prova" value="2" selected value> -- seleziona un film --</option>
+                                            <option class="prova" value="2" selected > -- seleziona un film --</option>
                                             
                                             <%	
                                             	
                                             	for(Proiezione x : listaProiezUtente){
                                             	
                                             %>
-                                            <option value=""> <%= x.getFilm().getTitolo() + " " + x.getDataOra()%></option>
+                                            <option  value=""> <%= x.getFilm().getTitolo() + " " + x.getDataOra()%></option>
+ 												
  										<%} %>
                                         </select>
                                         </label>
@@ -208,6 +209,7 @@
                                 </tr>
                                <%
                                 	for(Proiezione x : listaProiezUtente){
+                                		
                                  %>
                                 <tr class="d-none justify-content-center" id="info-prenotazione">
                                     <td id="nomeFilmScelta" class="col-md-2 col-2">
@@ -245,7 +247,6 @@
                                 	</td>
                                 	</form>
                                 </tr>
-
 						 <%} 
 						 }%>
                             </tbody>
@@ -301,7 +302,8 @@
 
  <!-- Footer: -->
     <jsp:include page= "footer.jsp"></jsp:include>
-
+	
+	
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
