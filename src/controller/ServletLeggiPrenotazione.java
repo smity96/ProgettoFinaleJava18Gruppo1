@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Prenotazione;
 import model.Proiezione;
+import model.Utente;
+import utilities.InvioEmail;
 import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbProiezione;
 
@@ -29,10 +31,8 @@ public class ServletLeggiPrenotazione extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		listaProiez = UtilitiesDbProiezione.leggiProiezioni();
 		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
-		
 		request.setAttribute("listaProiez", listaProiez);
 		request.setAttribute("listaPreno", listaPreno);
-		
 		request.getRequestDispatcher("/html/prenotaUtente.jsp").forward(request, response);
 	}
 

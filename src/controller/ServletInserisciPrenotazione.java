@@ -40,9 +40,9 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 		int ticket=(int)((Math.random() * (2147483646 - 1000000000)) + 1000000000);
 		pr.setCodice_biglietto(ticket);
 		UtilitiesDbPrenotazione.inserisciPrenotazione(pr);
+		//invio di mail
+		InvioEmail.inviaMail(utente, 4, null);
 		response.sendRedirect("ServletLeggiPrenotazione");
-		
-		
 	}	
 }
 

@@ -121,7 +121,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneUtente">Gestione Prenotazioni</a></div>
                         </li>
                         </ul>
                 </nav>
@@ -156,7 +156,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                                     <th class="stile" scope="col">Titolo film</th>
                                     <th class="stile" scope="col">Locandina</th>
                                     <th class="stile" scope="col">Orario e data</th>
-                                    <th class="stile" scope="col">Posti disponibili</th>
+                                    <th class="stile" scope="col">Durata</th>
                                     <th class="stile" scope="col">Numero posti prenotazione</th>
                                     <th class="stile" scoper="col">Prezzo biglietto singolo</th>
                                     <th class="stile" scope="col">Prenota film</th>
@@ -196,8 +196,9 @@ Utente u = (Utente)s.getAttribute("uLog");
 										String dateIta=ita.format(x.getDataOra());
 										%>
 									<td class="stile"><%= dateIta %></td>
-									<td class="stile"><%= x.getIntervallo() + x.getFilm().getDurata() %></td>
+									<td class="stile"><%= x.getIntervallo() + x.getFilm().getDurata() %>'</td>
 									<td class="stile">
+									
 										<%	
                                         	
 											int postiDisponibili = x.getPostiMax();
@@ -312,7 +313,7 @@ Utente u = (Utente)s.getAttribute("uLog");
 		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
 		crossorigin="anonymous"></script>
 
-	<script src="../js/script.js"></script>
-	<script src="../js/profiloUtente.js"></script>
+	<script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
+	<script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
 </body>
 </html>
