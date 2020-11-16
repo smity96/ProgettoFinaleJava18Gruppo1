@@ -62,7 +62,7 @@ pageEncoding="ISO-8859-1"%>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
   
-<jsp:include page= "navbarNotte.jsp"></jsp:include>
+ <jsp:include page= "navbarNonLog.jsp"></jsp:include>
  <!--Form registrazione dell'utente: -->
     <form
       action="/ProgettoFinaleJava18Gruppo1/ServletInserisciUtente"

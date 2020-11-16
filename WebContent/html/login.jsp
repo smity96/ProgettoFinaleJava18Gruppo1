@@ -36,7 +36,7 @@ pageEncoding="ISO-8859-1"%>
   
   <!-- Navbar -->
   
-<jsp:include page= "navbarNotte.jsp"></jsp:include>
+ <jsp:include page= "navbarNonLog.jsp"></jsp:include>
   <!--Form del login: -->
     <form
       class="form-signin"

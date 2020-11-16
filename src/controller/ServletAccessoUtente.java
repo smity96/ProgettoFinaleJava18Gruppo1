@@ -40,35 +40,36 @@ public class ServletAccessoUtente extends HttpServlet {
 //-----------DECRIPTO LA PASSWORD NEL DATABASE E LA PARAGONO CON QUELLA FORNITA ------			
 			byte[] decodedBytes = Base64.getDecoder().decode(ut.getPassword());
 			String decodedString = new String(decodedBytes);
-//-----------CONTROLLO SE NEL DB è PRESENTE MAIL+PASSWORD-----------------------------
+//-----------CONTROLLO SE NEL DB ï¿½ PRESENTE MAIL+PASSWORD-----------------------------
 			if (email.equals(ut.getEmail()) && pssw.equals(decodedString)) {
 //-----------CREO UNA SESSIONE CON L'UTENTE LOGGATO-----------------------------------				
 				HttpSession session = request.getSession();
 				session.setAttribute("uLog", ut);
 //-----------CREO I COOKIES DELL'UTENTE-----------------------------------------------				
 				if (request.getParameter("ricordami")!=null){
-					Cookie accesso=new Cookie(email,pssw);
+					Cookie accesso=new Cookie("idUtente",Integer.toString(ut.getIdUtente()));
+					response.addCookie(accesso);
 				}
 
 //-----------CONTROLLO IL RUOLO E INDIRIZZO ALLE VARIE DASHBOARD----------------------
 				switch (ut.getRuolo()) {
 				case 0:
 					//registrazione non approvata
-					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
+					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex");
 					break;
 				case 1:
 					//utente normale
-					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
+					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex");
 					break;
 				case 2:
 					//staff
 					request.setAttribute("listaU", listaU);
-					request.getRequestDispatcher("html/dashboard-staff-gestione-utenti.jsp").forward(request, response);
+					request.getRequestDispatcher("html/dashboard-staff-messaggio-benvenuto.jsp").forward(request, response);
 					break;
 				case 3:
 					//admin
 					request.setAttribute("listaU", listaU);
-					request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
+					request.getRequestDispatcher("html/dashboard-messaggio-benvenuto.jsp").forward(request, response);
 					break;
 				default:
 					System.out.println("Non dovresti essere qui");

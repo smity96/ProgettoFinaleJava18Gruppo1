@@ -198,7 +198,7 @@
                                             	for(Proiezione x : listaProiezUtente){
                                             	
                                             %>
-                                            <option  value=""> <%= x.getFilm().getTitolo() + " " + x.getDataOra()%></option>
+                                            <option value="<%=x.getIdProiezione()%>"> <%= x.getFilm().getTitolo() + " " + x.getDataOra()%></option>
  												
  										<%} %>
                                         </select>
@@ -211,7 +211,7 @@
                                 	for(Proiezione x : listaProiezUtente){
                                 		
                                  %>
-                                <tr class="d-none justify-content-center" id="info-prenotazione">
+                                <tr class="justify-content-center film" id="<%=x.getIdProiezione()%>">
                                     <td id="nomeFilmScelta" class="col-md-2 col-2">
                                         <img class="img-fluid film-custom-height mb-3"
                                             src="<%=x.getFilm().getLocandina() %>" alt="">

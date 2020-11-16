@@ -36,6 +36,20 @@
                 						
                 	
                 %>
+                
+<% 
+	//Lettura cookie utente
+	if(u==null){
+		String idUtente=null;
+		Cookie cookies[]=request.getCookies();
+		for(Cookie c:cookies){
+			if(c.getName().equals("idUtente")){
+				idUtente=c.getValue();
+			}
+		}
+		String url=request.getRequestURI();
+	}
+%>
 </head>
 <body style="font-family: 'Monserrat', sans-serif">
 	<!-- navbar in alto-->
