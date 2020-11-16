@@ -43,7 +43,7 @@
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
-                <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Admin Dashboard</h1>
+            <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Dashboard Staff</h1>
             <!-- Fine Navbar Brand -->
 
             <!-- Toggler/collapse Button -->
@@ -54,7 +54,6 @@
             <!-- Navbar links collapse -->
 
             <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
-                
                 <ul class="navbar-nav links d-xl-none">
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
@@ -75,18 +74,18 @@
                   </ul>
 
                 <!-- nav icons -->
-
+                
                 <ul class="navbar-nav icons">
                     <li class="nav-item mr-5">
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="CIAO:"+u.getNome()%></span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
-                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logout
+                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
                       </a>
                     </li>
                 </ul>
