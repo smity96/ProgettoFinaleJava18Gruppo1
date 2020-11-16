@@ -179,8 +179,13 @@
                                     <td class="stile"><%= p.getProiezione().getDataOra() %>
                                     
                                     <br>
+                                    <br>
+                                    <br>
                                     
-                                    codice biglietto???</td>
+                                    codice biglietto:
+                                    <br>
+                                    <%=p.getCodice_biglietto() %>
+                                    </td>
                                     <td class="stile"><%=p.getPostiPrenotati() %></td>
                                     <td class="stile"><%=p.getCosto_totale() %></td>
                                     <td><button type="submit" class="btn btn-outline-warning stile">Modifica</button></td>

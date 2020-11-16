@@ -15,3 +15,5 @@ http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css
 
 Path per le immagini
 http://127.0.0.1:8887/nomeFile
+
+//x.getIntervallo() + x.getFilm().getDurata()

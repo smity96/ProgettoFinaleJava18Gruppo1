@@ -146,6 +146,7 @@
                         </div>
 
                       <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="post" enctype="multipart/form-data">
+                      <input type="hidden" name="red" value="2"> 
                         <table class="table table-bordered table-dark">
                             <thead>
                                 <tr>
@@ -225,7 +226,7 @@
                                             value="<%u.getNomeSocieta(); %>"></td>
                                 </tr>
                                     <tr>
-                                    <td><input type="hidden" name="id" value="<%= u.getIdUtente() %>"></td>
+                                    <td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
                                     </tr> 
                                 <tr class="d-flex">
                                     <td class="col-12 justify-content-center"><input class="bg-oro"

@@ -215,7 +215,7 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Locandina</label></th>
                                     <td class="col-md-10 col-9"><input class="col-md-5 col-8 mr-2" type="url"
-                                            name="fileUrl" placeholder="URL"><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
+                                            name="fileUrl" value="<%= f.getLocandina()%>"><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
                                             type="file" name="file"></td>
                                 </tr>
     
