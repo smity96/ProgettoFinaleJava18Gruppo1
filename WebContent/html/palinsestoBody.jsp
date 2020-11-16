@@ -51,7 +51,7 @@
     
      
 
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
     <!-- Google fonts link -->
      <link rel="preconnect" href="https://fonts.gstatic.com">
      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">

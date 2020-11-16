@@ -12,8 +12,7 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
    <%
-     HttpSession s=request.getSession(false);        
-     //TODO Sistemare anche qui
+     HttpSession s=request.getSession(false);  
      Utente u = (Utente)s.getAttribute("uLog");
                             
    %>
@@ -293,7 +292,7 @@
             crossorigin="anonymous"></script>
 
         
-        <script src="/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
-        <script src="/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
+        <script src="<%=request.getContextPath()%>/js/script.js"></script>
+        <script src="<%=request.getContextPath()%>/js/profiloUtente.js"></script>
     </body>
 </html>
