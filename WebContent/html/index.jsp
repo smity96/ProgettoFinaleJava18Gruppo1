@@ -36,7 +36,7 @@
 <% 
 HttpSession s=request.getSession(false);
 Utente u=(Utente)s.getAttribute("uLog");
-	if(u==null){  %>
+	if(u==null||u.getRuolo()==0){  %>
     <jsp:include page="navbarNonLog.jsp"></jsp:include>
 <%} else if(u.getRuolo()==3){%>
 	<jsp:include page="NavbarAdmin.jsp"></jsp:include>
@@ -166,7 +166,7 @@ Utente u=(Utente)s.getAttribute("uLog");
               }else{
             	  films.add(p.getFilm());
             	  %>
-            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films f.getGenere">
+            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films f.getGenere <%=p.getFilm().getGenere()%>">
                 <div class="card single-film size-custom">
                     <div class="img-container size-custom">
                         <!-- il getlocandina stava qui -->

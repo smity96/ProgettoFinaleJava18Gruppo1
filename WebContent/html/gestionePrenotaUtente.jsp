@@ -189,7 +189,7 @@
                                     <%=p.getCodice_biglietto() %>
                                     </td>
                                     <td class="stile"><%=p.getPostiPrenotati() %></td>
-                                    <td class="stile"><%=p.getCosto_totale() %></td>
+                                    <td class="stile"><%=p.getCosto_totale() %> Euro</td>
                                     <td><button type="submit" class="btn btn-outline-warning stile">Modifica</button></td>
                                     </form>
                                     
@@ -226,7 +226,7 @@
                                         
                                       </select>
                                     </td>
-                                    <td><%=p.getCosto_totale() %></td>
+                                    <td> &euro; <%=p.getCosto_totale() %> </td>
                                     <td><button type="submit" class="btn btn-outline-warning stile">Conferma</button></td>
                                  
                                     

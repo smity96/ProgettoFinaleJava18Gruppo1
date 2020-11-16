@@ -126,7 +126,7 @@ public class ServletInserisciUtente extends HttpServlet {
 				listaU.add(utente);
 				//invio la mail di attesa conferma, consultare il metodo per capire perche' ci sono 3 valori
 				InvioEmail.inviaMail(utente, 1, null);
-				response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
+				response.sendRedirect("/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex");
 			
 			}else {
 				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp");

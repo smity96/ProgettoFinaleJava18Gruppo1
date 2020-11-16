@@ -55,7 +55,8 @@ public class ServletAccessoUtente extends HttpServlet {
 				switch (ut.getRuolo()) {
 				case 0:
 					//registrazione non approvata
-					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex");
+					request.setAttribute("error", "L'utente deve essere accettato dall'admin");
+					request.getRequestDispatcher("html/login.jsp").forward(request, response);
 					break;
 				case 1:
 					//utente normale

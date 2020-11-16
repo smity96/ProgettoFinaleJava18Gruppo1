@@ -38,6 +38,11 @@ pageEncoding="ISO-8859-1"%>
   
  <jsp:include page= "navbarNonLog.jsp"></jsp:include>
   <!--Form del login: -->
+    
+    
+    <%if(request.getAttribute("error")!=null){ %>
+    <p> <%=request.getAttribute("error") %></p>
+    <%} %>
     <form
       class="form-signin"
       action="<%=request.getContextPath() %>/ServletAccessoUtente"
@@ -96,7 +101,20 @@ pageEncoding="ISO-8859-1"%>
       <br>
       <br>
       
+      
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
     
     <jsp:include page= "footer.jsp"></jsp:include>
 
