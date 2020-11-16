@@ -97,7 +97,6 @@ public class ServletModificaUtente extends HttpServlet {
 			System.out.println("sto nel catch");
 			e.printStackTrace();
 		}
-
 		utente.setImmagine("http://127.0.0.1:8887/" + fileName);
 		System.out.println(utente.toString());
 		UtilitiesDbUtente.modUtente(utente);
