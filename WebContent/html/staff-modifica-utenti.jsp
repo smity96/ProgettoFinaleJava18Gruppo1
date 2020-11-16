@@ -38,8 +38,8 @@
                 %>
     </head>
 <body style="font-family: 'Monserrat', sans-serif">
-      <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <!-- navbar in alto-->
+    <nav class="navbar bg-nero navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
