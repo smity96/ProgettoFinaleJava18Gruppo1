@@ -47,7 +47,7 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
   </head>
   <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar bg-nero navbar-expand-xl">
       <div class="container-fluid">
         <!-- Navbar Brand -->
         <h1
