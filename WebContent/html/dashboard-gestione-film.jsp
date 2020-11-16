@@ -29,7 +29,7 @@
                                			//String mail = (String) s.getAttribute("mailLog");
                 						//String pssw = (String) session.getAttribute("psswLog");
                 						//TODO Sistemare la sessione
-                						//Utente u = (Utente)s.getAttribute("uLog");
+                						Utente u = (Utente)s.getAttribute("uLog");
                 						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                 						
                 	
@@ -68,7 +68,7 @@
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp"><i class="fas fa-film mr-3 text-muted"></i>Gestione Film</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm"><i class="fas fa-film mr-3 text-muted"></i>Gestione Film</a>
                     </li>
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
@@ -170,7 +170,7 @@
                                 </a>
                             </div>
                             
-                            <%List<Film> tuttiFilm=UtilitiesDbFilm.leggiFilmAll(); %>
+                            <%List<Film> tuttiFilm=(List<Film>)request.getAttribute("tuttiFilm"); %>
                             <table class="table table-dark">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
@@ -180,7 +180,7 @@
                                         <th class="col-2 scritta-dorata">Cancella Film</th>
                                     </tr>
                                 </thead>
-                                <tbody>                              
+                                <tbody>                        
                                 <%for(Film f: tuttiFilm){ %>
                                     <tr class="d-flex align-items-center">
                                         <td class="col-4 bordo-trasparente"><img class="img-fluid film-custom-height"

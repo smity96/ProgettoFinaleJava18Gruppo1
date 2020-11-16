@@ -100,7 +100,11 @@ public class ServletInserisciUtente extends HttpServlet {
 		            System.out.println("sto nel catch");
 		            e.printStackTrace();
 		        }
-				utente.setImmagine("http://127.0.0.1:8887/" + fileName);
+				if(fileName!=null) {
+					utente.setImmagine("http://127.0.0.1:8887/" + fileName);
+				}else {
+					utente.setImmagine("https://mpng.subpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg");
+				}
 //-----------FORMATTAZIONE DELLA DATA.DI.NASCITA ------------------------------------------				
 //-----------CONVERTO LA DATA IN LOCALdate E VERIFICO CHE L'ETA' SIA MAGGIORE DI 16---------				
 				DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");		

@@ -26,12 +26,12 @@
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
 <%
-                                      /* HttpSession s=request.getSession(false);    
+                                       HttpSession s=request.getSession(false);    
                                         //session.getAttribute("utentelog")
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
-                                        //Utente u=UtilitiesDbUtente.leggiUtenteById(2); */
+                                        //Utente u=UtilitiesDbUtente.leggiUtenteById(2); 
                                         
                     
                 %>

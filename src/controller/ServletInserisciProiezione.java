@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -34,14 +35,14 @@ public class ServletInserisciProiezione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Lorenzo è bello
+		//Lorenzo ï¿½ bello
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("sono nel doPost");
+		boolean errore=false;
 		Proiezione pDaAggiungere = new Proiezione();
 		String dataEora2  = request.getParameter("dataOra");
-		SimpleDateFormat formatter6 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+		SimpleDateFormat formatter6 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
 		try {
 			Date dataEora = formatter6.parse(dataEora2);
 			pDaAggiungere.setDataOra(dataEora);
@@ -53,15 +54,15 @@ public class ServletInserisciProiezione extends HttpServlet {
 		pDaAggiungere.setIntervallo(Integer.parseInt(request.getParameter("intervallo")));
 		pDaAggiungere.setPostiMax(Integer.parseInt(request.getParameter("posti")));
 		if(UtilitiesDbProiezione.slotOccupato(proiezioni, pDaAggiungere) || !UtilitiesDbProiezione.slotRegolare(pDaAggiungere)) {
-			// TODO chiedere come inserire una risposta d'errore
-			//provasendredirect
-			//TODO controllo? jsp amministratore/staff
-			System.out.println("if");
-			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
+			errore=true;
+			request.setAttribute("errore", errore);
+			
+			request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);; 
 		}else {
-			System.out.println("else");
 			UtilitiesDbProiezione.aggiungiProiezione(pDaAggiungere);
-			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
+			errore=false;
+			request.setAttribute("errore", errore);
+			request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);
 		}
 		//doGet(request, response);
 	}

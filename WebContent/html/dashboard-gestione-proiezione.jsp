@@ -1,3 +1,5 @@
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -25,12 +27,12 @@
 	<link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
 <%
-              						  /* HttpSession s=request.getSession(false);    
+              						   HttpSession s=request.getSession(false);    
 										//session.getAttribute("utentelog")
                                			//String mail = (String) s.getAttribute("mailLog");
                 						//String pssw = (String) session.getAttribute("psswLog");
                 						Utente u = (Utente)s.getAttribute("uLog");
-                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2); */
+                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2); 
                 						
                 	
                 %>
@@ -67,7 +69,7 @@
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-prenotazione.jsp"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp"><i class="fas fa-film mr-3 text-muted"></i>Gestione Film</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm"><i class="fas fa-film mr-3 text-muted"></i>Gestione Film</a>
                     </li>
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
@@ -167,6 +169,16 @@
 											Film Alla Proiezione</i>
 									</a>
 								</p>
+								<% 
+								boolean errore=false;
+								if(request.getAttribute("errore")!=null){
+									 errore=(boolean)request.getAttribute("errore");
+								}
+								if (errore){
+								%>
+								<p>Attenzione! La proiezione che hai inserito o modificato va in conflitto con altre
+								 proiezioni o e' antecedente alla data e ora attuale.</p>
+								 <%} %>
 							</div>
 							<table class="table table-dark">
 								<thead>
@@ -188,7 +200,11 @@
                                 %>
 									<tr class="d-flex align-items-center justify-content-center">
 										<td class="col-2 bordo-trasparente scritta-dorata">
-											<p><%= p.getDataOra() %></p>
+										<%
+										SimpleDateFormat ita=new SimpleDateFormat("E dd MMM yyyy HH:mm",Locale.ITALY);
+										String dateIta=ita.format(p.getDataOra());
+										%>
+											<p><%= dateIta %></p>
 										</td>
 										<td
 											class="col-2 bordo-trasparente text-capitalize scritta-dorata">

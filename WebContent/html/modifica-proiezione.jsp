@@ -1,4 +1,5 @@
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -24,13 +25,13 @@
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
-                                     /*  HttpSession s=request.getSession(false);    
+                                      HttpSession s=request.getSession(false);    
                                         //session.getAttribute("utentelog")
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                                      */   
+                                       
                     
         %>
     </head>
@@ -180,8 +181,11 @@
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Data E Ora Di Inizio</label>
                                     </th>
 	                                    <td class="col-md-10 col-9">
+	                                    <% SimpleDateFormat tFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
+	                                     String date= tFormat.format(pDaModificare.getDataOra());
+	                                    %>
 		                                    <input class="col-8 mx-auto" type="datetime-local"
-		                                            name="dataOra" value="<%= pDaModificare.getDataOra()%>" >
+		                                            name="dataOra" value="<%=date %>" >
 	                                    </td>
                                 </tr>
     
@@ -190,9 +194,18 @@
                                     
                                     <td class="col-md-10 col-9">
 	                                    <select class="col-8 mx-auto" name="film" id="films">
-	                                    <% for(Film f: films){ %>
-										  <option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
-										  <%} %>
+	                                    <% for(Film f: films){
+	                                    		if(f.equals(pDaModificare.getFilm())){%>
+										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%
+	                                    		}
+	                                    	} %>
+	                                     <% for(Film f: films){
+	                                   			if(!f.equals(pDaModificare.getFilm())){%>
+										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
+										  <%
+	                                    		}
+	                                    	} %>
 										</select>
                                     </td>
                                 </tr>

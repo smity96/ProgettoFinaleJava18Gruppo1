@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -40,9 +41,12 @@ public class ServletModificaProiezione extends HttpServlet {
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		boolean errore=false;
+		
+		
 		Proiezione pDaModificare=UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaModificare")));
 		String dataEora  = request.getParameter("dataOra");
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm", Locale.ITALY);
 		try {
 			Date dataEora2 = formatter.parse(dataEora);
 			pDaModificare.setDataOra(dataEora2);
@@ -55,16 +59,15 @@ public class ServletModificaProiezione extends HttpServlet {
 		Film f=UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("film")));
 		pDaModificare.setFilm(f);
 		if(UtilitiesDbProiezione.slotOccupato(proiezioni, pDaModificare) || !UtilitiesDbProiezione.slotRegolare(pDaModificare)) {
-			// TODO chiedere come inserire una risposta d'errore
-			//provasendredirect
-			//TODO controllo? jsp amministratore/staff
-			System.out.println("if");
-			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
-		}else {
-			System.out.println("else");
+			errore=true;
+			request.setAttribute("errore", errore);
+			request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);; 
+			}else {
+			errore=false;
+			request.setAttribute("errore", errore);
 			UtilitiesDbProiezione.modificaProiezione(pDaModificare);
-			response.sendRedirect("ServletLeggiProiezioniAdmin"); 
-		}
+			request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);; 
+			}
 	}
 
 }

@@ -1,3 +1,5 @@
+<%@page import="java.util.Locale"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="model.Utente"%>
 <%@page import="model.Prenotazione"%>
 <%@page import="model.Proiezione"%>
@@ -189,7 +191,11 @@ Utente u = (Utente)s.getAttribute("uLog");
 									<th class="stile" scope="row"><%= x.getFilm().getTitolo() %></th>
 									<td><img class="immagine"
 										src="<%= x.getFilm().getLocandina()%>"></td>
-									<td class="stile"><%= x.getDataOra()%></td>
+										<%
+										SimpleDateFormat ita=new SimpleDateFormat("E dd MMM yyyy HH:mm",Locale.ITALY);
+										String dateIta=ita.format(x.getDataOra());
+										%>
+									<td class="stile"><%= dateIta %></td>
 									<td class="stile"><%= x.getIntervallo() + x.getFilm().getDurata() %></td>
 									<td class="stile">
 										<%	

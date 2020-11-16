@@ -11,7 +11,12 @@
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
-   
+   <%
+     HttpSession s=request.getSession(false);        
+     //TODO Sistemare anche qui
+     Utente u = (Utente)s.getAttribute("uLog");
+                            
+   %>
 
     <style>
         .bottone{
@@ -34,17 +39,12 @@
      <!-- Google fonts link -->
      <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-   
-   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
 </head>
-<% 
-HttpSession s=request.getSession(false); 
-Utente u = (Utente)s.getAttribute("uLog");
-%>
+
 <body>
 
     <body>
@@ -122,7 +122,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-video text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/gestionePrenotaUtente.jsp">Gestione Prenotazioni</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneUtente">Gestione Prenotazioni</a></div>
                         </li>
 
                 </nav>

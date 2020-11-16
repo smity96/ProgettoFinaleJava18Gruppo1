@@ -50,8 +50,6 @@ public class ServletModificaFilm extends HttpServlet {
 			} else {
 				f3.setAnnoDiUscita(request.getParameter("annoDiUscita"));
 			}
-			String annoU=""+anno;
-			f3.setAnnoDiUscita(annoU);
 		} catch (NumberFormatException e1) {
 			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
 			e1.printStackTrace();
@@ -97,7 +95,7 @@ public class ServletModificaFilm extends HttpServlet {
 		if (check == false) {
 			UtilitiesDbFilm.inserisciFilm(f3);
 		}
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-film.jsp");
+		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
 	}
 
 	private String getFileName(final Part part) {
