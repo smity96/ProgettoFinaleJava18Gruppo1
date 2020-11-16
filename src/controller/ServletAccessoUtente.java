@@ -40,7 +40,7 @@ public class ServletAccessoUtente extends HttpServlet {
 //-----------DECRIPTO LA PASSWORD NEL DATABASE E LA PARAGONO CON QUELLA FORNITA ------			
 			byte[] decodedBytes = Base64.getDecoder().decode(ut.getPassword());
 			String decodedString = new String(decodedBytes);
-//-----------CONTROLLO SE NEL DB è PRESENTE MAIL+PASSWORD-----------------------------
+//-----------CONTROLLO SE NEL DB e' PRESENTE MAIL+PASSWORD-----------------------------
 			if (email.equals(ut.getEmail()) && pssw.equals(decodedString)) {
 //-----------CREO UNA SESSIONE CON L'UTENTE LOGGATO-----------------------------------				
 				HttpSession session = request.getSession();
@@ -63,12 +63,12 @@ public class ServletAccessoUtente extends HttpServlet {
 				case 2:
 					//staff
 					request.setAttribute("listaU", listaU);
-					request.getRequestDispatcher("html/dashboard-staff-gestione-utenti.jsp").forward(request, response);
+					request.getRequestDispatcher("html/dashboard-messaggio-benvenuto.jsp").forward(request, response);
 					break;
 				case 3:
 					//admin
 					request.setAttribute("listaU", listaU);
-					request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
+					request.getRequestDispatcher("html/dashboard-staff-messaggio-benvenuto.jsp").forward(request, response);
 					break;
 				default:
 					System.out.println("Non dovresti essere qui");
