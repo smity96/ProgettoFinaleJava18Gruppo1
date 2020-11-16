@@ -135,9 +135,13 @@ display: block;
   }
   }
 
-  @media screen and (max-width: 540px) {
+  @media screen and (max-width: 1450px) {
     .banner-title {
       font-size: 5rem;
+    }
+
+    .img-banner {
+      max-height: 10rem;
     }
   
     }
@@ -148,7 +152,7 @@ display: block;
       }
       }
 
-    @media screen and (max-width: 415px) {
+    @media screen and (max-width: 425px) {
       .banner-title {
         font-size: 3rem;
       }
