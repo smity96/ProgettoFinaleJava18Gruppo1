@@ -60,17 +60,17 @@
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
                   </ul>
 
@@ -114,22 +114,22 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp">Gestione Utenti</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
