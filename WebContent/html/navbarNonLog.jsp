@@ -62,11 +62,9 @@
         <div class="col-sm">
           <ul class="navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-          <% if(s.getAttribute("uLog")!=null){%> 
-            <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenotazione</a>
-            <%}else{ %>      
+
             <a class="nav-link text-warning font-weight-bold stile" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/login.jsp">Prenotazione</a>
-            <%} %>
+
           </li>
           </ul>
         </div>
@@ -75,12 +73,9 @@
             <div class="col-sm">
             <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
-            <%
-            if(s.getAttribute("uLog")!=null){%> 
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp">DashBoard</a>
-            <%} else{%>
+
             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
-            <%} %>
+            
           </li>    
         </ul>
       </div>
@@ -89,12 +84,9 @@
           <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-            <%
-            if(s.getAttribute("uLog")!=null){%>
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/ServletLogout">Logout</a>
-            <%} else{%>
+
              <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
-            <%} %>
+
             </li>
             </ul>
           </div>
