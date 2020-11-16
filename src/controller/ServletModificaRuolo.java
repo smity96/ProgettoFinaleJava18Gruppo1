@@ -24,18 +24,34 @@ public class ServletModificaRuolo extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+//---------CONFERMA REGISTRAZIONE UTENTE-----------------------
 		String idU = request.getParameter("b");
 		if (idU != null) {
 			Integer nId = Integer.parseInt(idU);
 			Utente u = UtilitiesDbUtente.leggiUtenteById(nId);
-			u.toString();
 			u.setRuolo(1);
 			UtilitiesDbUtente.modUtente(u);
 			List<Utente> listaU = UtilitiesDbUtente.listaUtenti();
+//--------INVIO MAIL CONFERMA REGISTRAZIONE -------------------			
 			InvioEmail.inviaMail(u, 2, null);
 			request.setAttribute("listaU", listaU);
 			request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
 		}
+			
+				
+//--------CAMBIO RUOLO UTENTE->STAFF----------------------------
+		String idS = request.getParameter("s");
+		if (idS != null) {
+			Integer nId = Integer.parseInt(idS);
+			Utente u = UtilitiesDbUtente.leggiUtenteById(nId);
+			u.setRuolo(2);
+			UtilitiesDbUtente.modUtente(u);
+			List<Utente> listaU = UtilitiesDbUtente.listaUtenti();
+			request.setAttribute("listaU", listaU);
+			request.getRequestDispatcher("html/dashboard-gestione-utenti.jsp").forward(request, response);
+		}
+				
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

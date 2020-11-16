@@ -172,11 +172,12 @@
                                 <%
                                 
                                 List<Utente>lU=(List<Utente>)request.getAttribute("listaU");
-                                
+                           			int n=0;
                                 	for(Utente g:lU){
+ 									n++;	                      
                                 %>
                                     <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><label><%=g.getIdUtente() %></label></td>
+                                        <td class="col-2 scritta-dorata"><label><%=n %></label></td>
                                         <td class="col-2 scritta-dorata"><label><%=g.getEmail() %></label></td>
                                         <%if(g.getRuolo()!=0){ %>
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
@@ -193,8 +194,8 @@
                                         <td class="col-2"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/modifica-utenti.jsp?d=<%=g.getIdUtente() %>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
                                         </td>
-                                        <%if(g.getRuolo()!=3) {%>
-                                        <td class="col-2"><a href="abil"><i
+                                        <%if(g.getRuolo()==1) {%>
+                                        <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?s=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-users"></i></a>
 										<%} %>
                                         </td>

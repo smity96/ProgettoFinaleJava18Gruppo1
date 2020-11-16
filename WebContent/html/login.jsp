@@ -37,8 +37,7 @@ pageEncoding="ISO-8859-1"%>
   <!-- Navbar -->
   
 <jsp:include page= "navbarNotte.jsp"></jsp:include>
-
-    <!--Form del login: -->
+  <!--Form del login: -->
     <form
       class="form-signin"
       action="<%=request.getContextPath() %>/ServletAccessoUtente"
@@ -66,7 +65,7 @@ pageEncoding="ISO-8859-1"%>
       
       
       
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ricordami">
     <label class="form-check-label text-warning stile" for="exampleCheck1">Ricordami!</label>
    
       <br>

@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,21 +31,26 @@ public class ServletAccessoUtente extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	throws ServletException, IOException {
 		listaU = UtilitiesDbUtente.listaUtenti();
 		String email = request.getParameter("email").trim();
 		String pssw = request.getParameter("password").trim();
 		boolean dentro = false;
 		for (Utente ut : listaU) {
-			System.out.println(ut.toString());
+//-----------DECRIPTO LA PASSWORD NEL DATABASE E LA PARAGONO CON QUELLA FORNITA ------			
 			byte[] decodedBytes = Base64.getDecoder().decode(ut.getPassword());
 			String decodedString = new String(decodedBytes);
-
+//-----------CONTROLLO SE NEL DB è PRESENTE MAIL+PASSWORD-----------------------------
 			if (email.equals(ut.getEmail()) && pssw.equals(decodedString)) {
+//-----------CREO UNA SESSIONE CON L'UTENTE LOGGATO-----------------------------------				
 				HttpSession session = request.getSession();
 				session.setAttribute("uLog", ut);
+//-----------CREO I COOKIES DELL'UTENTE-----------------------------------------------				
+				if (request.getParameter("ricordami")!=null){
+					Cookie accesso=new Cookie(email,pssw);
+				}
 
-//    			----indirizzo alle varie pagine----
+//-----------CONTROLLO IL RUOLO E INDIRIZZO ALLE VARIE DASHBOARD----------------------
 				switch (ut.getRuolo()) {
 				case 0:
 					//registrazione non approvata
@@ -52,7 +58,7 @@ public class ServletAccessoUtente extends HttpServlet {
 					break;
 				case 1:
 					//utente normale
-					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp");
+					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
 					break;
 				case 2:
 					//staff
@@ -71,10 +77,11 @@ public class ServletAccessoUtente extends HttpServlet {
 				dentro = true;
 			}
 		}
+//------------------SE LOGIN ERRATO INDIRIZZATO ALLA REGISTRAZIONE-----------------------------		
 		if (!dentro) {
 			request.getRequestDispatcher("html/registrazione.jsp").forward(request, response);
 		}
-
+	
 		// response.sendRedirect("/profilo.jsp");
-	}
+	}	
 }
