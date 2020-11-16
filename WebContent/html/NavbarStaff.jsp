@@ -82,7 +82,7 @@
        <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/profiloUtente.jsp">Ciao, <%=u.getNome() %> </a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="<%=request.getContextPath() %>/html/dashboard-staff-gestione-profilo.jsp">Ciao, <%=u.getNome() %> </a>
             </li>
             </ul>
           </div>
@@ -91,7 +91,7 @@
           <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/ServletLogout">Logout</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="#">Logout</a>
             </li>
             </ul>
           </div>
