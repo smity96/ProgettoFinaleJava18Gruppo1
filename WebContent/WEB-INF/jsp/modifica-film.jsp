@@ -1,5 +1,4 @@
 
-<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -10,15 +9,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   
-    <!--Titolo e logo barra ricerca-->
+    
+     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
-   
-   <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
    
-   
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
@@ -29,12 +28,14 @@
                                         //session.getAttribute("utentelog")
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
+                                        //TODO Sistemare anche qui
                                         Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                                       
+                                        
                     
-        %>
+                %>
     </head>
+    
     <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
     <nav class="navbar bg-nero navbar-expand-xl">
@@ -58,11 +59,11 @@
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
@@ -118,12 +119,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
@@ -155,96 +156,86 @@
 
                 <!-- inizio funzioni main -->
 
-                <!-- inizio modifica proiezione -->
-                
-                <%
-                List<Film> films=(List<Film>)request.getAttribute("listaFilms");
-                Proiezione pDaModificare=(Proiezione)request.getAttribute("proiezioneDaModificare");
-                %>
+                <!-- inizio modifica film -->
           
                 <div class="row justify-content-center text-uppercase">
                     <div class="col-12 p-0 text-center">
                         <div class="mb-4">
-                            <h1 class="d-inline mr-3">Modifica Proiezione</h1>
+                            <h1 class="d-inline mr-3">Modifica Film</h1>
                         </div>
 
-                      <form action="ServletModificaProiezione" method="post">
+                      <form action="<%=request.getContextPath()%>/ServletModificaFilm" method="post" enctype="multipart/form-data">
+                      <%Film f=(Film)request.getAttribute("Film"); %>
+                      <input type="hidden" name="id_filmMod" value="<%=f.getIdFilm() %>">
                         <table class="table table-bordered table-dark m-0">
                             <thead>
                                 <tr>
-                                    <th class="scritta-dorata">Dati Proiezione</th>
+                                    <th class="scritta-dorata">Dati Film</th>
                                 </tr>
                             </thead>
                             <tbody>
-    
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 scritta-dorata"><label>Data E Ora Di Inizio</label>
-                                    </th>
-	                                    <td class="col-md-10 col-9">
-	                                    <% SimpleDateFormat tFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
-	                                     String date= tFormat.format(pDaModificare.getDataOra());
-	                                    %>
-		                                    <input class="col-8 mx-auto" type="datetime-local"
-		                                            name="dataOra" value="<%=date %>" >
-	                                    </td>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Titolo</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="titolo"
+                                            value="<%=f.getTitolo() %>" class="text-capitalize"></td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 scritta-dorata"><label>Films</label></th>
-                                    
-                                    <td class="col-md-10 col-9">
-	                                    <select class="col-8 mx-auto" name="film" id="films">
-	                                    <% for(Film f: films){
-	                                    		if(f.equals(pDaModificare.getFilm())){%>
-										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
-										  <%
-	                                    		}
-	                                    	} %>
-	                                     <% for(Film f: films){
-	                                   			if(!f.equals(pDaModificare.getFilm())){%>
-										 		<option value="<%= f.getIdFilm()%>"><%= f.getTitolo() %></option>
-										  <%
-	                                    		}
-	                                    	} %>
-										</select>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Genere</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="genere" value="<%=f.getGenere() %>"
+                                            class="text-capitalize"></td>
+                                </tr>
+    
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Anno di Uscita</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="annoDiUscita"
+                                            value="<%=f.getAnnoDiUscita()%>">
                                     </td>
                                 </tr>
     
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 scritta-dorata"><label>Intervallo</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number" name="intervallo"
-                                            value="<%=pDaModificare.getIntervallo()%>"></td>
-                                </tr>
-    
-                                <tr class="d-flex">
-                                    <th class="col-md-2 col-3 scritta-dorata"><label>Num. Posti</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                            name="posti" value="<%=pDaModificare.getPostiMax()%>"></td>
-                                </tr>
-
-                                <tr class="d-flex">
-                                    <th class="col-md-2 col-3 scritta-dorata"><label>Costo Biglietto</label></th>
-                                    <td class="col-md-10 col-9"><input class="col-8 mx-auto" type="number"
-                                            name="prezzo" value="<%=pDaModificare.getPrezzo()%>"></td>
-                                </tr>
-    							<input type="hidden" name="idDaModificare" value="<%= pDaModificare.getIdProiezione() %>">
-                                <tr class="d-flex">
-                                    <td class="col-12"><button type="submit" class="btn btn-success mr-2">Modifica
-                                            Proiezione</button>
-                                        <a href="ServletLeggiProiezioniAdmin">
-	                                        <button type="button" class="btn btn-danger ml-2" data-dismiss="modal">
-	                                            Annulla Inserimento
-	                                        </button>
-                                        </a>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Durata</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="text" name="durata"
+                                            value="<%=f.getDurata()%>">
                                     </td>
                                 </tr>
     
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Trailer</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-8" type="url" name="urlTrailer" value="<%=f.getUrlTrailer()%>">
+                                    </td>
+                                </tr>
+    
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Trama</label></th>
+                                    <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto" type="text"
+                                            name="trama"><%=f.getTrama() %></textarea></td>
+                                </tr>
+    
+                                <tr class="d-flex">
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Locandina</label></th>
+                                    <td class="col-md-10 col-9"><input class="col-md-5 col-8 mr-2" type="url"
+                                            name="fileUrl" value="<%= f.getLocandina()%>"><input class="col-md-3 col-sm-8 col-9 mt-3 mt-md-0"
+                                            type="file" name="file"></td>
+                                </tr>
+    
+                                <tr class="d-flex">
+                                
+                                    <td class="col-12"><button type="submit" class="btn btn-success mr-2">Salva
+                                            Modifica</button>
+                                            <a href="<%=request.getContextPath()%>/ServletOrdinaFilm">
+                                            	<button type="button" class="btn btn-danger ml-2">
+                                            		Annulla Modifica
+                                        		</button>	
+                                            </a>
+                                        </td>
+                                </tr>
                             </tbody>
                         </table>
-                            </form>
+                        </form>
                     </div>
                 </div>
-                <!-- fine modifica proiezione -->
+                <!-- fine modifica film -->
 
             </div>
             <!-- fine main destra -->
@@ -256,7 +247,8 @@
 
     <!-- Modals -->
 
-    <!-- Modal Uscita -->
+    <!-- Modal uscita -->
+    <!-- Modal -->
         <div class="modal fade text-warning" id="sign-out">
             <div class="modal-dialog bg-dark text-warning">
                 <div class="modal-content bg-dark text-warning">
@@ -285,11 +277,12 @@
                 </div>
             </div>
         </div>
-    <!-- Fine Modal Uscita -->
-    
-     <!-- Footer: -->
+        
+       <!-- Fine Modal Uscita -->
+       
+        <!-- Footer: -->
     <jsp:include page= "footer.jsp"></jsp:include>
-    
+       
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

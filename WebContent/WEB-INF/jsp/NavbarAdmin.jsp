@@ -1,3 +1,4 @@
+<%@page import="model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -24,6 +25,9 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   </head>
+  <%HttpSession s=request.getSession();
+  Utente u = (Utente)s.getAttribute("uLog");
+  %>
   <body class="bg-dark" style="font-family: 'Montserrat', sans-serif">    
   
   <!--Navbar Utente NON loggato: -->
@@ -31,7 +35,7 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-xl">
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->
@@ -61,34 +65,37 @@
         <div class="col-sm">
           <ul class="navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
-
-            <a class="nav-link text-warning font-weight-bold stile" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/login.jsp">Prenotazione</a>
-
+            <a class="nav-link text-warning font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenotazione</a>
+           
           </li>
           </ul>
         </div>
         
-        <!--Vai alla pagina di registrazione: -->
             <div class="col-sm">
             <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
-
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
-            
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">DashBoard</a>
           </li>    
         </ul>
       </div>
+      
+       <div class="col-sm">
+          <ul class=" navbar-nav d-flex flex-row unstyled">
+            <li class="nav-item m-auto width:90%">
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/profiloUtente.jsp">Ciao, <%=u.getNome() %> </a>
+            </li>
+            </ul>
+          </div>
 
         <!--Vai alla pagina di Login: -->
           <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-
-             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
-
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/ServletLogout">Logout</a>
             </li>
             </ul>
           </div>
+          
           
       </div>
     </nav>  
@@ -98,23 +105,23 @@
 <!-- Modal uscita -->
 
 <!-- Modal -->
-        <!-- <div class="modal fade text-warning" id="sign-out">
+        <div class="modal fade text-warning" id="sign-out">
             <div class="modal-dialog bg-dark text-warning">
                 <div class="modal-content bg-dark text-warning">
                     <!-- Modal Header -->
-                    <!-- <div class="modal-header bg-dark text-warning">
+                    <div class="modal-header bg-dark text-warning">
                         <h4 class="modal-title stile text-warning">Vuoi fare il logout?</h4>
                         <button type="button" class="close" data-dismiss="modal">
                             &times;
                         </button>
                     </div>
 
-                    <!-- Modal body 
+                    <!-- Modal body -->
                     <div class="modal-body stile bg-dark text-warning">
                         Premi logout per uscire.
-                    </div>-->
+                    </div>
 
-                    <!-- Modal footer 
+                    <!-- Modal footer -->
                     <div class="modal-footer stile">
                         <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
                             Rimani
@@ -125,7 +132,7 @@
                     </div>
                 </div>
             </div>
-        </div> -->
+        </div>
 
     <!--Bootstrap links-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -3,7 +3,7 @@
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,18 +24,13 @@
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
-              						  HttpSession s=request.getSession(false);    
-										//session.getAttribute("utentelog")
-                               			//String mail = (String) s.getAttribute("mailLog");
-                						//String pssw = (String) session.getAttribute("psswLog");
-                						Utente u = (Utente)s.getAttribute("uLog");
-                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                						
-                	
-                %>
+        HttpSession s=request.getSession(false);    
+        Utente u = (Utente)s.getAttribute("uLog");
+              
+                %>/ProgettoFinaleJava18Gruppo1/html/index.jsp
     </head>
-<body style="font-family: 'Monserrat', sans-serif">
 
+<body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
     <nav class="navbar bg-nero navbar-expand-xl">
         <div class="container-fluid">
@@ -57,11 +52,11 @@
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
@@ -111,12 +106,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">Gestione Profilo</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
@@ -138,30 +133,89 @@
 
                 <!-- inizio funzioni main -->
                 
-                <!-- messaggio benvenuto -->
-                
-                <div class="row text-center align-items-center d-flex mt-5">
-                    <div class="col-12 p-0 mb-3"><img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail foto-profilo-benvenuto mr-3"
-                        alt="foto profilo utente"></div>
-                    
-                    <div class="col-12 p-0 mb-3">
-                        <h1 class="text-capitalize">
-                            <i class="fas fa-handshake mr-3"></i>
-                            Benvenuto al Pannello di Controllo di Sorrento Cinema</h1>
+                <!-- inizio gestione utenti -->
+                <!-- sono due come sopra -->
+
+
+                    <div class="row text-uppercase text-center d-none d-md-flex">
+                        <div class="col-12 p-0">
+                            <div class="mb-4">
+                                <h1 class="d-inline mr-3">Gestione Utenti</h1>
+                            </div>
+                            <table class="table table-bordered table-hover table-dark">
+                                <thead>
+                                    <tr class="d-flex">
+                                        <th class="col-3 scritta-dorata">Id° Utente</th>
+                                        <th class="col-3 scritta-dorata">Nome Utente</th>
+                                        <th class="col-3 scritta-dorata">Cancella Utente</th>
+                                        <th class="col-3 scritta-dorata">Modifica Utente</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <%
+                                
+                                List<Utente>lU=(List<Utente>)request.getAttribute("listaU");
+                                
+                                    for(Utente g:lU){
+                                %>
+                                    <tr class="d-flex">
+                                        <td class="col-3 scritta-dorata"><%=g.getIdUtente() %></td>
+                                        <td class="col-3 scritta-dorata"><%=g.getEmail() %></td>
+                                        <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
+                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
+                                        </td>
+                                        <td class="col-3"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/ServletLeggiUtenteById?d=<%=g.getIdUtente() %>"><i
+                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
+                                        </td>
+                                    </tr>
+                                    <%} %>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="col-12 p-0 mb-3">
-                        <h2 class="text-capitalize">Qui potrai interagire con le funzioni di controllo dedicate
-                            all'Admin</h2>
+
+                  <!-- inizio gestione utenti parte 2-->
+
+
+                    <div class="row text-uppercase text-center d-flex d-md-none">
+                        <div class="col-12 p-0">
+                            <div class="mb-4">
+                                <h1 class="d-inline mr-3 titolo-custom">Gestione Utenti</h1>
+                            </div>
+                            <table class="table table-bordered table-hover table-dark">
+                                <thead>
+                                    <tr class="d-flex">
+                                        <th class="col-2 scritta-dorata">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata">Nome Utente</th>
+                                        <th class="col-5 scritta-dorata">Gestisci Utente</th>
+                                        <th class="col-3 scritta-dorata">Conferma Operazione</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <%for(Utente x:lU) 
+                                                    {%>         
+                                    <tr class="d-flex">
+                                        <td class="col-2 scritta-dorata"><%=x.getIdUtente() %></td>
+                                        <td class="col-2 scritta-dorata"><%=x.getNome() %></td>
+                                        <td class="col-5"><label><select class="col-12 text-center h-100"
+                                                    name="gestici-utente">
+                                                    <option value="cancella-utente">cancella utente</option>
+                                                    <option value="modifica-utente">modifica utente</option>
+                                                </select></label></td>
+                                        <td class="col-3"><a href=""><i
+                                                    class="fas fa-check-circle icona-menu-piccolo colore-icone-scuro"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <%} %>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <div class="col-12 p-0 mb-3">
-                        <h3 class="text-capitalize">Usa il menu a sinistra per spostarti tra le varie sezioni.</h3>
-                    </div>
-                    <div class="col-12 p-0 mb-3">
-                        <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verra' visualizzato in
-                            alto.</h4>
-                    </div>
-                </div>
-                <!-- fine messaggio benvenuto -->
+                <!-- fine gestione utenti -->
+
+
+
             </div>
             <!-- fine main destra -->
 
@@ -202,11 +256,12 @@
                 </div>
             </div>
         </div>
-       <!-- Fine Modal Uscita -->
-       
-        <!-- Footer: -->
+    <!-- Fine Modal Uscita -->
+    
+    
+     <!-- Footer: -->
     <jsp:include page= "footer.jsp"></jsp:include>
-       
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

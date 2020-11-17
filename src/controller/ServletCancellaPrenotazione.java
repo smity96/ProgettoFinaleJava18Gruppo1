@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.*;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,15 +24,19 @@ public class ServletCancellaPrenotazione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		if(!isUtente(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			int idPrenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
+			UtilitiesDbPrenotazione.rimuoviPrenotazione(idPrenotazione);
+		
+			response.sendRedirect("/ServletLeggiPrenotazioneUtente");
+		}
 		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idPrenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
-		UtilitiesDbPrenotazione.rimuoviPrenotazione(idPrenotazione);
-	
-		response.sendRedirect("ServletLeggiPrenotazioneUtente");
+		doGet(request, response);
 	}
 
 }

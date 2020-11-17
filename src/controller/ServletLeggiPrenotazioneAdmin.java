@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -31,11 +33,21 @@ public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
+			List<Prenotazione> pren=new ArrayList<Prenotazione>();
+			//allUtenti.stream().peek(u->System.out.println(u)).sorted((u1,u2)->u1.getEmail().compareToIgnoreCase(u2.getEmail())).forEach(u->pren.addAll(u.getPrenotazioni()));
+			pren=listaPreno.stream().sorted((p1,p2)->p1.getUtente().getEmail().compareToIgnoreCase(p2.getUtente().getEmail())).peek(p->System.out.println(p)).collect(Collectors.toList());
+			request.setAttribute("listaPreno", pren);
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-prenotazione.jsp").forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
+		doGet(request, response);
+		
 		/*//lista di appoggio
 		List<Utente>allUtenti=new ArrayList<Utente>();
 		//lista di appoggioPrenotazioni
@@ -59,11 +71,6 @@ public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 			}
 		}*/
 		
-		List<Prenotazione> pren=new ArrayList<Prenotazione>();
-		//allUtenti.stream().peek(u->System.out.println(u)).sorted((u1,u2)->u1.getEmail().compareToIgnoreCase(u2.getEmail())).forEach(u->pren.addAll(u.getPrenotazioni()));
-		pren=listaPreno.stream().sorted((p1,p2)->p1.getUtente().getEmail().compareToIgnoreCase(p2.getUtente().getEmail())).peek(p->System.out.println(p)).collect(Collectors.toList());
-		request.setAttribute("listaPreno", pren);
-		request.getRequestDispatcher("/html/dashboard-gestione-prenotazione.jsp").forward(request, response);
 	}
 	
 	class emailComparator implements Comparator<Utente> {

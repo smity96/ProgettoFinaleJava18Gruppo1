@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.IOException;
 import java.util.Collections;
 import java.util.Comparator;
@@ -21,12 +23,16 @@ public class ServletLeggiProiezioniAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
-		List<Film> films = UtilitiesDbFilm.leggiFilmAll();
-		Collections.sort(proiezioni, new dateComparator());
-		request.setAttribute("proiezioni", proiezioni);
-		request.setAttribute("films", films);
-		request.getRequestDispatcher("/html/dashboard-gestione-proiezione.jsp").forward(request, response);
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
+			List<Film> films = UtilitiesDbFilm.leggiFilmAll();
+			Collections.sort(proiezioni, new dateComparator());
+			request.setAttribute("proiezioni", proiezioni);
+			request.setAttribute("films", films);
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-proiezione.jsp").forward(request, response);
+		}
 	}
 
 

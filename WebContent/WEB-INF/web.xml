@@ -7,12 +7,12 @@ id="WebApp_ID" version="3.1">
    
   
   <!-- welcomeFileList sta per le pagine che deve avviare a path vuoto -->
-  <!--  
+   
    <welcome-file-list>
-    <welcome-file>TestInserisci_Nicola.jsp</welcome-file>
+    <welcome-file>ServletLeggiIndex</welcome-file>
   </welcome-file-list>
   
-   diamo un nome per questo file alle servlet--> 
+   <!-- diamo un nome per questo file alle servlet--> 
   <!--  
   <servlet>
   	<servlet-name>ServletInserisciPrenotazione</servlet-name>

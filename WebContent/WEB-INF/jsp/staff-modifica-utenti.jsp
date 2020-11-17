@@ -3,7 +3,7 @@
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,23 +25,25 @@
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
-              						  HttpSession s=request.getSession(false);    
-										//session.getAttribute("utentelog")
-                               			//String mail = (String) s.getAttribute("mailLog");
-                						//String pssw = (String) session.getAttribute("psswLog");
-                						Utente u = (Utente)s.getAttribute("uLog");
-                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                						
-                	
+                                      HttpSession s=request.getSession(false);    
+                                        //session.getAttribute("utentelog")
+                                        //String mail = (String) s.getAttribute("mailLog");
+                                        //String pssw = (String) session.getAttribute("psswLog");
+                                        Utente u = (Utente)s.getAttribute("uLog");
+                                        //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
+                                        Utente b=(Utente)(request.getAttribute("d"));
+                    
+                                        
+                    
                 %>
     </head>
-<body style="font-family:'Monserrat', sans-serif">
+<body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
     <nav class="navbar bg-nero navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
-            <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Admin Dashboard</h1>
+            <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Dashboard Staff</h1>
             <!-- Fine Navbar Brand -->
 
             <!-- Toggler/collapse Button -->
@@ -57,23 +59,17 @@
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm"><i class="fas fa-film mr-3 text-muted"></i>Gestione Film</a>
-                    </li>
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniAdmin"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
-                    </li>
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteAdmin"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
                   </ul>
 
@@ -84,7 +80,7 @@
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="CIAO "+u.getNome().toUpperCase() %></span>
+                        <span class="scritta-dorata ml-2"><%="CIAO:"+u.getNome()%></span>
                       </a>
                     </li>
                     <li class="nav-item">
@@ -117,32 +113,22 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin">Gestisci Prenotazioni</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro "
-                                href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm">Gestione Film</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniAdmin">Gestione Proiezioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteAdmin">Gestione Utenti</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -154,16 +140,16 @@
 
                 <!-- inizio funzioni main -->
 
-                <!-- inizio gestione profilo -->
+                <!-- inizio modifica utenti -->
           
                 <div class="row justify-content-center text-uppercase">
                     <div class="col-12 p-0 text-center">
                         <div class="mb-4">
-                            <h1 class="d-inline mr-3 titolo-custom">Gestione Profilo</h1>
+                            <h1 class="d-inline mr-3">Modifica Utente</h1>
                         </div>
 
-                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="post" enctype="multipart/form-data">
-                      <input type="hidden" name="red" value="3"> 
+                      <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente?d=<%=b.getIdUtente() %>" method="post" enctype="multipart/form-data"
+                      >
                         <table class="table table-bordered table-dark">
                             <thead>
                                 <tr>
@@ -174,19 +160,19 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Nome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nome"
-                                            value="<%=u.getNome() %>" class="text-capitalize"></td>
+                                            value="<%=b.getNome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Cognome</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
-                                            value="<%=u.getCognome() %>" class="text-capitalize"></td>
+                                            value="<%=b.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
-                                            value="<%=u.getDataDiNascita()%>">
+                                            value="<%=b.getDataDiNascita()%>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -196,12 +182,12 @@
                             <tbody></tbody>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Email</label></th>
-                                <td class="col-md-10 col-9 scritta-dorata"><input class="col-8" type="email"
-                                        name="email" value="<%=u.getEmail()%>"></td>
+                                <td class="col-md-10 col-9"><input class="col-8" type="email"
+                                        name="email" value="<%=b.getEmail()%>"></td>
                             </tr>
                             <!-- 
                              <tr class="d-flex">
-                                <th class="col-md-2 col-3 scritta-dorata"><label>Username</label></th>
+                                <th class="col-md-2 col-3 colore-icone-scuro"><label>Username</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="text" name="username"
                                         value="ale15">
                                 </td>
@@ -210,43 +196,43 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%u.getPassword(); %> "></td>
+                                        value="<%b.getPassword(); %> "></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="img" value="<%u.getImmagine(); %>"></td>
+                                    type="file" name="img" value="<%b.getImmagine(); %>"></td>
                             </tr>
                             </tbody>
                             <thead>
                                 <tr>
-                                    <th class="scritta-dorata">Dati Fatturazione</th>
+                                    <th class="cscritta-dorata">Dati Fatturazione</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Partita Iva</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="pIva"
-                                            value="<%=u.getPIva() %>" class="text-capitalize"></td>
+                                            value="<%=b.getPIva() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Indirizzo</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="indirizzo"
-                                            value="<%=u.getIndirizzo() %>" class="text-capitalize"></td>
+                                            value="<%=b.getIndirizzo() %>" class="text-capitalize"></td>
                                 </tr>
 
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Nome Societa'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
-                                            value="<%u.getNomeSocieta(); %>"></td>
+                                            value="<%=b.getNomeSocieta() %>"></td>
                                 </tr>
-									<tr>
-									<td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
-									</tr> 
+                                    <tr style="visibility: collapse;">
+                                    <input type="hidden"name="red" value="<%=u.getRuolo()%>">
+                                    </tr> 
                                 <tr class="d-flex">
-                                    <td class="col-12 justify-content-center"><input class="bg-oro"
+                                    <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"
                                             type="submit" value="modifica"></td>
                                 </tr>
                             </tbody>
@@ -254,9 +240,7 @@
                             </form>
                     </div>
                 </div>
-                <!-- fine gestione profilo -->
-
-
+                <!-- fine modifica utenti -->
 
             </div>
             <!-- fine main destra -->
@@ -269,7 +253,7 @@
     <!-- Modals -->
 
     <!-- Modal uscita -->
-<!-- Modal -->
+    <!-- Modal -->
         <div class="modal fade text-warning" id="sign-out">
             <div class="modal-dialog bg-dark text-warning">
                 <div class="modal-content bg-dark text-warning">
@@ -298,12 +282,8 @@
                 </div>
             </div>
         </div>
-        
-      <!-- Fine Modal Uscita -->
-      
-       <!-- Footer: -->
-    <jsp:include page= "footer.jsp"></jsp:include>
-      
+    <!-- Fine Modal Uscita -->
+
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -314,7 +294,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

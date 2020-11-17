@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -35,36 +37,38 @@ public class ServletInserisciProiezione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Lorenzo � bello
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			boolean errore=false;
+			Proiezione pDaAggiungere = new Proiezione();
+			String dataEora2  = request.getParameter("dataOra");
+			SimpleDateFormat formatter6 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
+			try {
+				Date dataEora = formatter6.parse(dataEora2);
+				pDaAggiungere.setDataOra(dataEora);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}	
+			pDaAggiungere.setPrezzo(Double.parseDouble(request.getParameter("prezzo")));
+			pDaAggiungere.setFilm(UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id"))));
+			pDaAggiungere.setIntervallo(Integer.parseInt(request.getParameter("intervallo")));
+			pDaAggiungere.setPostiMax(Integer.parseInt(request.getParameter("posti")));
+			if(UtilitiesDbProiezione.slotOccupato(proiezioni, pDaAggiungere) || !UtilitiesDbProiezione.slotRegolare(pDaAggiungere)) {
+				errore=true;
+				request.setAttribute("errore", errore);
+				request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);; 
+			}else {
+				UtilitiesDbProiezione.aggiungiProiezione(pDaAggiungere);
+				errore=false;
+				request.setAttribute("errore", errore);
+				request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);
+			}
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		boolean errore=false;
-		Proiezione pDaAggiungere = new Proiezione();
-		String dataEora2  = request.getParameter("dataOra");
-		SimpleDateFormat formatter6 = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm",Locale.ITALY);
-		try {
-			Date dataEora = formatter6.parse(dataEora2);
-			pDaAggiungere.setDataOra(dataEora);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}	
-		pDaAggiungere.setPrezzo(Double.parseDouble(request.getParameter("prezzo")));
-		pDaAggiungere.setFilm(UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id"))));
-		pDaAggiungere.setIntervallo(Integer.parseInt(request.getParameter("intervallo")));
-		pDaAggiungere.setPostiMax(Integer.parseInt(request.getParameter("posti")));
-		if(UtilitiesDbProiezione.slotOccupato(proiezioni, pDaAggiungere) || !UtilitiesDbProiezione.slotRegolare(pDaAggiungere)) {
-			errore=true;
-			request.setAttribute("errore", errore);
-			
-			request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);; 
-		}else {
-			UtilitiesDbProiezione.aggiungiProiezione(pDaAggiungere);
-			errore=false;
-			request.setAttribute("errore", errore);
-			request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);
-		}
-		//doGet(request, response);
+		doGet(request, response);
 	}
 
 }

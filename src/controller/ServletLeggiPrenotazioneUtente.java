@@ -21,24 +21,18 @@ public class ServletLeggiPrenotazioneUtente extends HttpServlet {
 	List<Proiezione> listaProiez;
 	List<Prenotazione> listaPreno;
     
-	public ServletLeggiPrenotazioneUtente() {
-        super();
-        
-    }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		listaProiez = UtilitiesDbProiezione.leggiProiezioni();
 		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
 		
 		request.setAttribute("listaProiez", listaProiez);
 		request.setAttribute("listaPreno", listaPreno);
 		
-		request.getRequestDispatcher("/html/gestionePrenotaUtente.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/gestionePrenotaUtente.jsp").forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
 }

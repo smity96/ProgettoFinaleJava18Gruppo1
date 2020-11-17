@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -19,12 +21,15 @@ public class ServletLeggiFilmToModifica extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//request.getContextPath()
-		int id=Integer.parseInt(request.getParameter("id_FilmMod"));
-		System.out.println(id);
-		Film f=UtilitiesDbFilm.leggiFilm(id);
-		request.setAttribute("Film", f);
-		request.getRequestDispatcher("html/modifica-film.jsp").forward(request, response);
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			int id=Integer.parseInt(request.getParameter("id_FilmMod"));
+			System.out.println(id);
+			Film f=UtilitiesDbFilm.leggiFilm(id);
+			request.setAttribute("Film", f);
+			request.getRequestDispatcher("/WEB-INF/jsp/modifica-film.jsp").forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

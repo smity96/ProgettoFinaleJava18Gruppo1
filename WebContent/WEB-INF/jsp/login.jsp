@@ -84,7 +84,7 @@ pageEncoding="ISO-8859-1"%>
 
       <a
         class="text-warning stile"
-        href="/ProgettoFinaleJava18Gruppo1/html/emailRecuperaPassword.jsp"
+        href="/ProgettoFinaleJava18Gruppo1/IndieRecPassword"
         >Recupera password.</a
       >
       </p>
@@ -94,7 +94,7 @@ pageEncoding="ISO-8859-1"%>
 
       <a
         class="text-warning stile"
-        href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp"
+        href="/ProgettoFinaleJava18Gruppo1/IndieRegistrazione"
         >Registrati qui!</a
       >
       

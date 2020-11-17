@@ -1,9 +1,9 @@
-
+<!-- lorem ipsum -->
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,32 +17,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
    
-    
-    
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
     <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
       <%
-                                      HttpSession s=request.getSession(false);    
-                                        //session.getAttribute("utentelog")
-                                        //String mail = (String) s.getAttribute("mailLog");
-                                        //String pssw = (String) session.getAttribute("psswLog");
-                                        //TODO Sistemare la sessione
-                                        Utente u = (Utente)s.getAttribute("uLog");
-                                        //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                                        
-                    
+              						  HttpSession s=request.getSession(false);    
+										//session.getAttribute("utentelog")
+                               			//String mail = (String) s.getAttribute("mailLog");
+                						//String pssw = (String) session.getAttribute("psswLog");
+                						//TODO Sistemare la sessione
+                						Utente u = (Utente)s.getAttribute("uLog");
+                						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
+                						
+                	
                 %>
     </head>
-    <body style="font-family: 'Monserrat', sans-serif">
+	<body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
-    <nav class="navbar bg-nero navbar-expand-xl">
+    <nav class="navbar navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
-            <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Dashboard Staff</h1>
+                <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Admin Dashboard</h1>
             <!-- Fine Navbar Brand -->
 
             <!-- Toggler/collapse Button -->
@@ -53,27 +52,34 @@
             <!-- Navbar links collapse -->
 
             <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
+                
                 <ul class="navbar-nav links d-xl-none">
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm"><i class="fas fa-film mr-3 text-muted"></i>Gestione Film</a>
+                    </li>
+                    <li class="nav-item nav-item-custom">
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniAdmin"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
+                    </li>
+                    <li class="nav-item nav-item-custom">
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteAdmin"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
                   </ul>
 
                 <!-- nav icons -->
-                
+
                 <ul class="navbar-nav icons">
                     <li class="nav-item mr-5">
                       <a class="nav-link" href="#">
@@ -84,7 +90,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
-                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
+                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logout
                       </a>
                     </li>
                 </ul>
@@ -113,22 +119,32 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">Gestione Profilo</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin">Gestione Profilo</a></div>
+                    </li>
+                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
+                        <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
+                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin">Gestisci Prenotazioni</a></div>
+                    </li>
+                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
+                        <div class="col-2 m-0"><i class="fas fa-film text-muted mr-3 nav-size"></i></div>
+                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro "
+                                href="/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm">Gestione Film</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniAdmin">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteAdmin">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -154,7 +170,7 @@
                                 </a>
                             </div>
                             
-                            <%List<Film> tuttiFilm=UtilitiesDbFilm.leggiFilmAll(); %>
+                            <%List<Film> tuttiFilm=(List<Film>)request.getAttribute("tuttiFilm"); %>
                             <table class="table table-dark">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
@@ -164,7 +180,7 @@
                                         <th class="col-2 scritta-dorata">Cancella Film</th>
                                     </tr>
                                 </thead>
-                                <tbody>                              
+                                <tbody>                        
                                 <%for(Film f: tuttiFilm){ %>
                                     <tr class="d-flex align-items-center">
                                         <td class="col-4 bordo-trasparente"><img class="img-fluid film-custom-height"
@@ -197,7 +213,7 @@
                                         <i class="fas fa-plus aggiungi-custom">Aggiungi Film</i>
                                     </a></p>
                             </div>
-                            <table class="table table-hover table-dark">
+                            <table class="table table-dark">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
                                         <th class="col-6 scritta-dorata">Titolo</th>
@@ -271,8 +287,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    <!-- Fine Modal Uscita -->
+        </div>    
+        
+   <!-- Fine Modal Uscita -->
 
     <!-- Modal Aggiungi Film -->
 
@@ -349,10 +366,9 @@
         </div>
     </div>
     <!-- Fine Modal Aggiungi Film -->
-    
-     <!-- Footer: -->
+
+ <!-- Footer: -->
     <jsp:include page= "footer.jsp"></jsp:include>
-    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

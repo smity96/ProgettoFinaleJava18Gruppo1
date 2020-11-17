@@ -74,12 +74,12 @@
 							Al Sito</a></li>
 					<li class="nav-item nav-item-custom"><a
 						class="nav-link scritta-click-scuro scritta-dorata"
-						href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp"><i
+						href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin"><i
 							class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a></li>
 
 					<li class="nav-item nav-item-custom"><a
 						class="nav-link scritta-click-scuro scritta-dorata"
-						href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i
+						href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin"><i
 							class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a></li>
 					<li class="nav-item nav-item-custom"><a
 						class="nav-link scritta-click-scuro scritta-dorata"
@@ -149,7 +149,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a>
+								href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">Dashboard</a>
 						</div>
 					</li>
 					<li
@@ -159,7 +159,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione
+								href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin">Gestione
 								Profilo</a>
 						</div>
 					</li>
@@ -170,7 +170,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/ServletLeggiPrenotazioneAdmin">Gestisci
+								href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin">Gestisci
 								Prenotazioni</a>
 						</div>
 					</li>
@@ -192,7 +192,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/ServletLeggiProiezioniAdmin">Gestione
+								href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniAdmin">Gestione
 								Proiezioni</a>
 						</div>
 					</li>

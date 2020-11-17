@@ -4,7 +4,6 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-
      <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
@@ -18,7 +17,7 @@
         
      </style>
      
-      <!-- Google fonts link -->
+     <!-- Google fonts link -->
      <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
    
@@ -31,31 +30,32 @@
     />
 
 </head>
-<body class="bg-dark">
-
-  <!-- Navbar -->
+<body style="font-family: 'Monserrat', sans-serif">
+    <!-- Navbar -->
   
 <jsp:include page= "navbarNonLog.jsp"></jsp:include>
 
-    <!-- Inserisci email per il recupero password -->
+      <!-- Abbiamo inviato email di recupero, vai su accedi -->
+
+    <br>
+    <br>
+        
+    <br>
+    <p class="text-warning text-center mt-4 stile">Abbiamo inviato la tua vecchia password al tuo indirizzo di posta elettronica.
+    <br>
+    Ti invitiamo ad accedere di nuovo al sito. 
+    <br>
+    Grazie e buona navigazione.
+    <br>
+    <br>
+    <br>
+    <a class="btn btn-outline-warning text-center text-light stile" href="/ProgettoFinaleJava18Gruppo1/IndieLogin">
+    Accedi
+    </a>
+    
+    </p>
 <br>
     <br>
-    <br> 
-    <form action="<%=request.getContextPath() %>/ServletRecuperoPassword" method="post">
-    
-    <p class="text-warning text-center mt-4 stile">Inserisci qui il tuo indirizzo di posta elettronica. 
-    <br>
-    Ti invieremo un'email con la tua vecchia password. 
-    <br>
-    <br>
-    <input type="email" name="email" class="btn rounded text-center bg-light" placeholder="Email">
-    <br>
-    <br>
-    <button class="btn btn-outline-warning text-center text-light stile" type="submit"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/emailPasswordInviata.jsp"></a>
-    Invia
-    </button>
-    </p>
-    </form>
     <br>
     <br>
     <br>
@@ -76,12 +76,10 @@
     <br>
     <br>
     <br>
-    <br>
-    <br>
-    
-     <!-- Footer: -->
+
+ <!-- Footer: -->
     <jsp:include page= "footer.jsp"></jsp:include>
-    
+
 
     <!--Bootstrap links-->
     <script
@@ -99,6 +97,8 @@
       integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
       crossorigin="anonymous"
     ></script>
+
+  
 
 </body>
 </html>
