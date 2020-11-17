@@ -20,7 +20,7 @@
  <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
    
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">     
+    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">     
     <!--Bootstrap links-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -77,7 +77,7 @@
             <li class="nav-item m-auto width:90%">
             <%
             if(s.getAttribute("uLog")!=null){%> 
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-admin.jsp">DashBoard</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Profilo</a>
             <%} else{%>
             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
             <%} %>
@@ -88,7 +88,7 @@
        <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="<%=request.getContextPath() %>/html/dashboard-gestione-profilo.jsp">Ciao, <%=u.getNome() %> </a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/profiloUtente.jsp">Ciao, <%=u.getNome() %> </a>
             </li>
             </ul>
           </div>
@@ -97,7 +97,16 @@
           <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
+<<<<<<< HEAD
             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/ServletLogout">Logout</a>
+=======
+            <%
+            if(s.getAttribute("uLog")!=null){%>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="#">Logout</a>
+            <%} else{%>
+             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
+            <%} %>
+>>>>>>> parent of 15b90d1... Merge branch 'main' of https://github.com/smity96/ProgettoFinaleJava18Gruppo1 into main
             </li>
             </ul>
           </div>

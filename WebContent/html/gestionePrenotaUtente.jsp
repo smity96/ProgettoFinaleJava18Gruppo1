@@ -165,11 +165,8 @@
                                  <% 
                                 	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
                                 	for(Prenotazione p : listaPreno){
-                                		if(!p.getUtente().equals(u)){
-                                			continue;
-                                		}
                                 	if(request.getAttribute("pDaModificare") == null || !request.getAttribute("pDaModificare").equals(p)){
-                                		//if(p.getUtente().equals(u)){
+                                	
                                 %>
                                 	
                                   <tr>
@@ -234,8 +231,7 @@
                                  </form>
                                   </tr>
                                   
-                                <%//}
-                                } 
+                                <%} 
                                 }%>
                                 
                                 </tbody>

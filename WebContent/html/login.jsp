@@ -41,7 +41,7 @@ pageEncoding="ISO-8859-1"%>
     
     
     <%if(request.getAttribute("error")!=null){ %>
-    <p> <%=request.getAttribute("error") %></p>
+    <p class="text-warning"> <%=request.getAttribute("error") %></p>
     <%} %>
     <form
       class="form-signin"

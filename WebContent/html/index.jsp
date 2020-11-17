@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         .titolo {
@@ -24,12 +24,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
     <!--Bootstrap links-->
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-index.css">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-index.css">
 </head>
 
 <body style="font-family: 'Montserrat', sans-serif">
@@ -79,83 +78,101 @@ Utente u=(Utente)s.getAttribute("uLog");
                 </div>
             </div>
             <!-- fine sezione titolo -->
+            
+             
 
             <!-- inizio filtro -->
 
-            <div class="col-12 mx-auto d-flex sortBtn flex-wrap">
-                <div class="col-12 mx-auto d-flex sortBtn justify-content-center flex-wrap"><a
-                        class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="all">
-                        <h5 class="scritta-dorata scritta-click-scuro">tutti</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="animazione">
-                        <h5 class="scritta-dorata scritta-click-scuro">animazione</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="azione">
-                        <h5 class="scritta-dorata scritta-click-scuro">azione</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="azione">
-                        <h5 class="scritta-dorata scritta-click-scuro">avventura</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="commedia">
-                        <h5 class="scritta-dorata scritta-click-scuro">commedia</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase justify-content-start fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="fantasy">
-                        <h5 class="scritta-dorata scritta-click-scuro">fantasy</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="fantascienza">
-                        <h5 class="scritta-dorata scritta-click-scuro">fantascienza</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="guerra">
-                        <h5 class="scritta-dorata scritta-click-scuro">guerra</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="horror">
-                        <h5 class="scritta-dorata scritta-click-scuro">horror</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="musical">
-                        <h5 class="scritta-dorata scritta-click-scuro">musical</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="romantico">
-                        <h5 class="scritta-dorata scritta-click-scuro">romantico</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="storico">
-                        <h5 class="scritta-dorata scritta-click-scuro">storico</h5>
-                    </a></div>
-                <div class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
-                    <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                        data-filter="thriller">
-                        <h5 class="scritta-dorata scritta-click-scuro">thriller</h5>
-                    </a>
-                </div>
+            <div class="row">
+                <div class="col-12 mx-auto d-flex sortBtn flex-wrap">
+                    <div class="col-12 mx-auto d-flex sortBtn justify-content-center flex-wrap"><a
+                            class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="all">
+                            <h5>tutti</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="animazione">
+                            <h5>animazione</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="azione">
+                            <h5>azione</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="azione">
+                            <h5>avventura</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="commedia">
+                            <h5>commedia</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase justify-content-start fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="fantasy">
+                            <h5>fantasy</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="fantascienza">
+                            <h5>fantascienza</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="guerra">
+                            <h5>guerra</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="horror">
+                            <h5>horror</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="musical">
+                            <h5>musical</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="romantico">
+                            <h5>romantico</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="storico">
+                            <h5>storico</h5>
+                        </a></div>
+                    <div
+                        class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
+                        <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            data-filter="thriller">
+                            <h5>thriller</h5>
+                        </a>
+                    </div>
 
+                </div>
             </div>
         </div>
         <!-- fine filtro -->
+        
+       <input type="text" id="ricercaTitolo" oninput="ricercaTitolo()">
 
-        <!-- inizio lista film -->
-        <div class="row d-flex text-center">
+            <!-- inizio lista film -->
+            <div class="row d-flex text-center">
 
             <!-- singolo film -->
             <%  List<Proiezione> proiezioni = (List<Proiezione>)request.getAttribute("proiezioni");
@@ -166,7 +183,7 @@ Utente u=(Utente)s.getAttribute("uLog");
               }else{
             	  films.add(p.getFilm());
             	  %>
-            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films f.getGenere <%=p.getFilm().getGenere()%>">
+            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films f.getGenere proiezione" id="<%=p.getFilm().getTitolo()%>">
                 <div class="card single-film size-custom">
                     <div class="img-container size-custom">
                         <!-- il getlocandina stava qui -->
@@ -174,9 +191,9 @@ Utente u=(Utente)s.getAttribute("uLog");
                         <img src="<%= p.getFilm().getLocandina()%>" class=" img-custom" alt="">
                         <span class="film-item-icon mx-0 px-0">
                         	<a style="color: #000000" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">
-                            <div class="col-12 m-auto">
-                                <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                	<span class="pl-2">Clicca per andare alla programmazione</span>
+                            <div class="col-12">
+                                <i class="fas fa-calendar-alt text-capitalize px-lg-2 px-1"></i>
+                                	<span class="pl-lg-2 pl-1">Clicca per andare alla programmazione</span>
                             </div>
                             </a>
                         </span>
@@ -191,6 +208,16 @@ Utente u=(Utente)s.getAttribute("uLog");
         </div>
     </section>
     <!-- fine sezione film -->
+    <script type="text/javascript">
+        	function ricercaTitolo(){
+        		var titoloRicerca = document.getElementById("ricercaTitolo").value;
+        		var titoli=new Array($('.proiezione').attr('id'));
+        		//if(){
+        			console.log("Sono entrato");
+        			console.log(titoli);
+        		//}
+        	}
+    </script>
 
     <!-- sezione prossimamente -->
     <section class="py-3 bg-grigio-scuro">
@@ -247,7 +274,7 @@ Utente u=(Utente)s.getAttribute("uLog");
     <jsp:include page= "footer.jsp"></jsp:include>
 
     <!--Bootstrap links-->
-
+	<script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script-filter.js" type="text/javascript"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>

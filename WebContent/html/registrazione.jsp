@@ -80,7 +80,12 @@ pageEncoding="ISO-8859-1"%>
       />
       <p class="h3 mb-3 text-warning stile">Registrati:</p>
 
-       
+    <% if (request.getAttribute("error")!=null){
+    boolean minore=(Boolean)request.getAttribute("error");
+    if(minore==true){%>
+    <h1 class="text-warning">SEI TROPPO GIOVANE PER REGISTARTI</h1>
+    <%} 
+    	}%>
     
     
       <!--Requisiti obbligatori: -->
@@ -338,7 +343,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
 
                     <!-- Modal body -->
                     <div class="modal-body stile bg-dark text-warning">
-                       La tua registrazione è stata inviata con successo. 
+                       La tua registrazione ï¿½ stata inviata con successo. 
                        Ti invitiamo gentilmente ad attendere la conferma della tua registrazione da parte dell'amministratore. 
                     </div>
 
