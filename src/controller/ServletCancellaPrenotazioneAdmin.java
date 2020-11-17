@@ -28,7 +28,7 @@ public class ServletCancellaPrenotazioneAdmin extends HttpServlet {
 			int idPrenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
 			UtilitiesDbPrenotazione.rimuoviPrenotazione(idPrenotazione);
 		
-			response.sendRedirect(request.getContextPath()+"/ServletLeggiPrenotazioneAdmin");
+			response.sendRedirect("/ServletLeggiPrenotazioneAdmin");
 		}
 	}
 
