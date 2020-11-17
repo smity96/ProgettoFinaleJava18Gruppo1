@@ -3,6 +3,7 @@ package controller;
 import static utilities.UtilitiesDbUtente.isAdmin;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,7 +30,10 @@ public class ServletCancellaFilm extends HttpServlet {
 			Film f2 = UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id_film")));
 			// elimino il film
 			UtilitiesDbFilm.cancellaFilm(f2);
-			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
+			List<Film> film=UtilitiesDbFilm.leggiFilmAll();
+			film.sort((f1,f3)->f1.getTitolo().compareToIgnoreCase(f3.getTitolo()));
+			request.setAttribute("tuttiFilm", film);
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-film.jsp").forward(request, response);
 		}
 	}
 

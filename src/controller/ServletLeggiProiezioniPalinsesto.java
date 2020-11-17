@@ -27,10 +27,8 @@ public class ServletLeggiProiezioniPalinsesto extends HttpServlet {
 		request.setAttribute("Proiezioni", Proiezioni);
 		request.setAttribute("Films", Films);
 		request.setAttribute("Prenotazioni", Prenotazioni);
-		//TODO cambiare path 
-		request.getRequestDispatcher("/html/palinsestoBody.jsp").forward(request, response);
+		request.getRequestDispatcher("/WEB-INF/jsp/palinsestoBody.jsp").forward(request, response);
 	}
-
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);

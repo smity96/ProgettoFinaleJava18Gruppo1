@@ -57,7 +57,6 @@ public class ServletInserisciProiezione extends HttpServlet {
 			if(UtilitiesDbProiezione.slotOccupato(proiezioni, pDaAggiungere) || !UtilitiesDbProiezione.slotRegolare(pDaAggiungere)) {
 				errore=true;
 				request.setAttribute("errore", errore);
-				
 				request.getRequestDispatcher("ServletLeggiProiezioniAdmin").forward(request, response);; 
 			}else {
 				UtilitiesDbProiezione.aggiungiProiezione(pDaAggiungere);

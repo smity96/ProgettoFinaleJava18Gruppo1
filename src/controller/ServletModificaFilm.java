@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -31,71 +33,80 @@ public class ServletModificaFilm extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doPost(request, response);
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			// mi prendo la lista completa dei film
+			List<Film> allFilm = UtilitiesDbFilm.leggiFilmAll();
+			// creo l'ogetto dalle risorse ottenute
+			Film f3 = new Film();
+			f3.setIdFilm(Integer.parseInt(request.getParameter("id_filmMod")));
+			f3.setTitolo(request.getParameter("titolo"));
+			f3.setGenere(request.getParameter("genere"));
+			try {
+				int anno = Integer.parseInt(request.getParameter("annoDiUscita"));
+				if (anno >= 2021 || anno < 1896) {
+					response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
+				} else {
+					f3.setAnnoDiUscita(request.getParameter("annoDiUscita"));
+				}
+			} catch (NumberFormatException e1) {
+				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
+				e1.printStackTrace();
+			}
+			f3.setDurata(Integer.parseInt(request.getParameter("durata")));
+			f3.setUrlTrailer(request.getParameter("urlTrailer"));
+			f3.setTrama(request.getParameter("trama"));
+			final String path = "C:\\FotoProfiloProgettoF";
+			// crea il part
+			final Part filePart = request.getPart("file");
+			// creiamo il file
+			System.out.println(filePart);
+			final String fileName = getFileName(filePart);
+			System.out.println("fileName: " + fileName);
+			try (OutputStream out = new FileOutputStream(new File(path + File.separator + fileName));
+					InputStream fileContent = filePart.getInputStream();) {
+				int read = 0;
+				final byte[] bytes = new byte[1024];
+				while ((read = fileContent.read(bytes)) != -1) {
+					out.write(bytes, 0, read);
+				}
+			} catch (FileNotFoundException e) {
+				System.out.println("sto nel catch");
+				e.printStackTrace();
+			}
+			if((request.getParameter("fileUrl").trim().equals("")||request.getParameter("fileUrl")==null)&&(fileName==null||fileName.trim().equals(""))) {
+				f3.setLocandina("https://thumbs.dreamstime.com/b/pellicola-di-film-di-colore-di-35mm-3995550.jpg");
+			}else if(fileName==null||fileName.trim().equals("")) {
+				f3.setLocandina(request.getParameter("fileUrl"));
+			}else if (request.getParameter("fileUrl").trim().equals("")||request.getParameter("fileUrl")==null) {
+				f3.setLocandina("http://127.0.0.1:8887/" + fileName);
+			}
+			// per ogni film contenuto nella lista
+			for (Film f : allFilm) {
+				// controllami se trovi un id uguale
+				if (f3.getIdFilm() == f.getIdFilm()) {
+					System.out.println("if dell'id");
+					// se l'id e' uguale allora cambiami il check e modifica il valore
+					UtilitiesDbFilm.modificaFilm(f3);
+					check = true;
+					break;
+				}
+			}
+			// se il check resta falso allora aggiungi il film
+			if (check == false) {
+				UtilitiesDbFilm.inserisciFilm(f3);
+			}
+			List<Film> film=UtilitiesDbFilm.leggiFilmAll();
+			film.sort((f1,f2)->f1.getTitolo().compareToIgnoreCase(f2.getTitolo()));
+			request.setAttribute("tuttiFilm", film);
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-film.jsp").forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		// mi prendo la lista completa dei film
-		List<Film> allFilm = UtilitiesDbFilm.leggiFilmAll();
-		// creo l'ogetto dalle risorse ottenute
-		Film f3 = new Film();
-		f3.setIdFilm(Integer.parseInt(request.getParameter("id_filmMod")));
-		f3.setTitolo(request.getParameter("titolo"));
-		f3.setGenere(request.getParameter("genere"));
-		try {
-			int anno = Integer.parseInt(request.getParameter("annoDiUscita"));
-			if (anno >= 2021 || anno < 1896) {
-				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
-			} else {
-				f3.setAnnoDiUscita(request.getParameter("annoDiUscita"));
-			}
-		} catch (NumberFormatException e1) {
-			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
-			e1.printStackTrace();
-		}
-		f3.setDurata(Integer.parseInt(request.getParameter("durata")));
-		f3.setUrlTrailer(request.getParameter("urlTrailer"));
-		f3.setTrama(request.getParameter("trama"));
-		final String path = "C:\\Users\\Smith\\Desktop\\imgProva";
-		// crea il part
-		final Part filePart = request.getPart("file");
-		// creiamo il file
-		System.out.println(filePart);
-		final String fileName = getFileName(filePart);
-		System.out.println("fileName: " + fileName);
-		try (OutputStream out = new FileOutputStream(new File(path + File.separator + fileName));
-				InputStream fileContent = filePart.getInputStream();) {
-			int read = 0;
-			final byte[] bytes = new byte[1024];
-			while ((read = fileContent.read(bytes)) != -1) {
-				out.write(bytes, 0, read);
-			}
-		} catch (FileNotFoundException e) {
-			System.out.println("sto nel catch");
-			e.printStackTrace();
-		}
-		if (request.getParameter("fileUrl").trim().equals("")) {
-			f3.setLocandina("http://127.0.0.1:8887/" + fileName);
-		} else {
-			f3.setLocandina(request.getParameter("fileUrl"));
-		}
-		// per ogni film contenuto nella lista
-		for (Film f : allFilm) {
-			// controllami se trovi un id uguale
-			if (f3.getIdFilm() == f.getIdFilm()) {
-				System.out.println("if dell'id");
-				// se l'id e' uguale allora cambiami il check e modifica il valore
-				UtilitiesDbFilm.modificaFilm(f3);
-				check = true;
-				break;
-			}
-		}
-		// se il check resta falso allora aggiungi il film
-		if (check == false) {
-			UtilitiesDbFilm.inserisciFilm(f3);
-		}
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
+		doGet(request, response);
 	}
 
 	private String getFileName(final Part part) {

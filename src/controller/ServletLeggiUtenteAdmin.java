@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -23,14 +25,18 @@ public class ServletLeggiUtenteAdmin extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			List<Utente> listaU=UtilitiesDbUtente.listaUtenti();
+			request.setAttribute("listaU", listaU);
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-utenti.jsp").forward(request, response);
+		}
 	}
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Utente> listaU=UtilitiesDbUtente.listaUtenti();
-		request.setAttribute("listaU", listaU);
-		request.getRequestDispatcher("/html/dashboard-gestione-utenti.jsp").forward(request, response);
+		doGet(request, response);
 	}
 
 }

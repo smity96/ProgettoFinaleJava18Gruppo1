@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.*;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -16,23 +18,20 @@ import utilities.UtilitiesDbUtente;
 @WebServlet("/ServletLeggiUtenteStaff")
 public class ServletLeggiUtenteStaff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public ServletLeggiUtenteStaff() {
-        super();
-        
-    }
-
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		if(!isStaff(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			List<Utente> listaU=UtilitiesDbUtente.listaUtenti();
+			request.setAttribute("listaU", listaU);
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-utenti.jsp").forward(request, response);
+		}
+		
 	}
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<Utente> listaU=UtilitiesDbUtente.listaUtenti();
-		request.setAttribute("listaU", listaU);
-		request.getRequestDispatcher("/html/dashboard-staff-gestione-utenti.jsp").forward(request, response);
+		doGet(request, response);	
 	}
 
 }

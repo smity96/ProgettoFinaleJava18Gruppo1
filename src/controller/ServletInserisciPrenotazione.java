@@ -1,6 +1,6 @@
 package controller;
 
-import static utilities.UtilitiesDbUtente.isAdmin;
+import static utilities.UtilitiesDbUtente.*;
 
 import java.io.IOException;
 import java.util.List;
@@ -23,7 +23,7 @@ public class ServletInserisciPrenotazione extends HttpServlet {
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(!isAdmin(request)) {
+		if(!isUtente(request)) {
 			response.sendRedirect(request.getContextPath());
 		}else {
 			utente = UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("id_utente")));
@@ -42,7 +42,7 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 			UtilitiesDbPrenotazione.inserisciPrenotazione(pr);
 			//invio di mail
 			InvioEmail.inviaMail(utente, 4, null);
-			response.sendRedirect("ServletLeggiPrenotazione");
+			response.sendRedirect("/ServletLeggiPrenotazione");
 		}
 	}
 

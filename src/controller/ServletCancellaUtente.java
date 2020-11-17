@@ -33,17 +33,17 @@ public class ServletCancellaUtente extends HttpServlet {
              	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
         		UtilitiesDbUtente.cancUtente(u);
         		listaU=UtilitiesDbUtente.listaUtenti();
-        		request.setAttribute("listaU", listaU);
         		if(isAdmin(request)) {
+        			request.setAttribute("listaU", listaU);
         			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-utenti.jsp").forward(request, response);
         		}else if(isStaff(request)) {
+        			request.setAttribute("listaU", listaU);
         			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-utenti.jsp").forward(request, response);
         		}
         	}
     	}else {
-    		response.sendRedirect("ServletLeggiIndex");
+    		response.sendRedirect("/ServletLeggiIndex");
     	}	
-    	
     }
     
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
