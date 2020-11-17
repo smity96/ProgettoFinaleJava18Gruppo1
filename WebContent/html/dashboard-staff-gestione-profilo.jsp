@@ -32,7 +32,7 @@
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                         
                     
-                %>
+                %>/ProgettoFinaleJava18Gruppo1/html/index.jsp
     </head>
 <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
@@ -77,7 +77,7 @@
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="Ciao:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
                       </a>
                     </li>
                     <li class="nav-item">
@@ -139,10 +139,10 @@
 
                 <!-- inizio gestione profilo -->
           
-                <div class="row justify-content-center text-uppercase">
+                <div class="row justify-content-center text-uppercase d-none funzione-menu gestione-profilo">
                     <div class="col-12 p-0 text-center">
                         <div class="mb-4">
-                            <h1 class="d-inline mr-3 titolo-custom">Gestione Profilo</h1>
+                            <h1 class="d-inline mr-3">Gestione Profilo</h1>
                         </div>
 
                       <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="post" enctype="multipart/form-data">
@@ -225,9 +225,9 @@
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
                                             value="<%u.getNomeSocieta(); %>"></td>
                                 </tr>
-									<tr>
-									<td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
-									</tr> 
+                                    <tr>
+                                    <td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
+                                    </tr> 
                                 <tr class="d-flex">
                                     <td class="col-12 justify-content-center"><input class="bg-oro"
                                             type="submit" value="modifica"></td>

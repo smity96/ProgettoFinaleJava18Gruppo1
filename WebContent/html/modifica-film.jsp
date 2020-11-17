@@ -223,12 +223,9 @@
                                 
                                     <td class="col-12"><button type="submit" class="btn btn-success mr-2">Salva
                                             Modifica</button>
-                                            <a href="<%=request.getContextPath()%>/ServletOrdinaFilm">
-                                            	<button type="button" class="btn btn-danger ml-2">
-                                            		Annulla Modifica
-                                        		</button>	
-                                            </a>
-                                        </td>
+                                        <button type="reset" value="Reset" class="btn btn-danger ml-2">
+                                            Annulla Modifica
+                                        </button></td>
                                 </tr>
                             </tbody>
                         </table>
