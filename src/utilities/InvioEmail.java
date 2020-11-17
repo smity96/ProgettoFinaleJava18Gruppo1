@@ -68,22 +68,22 @@ public class InvioEmail {
 			subject = "Benvenuto";
 			msg = "Gentile utente, \n"
 					+ "\nTi ringrazio per la tua iscrizione al cinema Sorrento, per favore attendi che l'amministratore confermi la tua richiesta e ti abiliti alla prenotazione dei biglietti. \n"
-					+ "Cordiali saluti. \n" + "Lo Staff del cinema Sorrento.";
+					+ "Cordiali saluti. \n" + "Lo Staff di Sorrento Cinema.";
 			break;
 		// approvazione della registrazione
 		case 2:
 			subject = "Ora sei abilitato";
 			msg = "Gentile utente, \n"
 					+ "\nL'amministratore ha approvato la tua registrazione, ora puoi iniziare ad effettuare le tue prenotazioni! \n"
-					+ "Cordiali saluti. \n" + "Lo Staff del cinema Sorrento.";
+					+ "Cordiali saluti. \n" + "Lo Staff di Sorrento Cinema.";
 			break;
 		// recupero password
 		case 3:
 			subject = "Dettagli account";
 			msg = "Gentile utente, \n"
-					+ "\nQuesta mail ti e' stata inviata perche' hai scordato i tuoi dati di accesso, i tuoi dati di accesso sono: \n"
+					+ "\nQuesta mail ti e' stata inviata perche' hai dimenticato i tuoi dati di accesso. Le tue credenziali sono: \n"
 					+ "Email: " + u.getEmail() + " \n" + "Password: " + pssw + " \n" + "Cordiali saluti. \n"
-					+ "Lo Staff del cinema Sorrento.";
+					+ "Lo Staff di Sorrento Cinema.";
 			break;
 		// conferma prenotazione
 		case 4:
@@ -110,7 +110,7 @@ public class InvioEmail {
 				msg = msg.concat("Codice prenotazione (da esibire in cassa al momento dell'acquisto): \n"
 						+ prenotAllUser.get(prenotAllUser.size() - 1).getCodice_biglietto() + "\n \n");
 			}
-			msg = msg.concat("Ti aspettiamo! \n" + "Lo Staff del cinema Sorrento.");
+			msg = msg.concat("Ti aspettiamo! \n" + "Lo Staff di Sorrento Cinema.");
 			break;
 		default:
 			System.out.println("se sei qui c'e' un errore");

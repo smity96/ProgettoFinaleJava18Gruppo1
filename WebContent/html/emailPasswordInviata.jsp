@@ -33,7 +33,7 @@
 <body style="font-family: 'Monserrat', sans-serif">
     <!-- Navbar -->
   
-<jsp:include page= "navbarNotte.jsp"></jsp:include>
+<jsp:include page= "navbarNonLog.jsp"></jsp:include>
 
       <!-- Abbiamo inviato email di recupero, vai su accedi -->
 
@@ -55,6 +55,18 @@
     
     </p>
 <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>

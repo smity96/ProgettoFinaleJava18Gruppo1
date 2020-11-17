@@ -161,12 +161,12 @@
                         <div class="mb-4">
                             <h1 class="d-inline mr-3 titolo-custom">Gestione Prenotazione</h1>
                         </div>
-                        <table class="table table-bordered table-dark">
+                        <table class="table table-bordered table-dark mb-0">
                             <thead>
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 scritta-dorata">Utente</th>
-                                    <th class="col-md-8 col-6 scritta-dorata">Film Prenotato</th>
-                                    <th class="col-md-2 col-3 scritta-dorata">Cancella Prenotazione</th>
+                                    <th class="col-2 scritta-dorata">Utente</th>
+                                    <th class="col-8 scritta-dorata">Film Prenotato</th>
+                                   	<th class="col-2 scritta-dorata">Cancella Prenotazione</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -187,11 +187,11 @@
                             			}
                             %>
                                 <tr class="d-flex">
-                                    <td class="col-md-2 col-3 scritta-dorata" rowspan="5"><label><%=p.getUtente().getEmail() %></label></td>
-                                    <td class="col-md-8 col-6 scritta-dorata"><select
-                                            class="col-12 text-center h-100 scelta" name="film-prenotati">
+                                    <td class="col-2 scritta-dorata" ><%=p.getUtente().getEmail() %></td>
+                                    <td class="col-8 scritta-dorata">
+                                    <select class="col-12 text-center h-100 scelta" name="film-prenotati">
                                             
-                                            <option class="prova" value="2" selected > -- seleziona un film --</option>
+                                         <option value="0">seleziona film..</option>
                                             
                                             <%	
                                             	
@@ -201,31 +201,35 @@
                                             <option value="<%=x.getIdProiezione()%>"> <%= x.getFilm().getTitolo() + " " + x.getDataOra()%></option>
  												
  										<%} %>
-                                        </select>
-                                        </label>
+                                        </select>  
                                     </td>
-                                    <td class="col-md-2 col-3" rowspan="2">
+                                    
+                                    <td class="col-2 " >
                                     </td>
                                 </tr>
+                                </tbody>
+                                </table>
+                                <table class="table table-bordered table-dark mt-0">
+                                <tbody>
                                <%
                                 	for(Proiezione x : listaProiezUtente){
                                 		
                                  %>
-                                <tr class="justify-content-center film" id="<%=x.getIdProiezione()%>">
-                                    <td id="nomeFilmScelta" class="col-md-2 col-2">
+                                <tr class="d-none justify-content-center film" id="<%=x.getIdProiezione()%>">
+                                    <td id="nomeFilmScelta" class="">
                                         <img class="img-fluid film-custom-height mb-3"
                                             src="<%=x.getFilm().getLocandina() %>" alt="">
-                                    </td>
+                                    </td> 
                                     
-                                    <td class="col-md-2 col-2">
+                                   <td class="">
                                         <p>Data E Ora:</p>
                                         <p class="p-0 m-0"><%=x.getDataOra() %></p>
                                     </td>
-                                    <td class="col-md-2 col-1">
+                                    <td class="">
                                         <p>Intervallo:</p>
                                         <p><%=x.getIntervallo() %></p>
                                     </td>
-                                    <td class="col-md-2 col-1">
+                                    <td class="">
                                     
                                     <%
                                     	Prenotazione preno = new Prenotazione();
@@ -238,14 +242,12 @@
                                         <p>N. Posti Prenotati:</p>
                                         <p><%=preno.getPostiPrenotati() %></p>
                                     </td>
-                                    <form action="ServletCancellaPrenotazioneAdmin" method="POST">
-                                    	<td class="col-md-2 col-3" rowspan="2">
-                                    <input type="hidden" name="id_prenotazione" value="<%=preno.getIdPrenotazione() %>">
-                                    
-                                    
-                                    	<button type="submit" ><i class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></button>
-                                	</td>
+                                    	<td class="">
+		                                    <form action="ServletCancellaPrenotazioneAdmin" method="POST">
+		                                    <input type="hidden" name="id_prenotazione" value="<%=preno.getIdPrenotazione() %>">
+                                    	<button class="btn align-items-center" type="submit" ><i class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></button>
                                 	</form>
+                                	</td>
                                 </tr>
 						 <%} 
 						 }%>

@@ -63,7 +63,7 @@
 <% 
 HttpSession s=request.getSession(false);
 Utente u=(Utente)s.getAttribute("uLog");
-	if(u==null){  %>
+	if(u==null||u.getRuolo()==0){  %>
     <jsp:include page="navbarNonLog.jsp"></jsp:include>
 <%} else if(u.getRuolo()==3){%>
 	<jsp:include page="NavbarAdmin.jsp"></jsp:include>

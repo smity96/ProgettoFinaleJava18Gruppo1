@@ -159,8 +159,8 @@
                                     for(Utente g:lU){
                                 %>
                                     <tr class="d-flex">
-                                        <td class="col-3 scritta-dorata"><label><%=g.getIdUtente() %></label></td>
-                                        <td class="col-3 scritta-dorata"><label><%=g.getEmail() %></label></td>
+                                        <td class="col-3 scritta-dorata"><%=g.getIdUtente() %></td>
+                                        <td class="col-3 scritta-dorata"><%=g.getEmail() %></td>
                                         <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
@@ -195,8 +195,8 @@
                                 <%for(Utente x:lU) 
                                                     {%>         
                                     <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><label><%=x.getIdUtente() %></label></td>
-                                        <td class="col-2 scritta-dorata"><label><%=x.getNome() %></label></td>
+                                        <td class="col-2 scritta-dorata"><%=x.getIdUtente() %></td>
+                                        <td class="col-2 scritta-dorata"><%=x.getNome() %></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
                                                     <option value="cancella-utente">cancella utente</option>
