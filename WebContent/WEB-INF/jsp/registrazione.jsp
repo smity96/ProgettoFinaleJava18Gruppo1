@@ -322,7 +322,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
 
       <!--Accedi qui se sei gi� registrato-->
       <p class="text-warning stile">Sei gia' registrato?</p>
-      <a class="text-warning stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp"
+      <a class="text-warning stile" href="/ProgettoFinaleJava18Gruppo1/IndieLogin"
         >Accedi qui!</a
       >
     <br>

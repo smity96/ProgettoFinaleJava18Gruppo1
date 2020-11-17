@@ -53,7 +53,7 @@ Utente u = (Utente)s.getAttribute("uLog");
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
+                <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">
                     <h1 class="stile">Dashboard Utente</h1>
                 </a>
 
@@ -70,7 +70,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         <li class="nav-item">       
-                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
                         <li class="nav-item">                            
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
@@ -113,7 +113,7 @@ Utente u = (Utente)s.getAttribute("uLog");
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size ml-4"></i></div>
