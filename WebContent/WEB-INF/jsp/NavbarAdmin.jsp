@@ -35,7 +35,7 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-xl">
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->

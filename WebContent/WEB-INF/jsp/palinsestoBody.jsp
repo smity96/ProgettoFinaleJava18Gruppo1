@@ -149,8 +149,12 @@ Utente u=(Utente)s.getAttribute("uLog");
  
           <!--Trailer film MODIFICATO-->
           
-     <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1 stile" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
-                  
+     <a class="btn btn-light btn-outline-light bottone p-0 text-warning text-decoration-none mt-1 stile" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
+     
+     <!-- METTERE SE SONO LOGGATO VADO A PRENOTA. SENNO VADO A LOGIN: -->
+     
+          <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1 stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenota</a>
+                
       </div>
       
       
