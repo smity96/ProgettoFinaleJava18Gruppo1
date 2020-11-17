@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
@@ -114,11 +115,6 @@ public class ServletInserisciUtente extends HttpServlet {
 				if(periodo>16) {		
 				Date dNa=UtilitiesDbFilm.convertiLocalDate(d1);
 				utente.setDataDiNascita(dNa);
-				}else {
-					request.setAttribute("error", true);
-					request.getRequestDispatcher("").forward(request, response);
-					
-				}
 //----------INSERIMENTO UETENTE NEL DATABASE-----------------------------------------------------				
 				UtilitiesDbUtente.insUtente(utente);
 				System.out.println(utente.toString());
@@ -127,9 +123,14 @@ public class ServletInserisciUtente extends HttpServlet {
 				//invio la mail di attesa conferma, consultare il metodo per capire perche' ci sono 3 valori
 				InvioEmail.inviaMail(utente, 1, null);
 				response.sendRedirect("/ProgettoFinaleJava18Gruppo1/html/index.jsp");
+				}else {
+				request.setAttribute("error", true);
+				request.getRequestDispatcher("html/registrazione.jsp").forward(request, response);
+
 			
-			}else {
-				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp");
+			//}else {
+				//response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp");
+				}
 
 			}
 		}
