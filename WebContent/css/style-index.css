@@ -91,90 +91,86 @@ display: block;
     opacity: 1; /* Firefox */
   }
 
-  input:focus {
-    background-color: #f19820 !important;
-}
 
-
-@media screen and (max-width: 1208px) {
-  .size-custom {
-    height: 28rem;
-    width: 18rem;
-  }
-
-  .film-item-icon {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    padding: 0rem;
-    background: #f19820;
-    -webkit-transition: all 0.7s ease-in-out;
-    transition: all 0.7s ease-in-out;
-    -webkit-transform: translate(100%, 100%);
-    transform: translate(100%, 100%);
-  }
-}
-
-@media screen and (max-width: 370px) {
-  .size-custom {
-    height: 25rem;
-    width: 15rem;
-  }
-
-  .scritta-programmazione {
-    font-size: 2rem;
-  }
- 
-}
-
-@media screen and (max-width: 450px) {
-  .c-image{
-    max-height: 25rem;
-    margin: auto;
-    max-width: 18rem;
-  }
-  }
-
-  @media screen and (max-width: 1450px) {
-    .banner-title {
-      font-size: 5rem;
-    }
-
-    .img-banner {
-      max-height: 10rem;
+  @media screen and (max-width: 1208px) {
+    .size-custom {
+      height: 28rem;
+      width: 18rem;
     }
   
+    .film-item-icon {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 0rem;
+      background: #f19820;
+      -webkit-transition: all 0.7s ease-in-out;
+      transition: all 0.7s ease-in-out;
+      -webkit-transform: translate(100%, 100%);
+      transform: translate(100%, 100%);
     }
-
-    @media screen and (max-width: 679px) {
-      .footer-copy {
-        font-size: 1.5rem;
-      }
-      }
-
-    @media screen and (max-width: 425px) {
+  }
+  
+  @media screen and (max-width: 370px) {
+    .size-custom {
+      height: 25rem;
+      width: 15rem;
+    }
+  
+    .scritta-programmazione {
+      font-size: 2rem;
+    }
+   
+  }
+  
+  @media screen and (max-width: 450px) {
+    .c-image{
+      max-height: 25rem;
+      margin: auto;
+      max-width: 18rem;
+    }
+    }
+  
+    @media screen and (max-width: 1450px) {
       .banner-title {
-        font-size: 3rem;
+        font-size: 5rem;
       }
-
-      .footer-copy {
-        font-size: 1.3rem;
-      }
-
+  
       .img-banner {
         max-height: 10rem;
       }
     
-    
       }
-
-      @media screen and (max-width: 322px) {
+  
+      @media screen and (max-width: 679px) {
+        .footer-copy {
+          font-size: 1.5rem;
+        }
+        }
+  
+      @media screen and (max-width: 425px) {
         .banner-title {
           font-size: 3rem;
         }
-
+  
+        .footer-copy {
+          font-size: 1.3rem;
+        }
+  
         .img-banner {
           max-height: 10rem;
         }
       
+      
         }
+  
+        @media screen and (max-width: 322px) {
+          .banner-title {
+            font-size: 3rem;
+          }
+  
+          .img-banner {
+            max-height: 10rem;
+          }
+        
+          }

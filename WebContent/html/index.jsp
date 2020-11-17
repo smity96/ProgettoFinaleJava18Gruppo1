@@ -166,17 +166,17 @@ Utente u=(Utente)s.getAttribute("uLog");
               }else{
             	  films.add(p.getFilm());
             	  %>
-            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films f.getGenere <%=p.getFilm().getGenere()%>">
-                <div class="card single-film size-custom">
+            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films <%=p.getFilm().getGenere()%>">
+                <div class="card single-film">
                     <div class="img-container size-custom">
                         <!-- il getlocandina stava qui -->
                         <%// TODO Sistemare questa parte  %>
                         <img src="<%= p.getFilm().getLocandina()%>" class=" img-custom" alt="">
                         <span class="film-item-icon mx-0 px-0">
                         	<a style="color: #000000" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">
-                            <div class="col-12 m-auto">
-                                <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                	<span class="pl-2">Clicca per andare alla programmazione</span>
+                            <div class="col-12">
+                                <i class="fas fa-calendar-alt text-capitalize px-lg-2 px-1"></i>
+                                	<span class="pl-lg-2 pl-1">Clicca per andare alla programmazione</span>
                             </div>
                             </a>
                         </span>
