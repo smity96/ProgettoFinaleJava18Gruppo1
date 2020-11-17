@@ -153,7 +153,7 @@ Utente u=(Utente)s.getAttribute("uLog");
      
      <!-- METTERE SE SONO LOGGATO VADO A PRENOTA. SENNO VADO A LOGIN: -->
      
-          <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1 stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenota</a>
+     <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1 stile ml-3" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenota</a>
                 
       </div>
       

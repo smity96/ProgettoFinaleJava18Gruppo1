@@ -49,7 +49,7 @@
     <br>
     <br>
     <br>
-    <a class="btn btn-outline-warning text-center text-light stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">
+    <a class="btn btn-outline-warning text-center text-light stile" href="/ProgettoFinaleJava18Gruppo1/IndieLogin">
     Accedi
     </a>
     

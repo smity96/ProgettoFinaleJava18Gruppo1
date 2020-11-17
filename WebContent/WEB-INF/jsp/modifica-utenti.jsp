@@ -31,7 +31,7 @@
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
-                                        Utente b=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("d")));
+                                        Utente b=(Utente)request.getAttribute("d");
                                         System.out.println(b.toString());
                                         
                     

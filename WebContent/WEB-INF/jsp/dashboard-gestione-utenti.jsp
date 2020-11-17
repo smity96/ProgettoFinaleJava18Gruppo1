@@ -51,11 +51,11 @@
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
@@ -111,12 +111,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>
@@ -191,7 +191,7 @@
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="col-2"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/modifica-utenti.jsp?d=<%=g.getIdUtente() %>"><i
+                                        <td class="col-2"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteById?d=<%=g.getIdUtente() %>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
                                         </td>
                                         <%if(g.getRuolo()==1) {%>
