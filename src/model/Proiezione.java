@@ -4,12 +4,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-
-
-/**
- * The persistent class for the proiezione database table.
- * 
- */
+//lorem ipsum
 @Entity
 @Table(name="proiezione")
 @NamedQuery(name="Proiezione.findAll", query="SELECT p FROM Proiezione p")

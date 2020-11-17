@@ -1,3 +1,4 @@
+<!-- lorem ipsum -->
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>

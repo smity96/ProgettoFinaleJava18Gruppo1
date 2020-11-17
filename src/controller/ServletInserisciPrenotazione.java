@@ -16,9 +16,7 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	Utente utente;
 	Proiezione proiezione;
-	public ServletInserisciPrenotazione() {
-       
-    }
+	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doPost(request, response);

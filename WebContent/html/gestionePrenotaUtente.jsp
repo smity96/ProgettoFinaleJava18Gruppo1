@@ -1,3 +1,4 @@
+<!-- lorem ipsum -->
 <%@page import="model.Utente"%>
 <%@page import="model.Prenotazione"%>
 <%@page import="java.util.List"%>

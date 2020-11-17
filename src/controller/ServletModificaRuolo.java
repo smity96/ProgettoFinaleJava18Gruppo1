@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 import model.Utente;
 import utilities.InvioEmail;
 import utilities.UtilitiesDbUtente;
-
+//lorem ipsum
 @WebServlet("/ServletModificaRuolo")
 public class ServletModificaRuolo extends HttpServlet {
 	private static final long serialVersionUID = 1L;

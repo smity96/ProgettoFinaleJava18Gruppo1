@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
+//lorem ipsum
 
 @Entity
 @Table(name="prenotazione")
@@ -19,12 +19,12 @@ public class Prenotazione implements Serializable {
 	private int postiPrenotati;
 
 	//bi-directional many-to-one association to Proiezione
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="proiezione", nullable=false)
 	private Proiezione proiezione;
 
 	//bi-directional many-to-one association to Utente
-	@ManyToOne(fetch=FetchType.LAZY)
+	@ManyToOne(fetch=FetchType.EAGER)
 	@JoinColumn(name="utente", nullable=false)
 	private Utente utente;
 	

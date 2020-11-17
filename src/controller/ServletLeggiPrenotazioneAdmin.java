@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,7 @@ import model.Prenotazione;
 import model.Utente;
 import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbProiezione;
-
+//lorem ipsum
 @WebServlet("/ServletLeggiPrenotazioneAdmin")
 public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,12 +36,13 @@ public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
-		//lista di appoggio
+		/*//lista di appoggio
 		List<Utente>allUtenti=new ArrayList<Utente>();
 		//lista di appoggioPrenotazioni
 		List<Prenotazione>prenoApp=new ArrayList<Prenotazione>();
 		//riempio la lista di appoggio Utente
 		for(Prenotazione p:listaPreno) {
+			if(!allUtenti.contains(p.getUtente()))
 			allUtenti.add(p.getUtente());
 		}
 		//la ordino
@@ -55,8 +57,12 @@ public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 					prenoApp.add(listaPreno.get(j));
 				}
 			}
-		}
-		request.setAttribute("listaPreno", prenoApp);
+		}*/
+		
+		List<Prenotazione> pren=new ArrayList<Prenotazione>();
+		//allUtenti.stream().peek(u->System.out.println(u)).sorted((u1,u2)->u1.getEmail().compareToIgnoreCase(u2.getEmail())).forEach(u->pren.addAll(u.getPrenotazioni()));
+		pren=listaPreno.stream().sorted((p1,p2)->p1.getUtente().getEmail().compareToIgnoreCase(p2.getUtente().getEmail())).peek(p->System.out.println(p)).collect(Collectors.toList());
+		request.setAttribute("listaPreno", pren);
 		request.getRequestDispatcher("/html/dashboard-gestione-prenotazione.jsp").forward(request, response);
 	}
 	
