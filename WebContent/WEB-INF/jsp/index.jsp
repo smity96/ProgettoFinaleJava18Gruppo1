@@ -12,7 +12,7 @@
 
     <style>
         .titolo {
-            font-family:
+            font-family: 'Eagle Lake', cursive; !important
         }
     </style>
 
@@ -22,6 +22,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
 
     <!--Bootstrap links-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -53,12 +56,12 @@ Utente u=(Utente)s.getAttribute("uLog");
                 <div class="col-12 mx-auto justify-content-center align-items-center d-flex custom-posizionamento">
                     <img class="img-fluid img-banner p-0 m-0"
                         src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/s-logo.png" alt="header-image">
-                    <span class="banner-title scritta-dorata customposizionamento3">orrento</span>
+                    <span class="banner-title scritta-dorata customposizionamento3 titolo">orrento</span>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center d-flex">
                 <div class="col-12 mx-auto justify-content-center align-items-center d-flex custom-posizionamento2">
-                    <h1 class="banner-title scritta-dorata"> Cinema </h1>
+                    <h1 class="banner-title scritta-dorata titolo"> Cinema </h1>
                 </div>
             </div>
         </div>

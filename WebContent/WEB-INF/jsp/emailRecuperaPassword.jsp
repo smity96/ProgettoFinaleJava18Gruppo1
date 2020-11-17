@@ -51,7 +51,7 @@
     <input type="email" name="email" class="btn rounded text-center bg-light" placeholder="Email">
     <br>
     <br>
-    <button class="btn btn-outline-warning text-center text-light stile" type="submit"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/emailPasswordInviata.jsp"></a>
+    <button class="btn btn-outline-warning text-center text-light stile" type="submit"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/IndieEmailPasswInviata"></a>
     Invia
     </button>
     </p>
