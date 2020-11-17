@@ -158,7 +158,7 @@
                                 <h1 class="d-inline mr-3">Gestione Utenti</h1>
                             </div>
                             <input class="col-4 mb-3" type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Cerca Per ID Utente">
-                                <input class="col-4 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca Per Nome Utente">
+                            <input class="col-4 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca Per Nome Utente">
                             <table class="table table-bordered table-dark" id="myTable">
                                 <thead>
                                     <tr class="d-flex">
