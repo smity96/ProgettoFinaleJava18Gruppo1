@@ -311,6 +311,8 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <button
         onclick="prendiDataNascita()"
         class="btn text-light btn-outline-warning stile"
+        data-toggle="modal" data-target="#registra"
+        href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"
       >
         Registrati
       </button>
@@ -326,6 +328,35 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
     <br>
     <br>
     <br>
+    
+    <!-- Modal -->
+        <div class="modal fade text-warning" id="registra">
+            <div class="modal-dialog bg-dark text-warning">
+                <div class="modal-content bg-dark text-warning">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-dark text-warning">
+                        <h4 class="modal-title stile text-warning">Registrazione effettuata</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body stile bg-dark text-warning">
+                       La tua registrazione e' stata inviata con successo. 
+                       Ti invitiamo gentilmente ad attendere la conferma della tua registrazione da parte dell'amministratore. 
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer stile">
+                       <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLogout';" type="button" class="btn btn-outline-danger text-light" data-dismiss="modal">
+                        Chiudi
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
   
     
 <jsp:include page= "footer.jsp"></jsp:include>
