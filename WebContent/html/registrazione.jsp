@@ -80,7 +80,12 @@ pageEncoding="ISO-8859-1"%>
       />
       <p class="h3 mb-3 text-warning stile">Registrati:</p>
 
-       
+    <% if (request.getAttribute("error")!=null){
+    boolean minore=(Boolean)request.getAttribute("error");
+    if(minore==true){%>
+    <h1 class="text-warning">SEI TROPPO GIOVANE PER REGISTARTI</h1>
+    <%} 
+    	}%>
     
     
       <!--Requisiti obbligatori: -->
@@ -321,12 +326,12 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
     <br>
     <br>
     <br>
-    
+  
     
 <jsp:include page= "footer.jsp"></jsp:include>
 
 
-    <script src="../js/script.js"></script>
+    <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
     <!--Bootstrap links-->
     <script
       src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

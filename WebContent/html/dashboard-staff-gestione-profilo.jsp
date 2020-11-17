@@ -32,11 +32,11 @@
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                         
                     
-                %>/ProgettoFinaleJava18Gruppo1/html/index.jsp
+                %>
     </head>
 <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar bg-nero navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
@@ -63,10 +63,10 @@
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
                   </ul>
 
@@ -77,7 +77,7 @@
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="Ciao:"+u.getNome()%></span>
                       </a>
                     </li>
                     <li class="nav-item">
@@ -120,12 +120,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-utenti.jsp">Gestione Utenti</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -139,10 +139,10 @@
 
                 <!-- inizio gestione profilo -->
           
-                <div class="row justify-content-center text-uppercase d-none funzione-menu gestione-profilo">
+                <div class="row justify-content-center text-uppercase">
                     <div class="col-12 p-0 text-center">
                         <div class="mb-4">
-                            <h1 class="d-inline mr-3">Gestione Profilo</h1>
+                            <h1 class="d-inline mr-3 titolo-custom">Gestione Profilo</h1>
                         </div>
 
                       <form action="/ProgettoFinaleJava18Gruppo1/ServletModificaUtente" method="post" enctype="multipart/form-data">
@@ -225,9 +225,9 @@
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
                                             value="<%u.getNomeSocieta(); %>"></td>
                                 </tr>
-                                    <tr>
-                                    <td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
-                                    </tr> 
+									<tr>
+									<td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
+									</tr> 
                                 <tr class="d-flex">
                                     <td class="col-12 justify-content-center"><input class="bg-oro"
                                             type="submit" value="modifica"></td>
@@ -296,7 +296,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"><%@include file="../js/script.js"%></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

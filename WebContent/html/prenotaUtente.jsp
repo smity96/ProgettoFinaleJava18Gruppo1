@@ -226,7 +226,7 @@ Utente u = (Utente)s.getAttribute("uLog");
 											Prenotazione gia' effettuata
 											<%} %>
 									</td>
-									<td class="stile" ><%= x.getPrezzo() %></td>
+									<td class="stile" > &euro; <%= x.getPrezzo() %></td>
 
 									<% 
                                     		if(postiDisponibili!=0 && prenotato == false){ 

@@ -9,6 +9,14 @@
 
     <!--Titolo e logo barra ricerca-->
     <title>Sorrento Cinema</title>
+    <%HttpSession s=request.getSession(false);
+    	Utente u=(Utente)s.getAttribute("uLog");
+    	if(u.getRuolo()==2){%>
+    		<meta http-equiv="refresh" content="0;URL=http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">
+    	<%}else if(u.getRuolo()==3){%>
+    		<meta http-equiv="refresh" content="0;URL=http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">
+    	<%}%>
+    
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
    
 
@@ -53,22 +61,20 @@
     
      <!-- Google fonts link -->
      <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
    
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash.css">
+    
 </head>
 
 <body style="font-family: 'Monserrat', sans-serif">
 
     <body>
-    <%HttpSession s=request.getSession(false);
-    	Utente u=(Utente)s.getAttribute("uLog");
-    	List<Utente>lU=(List)s.getAttribute("listaU");
-    %>
+    
     
         <!-- navbar -->
 
@@ -318,10 +324,10 @@
             integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
             crossorigin="anonymous"></script>
 
-        <script src="/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
         
 
-        <script src="/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
     </body>
 
 </html>

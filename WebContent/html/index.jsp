@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
         .titolo {
@@ -24,12 +24,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
 
     <!--Bootstrap links-->
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-index.css">
-
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
+    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-index.css">
 </head>
 
 <body style="font-family: 'Montserrat', sans-serif">
@@ -177,10 +176,12 @@ Utente u=(Utente)s.getAttribute("uLog");
                         <%// TODO Sistemare questa parte  %>
                         <img src="<%= p.getFilm().getLocandina()%>" class=" img-custom" alt="">
                         <span class="film-item-icon mx-0 px-0">
-                            <div class="col-12 m-auto">
-                                <i class="fas fa-calendar-alt text-capitalize px-2"></i>
-                                <span class="pl-2">Clicca per andare alla programmazione</span>
+                        	<a style="color: #000000" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniPalinsesto">
+                            <div class="col-12">
+                                <i class="fas fa-calendar-alt text-capitalize px-lg-2 px-1"></i>
+                                	<span class="pl-lg-2 pl-1">Clicca per andare alla programmazione</span>
                             </div>
+                            </a>
                         </span>
                     </div>
                 </div>

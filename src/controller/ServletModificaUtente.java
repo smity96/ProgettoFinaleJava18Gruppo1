@@ -97,7 +97,6 @@ public class ServletModificaUtente extends HttpServlet {
 			System.out.println("sto nel catch");
 			e.printStackTrace();
 		}
-
 		utente.setImmagine("http://127.0.0.1:8887/" + fileName);
 		System.out.println(utente.toString());
 		UtilitiesDbUtente.modUtente(utente);
@@ -112,9 +111,9 @@ public class ServletModificaUtente extends HttpServlet {
 				// utente normale
 				request.getRequestDispatcher("html/profiloUtente.jsp").forward(request, response);
 			} else if (red == 2) {
-				request.getRequestDispatcher("html/dashboard-staff-gestione-profilo.jsp").forward(request, response);
+				request.getRequestDispatcher("ServletLeggiUtenteStaff").forward(request, response);
 			} else if (red == 3) {
-				request.getRequestDispatcher("html/dashboard-gestione-profilo.jsp").forward(request, response);
+				request.getRequestDispatcher("ServletLeggiUtenteAdmin").forward(request, response);
 			} else {
 				switch (inSessione.getRuolo()) {
 				case 2:

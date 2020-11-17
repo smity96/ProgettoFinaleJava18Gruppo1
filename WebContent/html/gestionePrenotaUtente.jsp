@@ -12,8 +12,7 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
    <%
-     HttpSession s=request.getSession(false);        
-     //TODO Sistemare anche qui
+     HttpSession s=request.getSession(false);  
      Utente u = (Utente)s.getAttribute("uLog");
                             
    %>
@@ -166,8 +165,11 @@
                                  <% 
                                 	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
                                 	for(Prenotazione p : listaPreno){
+                                		if(!p.getUtente().equals(u)){
+                                			continue;
+                                		}
                                 	if(request.getAttribute("pDaModificare") == null || !request.getAttribute("pDaModificare").equals(p)){
-                                	
+                                		//if(p.getUtente().equals(u)){
                                 %>
                                 	
                                   <tr>
@@ -187,7 +189,7 @@
                                     <%=p.getCodice_biglietto() %>
                                     </td>
                                     <td class="stile"><%=p.getPostiPrenotati() %></td>
-                                    <td class="stile"><%=p.getCosto_totale() %></td>
+                                    <td class="stile"><%=p.getCosto_totale() %> Euro</td>
                                     <td><button type="submit" class="btn btn-outline-warning stile">Modifica</button></td>
                                     </form>
                                     
@@ -224,7 +226,7 @@
                                         
                                       </select>
                                     </td>
-                                    <td><%=p.getCosto_totale() %></td>
+                                    <td> &euro; <%=p.getCosto_totale() %> </td>
                                     <td><button type="submit" class="btn btn-outline-warning stile">Conferma</button></td>
                                  
                                     
@@ -232,7 +234,8 @@
                                  </form>
                                   </tr>
                                   
-                                <%} 
+                                <%//}
+                                } 
                                 }%>
                                 
                                 </tbody>
@@ -293,7 +296,7 @@
             crossorigin="anonymous"></script>
 
         
-        <script src="/ProgettoFinaleJava18Gruppo1/js/script.js"></script>
-        <script src="/ProgettoFinaleJava18Gruppo1/js/profiloUtente.js"></script>
+        <script src="<%=request.getContextPath()%>/js/script.js"></script>
+        <script src="<%=request.getContextPath()%>/js/profiloUtente.js"></script>
     </body>
 </html>

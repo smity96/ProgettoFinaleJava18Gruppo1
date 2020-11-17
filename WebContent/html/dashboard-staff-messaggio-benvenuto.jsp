@@ -37,7 +37,7 @@
 <body style="font-family: 'Monserrat', sans-serif">
 
     <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar bg-nero navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
@@ -64,10 +64,10 @@
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
                   </ul>
 
@@ -121,12 +121,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-utenti.jsp">Gestione Utenti</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -157,18 +157,11 @@
                         <h3 class="text-capitalize">Usa il menu a sinistra per spostarti tra le varie sezioni.</h3>
                     </div>
                     <div class="col-12 p-0 mb-3">
-                        <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verrà visualizzato in
+                        <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verra' visualizzato in
                             alto.</h4>
                     </div>
-                    <div class="col-12 p-0 mb-3">
-                        <h4 class="text-capitalize">In caso di dubbi, visualizzare le guide riportate qui sotto.</h4>
-                    </div>
-
                 </div>
                 <!-- fine messaggio benvenuto -->
-
-
-
             </div>
             <!-- fine main destra -->
 
@@ -225,7 +218,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"><%@include file="../js/script.js"%></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

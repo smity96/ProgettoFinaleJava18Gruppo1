@@ -32,7 +32,7 @@
 
 <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar bg-nero navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
@@ -59,10 +59,10 @@
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-utenti.jsp"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
                     </li>
                   </ul>
 
@@ -116,12 +116,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-proiezione.jsp">Gestione Proiezioni</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-utenti.jsp">Gestione Utenti</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
                     </li>
                 </ul>
             </nav>
@@ -159,12 +159,12 @@
                                     for(Utente g:lU){
                                 %>
                                     <tr class="d-flex">
-                                        <td class="col-3 scritta-dorata"><label><%=g.getIdUtente() %></label></td>
-                                        <td class="col-3 scritta-dorata"><label><%=g.getEmail() %></label></td>
+                                        <td class="col-3 scritta-dorata"><%=g.getIdUtente() %></td>
+                                        <td class="col-3 scritta-dorata"><%=g.getEmail() %></td>
                                         <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="col-3"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/modifica-utenti.jsp?d=<%=g.getIdUtente() %>"><i
+                                        <td class="col-3"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/staff-modifica-utenti.jsp?d=<%=g.getIdUtente() %>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
                                         </td>
                                     </tr>
@@ -195,8 +195,8 @@
                                 <%for(Utente x:lU) 
                                                     {%>         
                                     <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><label><%=x.getIdUtente() %></label></td>
-                                        <td class="col-2 scritta-dorata"><label><%=x.getNome() %></label></td>
+                                        <td class="col-2 scritta-dorata"><%=x.getIdUtente() %></td>
+                                        <td class="col-2 scritta-dorata"><%=x.getNome() %></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
                                                     <option value="cancella-utente">cancella utente</option>
@@ -273,7 +273,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"><%@include file="../js/script.js"%></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
 </body>
 
 </html>

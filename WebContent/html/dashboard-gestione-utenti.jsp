@@ -31,7 +31,7 @@
     </head>
 <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar bg-nero navbar-expand-xl">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
@@ -177,8 +177,8 @@
  									n++;	                      
                                 %>
                                     <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><label><%=n %></label></td>
-                                        <td class="col-2 scritta-dorata"><label><%=g.getEmail() %></label></td>
+                                        <td class="col-2 scritta-dorata"><%=n %></td>
+                                        <td class="col-2 scritta-dorata"><%=g.getEmail() %></td>
                                         <%if(g.getRuolo()!=0){ %>
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-check-circle"></i></a>
@@ -227,8 +227,8 @@
                                 <%for(Utente x:lU) 
                                 					{%>    		
                                     <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><label><%=x.getIdUtente() %></label></td>
-                                        <td class="col-2 scritta-dorata"><label><%=x.getNome() %></label></td>
+                                        <td class="col-2 scritta-dorata"><%=x.getIdUtente() %></td>
+                                        <td class="col-2 scritta-dorata"><%=x.getNome() %></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
                                                     <option value="conferma-utente"><a href="ProgettoFinaleJava18Gruppo1/ServletModificaUtente">conferma utente</a>

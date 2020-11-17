@@ -47,7 +47,7 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
   </head>
   <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar bg-nero navbar-expand-xl">
       <div class="container-fluid">
         <!-- Navbar Brand -->
         <h1
@@ -246,7 +246,7 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
             </div>
             <div class="col-12 p-0 mb-3">
               <h4 class="text-capitalize">
-                Se usi dispostivi con schermi piccoli, il menu verrà
+                Se usi dispostivi con schermi piccoli, il menu verra'
                 visualizzato in alto.
               </h4>
             </div>
