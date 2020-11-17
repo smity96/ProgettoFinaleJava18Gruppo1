@@ -1,4 +1,3 @@
-<!-- lorem ipsum -->
 <%@page import="model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -36,7 +35,7 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar navbar-expand-lg">
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->

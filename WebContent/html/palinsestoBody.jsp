@@ -1,4 +1,3 @@
-<!-- lorem ipsum -->
 <%@page import="model.Utente"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.text.DateFormat"%>
@@ -145,17 +144,13 @@ Utente u=(Utente)s.getAttribute("uLog");
       </div>
 
       <div class="col-12 d-flex">
-        <p class="text-light text-left font-weight-bold mt-2 mr-2 stile">Trailer:</p> 
+        <p class="text-light text-left font-weight-bold mt-1 mr-2 stile">Trailer:</p> 
 
  
           <!--Trailer film MODIFICATO-->
           
-     <a class="btn btn-outline-light bottone p-1 text-warning text-decoration-none mt-1 stile" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
-            
-            <!-- METTERE LOGICA, SE SONO LOGGATO VADO A LEGGI PRENOTAZIONE SE NON SONO LOGGATO VADO A LOGIN -->
-            
-     <a class="ml-3 btn btn-outline-warning bottone p-1 text-light text-decoration-none mt-1 stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione" target="_blank">Prenota film</a>
-                        
+     <a class="btn btn-warning btn-outline-warning bottone p-0 text-light text-decoration-none mt-1 stile" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
+                  
       </div>
       
       

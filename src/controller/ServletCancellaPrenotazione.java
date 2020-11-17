@@ -11,7 +11,7 @@ import model.Prenotazione;
 import model.Utente;
 import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbUtente;
-//lorem ipsum
+
 @WebServlet("/ServletCancellaPrenotazione")
 
 public class ServletCancellaPrenotazione extends HttpServlet {

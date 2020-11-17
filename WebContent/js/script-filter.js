@@ -1,4 +1,3 @@
-//lorem ipsum
 $(document).ready(function(){
 $('.fliter-btn').click(function() {
     const value = $(this).attr('data-filter');

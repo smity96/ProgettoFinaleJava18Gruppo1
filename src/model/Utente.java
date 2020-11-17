@@ -4,7 +4,12 @@ import java.io.Serializable;
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
-//lorem ipsum
+
+
+/**
+ * The persistent class for the utente database table.
+ * 
+ */
 @Entity
 @Table(name="utente")
 @NamedQuery(name="Utente.findAll", query="SELECT u FROM Utente u")

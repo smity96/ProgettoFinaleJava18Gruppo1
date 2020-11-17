@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.Utente;
 import utilities.InvioEmail;
 import utilities.UtilitiesDbUtente;
-//lorem ipsum
+
 @WebServlet("/ServletRecuperoPassword")
 public class ServletRecuperoPassword extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -18,7 +18,7 @@ import model.Prenotazione;
 import model.Utente;
 import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbProiezione;
-//lorem ipsum
+
 @WebServlet("/ServletLeggiPrenotazioneAdmin")
 public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;

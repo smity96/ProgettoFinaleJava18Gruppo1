@@ -15,14 +15,13 @@ import model.Film;
 import model.Proiezione;
 import utilities.UtilitiesDbFilm;
 import utilities.UtilitiesDbProiezione;
-//lorem ipsum
+
 @WebServlet("/ServletLeggiProiezioniAdmin")
 public class ServletLeggiProiezioniAdmin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
-		
 		List<Film> films = UtilitiesDbFilm.leggiFilmAll();
 		Collections.sort(proiezioni, new dateComparator());
 		request.setAttribute("proiezioni", proiezioni);

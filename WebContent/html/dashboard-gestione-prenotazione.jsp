@@ -1,4 +1,4 @@
-<!-- lorem ipsum -->
+
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>

@@ -1,4 +1,4 @@
-<!-- lorem ipsum -->
+
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -157,18 +157,11 @@
                         <h3 class="text-capitalize">Usa il menu a sinistra per spostarti tra le varie sezioni.</h3>
                     </div>
                     <div class="col-12 p-0 mb-3">
-                        <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verrà visualizzato in
+                        <h4 class="text-capitalize">Se usi dispostivi con schermi piccoli, il menu verra' visualizzato in
                             alto.</h4>
                     </div>
-                    <div class="col-12 p-0 mb-3">
-                        <h4 class="text-capitalize">In caso di dubbi, visualizzare le guide riportate qui sotto.</h4>
-                    </div>
-
                 </div>
                 <!-- fine messaggio benvenuto -->
-
-
-
             </div>
             <!-- fine main destra -->
 

@@ -23,7 +23,7 @@ import utilities.UtilitiesDbProiezione;
 @WebServlet("/ServletInserisciProiezione")
 public class ServletInserisciProiezione extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//lorem ipsum
+	
 	List<Proiezione> proiezioni;
 	
 	//costruttore cancellalo
@@ -35,7 +35,7 @@ public class ServletInserisciProiezione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Lorenzo  bello
+		//Lorenzo � bello
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -36,7 +36,7 @@ import utilities.UtilitiesDbUtente;
 @MultipartConfig
 public class ServletInserisciUtente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	//lorem ipsum
+
 	Utente utente = new Utente();
 	List<Utente> listaU;
 

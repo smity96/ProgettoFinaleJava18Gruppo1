@@ -3,7 +3,12 @@ package model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.util.List;
-//lorem ipsum
+
+
+/**
+ * The persistent class for the film database table.
+ * 
+ */
 @Entity
 @Table(name="film")
 @NamedQuery(name="Film.findAll", query="SELECT f FROM Film f")

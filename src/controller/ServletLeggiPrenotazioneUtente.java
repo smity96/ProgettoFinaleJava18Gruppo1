@@ -13,7 +13,7 @@ import model.Prenotazione;
 import model.Proiezione;
 import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbProiezione;
-//lorem ipsum
+
 
 @WebServlet("/ServletLeggiPrenotazioneUtente")
 public class ServletLeggiPrenotazioneUtente extends HttpServlet {

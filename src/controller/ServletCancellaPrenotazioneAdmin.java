@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import utilities.UtilitiesDbPrenotazione;
-//lorem ipsum
+
 
 @WebServlet("/ServletCancellaPrenotazioneAdmin")
 public class ServletCancellaPrenotazioneAdmin extends HttpServlet {

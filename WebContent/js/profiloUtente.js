@@ -1,4 +1,4 @@
-//lorem ipsum
+
 //immagine profilo
 
 $("#profileImage").click(function(e) {

@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Prenotazione;
 import utilities.UtilitiesDbPrenotazione;
-//lorem ipsum
+
 @WebServlet("/ServletLeggiPrenotazioneById")
 
 public class ServletLeggiPrenotazioneById extends HttpServlet {

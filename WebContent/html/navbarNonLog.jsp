@@ -1,4 +1,3 @@
-<!-- lorem ipsum -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 
@@ -32,7 +31,7 @@
     <title>Sorrento Cinema</title>
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
 
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar navbar-expand-lg">
            <div class="container">
 
         <!--Se clicchi sul logo vai alla home: -->
@@ -99,23 +98,23 @@
 <!-- Modal uscita -->
 
 <!-- Modal -->
-        <div class="modal fade text-warning" id="sign-out">
+        <!-- <div class="modal fade text-warning" id="sign-out">
             <div class="modal-dialog bg-dark text-warning">
                 <div class="modal-content bg-dark text-warning">
                     <!-- Modal Header -->
-                    <div class="modal-header bg-dark text-warning">
+                    <!-- <div class="modal-header bg-dark text-warning">
                         <h4 class="modal-title stile text-warning">Vuoi fare il logout?</h4>
                         <button type="button" class="close" data-dismiss="modal">
                             &times;
                         </button>
                     </div>
 
-                    <!-- Modal body -->
+                    <!-- Modal body 
                     <div class="modal-body stile bg-dark text-warning">
                         Premi logout per uscire.
-                    </div>
+                    </div>-->
 
-                    <!-- Modal footer -->
+                    <!-- Modal footer 
                     <div class="modal-footer stile">
                         <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
                             Rimani
@@ -126,7 +125,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
     <!--Bootstrap links-->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

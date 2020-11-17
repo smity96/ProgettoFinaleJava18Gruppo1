@@ -13,7 +13,7 @@ import model.Film;
 import model.Proiezione;
 import utilities.UtilitiesDbFilm;
 import utilities.UtilitiesDbProiezione;
-//lorem ipsum
+
 @WebServlet("/ServletLeggiProiezioneById")
 public class ServletLeggiProiezioneById extends HttpServlet {
 	private static final long serialVersionUID = 1L;

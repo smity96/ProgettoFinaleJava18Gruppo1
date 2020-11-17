@@ -15,7 +15,7 @@ import model.Proiezione;
 import utilities.UtilitiesDbFilm;
 import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbProiezione;
-//lorem ipsum
+
 @WebServlet("/ServletLeggiProiezioniPalinsesto")
 public class ServletLeggiProiezioniPalinsesto extends HttpServlet {
 	private static final long serialVersionUID = 1L;

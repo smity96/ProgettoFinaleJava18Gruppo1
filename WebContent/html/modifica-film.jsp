@@ -1,4 +1,4 @@
-<!-- lorem ipsum -->
+
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -223,9 +223,12 @@
                                 
                                     <td class="col-12"><button type="submit" class="btn btn-success mr-2">Salva
                                             Modifica</button>
-                                        <button type="reset" value="Reset" class="btn btn-danger ml-2">
-                                            Annulla Modifica
-                                        </button></td>
+                                            <a href="<%=request.getContextPath()%>/ServletOrdinaFilm">
+                                            	<button type="button" class="btn btn-danger ml-2">
+                                            		Annulla Modifica
+                                        		</button>	
+                                            </a>
+                                        </td>
                                 </tr>
                             </tbody>
                         </table>

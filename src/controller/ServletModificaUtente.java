@@ -27,7 +27,7 @@ import javax.servlet.http.Part;
 import model.Utente;
 import utilities.UtilitiesDbFilm;
 import utilities.UtilitiesDbUtente;
-//lorem ipsum
+
 @WebServlet("/ServletModificaUtente")
 @MultipartConfig
 public class ServletModificaUtente extends HttpServlet {

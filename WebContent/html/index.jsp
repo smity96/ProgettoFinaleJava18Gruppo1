@@ -1,4 +1,3 @@
-<!-- lorem ipsum -->
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -79,8 +78,6 @@ Utente u=(Utente)s.getAttribute("uLog");
                 </div>
             </div>
             <!-- fine sezione titolo -->
-            
-             
 
             <!-- inizio filtro -->
 
@@ -167,10 +164,7 @@ Utente u=(Utente)s.getAttribute("uLog");
 
                 </div>
             </div>
-        </div>
-        <!-- fine filtro -->
-        
-       <input type="text" id="ricercaTitolo" oninput="ricercaTitolo()">
+            <!-- fine filtro -->
 
             <!-- inizio lista film -->
             <div class="row d-flex text-center">
@@ -184,8 +178,8 @@ Utente u=(Utente)s.getAttribute("uLog");
               }else{
             	  films.add(p.getFilm());
             	  %>
-            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films f.getGenere proiezione" id="<%=p.getFilm().getTitolo()%>">
-                <div class="card single-film size-custom">
+            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films <%=p.getFilm().getGenere()%>">
+                <div class="card single-film">
                     <div class="img-container size-custom">
                         <!-- il getlocandina stava qui -->
                         <%// TODO Sistemare questa parte  %>
@@ -209,16 +203,6 @@ Utente u=(Utente)s.getAttribute("uLog");
         </div>
     </section>
     <!-- fine sezione film -->
-    <script type="text/javascript">
-        	function ricercaTitolo(){
-        		var titoloRicerca = document.getElementById("ricercaTitolo").value;
-        		var titoli=new Array($('.proiezione').attr('id'));
-        		//if(){
-        			console.log("Sono entrato");
-        			console.log(titoli);
-        		//}
-        	}
-    </script>
 
     <!-- sezione prossimamente -->
     <section class="py-3 bg-grigio-scuro">

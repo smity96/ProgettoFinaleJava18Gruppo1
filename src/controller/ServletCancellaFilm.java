@@ -10,10 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Film;
 import utilities.UtilitiesDbFilm;
-//lorem ipsum
+
 @WebServlet("/ServletCancellaFilm")
 public class ServletCancellaFilm extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+
+	public ServletCancellaFilm() {
+		super();
+	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

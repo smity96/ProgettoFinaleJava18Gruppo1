@@ -1,4 +1,3 @@
-<!-- lorem ipsum -->
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -36,7 +35,7 @@
 
   <!-- Navbar -->
   
-<jsp:include page= "navbarNotte.jsp"></jsp:include>
+<jsp:include page= "navbarNonLog.jsp"></jsp:include>
 
     <!-- Inserisci email per il recupero password -->
 <br>
@@ -57,6 +56,21 @@
     </button>
     </p>
     </form>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <br>
     <br>
     <br>

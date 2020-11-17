@@ -20,7 +20,7 @@ import utilities.InvioEmail;
 import utilities.UtilitiesDbPrenotazione;
 import utilities.UtilitiesDbProiezione;
 
-//lorem ipsum
+
 @WebServlet("/ServletLeggiPrenotazione")
 public class ServletLeggiPrenotazione extends HttpServlet {
 	private static final long serialVersionUID = 1L;

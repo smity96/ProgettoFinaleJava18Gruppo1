@@ -2,7 +2,7 @@ package model;
 
 import java.io.Serializable;
 import javax.persistence.*;
-//lorem ipsum
+
 
 @Entity
 @Table(name="prenotazione")
