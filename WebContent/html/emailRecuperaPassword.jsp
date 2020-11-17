@@ -36,7 +36,7 @@
 
   <!-- Navbar -->
   
-<jsp:include page= "navbarNonLog.jsp"></jsp:include>
+<jsp:include page= "navbarNotte.jsp"></jsp:include>
 
     <!-- Inserisci email per il recupero password -->
 <br>
@@ -57,21 +57,6 @@
     </button>
     </p>
     </form>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <br>
     <br>
     <br>

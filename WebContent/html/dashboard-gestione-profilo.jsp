@@ -1,4 +1,6 @@
 <!-- lorem ipsum -->
+
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -182,11 +184,13 @@
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
                                             value="<%=u.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
-
+<% SimpleDateFormat dTn=new SimpleDateFormat("yyyy-MM-dd",Locale.ITALY);
+	String dN=dTn.format(u.getDataDiNascita());
+	%>
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
-                                            value="<%=u.getDataDiNascita()%>">
+                                            value="<%=dN %>">
                                     </td>
                                 </tr>
                             </tbody>

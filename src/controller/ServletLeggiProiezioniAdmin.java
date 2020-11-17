@@ -22,6 +22,7 @@ public class ServletLeggiProiezioniAdmin extends HttpServlet {
        
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
+		
 		List<Film> films = UtilitiesDbFilm.leggiFilmAll();
 		Collections.sort(proiezioni, new dateComparator());
 		request.setAttribute("proiezioni", proiezioni);
