@@ -1,3 +1,4 @@
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -208,13 +209,15 @@
                         <input class="rounded stile" name="cognome" type="text" value="<%=u.getCognome()%>">
                     </div>
                  </div>
-
+<%SimpleDateFormat dDn=new SimpleDateFormat("yyyy-MM-dd"); 
+String dN=dDn.format(u.getDataDiNascita());
+%>
                 
                 <!--modifica data di nascita:-->
                  <div class="form-gorup row">
                         <label class="col-sm-2 col-form-label text-warning stile">Data di Nascita: </label>
                         <div class="col-sm-10">
-                    <input  class="rounded bottone" name="data_di_nascita" type="date" value="<%=u.getDataDiNascita()%>">
+                    <input  class="rounded bottone" name="data_di_nascita" type="date" value="<%=dN%>">
                 </div>
                 </div>
 
