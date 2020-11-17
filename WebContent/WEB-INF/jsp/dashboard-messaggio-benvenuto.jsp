@@ -75,11 +75,11 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin"><i class="fas fa-video mr-3 text-muted"></i>Gestione Prenotazioni</a>
@@ -96,30 +96,7 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
           </ul>
 
           <!-- nav icons -->
-          <ul class="navbar-nav icons d-xl-flex d-none align-items-center">
-            <li class="nav-item">
-              <a class="navbar-brand" href="#">
-                <img
-                  src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
-                  class="img-fluid rounded-circle img-thumbnail mr-3"
-                  alt="Logo"
-                  style="width: 40px"
-                />
-                <%="BENVENUTO:"+u.getNome() %>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                data-toggle="modal"
-                data-target="#sign-out"
-                href="#"
-              >
-                <i class="fas fa-sign-out-alt mr-2"></i>Logout
-              </a>
-            </li>
-          </ul>
-
+         
           <ul class="navbar-nav icons">
             <li class="nav-item mr-5">
               <a class="nav-link" href="#">
@@ -130,19 +107,19 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
                   style="width: 30px"
                 />
                 <span class="scritta-dorata ml-2"
-                  ><%="BENVENUTO: "+u.getNome()%></span
+                  ><%="CIAO : " +u.getNome()%></span
                 >
               </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link scritta-dorata scritta-click-scuro"
+              
+                <a
+                class="nav-link"
                 data-toggle="modal"
                 data-target="#sign-out"
                 href="#"
               >
-                <i class="fa fa-sign-out scritta-dorata align-items-center"></i>
-                Logut
+                <i class="fas fa-sign-out-alt mr-2"></i>Logout
               </a>
             </li>
           </ul>
@@ -178,12 +155,12 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
             <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione Profilo</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-video text-muted mr-3 nav-size"></i></div>

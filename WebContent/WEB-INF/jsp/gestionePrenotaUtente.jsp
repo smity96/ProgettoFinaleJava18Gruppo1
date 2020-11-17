@@ -52,7 +52,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="navbar-brand text-uppercase stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
+                <a class="navbar-brand text-uppercase stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">
                     <h1 class="stile">Dashboard Utente</h1>
                 </a>
 
@@ -70,7 +70,7 @@
                         </li>
                         
                         <li class="nav-item">
-                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
@@ -83,7 +83,7 @@
                     <!-- nav icons -->
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
-                            <a class="navbar-brand py-3 stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
+                            <a class="navbar-brand py-3 stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">
                                 <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" />
                                <%="BENVENUTO:"+u.getNome()%>
@@ -113,7 +113,7 @@
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size ml-4"></i></div>

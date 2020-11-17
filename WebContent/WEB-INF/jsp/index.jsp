@@ -12,7 +12,7 @@
 
     <style>
         .titolo {
-            font-family:
+            font-family: 'Eagle Lake', cursive; !important
         }
     </style>
 
@@ -22,6 +22,9 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap" rel="stylesheet">
 
     <!--Bootstrap links-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -53,12 +56,12 @@ Utente u=(Utente)s.getAttribute("uLog");
                 <div class="col-12 mx-auto justify-content-center align-items-center d-flex custom-posizionamento">
                     <img class="img-fluid img-banner p-0 m-0"
                         src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/s-logo.png" alt="header-image">
-                    <span class="banner-title scritta-dorata customposizionamento3">orrento</span>
+                    <span class="banner-title scritta-dorata customposizionamento3 titolo">orrento</span>
                 </div>
             </div>
             <div class="row justify-content-center align-items-center d-flex">
                 <div class="col-12 mx-auto justify-content-center align-items-center d-flex custom-posizionamento2">
-                    <h1 class="banner-title scritta-dorata"> Cinema </h1>
+                    <h1 class="banner-title scritta-dorata titolo"> Cinema </h1>
                 </div>
             </div>
         </div>
@@ -84,81 +87,81 @@ Utente u=(Utente)s.getAttribute("uLog");
             <div class="row">
                 <div class="col-12 mx-auto d-flex sortBtn flex-wrap">
                     <div class="col-12 mx-auto d-flex sortBtn justify-content-center flex-wrap"><a
-                            class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
+                            class="btn btn-black text-uppercase fliter-btn m-2  scritta-click-scuro"
                             data-filter="all">
-                            <h5>tutti</h5>
+                            <h5 class="scritta-dorata">tutti</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="animazione">
-                            <h5>animazione</h5>
+                            <h5  class="scritta-dorata">animazione</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="azione">
-                            <h5>azione</h5>
+                            <h5 class="scritta-dorata">azione</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="azione">
-                            <h5>avventura</h5>
+                            <h5 class="scritta-dorata">avventura</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="commedia">
-                            <h5>commedia</h5>
+                            <h5 class="scritta-dorata">commedia</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase justify-content-start fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="fantasy">
-                            <h5>fantasy</h5>
+                            <h5 class="scritta-dorata">fantasy</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="fantascienza">
-                            <h5>fantascienza</h5>
+                            <h5 class="scritta-dorata">fantascienza</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="guerra">
-                            <h5>guerra</h5>
+                            <h5 class="scritta-dorata">guerra</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="horror">
-                            <h5>horror</h5>
+                            <h5 class="scritta-dorata">horror</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="musical">
-                            <h5>musical</h5>
+                            <h5 class="scritta-dorata">musical</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="romantico">
-                            <h5>romantico</h5>
+                            <h5 class="scritta-dorata">romantico</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="storico">
-                            <h5>storico</h5>
+                            <h5 class="scritta-dorata">storico</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
                             data-filter="thriller">
-                            <h5>thriller</h5>
+                            <h5 class="scritta-dorata">thriller</h5>
                         </a>
                     </div>
 
@@ -259,7 +262,7 @@ Utente u=(Utente)s.getAttribute("uLog");
     <jsp:include page= "footer.jsp"></jsp:include>
 
     <!--Bootstrap links-->
-	<script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script-filter.js" type="text/javascript"></script>
+	
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -269,6 +272,7 @@ Utente u=(Utente)s.getAttribute("uLog");
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script-filter.js" type="text/javascript"></script>
 </body>
 
 </html>

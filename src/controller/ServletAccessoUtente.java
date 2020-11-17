@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Utente;
 import utilities.UtilitiesDbUtente;
+import static utilities.UtilitiesDbUtente.*;
 
 @WebServlet("/ServletAccessoUtente")
 public class ServletAccessoUtente extends HttpServlet {
@@ -60,7 +61,7 @@ public class ServletAccessoUtente extends HttpServlet {
 					break;
 				case 1:
 					//utente normale
-					response.sendRedirect("/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex");
+					response.sendRedirect(request.getContextPath());
 					break;
 				case 2:
 					//staff

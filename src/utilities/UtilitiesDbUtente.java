@@ -129,6 +129,16 @@ public class UtilitiesDbUtente {
 		}
 	}
 	
+	public static boolean isUtente(HttpServletRequest request) {
+		Utente u=(Utente)request.getSession().getAttribute("uLog");
+		if(u==null||u.getRuolo()!=1) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+	
+	
 
 }
 

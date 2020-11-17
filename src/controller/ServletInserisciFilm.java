@@ -99,8 +99,6 @@ public class ServletInserisciFilm extends HttpServlet {
 			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-film.jsp").forward(request, response);
 		}
 		
-			
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

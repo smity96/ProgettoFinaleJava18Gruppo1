@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.*;
+
 import java.io.IOException;
 import java.util.List;
 
@@ -20,18 +22,20 @@ public class ServletLeggiProiezioneByIdStaff extends HttpServlet {
        
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		doPost(request, response);
+		if(!isStaff(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			Proiezione p= UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaModificare")));
+			List<Film> films=UtilitiesDbFilm.leggiFilmAll();
+			request.setAttribute("proiezioneDaModificare", p);
+			request.setAttribute("listaFilms", films);
+			request.getRequestDispatcher("/WEB-INF/jsp/staff-modifica-proiezione.jsp").forward(request, response);
+		}
 		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		Proiezione p= UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaModificare")));
-		List<Film> films=UtilitiesDbFilm.leggiFilmAll();
-		request.setAttribute("proiezioneDaModificare", p);
-		request.setAttribute("listaFilms", films);
-		request.getRequestDispatcher("/html/staff-modifica-proiezione.jsp").forward(request, response);
+		doGet(request, response);
 	}
 
 }

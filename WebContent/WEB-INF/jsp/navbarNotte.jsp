@@ -88,7 +88,7 @@
        <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="<%=request.getContextPath() %>/html/dashboard-gestione-profilo.jsp">Ciao, <%=u.getNome() %> </a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="<%=request.getContextPath() %>/IndieDashboardAdmin">Ciao, <%=u.getNome() %> </a>
             </li>
             </ul>
           </div>

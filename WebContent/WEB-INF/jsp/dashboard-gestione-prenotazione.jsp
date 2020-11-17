@@ -1,4 +1,5 @@
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -73,12 +74,12 @@
 							Al Sito</a></li>
 					<li class="nav-item nav-item-custom"><a
 						class="nav-link scritta-click-scuro scritta-dorata"
-						href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp"><i
+						href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin"><i
 							class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a></li>
 
 					<li class="nav-item nav-item-custom"><a
 						class="nav-link scritta-click-scuro scritta-dorata"
-						href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp"><i
+						href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin"><i
 							class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a></li>
 					<li class="nav-item nav-item-custom"><a
 						class="nav-link scritta-click-scuro scritta-dorata"
@@ -148,7 +149,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">Dashboard</a>
+								href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">Dashboard</a>
 						</div>
 					</li>
 					<li
@@ -158,7 +159,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">Gestione
+								href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin">Gestione
 								Profilo</a>
 						</div>
 					</li>
@@ -169,7 +170,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/ServletLeggiPrenotazioneAdmin">Gestisci
+								href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazioneAdmin">Gestisci
 								Prenotazioni</a>
 						</div>
 					</li>
@@ -191,7 +192,7 @@
 						</div>
 						<div class="col-6 m-0">
 							<a class="nav-link scritta-dorata scritta-click-scuro"
-								href="/ProgettoFinaleJava18Gruppo1/html/ServletLeggiProiezioniAdmin">Gestione
+								href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniAdmin">Gestione
 								Proiezioni</a>
 						</div>
 					</li>
@@ -234,91 +235,50 @@
 							</thead>
 							<tbody>
 								<% 
-                            	ArrayList<Utente> listaPrenDiUtente = new ArrayList<>(); 
+                            	
                             	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
-                            	ArrayList<Proiezione> listaProiezUtente = new ArrayList<>();
                             	for(Prenotazione p : listaPreno){
-                            		if(listaPrenDiUtente.contains(p.getUtente())){
-                            			continue;
-                            			}else{
-                            				listaProiezUtente = new ArrayList<>();
-                            				for(Prenotazione p2 : listaPreno){
-                            					if(p2.getUtente().equals(p.getUtente())){
-                            						listaProiezUtente.add(p2.getProiezione());
-                            					}
-                            				}
-                            				listaPrenDiUtente.add(p.getUtente());
-                            			}
+                            		
                             %>
 								<tr class="d-flex">
 									<td class="col-2 scritta-dorata"><%=p.getUtente().getEmail() %></td>
-									<td class="col-8 scritta-dorata"><select
-										class="col-12 text-center h-100 scelta" name="film-prenotati">
-
-											<option value="0">seleziona film..</option>
-
-											<%	
-                                            	
-                                            	for(Proiezione x : listaProiezUtente){
-                                            	
-                                            %>
-											<option value="<%=x.getIdProiezione()%>">
-												<%= x.getFilm().getTitolo() + " " + x.getDataOra()%></option>
-
-											<%} %>
-									</select></td>
-
-									<td class="col-2 "></td>
-								</tr>
-							</tbody>
-						</table>
-						<table class="table table-bordered table-dark mt-0">
-							<tbody>
-								<%
-                                	for(Proiezione x : listaProiezUtente){
-                                		
-                                 %>
-								<tr class="d-none justify-content-center film"
-									id="<%=x.getIdProiezione()%>">
-									<td id="nomeFilmScelta" class=""><img
+									<td id="nomeFilmScelta" class="col-4"><img
 										class="img-fluid film-custom-height mb-3"
-										src="<%=x.getFilm().getLocandina() %>" alt=""></td>
-
-									<td class="">
-										<p>Data E Ora:</p>
-										<p class="p-0 m-0"><%=x.getDataOra() %></p>
+										src="<%=p.getProiezione().getFilm().getLocandina() %>" alt="">
 									</td>
-									<td class="">
-										<p>Intervallo:</p>
-										<p><%=x.getIntervallo() %></p>
+									<td class="col-2 scritta-dorata">
+										<p><%=p.getProiezione().getFilm().getTitolo() %> </p>
+										
+										<% 
+											SimpleDateFormat dataIta = new SimpleDateFormat("dd-MM-yyyy" + "   " + "hh:mm");	
+											String oraIta = dataIta.format(p.getProiezione().getDataOra());
+										%>
+										
+										<p><%=oraIta%></p>
 									</td>
-									<td class="">
-										<%
-                                    	Prenotazione preno = new Prenotazione();
-                                    	for(Prenotazione y : listaPreno){
-                                    		if(y.getUtente().equals(p.getUtente()) && y.getProiezione().equals(x)){
-                                    			preno = y;
-                                    		}
-                                    	}
-                                    %>
+									<td class="col-2">
+									
 										<p>N. Posti Prenotati:</p>
-										<p><%=preno.getPostiPrenotati() %></p>
+										<p><%=p.getPostiPrenotati() %></p>
 									</td>
-									<td class="">
+									<td class="col-2">
 										<form action="ServletCancellaPrenotazioneAdmin" method="POST">
 											<input type="hidden" name="id_prenotazione"
-												value="<%=preno.getIdPrenotazione() %>">
+												value="<%=p.getIdPrenotazione() %>">
 											<button class="btn align-items-center" type="submit">
 												<i
 													class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i>
 											</button>
 										</form>
 									</td>
+									
 								</tr>
-								<%} 
-						 }%>
-							</tbody>
+							
+					
+								<%} %>
+						 </tbody>
 						</table>
+							
 
 					</div>
 				</div>

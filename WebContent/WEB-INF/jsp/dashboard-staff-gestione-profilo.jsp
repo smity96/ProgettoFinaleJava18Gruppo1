@@ -29,6 +29,9 @@
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
+                                        if(request.getAttribute("uLogSt")!=null){
+                                        	u=(Utente)request.getAttribute("uLogSt");
+                                        }
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                         
                     
@@ -56,11 +59,11 @@
                       <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
                     </li>
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
                     </li>
           
                     <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
+                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/html/IndieGestioneProfiloStaff"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
                     </li>
                     <li class="nav-item nav-item-custom">
                       <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
@@ -82,7 +85,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
-                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
+                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logout
                       </a>
                     </li>
                 </ul>
@@ -110,12 +113,12 @@
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">Dashboard</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff">Dashboard</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
                         <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">Gestione Profilo</a></div>
+                                href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff">Gestione Profilo</a></div>
                     </li>
                     <li class="nav-item d-flex justify-content-around align-items-center my-3">
                         <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
@@ -193,13 +196,13 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%u.getPassword(); %> "></td>
+                                        value="<%=u.getPassword() %> "></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="img" value="<%u.getImmagine(); %>"></td>
+                                    type="file" name="img" value="<%=u.getImmagine() %>"></td>
                             </tr>
                             </tbody>
                             <thead>
@@ -223,7 +226,7 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Nome Societa'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
-                                            value="<%u.getNomeSocieta(); %>"></td>
+                                            value="<%=u.getNomeSocieta() %>"></td>
                                 </tr>
 									<tr>
 									<td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>

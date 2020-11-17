@@ -1,6 +1,6 @@
 package controller;
 
-import static utilities.UtilitiesDbUtente.isAdmin;
+import static utilities.UtilitiesDbUtente.*;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -24,13 +24,13 @@ public class ServletCancellaPrenotazione extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(!isAdmin(request)) {
+		if(!isUtente(request)) {
 			response.sendRedirect(request.getContextPath());
 		}else {
 			int idPrenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
 			UtilitiesDbPrenotazione.rimuoviPrenotazione(idPrenotazione);
 		
-			response.sendRedirect("ServletLeggiPrenotazioneUtente");
+			response.sendRedirect("/ServletLeggiPrenotazioneUtente");
 		}
 		
 	}

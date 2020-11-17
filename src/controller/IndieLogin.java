@@ -1,7 +1,5 @@
 package controller;
 
-import static utilities.UtilitiesDbUtente.isAdmin;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,29 +7,33 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.Proiezione;
-import utilities.UtilitiesDbProiezione;
-
-@WebServlet("/ServletCancellaProiezione")
-public class ServletCancellaProiezione extends HttpServlet {
+/**
+ * Servlet implementation class IndieLogin
+ */
+@WebServlet("/IndieLogin")
+public class IndieLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-    public ServletCancellaProiezione() {
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public IndieLogin() {
         super();
-
+        // TODO Auto-generated constructor stub
     }
 
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(!isAdmin(request)) {
-			response.sendRedirect(request.getContextPath());
-		}else {
-			Proiezione pDaEliminare=UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaEliminare")));
-			UtilitiesDbProiezione.eliminaProiezione(pDaEliminare);
-			response.sendRedirect("/ServletLeggiProiezioniAdmin");
-		}
+		request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 	}
 
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

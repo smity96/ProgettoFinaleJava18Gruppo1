@@ -11,10 +11,13 @@
     <title>Sorrento Cinema</title>
     <%HttpSession s=request.getSession(false);
     	Utente u=(Utente)s.getAttribute("uLog");
+    	if(request.getAttribute("uLogSt")!=null){
+        	u=(Utente)request.getAttribute("uLogSt");
+        }
     	if(u.getRuolo()==2){%>
-    		<meta http-equiv="refresh" content="0;URL=http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-gestione-profilo.jsp">
+    		<meta http-equiv="refresh" content="0;URL=http://localhost:8080/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff">
     	<%}else if(u.getRuolo()==3){%>
-    		<meta http-equiv="refresh" content="0;URL=http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/dashboard-gestione-profilo.jsp">
+    		<meta http-equiv="refresh" content="0;URL=http://localhost:8080/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloAdmin">
     	<%}%>
     
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
@@ -81,7 +84,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
                 <!-- Brand -->
-                <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">
+                <a class="navbar-brand text-uppercase" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">
                     <h1 class="stile">Dashboard Utente</h1>
                 </a>
 
@@ -98,7 +101,7 @@
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fas fa-home text-muted mr-3 nav-size"></i>Torna Al Sito</a>
                         </li>
                         <li class="nav-item">       
-                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
+                            <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente"><i class="fas fa-user text-muted mr-3 nav-size"></i>Gestione Profilo</a>
                         </li>
                         <li class="nav-item">                            
                             <a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione"><i class="fas fa-film text-muted mr-3 nav-size"></i>Prenota film</a>
@@ -142,7 +145,7 @@
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-user text-muted mr-3 nav-size ml-4"></i></div>
-                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/html/profiloUtente.jsp">Gestione Profilo</a></div>
+                            <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">Gestione Profilo</a></div>
                         </li>
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-film text-muted mr-3 nav-size ml-4"></i></div>

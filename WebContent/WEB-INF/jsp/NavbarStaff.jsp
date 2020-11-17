@@ -74,7 +74,7 @@
             <div class="col-sm">
             <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-staff-messaggio-benvenuto.jsp">DashBoard</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff">DashBoard</a>
           </li>    
         </ul>
       </div>
@@ -82,7 +82,7 @@
        <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="<%=request.getContextPath() %>/html/dashboard-staff-gestione-profilo.jsp">Ciao, <%=u.getNome() %> </a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="<%=request.getContextPath() %>/IndieGestioneProfiloStaff">Ciao, <%=u.getNome() %> </a>
             </li>
             </ul>
           </div>

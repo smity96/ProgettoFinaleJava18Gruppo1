@@ -74,7 +74,7 @@
             <div class="col-sm">
             <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/dashboard-messaggio-benvenuto.jsp">DashBoard</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardAdmin">DashBoard</a>
           </li>    
         </ul>
       </div>
