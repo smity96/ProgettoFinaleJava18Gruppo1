@@ -142,11 +142,15 @@
                             <div class="mb-4">
                                 <h1 class="d-inline mr-3">Gestione Utenti</h1>
                             </div>
-                            <table class="table table-bordered table-hover table-dark">
+
+                            <input class="col-4 mb-3" type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Cerca Per ID Utente">
+                            <input class="col-4 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca Per Nome Utente">
+
+                            <table class="table table-bordered table-hover table-dark" id="myTable">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-3 scritta-dorata">Id° Utente</th>
-                                        <th class="col-3 scritta-dorata">Nome Utente</th>
+                                        <th class="col-3 scritta-dorata" onclick="sortTable(0)">Id° Utente</th>
+                                        <th class="col-3 scritta-dorata" onclick="sortTable(1)">Nome Utente</th>
                                         <th class="col-3 scritta-dorata">Cancella Utente</th>
                                         <th class="col-3 scritta-dorata">Modifica Utente</th>
                                     </tr>
