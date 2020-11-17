@@ -97,16 +97,9 @@
           <div class="col-sm">
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
-<<<<<<< HEAD
+
             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="/ServletLogout">Logout</a>
-=======
-            <%
-            if(s.getAttribute("uLog")!=null){%>
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" data-toggle="modal" data-target="#sign-out" href="#">Logout</a>
-            <%} else{%>
-             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
-            <%} %>
->>>>>>> parent of 15b90d1... Merge branch 'main' of https://github.com/smity96/ProgettoFinaleJava18Gruppo1 into main
+
             </li>
             </ul>
           </div>
