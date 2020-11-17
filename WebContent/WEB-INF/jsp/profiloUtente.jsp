@@ -11,6 +11,9 @@
     <title>Sorrento Cinema</title>
     <%HttpSession s=request.getSession(false);
     	Utente u=(Utente)s.getAttribute("uLog");
+    	if(request.getAttribute("uLogSt")!=null){
+        	u=(Utente)request.getAttribute("uLogSt");
+        }
     	if(u.getRuolo()==2){%>
     		<meta http-equiv="refresh" content="0;URL=http://localhost:8080/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff">
     	<%}else if(u.getRuolo()==3){%>
