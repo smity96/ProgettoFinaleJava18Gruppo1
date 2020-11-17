@@ -84,12 +84,12 @@
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="Benvenuto:"+u.getNome()%></span>
                       </a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
-                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
+                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logout
                       </a>
                     </li>
                 </ul>
@@ -173,11 +173,12 @@
                             <% 
                             	ArrayList<Utente> listaPrenDiUtente = new ArrayList<>(); 
                             	List<Prenotazione> listaPreno = (List<Prenotazione>)request.getAttribute("listaPreno");
+                            	ArrayList<Proiezione> listaProiezUtente = new ArrayList<>();
                             	for(Prenotazione p : listaPreno){
-                            		ArrayList<Proiezione> listaProiezUtente = new ArrayList<>();
                             		if(listaPrenDiUtente.contains(p.getUtente())){
                             			continue;
                             			}else{
+                            				listaProiezUtente = new ArrayList<>();
                             				for(Prenotazione p2 : listaPreno){
                             					if(p2.getUtente().equals(p.getUtente())){
                             						listaProiezUtente.add(p2.getProiezione());
