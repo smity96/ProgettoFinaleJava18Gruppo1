@@ -17,6 +17,7 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
+import javax.mail.Session;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -44,9 +45,9 @@ public class ServletModificaUtente extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (!isAdmin(request) || !isStaff(request)||!isUtente(request)) {
+		if(!isAdmin(request)&&!isStaff(request)&&!isUtente(request)) {
 			response.sendRedirect(request.getContextPath());
-		} else {
+		}else {
 			utente = UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("d")));
 			// ---------GESTIONE PARTITA IVA ->UNIQUE<- -------------------------
 			String pIva = request.getParameter("pIva");
@@ -106,6 +107,7 @@ public class ServletModificaUtente extends HttpServlet {
 			int red=0;
 			if(request.getParameter("red")!=null) {
 				red = Integer.parseInt(request.getParameter("red"));
+				System.out.println(red);
 			}
 			if(isAdmin(request)) {
 				if(red==3) {
@@ -117,8 +119,11 @@ public class ServletModificaUtente extends HttpServlet {
 				}
 			}else if(isStaff(request)) {
 				if (red == 2) {
-					request.getRequestDispatcher("ServletLeggiUtenteStaff").forward(request, response);
+					System.out.println("if red");
+					request.setAttribute("uLogSt", utente);
+					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-profilo.jsp").forward(request, response);
 				}else {
+					System.out.println("if else");
 					// utente staff
 					request.setAttribute("listaU", listaU);
 					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-utenti.jsp").forward(request,response);
@@ -134,7 +139,7 @@ public class ServletModificaUtente extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		doGet(request, response);
 	}
 
 //------METODO PER LA GETIONE DELLE IMG----------------------------------------------------------

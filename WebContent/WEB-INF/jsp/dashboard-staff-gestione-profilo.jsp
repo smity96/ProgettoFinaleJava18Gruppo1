@@ -82,7 +82,7 @@
                     </li>
                     <li class="nav-item">
                       <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
-                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
+                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logout
                       </a>
                     </li>
                 </ul>

@@ -62,7 +62,7 @@
           <ul class="navbar-nav d-flex flex-row">
           <li class="nav-item m-auto width:90%">
 
-            <a class="nav-link text-warning font-weight-bold stile" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/login.jsp">Prenotazione</a>
+            <a class="nav-link text-warning font-weight-bold stile" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/IndieLogin">Prenotazione</a>
 
           </li>
           </ul>
