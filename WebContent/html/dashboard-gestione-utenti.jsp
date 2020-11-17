@@ -157,11 +157,13 @@
                             <div class="mb-4">
                                 <h1 class="d-inline mr-3">Gestione Utenti</h1>
                             </div>
-                            <table class="table table-bordered table-dark">
+                            <input class="col-4 mb-3" type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Cerca Per ID Utente">
+                                <input class="col-4 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca Per Nome Utente">
+                            <table class="table table-bordered table-dark" id="myTable">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 scritta-dorata">Id. Utente</th>
-                                        <th class="col-2 scritta-dorata">Nome Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable(0)">Id. Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable(1)">Nome Utente</th>
                                         <th class="col-2 scritta-dorata">Conferma Utente</th>
                                         <th class="col-2 scritta-dorata">Cancella Utente</th>
                                         <th class="col-2 scritta-dorata">Modifica Utente</th>
@@ -214,11 +216,13 @@
                             <div class="mb-4">
                                 <h1 class="d-inline mr-3 titolo-custom">Gestione Utenti</h1>
                             </div>
-                            <table class="table table-bordered table-dark">
+                            <input class="col-3 mb-3" type="text" id="myInput4" onkeyup="myFunction4()" placeholder="ID Utente">
+                            <input class="col-3 mb-3" type="text" id="myInput3" onkeyup="myFunction3()" placeholder="Nome Utente">
+                            <table class="table table-bordered table-dark" id="myTable2">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 scritta-dorata">Id° Utente</th>
-                                        <th class="col-2 scritta-dorata">Nome Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable2(0)">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable2(1)">Nome Utente</th>
                                         <th class="col-5 scritta-dorata">Gestisci Utente</th>
                                         <th class="col-3 scritta-dorata">Conferma Operazione</th>
                                     </tr>
@@ -307,7 +311,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script type="text/javascript"><%@include file="../js/script.js"%></script>
+        <script
+		src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/riordina.js"
+		type="text/javascript"></script>
 </body>
 
 </html>

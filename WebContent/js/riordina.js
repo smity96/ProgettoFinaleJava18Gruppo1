@@ -44,7 +44,7 @@ function myFunction() {
   
   function myFunction3() {
     let input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput");
+    input = document.getElementById("myInput3");
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable2");
     tr = table.getElementsByTagName("tr");
@@ -66,7 +66,7 @@ function myFunction() {
   
   function myFunction4() {
     let input, filter, table, tr, td, i, txtValue;
-    input = document.getElementById("myInput2");
+    input = document.getElementById("myInput4");
     filter = input.value.toUpperCase();
     table = document.getElementById("myTable2");
     tr = table.getElementsByTagName("tr");
