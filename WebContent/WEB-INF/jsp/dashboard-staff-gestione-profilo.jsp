@@ -29,6 +29,9 @@
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
+                                        if(request.getAttribute("uLogSt")!=null){
+                                        	u=(Utente)request.getAttribute("uLogSt");
+                                        }
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                         
                     

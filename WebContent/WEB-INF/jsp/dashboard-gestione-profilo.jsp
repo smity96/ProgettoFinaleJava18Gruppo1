@@ -30,6 +30,9 @@
                                			//String mail = (String) s.getAttribute("mailLog");
                 						//String pssw = (String) session.getAttribute("psswLog");
                 						Utente u = (Utente)s.getAttribute("uLog");
+                						if(request.getAttribute("uLogSt")!=null){
+                                        	u=(Utente)request.getAttribute("uLogSt");
+                                        }
                 						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                 						
                 	
@@ -240,7 +243,7 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Nome Societa'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
-                                            value="<%u.getNomeSocieta(); %>"></td>
+                                            value="<%=u.getNomeSocieta() %>"></td>
                                 </tr>
 									<tr>
 									<td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
