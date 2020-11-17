@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -21,15 +23,25 @@ public class ServletLeggiProiezioniStaff extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		List<Proiezione> proiezioni = UtilitiesDbProiezione.leggiProiezioni();
 		List<Film> films = UtilitiesDbFilm.leggiFilmAll();
+		Collections.sort(proiezioni, new dateComparator());
 		request.setAttribute("proiezioni", proiezioni);
 		request.setAttribute("films", films);
-		request.getRequestDispatcher("/html/dashboard-staff-gestione-proiezione.jsp")
-		.forward(request, response);
+		request.getRequestDispatcher("/html/dashboard-staff-gestione-proiezione.jsp").forward(request, response);
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+	}
+	
+	class dateComparator implements Comparator<Proiezione> {
+	    @Override
+	    public int compare(Proiezione a, Proiezione b) {
+	    	if(a.getDataOra()==null||b.getDataOra()==null) {
+	    		return 0;
+	    	}
+	        return a.getDataOra().compareTo(b.getDataOra());
+	    }
 	}
 	
 }
