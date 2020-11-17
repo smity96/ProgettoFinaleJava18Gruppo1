@@ -1,4 +1,5 @@
 package utilities;
+import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -6,6 +7,9 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
+import javax.servlet.http.HttpServletRequest;
+
+import model.Film;
 import model.Utente;
 
 public class UtilitiesDbUtente {
@@ -105,6 +109,24 @@ public class UtilitiesDbUtente {
 		et.commit();
 		System.out.println(u.getRuolo()+" "+ ":" +"letto con successo");
 		return u;
+	}
+	
+	public static boolean isAdmin(HttpServletRequest request) {
+		Utente u=(Utente)request.getSession().getAttribute("uLog");
+		if(u==null||u.getRuolo()!=3) {
+			return false;
+		}else {
+			return true;
+		}
+	}
+	
+	public static boolean isStaff(HttpServletRequest request) {
+		Utente u=(Utente)request.getSession().getAttribute("uLog");
+		if(u==null||u.getRuolo()!=2) {
+			return false;
+		}else {
+			return true;
+		}
 	}
 	
 

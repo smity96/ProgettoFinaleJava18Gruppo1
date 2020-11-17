@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import static utilities.UtilitiesDbUtente.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,13 +21,17 @@ public class ServletCancellaProiezioneStaff extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		if(!isStaff(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			Proiezione pDaEliminare=UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaEliminare")));
+			UtilitiesDbProiezione.eliminaProiezione(pDaEliminare);
+			response.sendRedirect("ServletLeggiProiezioniStaff");
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Proiezione pDaEliminare=UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaEliminare")));
-		UtilitiesDbProiezione.eliminaProiezione(pDaEliminare);
-		response.sendRedirect("ServletLeggiProiezioniStaff");
+		doGet(request, response);
 	}
 
 }

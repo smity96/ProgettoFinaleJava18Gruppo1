@@ -63,7 +63,7 @@ public class ServletLeggiPrenotazioneAdmin extends HttpServlet {
 		//allUtenti.stream().peek(u->System.out.println(u)).sorted((u1,u2)->u1.getEmail().compareToIgnoreCase(u2.getEmail())).forEach(u->pren.addAll(u.getPrenotazioni()));
 		pren=listaPreno.stream().sorted((p1,p2)->p1.getUtente().getEmail().compareToIgnoreCase(p2.getUtente().getEmail())).peek(p->System.out.println(p)).collect(Collectors.toList());
 		request.setAttribute("listaPreno", pren);
-		request.getRequestDispatcher("/html/dashboard-gestione-prenotazione.jsp").forward(request, response);
+		request.getRequestDispatcher("WEB-INF/jsp/dashboard-gestione-prenotazione.jsp").forward(request, response);
 	}
 	
 	class emailComparator implements Comparator<Utente> {

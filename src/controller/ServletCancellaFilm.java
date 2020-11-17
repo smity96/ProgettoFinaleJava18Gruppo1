@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -21,14 +23,18 @@ public class ServletCancellaFilm extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		doPost(request, response);
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			Film f2 = UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id_film")));
+			// elimino il film
+			UtilitiesDbFilm.cancellaFilm(f2);
+			response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		Film f2 = UtilitiesDbFilm.leggiFilm(Integer.parseInt(request.getParameter("id_film")));
-		// elimino il film
-		UtilitiesDbFilm.cancellaFilm(f2);
-		response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletOrdinaFilm");
+		doGet(request, response);
 	}
 }

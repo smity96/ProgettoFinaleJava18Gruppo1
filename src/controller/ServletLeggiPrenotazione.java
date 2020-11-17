@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -36,7 +37,7 @@ public class ServletLeggiPrenotazione extends HttpServlet {
 		listaProiez = UtilitiesDbProiezione.leggiProiezioni();
 		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
 		//creo un array di appoggio per le proiezioni
-		List<Proiezione> proiezioni=new ArrayList<Proiezione>();
+		/*List<Proiezione> proiezioni=new ArrayList<Proiezione>();
 		//creo un array di appoggio per le prenotazioni
 		List<Prenotazione> listaPrenoApp=new ArrayList<Prenotazione>();
 		//lo riempio
@@ -57,11 +58,15 @@ public class ServletLeggiPrenotazione extends HttpServlet {
 			}
 		}
 		//per sicurezza ordino anche le proiezioni
-		Collections.sort(listaProiez, new dateComparator());
+		Collections.sort(listaProiez, new dateComparator());*/
+		List<Prenotazione> pren=new ArrayList<Prenotazione>();
+		//allUtenti.stream().peek(u->System.out.println(u)).sorted((u1,u2)->u1.getEmail().compareToIgnoreCase(u2.getEmail())).forEach(u->pren.addAll(u.getPrenotazioni()));
+		pren=listaPreno.stream().sorted((p1,p2)->p1.getUtente().getEmail().compareToIgnoreCase(p2.getUtente().getEmail())).peek(p->System.out.println(p)).collect(Collectors.toList());
+		
 		request.setAttribute("listaProiez", listaProiez);
 		//metto qui la lista corretta
-		request.setAttribute("listaPreno", listaPrenoApp);
-		request.getRequestDispatcher("/html/prenotaUtente.jsp").forward(request, response);
+		request.setAttribute("listaPreno", pren);
+		request.getRequestDispatcher("WEB-INF/jsp/prenotaUtente.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

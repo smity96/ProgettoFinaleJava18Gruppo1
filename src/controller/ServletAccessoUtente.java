@@ -56,7 +56,7 @@ public class ServletAccessoUtente extends HttpServlet {
 				case 0:
 					//registrazione non approvata
 					request.setAttribute("error", "L'utente deve essere accettato dall'admin");
-					request.getRequestDispatcher("html/login.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
 					break;
 				case 1:
 					//utente normale
@@ -65,12 +65,12 @@ public class ServletAccessoUtente extends HttpServlet {
 				case 2:
 					//staff
 					request.setAttribute("listaU", listaU);
-					request.getRequestDispatcher("html/dashboard-staff-messaggio-benvenuto.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-messaggio-benvenuto.jsp").forward(request, response);
 					break;
 				case 3:
 					//admin
 					request.setAttribute("listaU", listaU);
-					request.getRequestDispatcher("html/dashboard-messaggio-benvenuto.jsp").forward(request, response);
+					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-messaggio-benvenuto.jsp").forward(request, response);
 					break;
 				default:
 					System.out.println("Non dovresti essere qui");
@@ -81,7 +81,7 @@ public class ServletAccessoUtente extends HttpServlet {
 		}
 //------------------SE LOGIN ERRATO INDIRIZZATO ALLA REGISTRAZIONE-----------------------------		
 		if (!dentro) {
-			request.getRequestDispatcher("html/registrazione.jsp").forward(request, response);
+			request.getRequestDispatcher("/WEB-INF/jsp/registrazione.jsp").forward(request, response);
 		}
 	
 		// response.sendRedirect("/profilo.jsp");

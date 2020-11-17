@@ -1,5 +1,7 @@
 package controller;
 
+import static utilities.UtilitiesDbUtente.isAdmin;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,14 +22,18 @@ public class ServletCancellaPrenotazioneAdmin extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doPost(request, response);
+		if(!isAdmin(request)) {
+			response.sendRedirect(request.getContextPath());
+		}else {
+			int idPrenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
+			UtilitiesDbPrenotazione.rimuoviPrenotazione(idPrenotazione);
+		
+			response.sendRedirect(request.getContextPath()+"/ServletLeggiPrenotazioneAdmin");
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idPrenotazione = Integer.parseInt(request.getParameter("id_prenotazione"));
-		UtilitiesDbPrenotazione.rimuoviPrenotazione(idPrenotazione);
-	
-		response.sendRedirect("ServletLeggiPrenotazioneAdmin");
+		doGet(request, response);
 	}
 
 }
