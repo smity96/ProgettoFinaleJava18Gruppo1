@@ -214,11 +214,13 @@
                             <div class="mb-4">
                                 <h1 class="d-inline mr-3 titolo-custom">Gestione Utenti</h1>
                             </div>
-                            <table class="table table-bordered table-dark">
+                            <input class="col-3 mb-3" type="text" id="myInput4" onkeyup="myFunction4()" placeholder="ID Utente">
+                            <input class="col-3 mb-3" type="text" id="myInput3" onkeyup="myFunction3()" placeholder="Nome Utente">
+                            <table class="table table-bordered table-dark" id="myTable2">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 scritta-dorata">Id° Utente</th>
-                                        <th class="col-2 scritta-dorata">Nome Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable2(0)">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable2(1)">Nome Utente</th>
                                         <th class="col-5 scritta-dorata">Gestisci Utente</th>
                                         <th class="col-3 scritta-dorata">Conferma Operazione</th>
                                     </tr>

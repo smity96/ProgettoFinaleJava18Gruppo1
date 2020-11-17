@@ -73,7 +73,7 @@
             <ul class="navbar-nav d-flex flex-row">
             <li class="nav-item m-auto width:90%">
 
-            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/registrazione.jsp">Registrazione</a>
+            <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/IndieRegistrazione">Registrazione</a>
             
           </li>    
         </ul>
@@ -84,7 +84,7 @@
           <ul class=" navbar-nav d-flex flex-row unstyled">
             <li class="nav-item m-auto width:90%">
 
-             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/html/login.jsp">Login</a>
+             <a class="nav-link text-warning d-flex justify-content-end font-weight-bold stile" href="/ProgettoFinaleJava18Gruppo1/IndieLogin">Login</a>
 
             </li>
             </ul>
