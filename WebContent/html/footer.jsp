@@ -31,10 +31,10 @@
                 <div class="col-6 d-flex justify-content-end flex-wrap">
                     <h1 class="mr-3 scritta-dorata footer-copy pt-2">Seguici Su</h1>
                     <div class="info-icons mt-3"> 
-                        <a href="#" class="scritta-dorata scritta-click-scuro pt-sm-5 col-sm-4 col-6">
+                        <a href="https://www.facebook.com/CinemaSorrentoGeneration" class="scritta-dorata scritta-click-scuro pt-sm-5 col-sm-4 col-6">
                             <i class="fab fa-facebook fa-2x footer-copy"></i>
                         </a>
-                        <a href="#" class="scritta-dorata scritta-click-scuro pt-sm-5 col-sm-4 col-6">
+                        <a href="https://www.instagram.com/sorrentocinema/" class="scritta-dorata scritta-click-scuro pt-sm-5 col-sm-4 col-6">
                             <i class="fab fa-instagram fa-2x footer-copy"></i>
                         </a>
                     </div>
