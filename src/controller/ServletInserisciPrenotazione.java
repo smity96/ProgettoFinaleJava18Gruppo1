@@ -42,7 +42,7 @@ public class ServletInserisciPrenotazione extends HttpServlet {
 			UtilitiesDbPrenotazione.inserisciPrenotazione(pr);
 			//invio di mail
 			InvioEmail.inviaMail(utente, 4, null);
-			response.sendRedirect("/ServletLeggiPrenotazione");
+			response.sendRedirect("ServletLeggiPrenotazione");
 		}
 	}
 

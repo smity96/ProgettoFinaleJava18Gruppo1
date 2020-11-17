@@ -96,30 +96,7 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
           </ul>
 
           <!-- nav icons -->
-          <ul class="navbar-nav icons d-xl-flex d-none align-items-center">
-            <li class="nav-item">
-              <a class="navbar-brand" href="#">
-                <img
-                  src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png"
-                  class="img-fluid rounded-circle img-thumbnail mr-3"
-                  alt="Logo"
-                  style="width: 40px"
-                />
-                <%="BENVENUTO:"+u.getNome() %>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                data-toggle="modal"
-                data-target="#sign-out"
-                href="#"
-              >
-                <i class="fas fa-sign-out-alt mr-2"></i>Logout
-              </a>
-            </li>
-          </ul>
-
+         
           <ul class="navbar-nav icons">
             <li class="nav-item mr-5">
               <a class="nav-link" href="#">
@@ -130,19 +107,19 @@ charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
                   style="width: 30px"
                 />
                 <span class="scritta-dorata ml-2"
-                  ><%="BENVENUTO: "+u.getNome()%></span
+                  ><%="CIAO : " +u.getNome()%></span
                 >
               </a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link scritta-dorata scritta-click-scuro"
+              
+                <a
+                class="nav-link"
                 data-toggle="modal"
                 data-target="#sign-out"
                 href="#"
               >
-                <i class="fa fa-sign-out scritta-dorata align-items-center"></i>
-                Logut
+                <i class="fas fa-sign-out-alt mr-2"></i>Logout
               </a>
             </li>
           </ul>

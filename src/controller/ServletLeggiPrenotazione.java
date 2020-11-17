@@ -1,6 +1,6 @@
 package controller;
 
-import static utilities.UtilitiesDbUtente.isAdmin;
+import static utilities.UtilitiesDbUtente.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,19 +36,21 @@ public class ServletLeggiPrenotazione extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		listaProiez = UtilitiesDbProiezione.leggiProiezioni();
-		listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
-		List<Prenotazione> pren = new ArrayList<Prenotazione>();
-		pren = listaPreno.stream()
-				.sorted((p1, p2) -> p1.getUtente().getEmail().compareToIgnoreCase(p2.getUtente().getEmail()))
-				.peek(p -> System.out.println(p)).collect(Collectors.toList());
-
-		request.setAttribute("listaProiez", listaProiez);
-		// metto qui la lista corretta
-		request.setAttribute("listaPreno", pren);
-		request.getRequestDispatcher("/WEB-INF/jsp/prenotaUtente.jsp").forward(request, response);
-
+		if(!isUtente(request) && !isAdmin(request) && !isStaff(request)) {
+			response.sendRedirect("IndieLogin");
+		}else {
+			listaProiez = UtilitiesDbProiezione.leggiProiezioni();
+			listaPreno = UtilitiesDbPrenotazione.leggiPrenotazione();
+			List<Prenotazione> pren = new ArrayList<Prenotazione>();
+			pren = listaPreno.stream()
+					.sorted((p1, p2) -> p1.getUtente().getEmail().compareToIgnoreCase(p2.getUtente().getEmail()))
+					.peek(p -> System.out.println(p)).collect(Collectors.toList());
+	
+			request.setAttribute("listaProiez", listaProiez);
+			// metto qui la lista corretta
+			request.setAttribute("listaPreno", pren);
+			request.getRequestDispatcher("/WEB-INF/jsp/prenotaUtente.jsp").forward(request, response);
+		}
 		// creo un array di appoggio per le proiezioni
 		/*
 		 * List<Proiezione> proiezioni=new ArrayList<Proiezione>(); //creo un array di

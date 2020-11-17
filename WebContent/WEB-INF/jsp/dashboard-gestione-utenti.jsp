@@ -181,7 +181,7 @@
                                         <td class="col-2 scritta-dorata"><%=g.getEmail() %></td>
                                         <%if(g.getRuolo()!=0){ %>
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
-                                                    class="colore-icone-scuro icona-menu-piccolo fas fa-check-circle"></i></a>
+                                                    class="colore-icone-scuro icona-menu-piccolo"></i></a>
                                         </td>
                                         <% }else{%>
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?b=<%=g.getIdUtente()%>"><i
@@ -197,8 +197,13 @@
                                         <%if(g.getRuolo()==1) {%>
                                         <td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?s=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-users"></i></a>
+										</td>
+										<%}else{ %>
+											<td class="col-2"><a href="/ProgettoFinaleJava18Gruppo1/ServletModificaRuolo?s=<%=g.getIdUtente()%>"><i
+                                                    class="colore-icone-scuro icona-menu-piccolo"></i></a>
+										</td>
 										<%} %>
-                                        </td>
+                                        
                                     </tr>
                                     <%} %>
                                 </tbody>

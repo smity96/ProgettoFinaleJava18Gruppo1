@@ -210,13 +210,13 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%u.getPassword(); %> "></td>
+                                        value="<%=u.getPassword() %> "></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="img" value="<%u.getImmagine(); %>"></td>
+                                    type="file" name="img" value="<%=u.getImmagine()%>"></td>
                             </tr>
                             </tbody>
                             <thead>
@@ -240,7 +240,7 @@
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Nome Societa'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="nomeSoc"
-                                            value="<%u.getNomeSocieta(); %>"></td>
+                                            value="<%=u.getNomeSocieta() %>"></td>
                                 </tr>
 									<tr>
 									<td><input type="hidden" name="d" value="<%= u.getIdUtente() %>"></td>
