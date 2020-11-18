@@ -28,7 +28,7 @@ public class ServletModificaPrenotazione extends HttpServlet {
 		
 		UtilitiesDbPrenotazione.modificaPrenotazione(prenotazione);
 		
-		response.sendRedirect("/ServletLeggiPrenotazioneUtente");
+		response.sendRedirect("ServletLeggiPrenotazioneUtente");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
