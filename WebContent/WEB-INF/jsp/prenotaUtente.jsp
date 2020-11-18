@@ -111,7 +111,7 @@ if(request.getAttribute("uLogSt")==null){
             <div class="row">
                 <nav
                     class="col-lg-3 col-xl-2 d-none d-lg-flex sidebar align-items-center justify-content-center right-padding max-viewport">
-                    <ul class="navbar-nav flex-column">
+                    <ul class="navbar-nav flex-column list-side-height">
                         <li class="nav-item d-flex align-items-center my-3">
                             <div class="col-3"><i class="fas fa-home text-muted mr-3 nav-size ml-4"></i></div>
                             <div class="col-9 ml-3"><a class="nav-link active stile" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna alla Home</a></div>
