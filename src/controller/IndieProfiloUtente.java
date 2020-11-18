@@ -22,7 +22,11 @@ public class IndieProfiloUtente extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		if(isUtente(request)) {
 			request.getRequestDispatcher("/WEB-INF/jsp/profiloUtente.jsp").forward(request, response);
-		}else {
+		}else if(isStaff(request)){
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-profilo.jsp").forward(request, response);
+		}else if(isAdmin(request)){
+			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-profilo.jsp").forward(request, response);
+		}else{
 			response.sendRedirect(request.getContextPath());
 		}
 	}

@@ -82,7 +82,7 @@
        <!-- Fine Modal Uscita -->
        
         <!-- Footer: -->
-    <jsp:include page= "footer.jsp"></jsp:include>
+    
        
 
 

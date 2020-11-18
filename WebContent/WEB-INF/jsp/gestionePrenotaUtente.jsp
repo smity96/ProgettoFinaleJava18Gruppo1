@@ -58,7 +58,7 @@
             <div class="container-fluid">
                 <!-- Brand -->
                 <a class="navbar-brand text-uppercase stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">
-                    <h1 class="stile">Dashboard Utente</h1>
+                    <h1 class="stile">Pannello di controllo</h1>
                 </a>
 
                 <!-- Toggler/collapsibe Button -->
@@ -137,7 +137,7 @@
                         <div class="col-12">
                             <div>
                             <h3>
-                                <span class="text-uppercase text-danger stile">Dashboard /</span><span
+                                <span class="text-uppercase text-danger stile">Pannello /</span><span
                                     class="text-muted small stile"> Gestione Prenotazioni Film</span>
                             </h3>
                             </div>

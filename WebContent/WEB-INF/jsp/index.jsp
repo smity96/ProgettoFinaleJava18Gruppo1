@@ -106,14 +106,14 @@ Utente u=(Utente)s.getAttribute("uLog");
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                            data-filter="azione">
-                            <h5 class="scritta-dorata">avventura</h5>
+                            data-filter="commedia">
+                            <h5 class="scritta-dorata">commedia</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">
                         <a class="btn btn-black text-uppercase fliter-btn m-2 scritta-dorata scritta-click-scuro"
-                            data-filter="commedia">
-                            <h5 class="scritta-dorata">commedia</h5>
+                            data-filter="drammatico">
+                            <h5 class="scritta-dorata">drammatico</h5>
                         </a></div>
                     <div
                         class="col-xl-2 col-lg-3 col-sm-4 col-6 mx-auto d-flex justify-content-center sortBtn flex-wrap">

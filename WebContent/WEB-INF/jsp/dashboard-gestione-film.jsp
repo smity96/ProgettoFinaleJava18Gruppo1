@@ -212,7 +212,7 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3"><label>Trama</label></th>
                                 <td class="col-md-10 col-9"><textarea class="col-8 form-control mx-auto"
-                                        name="trama">Bella Chen il Malvagio</textarea></td>
+                                        name="trama"></textarea></td>
                             </tr>
 
                             <tr class="d-flex">
@@ -238,7 +238,7 @@
     <!-- Fine Modal Aggiungi Film -->
 
  <!-- Footer: -->
-    <jsp:include page= "footer.jsp"></jsp:include>
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

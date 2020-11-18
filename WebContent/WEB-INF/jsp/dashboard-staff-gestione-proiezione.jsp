@@ -280,7 +280,7 @@
     <!-- Fine Modal Aggiungi Film alla Proiezione -->
     
      <!-- Footer: -->
-    <jsp:include page= "footer.jsp"></jsp:include>
+    
     
     
 

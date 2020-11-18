@@ -172,7 +172,7 @@ String dN=sDf.format(b.getDataDiNascita());
     <!-- Fine Modal Uscita -->
     
      <!-- Footer: -->
-    <jsp:include page= "footer.jsp"></jsp:include>
+    
     
 
 	
