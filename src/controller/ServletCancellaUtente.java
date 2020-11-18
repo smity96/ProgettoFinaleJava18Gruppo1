@@ -27,7 +27,7 @@ public class ServletCancellaUtente extends HttpServlet {
    
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	if(isAdmin(request)&&isStaff(request)) {
+    	if(isAdmin(request)||isStaff(request)) {
         	if(!request.getParameter("canc").trim().equals("")||request.getParameter("canc")!=null) {
         		//creo l'utente che devo cancellare
              	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
@@ -42,7 +42,7 @@ public class ServletCancellaUtente extends HttpServlet {
         		}
         	}
     	}else {
-    		response.sendRedirect("/ServletLeggiIndex");
+    		response.sendRedirect("ServletLeggiIndex");
     	}	
     }
     

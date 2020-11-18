@@ -49,7 +49,7 @@
                                         <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
                                         </td>
-                                        <td class="col-3"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/html/ServletLeggiUtenteById?d=<%=g.getIdUtente() %>"><i
+                                        <td class="col-3"><a href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteById?d=<%=g.getIdUtente() %>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-edit"></i></a>
                                         </td>
                                     </tr>
