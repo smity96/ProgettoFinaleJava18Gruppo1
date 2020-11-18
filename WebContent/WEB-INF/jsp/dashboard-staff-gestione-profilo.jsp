@@ -86,7 +86,7 @@ String dN=sDf.format(u.getDataDiNascita());
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%=u.getPassword() %> "></td>
+                                      placeholder="password"></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>

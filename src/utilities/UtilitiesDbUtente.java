@@ -1,10 +1,12 @@
 package utilities;
+import java.util.Base64;
 import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.NoResultException;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.servlet.http.HttpServletRequest;
@@ -49,7 +51,7 @@ public class UtilitiesDbUtente {
 		EntityTransaction et = em.getTransaction();
 		et.begin();
 		if (!em.contains(u)) {
-		    u = em.merge(u);
+			u = em.merge(u);
 		}
 		em.remove(u);
 		et.commit();
@@ -72,8 +74,8 @@ public class UtilitiesDbUtente {
 		return em.createNamedQuery("Utente.findAll").getResultList();
 	}
 
-	
-	
+
+
 	public static Utente isUtenteGiaReg(String email) {
 		EntityManager em=getManager();
 		EntityTransaction et=em.getTransaction();
@@ -81,26 +83,30 @@ public class UtilitiesDbUtente {
 		Utente u=em.find(Utente.class, email);
 		et.commit();
 		System.out.println("utente gia' registrato"+" "+u.getIdUtente());
-		 return u;
+		return u;
 
-		
+
 
 	}
-	
+
 	public static Utente uLogin(String email,String pssw) {
+		if(email==null||pssw==null||pssw.length()==0)return null;
+		pssw = Base64.getEncoder().encodeToString(pssw.getBytes());
 		EntityManager em=getManager();
 		EntityTransaction et=em.getTransaction();
 		et.begin();
-		Utente u=em.find(Utente.class, email + pssw);
-		et.commit();
-		if(u!=null) {
-			
-		}else if(u.getRuolo()!=0) {
+		Query q=em.createQuery("Select u from Utente u where u.password =:pwd and u.email =:email");
+		q.setParameter("pwd", pssw);
+		q.setParameter("email", email);
+		try {
+			Utente u=(Utente)q.getSingleResult();
+			et.commit();
 			return u;
+		}catch (NoResultException e) {
+			return null;
 		}
-		return null;
-		}
-	
+	}
+
 	public static Utente leggiUtenteByRuolo(int ruolo) {
 		EntityManager em=getManager();
 		EntityTransaction et = em.getTransaction();
@@ -110,7 +116,7 @@ public class UtilitiesDbUtente {
 		System.out.println(u.getRuolo()+" "+ ":" +"letto con successo");
 		return u;
 	}
-	
+
 	public static boolean isAdmin(HttpServletRequest request) {
 		Utente u=(Utente)request.getSession().getAttribute("uLog");
 		if(u==null||u.getRuolo()!=3) {
@@ -119,7 +125,7 @@ public class UtilitiesDbUtente {
 			return true;
 		}
 	}
-	
+
 	public static boolean isStaff(HttpServletRequest request) {
 		Utente u=(Utente)request.getSession().getAttribute("uLog");
 		if(u==null||u.getRuolo()!=2) {
@@ -128,7 +134,7 @@ public class UtilitiesDbUtente {
 			return true;
 		}
 	}
-	
+
 	public static boolean isUtente(HttpServletRequest request) {
 		Utente u=(Utente)request.getSession().getAttribute("uLog");
 		if(u==null||u.getRuolo()!=1) {
@@ -137,8 +143,8 @@ public class UtilitiesDbUtente {
 			return true;
 		}
 	}
-	
-	
+
+
 
 }
 

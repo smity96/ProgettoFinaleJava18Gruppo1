@@ -70,9 +70,9 @@ public class ServletModificaUtente extends HttpServlet {
 			utente.setEmail(request.getParameter("email"));
 			utente.setIndirizzo(request.getParameter("indirizzo"));
 			// -----------GESTIONE CRIPTAZIONE PASSWORD----------------------
-			String pssw = request.getParameter("password").trim();
-			System.out.println("password:" + pssw);
-			if (!pssw.equals("")) {
+			
+			if (request.getParameter("password")!=null||!request.getParameter("password").trim().equals("")) {
+				String pssw = request.getParameter("password").trim();
 				System.out.println("sto nell if sono la ps:" + pssw + "<-fine ");
 				String encodedString = Base64.getEncoder().encodeToString(pssw.getBytes());
 				utente.setPassword(encodedString);

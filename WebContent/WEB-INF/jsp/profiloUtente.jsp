@@ -236,7 +236,7 @@ String dN=sDf.format(u.getDataDiNascita());
             <div class="form-gorup row">
                 <label class="col-sm-2 col-form-label text-warning stile">Password: </label>
                 <div class="col-sm-10">
-            <input  class="rounded stile" name="password" type="password" value="<%=u.getPassword()%>">
+            <input  class="rounded stile" name="password" type="password" placeholder="password">
         </div>
         </div>
 

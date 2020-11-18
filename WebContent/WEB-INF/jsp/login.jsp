@@ -69,12 +69,13 @@ pageEncoding="ISO-8859-1"%>
       </p>
       
       
-      
+    <!-- 
       <input type="checkbox" class="form-check-input" id="exampleCheck1" name="ricordami">
     <label class="form-check-label text-warning stile" for="exampleCheck1">Ricordami!</label>
    
       <br>
       <br>
+     -->  
       <button class="btn text-light btn-outline-warning stile">Accedi</button>
       <br />
       <br />
