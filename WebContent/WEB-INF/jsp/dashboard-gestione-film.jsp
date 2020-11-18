@@ -30,11 +30,12 @@
                             </div>
                             
                             <%List<Film> tuttiFilm=(List<Film>)request.getAttribute("tuttiFilm"); %>
-                            <table class="table table-dark">
+                                <input class="col-4 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca Per Titolo">
+                            <table class="table table-dark" id="myTable">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
                                         <th class="col-4 scritta-dorata">Locandina</th>
-                                        <th class="col-4 scritta-dorata">Titolo</th>
+                                        <th class="col-4 scritta-dorata" onclick="sortTable(1)">Titolo</th>
                                         <th class="col-2 scritta-dorata">Modifica Info Film</th>
                                         <th class="col-2 scritta-dorata">Cancella Film</th>
                                     </tr>
@@ -72,10 +73,11 @@
                                         <i class="fas fa-plus aggiungi-custom">Aggiungi Film</i>
                                     </a></p>
                             </div>
-                            <table class="table table-dark">
+                            <input class="col-4 mb-3" type="text" id="myInput4" onkeyup="myFunction4()" placeholder="Cerca per Titolo">
+                            <table class="table table-dark" id="myTable2">
                                 <thead>
                                     <tr class="d-flex justify-content-center">
-                                        <th class="col-6 scritta-dorata">Titolo</th>
+                                        <th class="col-6 scritta-dorata" onclick="sortTable2(0)">Titolo</th>
                                         <th class="col-3 scritta-dorata">Modifica Info Film</th>
                                         <th class="col-3 scritta-dorata">Cancella Film</th>
                                     </tr>
@@ -239,7 +241,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/riordina.js" type="text/javascript"></script>
 </body>
 
 </html>
