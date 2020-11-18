@@ -21,12 +21,22 @@ public class ServletLeggiFilmToModifica extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Film f=new Film();
 		if(!isAdmin(request)) {
 			response.sendRedirect(request.getContextPath());
 		}else {
-			int id=Integer.parseInt(request.getParameter("id_FilmMod"));
-			System.out.println(id);
-			Film f=UtilitiesDbFilm.leggiFilm(id);
+			if(request.getAttribute("id_FilmMod")!=null) {
+				System.out.println("---> "+request.getAttribute("id_FilmMod"));
+				int id=Integer.parseInt((String)request.getAttribute("id_FilmMod"));
+				System.out.println(id);
+				f=UtilitiesDbFilm.leggiFilm(id);
+			}else if(request.getParameter("id_filmMod")!=null) {
+				System.out.println("---> "+request.getAttribute("id_FilmMod"));
+				int id=Integer.parseInt(request.getParameter("id_filmMod"));
+				System.out.println(id);
+				f=UtilitiesDbFilm.leggiFilm(id);
+			}
+			
 			request.setAttribute("Film", f);
 			request.getRequestDispatcher("/WEB-INF/jsp/modifica-film.jsp").forward(request, response);
 		}

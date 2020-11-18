@@ -44,7 +44,12 @@
 </head>
 <%
 HttpSession s=request.getSession(false); 
-Utente u = (Utente)s.getAttribute("uLog");
+Utente u=null;
+if(request.getAttribute("uLogSt")==null){
+	u = (Utente)s.getAttribute("uLog");
+}else{
+	u=(Utente)request.getAttribute("uLogSt");
+}
 %>
 
 <body style="font-family: 'Monserrat', sans-serif">
@@ -84,9 +89,9 @@ Utente u = (Utente)s.getAttribute("uLog");
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
                             <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">
-                                <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                                <img src="<%=u.getImmagine() %>" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" >
-                                <%="BENVENUTO:"+u.getNome()%>
+                                <%="CIAO:"+u.getNome().toUpperCase()%>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -232,12 +237,12 @@ Utente u = (Utente)s.getAttribute("uLog");
                                     		if(postiDisponibili!=0 && prenotato == false){ 
                                     	%>
 
-									<td><button type="submit" onclick="history.back()"
+									<td><button type="submit" 
 											class="btn btn-outline-warning stile">Prenota</button></td>
 
 									<% } else if(postiDisponibili == 0 && prenotato == false){%>
 
-									<td><button type="submit" onclick="history.back()"
+									<td><button type="submit"
 											class="btn btn-outline-warning stile" disabled>Posti
 											Esauriti</button></td>
 

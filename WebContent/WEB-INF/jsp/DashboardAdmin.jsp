@@ -26,7 +26,18 @@
                                			//String mail = (String) s.getAttribute("mailLog");
                 						//String pssw = (String) session.getAttribute("psswLog");
                 						//TODO Sistemare la sessione
-                						Utente u = (Utente)s.getAttribute("uLog");
+                						Utente u=(Utente)s.getAttribute("uLog");
+                						/*if(request.getAttribute("uLogSt")!=null){
+                							Utente appoggio=(Utente)request.getAttribute("uLogSt");
+                							if(appoggio.getIdUtente()==u.getIdUtente()){
+                    							u=(Utente)request.getAttribute("uLogSt");
+                    						}else{
+                    							u = (Utente)s.getAttribute("uLog");
+                    						}
+                						}*/
+                						
+                						
+                						
                 						//Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                 						
                 	
@@ -79,10 +90,10 @@
 
                 <ul class="navbar-nav icons">
                     <li class="nav-item mr-5">
-                      <a class="nav-link" href="#">
-                        <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
+                      <a class="nav-link" href="IndieGestioneProfiloAdmin">
+                        <img src="<%=u.getImmagine() %>" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="CIAO:"+u.getNome().toUpperCase()%></span>
                       </a>
                     </li>
                     <li class="nav-item">

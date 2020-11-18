@@ -57,8 +57,12 @@
     </p>
     </form>
     <br>
-    <br>
-    <br>
+    <%if(request.getAttribute("emailInviata")!=null&&(Boolean)request.getAttribute("emailInviata")==false){
+    	%>
+   		<p class="text-warning text-center mt-4 stile">
+   		Email non presente nel sistema o errata.
+   		</p>
+    <% }%>
     <br>
     <br>
     <br>

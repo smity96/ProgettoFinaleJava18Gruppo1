@@ -52,7 +52,7 @@ public class ServletModificaUtente extends HttpServlet {
 			// ---------GESTIONE PARTITA IVA ->UNIQUE<- -------------------------
 			String pIva = request.getParameter("pIva");
 			if (pIva.trim().equals("")) {
-				pIva = null;
+				pIva = " ";
 			}
 			// ---------GESTIONE DATA DI NASCITA----------------------------------
 			String dDn = request.getParameter("data_di_nascita");
@@ -70,10 +70,13 @@ public class ServletModificaUtente extends HttpServlet {
 			utente.setEmail(request.getParameter("email"));
 			utente.setIndirizzo(request.getParameter("indirizzo"));
 			// -----------GESTIONE CRIPTAZIONE PASSWORD----------------------
-			
-			if (request.getParameter("password")!=null||!request.getParameter("password").trim().equals("")) {
+			System.out.println("---->"+request.getParameter("password")+"<---");
+			if (request.getParameter("password")==null||request.getParameter("password").equals("")) {
+				System.out.println("utente password-->"+utente.getPassword()+"<---");
+				utente.setPassword(utente.getPassword());
+			}else if(request.getParameter("password")!=null||!request.getParameter("password").equals("")){
 				String pssw = request.getParameter("password").trim();
-				System.out.println("sto nell if sono la ps:" + pssw + "<-fine ");
+				System.out.println("sto nell if sono la ps:->" + pssw + "<-fine ");
 				String encodedString = Base64.getEncoder().encodeToString(pssw.getBytes());
 				utente.setPassword(encodedString);
 			}
@@ -98,7 +101,11 @@ public class ServletModificaUtente extends HttpServlet {
 				System.out.println("sto nel catch");
 				e.printStackTrace();
 			}
-			utente.setImmagine("http://127.0.0.1:8887/" + fileName);
+			if((fileName==null||fileName.trim().equals(""))) {
+				//utente.setImmagine("https://mpng.subpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg");
+			}else {
+				utente.setImmagine("http://127.0.0.1:8887/" + fileName);
+			}
 			System.out.println(utente.toString());
 			UtilitiesDbUtente.modUtente(utente);
 			// ---------AGGIORNAMENTO LISTA -----------------------------------------------
@@ -111,25 +118,31 @@ public class ServletModificaUtente extends HttpServlet {
 			}
 			if (isAdmin(request)) {
 				if (red == 3) {
-					request.setAttribute("uLogSt", utente);
+					//request.setAttribute("uLogSt", utente);
+					HttpSession session = request.getSession();
+					session.setAttribute("uLog", utente);
 					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-profilo.jsp").forward(request,
 							response);
 				} else {
 					// utente admin
 					request.setAttribute("listaU", listaU);
+					//request.setAttribute("uLogSt", utente);
 					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-utenti.jsp").forward(request,
 							response);
 				}
 			} else if (isStaff(request)) {
 				if (red == 2) {
 					System.out.println("if red");
-					request.setAttribute("uLogSt", utente);
+					//request.setAttribute("uLogSt", utente);
+					HttpSession session = request.getSession();
+					session.setAttribute("uLog", utente);
 					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-profilo.jsp").forward(request,
 							response);
 				} else {
 					System.out.println("if else");
 					// utente staff
 					request.setAttribute("listaU", listaU);
+					//request.setAttribute("uLogSt", utente);
 					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-utenti.jsp").forward(request,
 							response);
 				}

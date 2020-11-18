@@ -256,6 +256,9 @@ Utente u=(Utente)s.getAttribute("uLog");
             <!-- fine film prossimamente -->
         </div>
     </section>
+    <br>
+     <br>
+      
     <!-- fine sezione film prossimamente -->
 	
      <!-- Footer: -->

@@ -26,8 +26,17 @@
                                 <h1 class="mb-2">Lista Film In Programmazione</h1>
                                 <a data-toggle="modal" data-target=".aggiungi-film" href="">
                                     <p class="fas fa-plus aggiungi-custom">Aggiungi Film</p>
-                                </a>
+                                     </a>
                             </div>
+                            <%if(request.getAttribute("errore123")!=null){
+                                    	%>
+                                    	<p>Ahimé, le pellicole sono state inventate solo nel 1896 e purtroppo non prevediamo il futuro<p>
+                                    	
+                                  <%  }else if(request.getAttribute("erroreParola")!=null){
+                                	  %>
+                                	  <p>Non puoi inserire lettere come data</p>
+                                  <% }
+                                    %>
                             
                             <%List<Film> tuttiFilm=(List<Film>)request.getAttribute("tuttiFilm"); %>
                             <table class="table table-dark">
@@ -47,7 +56,7 @@
                                         <td class="col-4 text-capitalize bordo-trasparente">
                                             <p class="scritta-dorata"><%=f.getTitolo() %></p>
                                         <td class="col-2 bordo-trasparente">
-                                            <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_FilmMod=<%=f.getIdFilm() %>">
+                                            <a href="<%=request.getContextPath()%>/ServletLeggiFilmToModifica?id_filmMod=<%=f.getIdFilm() %>">
                                                 <i class="colore-icone-scuro icona-menu-grande fas fa-edit"></i>
                                             </a>
                                         <td class="col-2 bordo-trasparente">

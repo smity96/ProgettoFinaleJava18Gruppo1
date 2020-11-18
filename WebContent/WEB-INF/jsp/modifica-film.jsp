@@ -21,6 +21,15 @@
                         <div class="mb-4">
                             <h1 class="d-inline mr-3">Modifica Film</h1>
                         </div>
+                        <%if(request.getAttribute("errore123")!=null){
+                                    	%>
+                                    	<p>Ahimé, le pellicole sono state inventate solo nel 1896 e purtroppo non prevediamo il futuro<p>
+                                    	
+                                  <%  }else if(request.getAttribute("erroreParola")!=null){
+                                	  %>
+                                	  <p>Non puoi inserire lettere come data</p>
+                                  <% }
+                                    %>
 
                       <form action="<%=request.getContextPath()%>/ServletModificaFilm" method="post" enctype="multipart/form-data">
                       <%Film f=(Film)request.getAttribute("Film"); %>

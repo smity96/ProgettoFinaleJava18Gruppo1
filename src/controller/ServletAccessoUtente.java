@@ -111,7 +111,7 @@ public class ServletAccessoUtente extends HttpServlet {
 								break;
 							case 1:
 								//utente normale
-								response.sendRedirect(request.getContextPath());
+								path="ServletLeggiIndex";
 								break;
 							case 2:
 								//staff

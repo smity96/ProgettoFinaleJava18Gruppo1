@@ -23,7 +23,7 @@ public class ServletInserisciPrenotazione extends HttpServlet {
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(!isUtente(request)) {
+		if(!isUtente(request) && !isAdmin(request) && !isStaff(request)) {
 			response.sendRedirect(request.getContextPath());
 		}else {
 			utente = UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("id_utente")));

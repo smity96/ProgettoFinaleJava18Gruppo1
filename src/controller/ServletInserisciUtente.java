@@ -58,7 +58,7 @@ public class ServletInserisciUtente extends HttpServlet {
 			boolean reg = true;
 			// ------GESTISCO LA ->PARTITA-IVA<- ---------------------
 			if (pi.equals("") || pi == null) {
-				pi = null;
+				pi = " ";
 			}
 			// ------CONTROLLO CHE NON SIA GIA' PRESENTE LA ->MAIL<- NEL DB,
 //				SE PRESENTE REINDIRIZZO A login---------------------
@@ -105,10 +105,10 @@ public class ServletInserisciUtente extends HttpServlet {
 						System.out.println("sto nel catch");
 						e.printStackTrace();
 					}
-					if (fileName != null) {
-						utente.setImmagine("http://127.0.0.1:8887/" + fileName);
+					if ((fileName==null||fileName.trim().equals(""))) {
+						utente.setImmagine("http://127.0.0.1:8887/qwerty.jpg");
 					} else {
-						utente.setImmagine("https://mpng.subpng.com/20180521/ocp/kisspng-computer-icons-user-profile-avatar-french-people-5b0365e4f1ce65.9760504415269493489905.jpg");
+						utente.setImmagine("http://127.0.0.1:8887/" + fileName);
 					}
 					// -----------FORMATTAZIONE DELLA DATA.DI.NASCITA
 					// ------------------------------------------

@@ -30,7 +30,7 @@
                             <table class="table table-bordered table-hover table-dark" id="myTable">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-3 scritta-dorata" onclick="sortTable(0)">Id� Utente</th>
+                                        <th class="col-3 scritta-dorata" onclick="sortTable(0)">Id Utente</th>
                                         <th class="col-3 scritta-dorata" onclick="sortTable(1)">Nome Utente</th>
                                         <th class="col-3 scritta-dorata">Cancella Utente</th>
                                         <th class="col-3 scritta-dorata">Modifica Utente</th>
@@ -166,6 +166,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
         <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/riordina.js" type="text/javascript"></script>
 </body>
 
 </html>

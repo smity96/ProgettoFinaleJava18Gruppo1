@@ -116,9 +116,9 @@
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
                             <a class="navbar-brand py-3" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">
-                                <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                                <img src="<%=u.getImmagine() %>" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" >
-                                <%="CIAO :"+u.getNome().toUpperCase()%>
+                                <%="CIAO: "+u.getNome().toUpperCase()%>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -192,7 +192,7 @@
                                 <img id="profileImage" class="img-thumbnail" src="<%=u.getImmagine() %>" >
                              
                              <input id="imageUpload" type="file" 
-                                    name="img" placeholder="Photo" required="" capture>
+                                    name="img" placeholder="Photo" >
                         </div>
                         
                         <!--modifica nome-->

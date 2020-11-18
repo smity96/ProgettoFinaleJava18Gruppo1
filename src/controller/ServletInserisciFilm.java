@@ -39,66 +39,68 @@ public class ServletInserisciFilm extends HttpServlet {
 			//
 			try {
 				int anno = Integer.parseInt(request.getParameter("annoDiUscita"));
+				System.out.println("----> "+request.getParameter("annoDiUscita"));
 				if (anno >= 2021 || anno < 1896) {
-					response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
+					System.out.println("sono nell'if 1896 "+request.getParameter("annoDiUscita"));
+					request.setAttribute("errore123", true);
+					request.getRequestDispatcher("ServletOrdinaFilm").forward(request, response);
 				} else {
 					f2.setAnnoDiUscita(request.getParameter("annoDiUscita"));
+					f2.setDurata(Integer.parseInt(request.getParameter("durata")));
+					f2.setUrlTrailer(request.getParameter("urlTrailer"));
+					f2.setTrama(request.getParameter("trama"));
+					final String path = "C:\\FotoProfiloProgettoF";
+					// crea il part
+					final Part filePart = request.getPart("file");
+					// creiamo il file
+					System.out.println(filePart);
+					final String fileName = getFileName(filePart);
+					System.out.println("fileName: " + fileName);
+					try (OutputStream out = new FileOutputStream(new File(path + File.separator + fileName));
+							InputStream fileContent = filePart.getInputStream();) {
+						int read = 0;
+						final byte[] bytes = new byte[1024];
+						while ((read = fileContent.read(bytes)) != -1) {
+							out.write(bytes, 0, read);
+						}
+					} catch (FileNotFoundException e) {
+						System.out.println("sto nel catch");
+						e.printStackTrace();
+					}
+					if((request.getParameter("fileUrl").trim().equals("")||request.getParameter("fileUrl")==null)&&(fileName==null||fileName.trim().equals(""))) {
+						f2.setLocandina("https://thumbs.dreamstime.com/b/pellicola-di-film-di-colore-di-35mm-3995550.jpg");
+					}else if(fileName==null||fileName.trim().equals("")) {
+						f2.setLocandina(request.getParameter("fileUrl"));
+					}else if (request.getParameter("fileUrl").trim().equals("")||request.getParameter("fileUrl")==null) {
+						f2.setLocandina("http://127.0.0.1:8887/" + fileName);
+					}
+					
+					// controllo sul titolo
+					for (Film f : allFilm) {
+						if (f.getTitolo().equalsIgnoreCase(f2.getTitolo())) {
+							System.out.println("if check falso");
+							check = true;
+							response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
+						}
+					}
+					if (check == false) {
+						System.out.println("if aggiunta film");
+						// aggiungo film
+						UtilitiesDbFilm.inserisciFilm(f2);
+					}
+					List<Film> film=UtilitiesDbFilm.leggiFilmAll();
+					film.sort((f1,f3)->f1.getTitolo().compareToIgnoreCase(f3.getTitolo()));
+					request.setAttribute("tuttiFilm", film);
+					request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-film.jsp").forward(request, response);
+				
 				}
 			} catch (NumberFormatException e1) {
-				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
+				System.out.println("sono nel catch number");
+				request.setAttribute("erroreParola", true);
+				request.getRequestDispatcher("ServletOrdinaFilm").forward(request, response);
 				e1.printStackTrace();
-			} catch (IOException e1) {
-				response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
-				e1.printStackTrace();
 			}
-			f2.setDurata(Integer.parseInt(request.getParameter("durata")));
-			f2.setUrlTrailer(request.getParameter("urlTrailer"));
-			f2.setTrama(request.getParameter("trama"));
-			final String path = "C:\\FotoProfiloProgettoF";
-			// crea il part
-			final Part filePart = request.getPart("file");
-			// creiamo il file
-			System.out.println(filePart);
-			final String fileName = getFileName(filePart);
-			System.out.println("fileName: " + fileName);
-			try (OutputStream out = new FileOutputStream(new File(path + File.separator + fileName));
-					InputStream fileContent = filePart.getInputStream();) {
-				int read = 0;
-				final byte[] bytes = new byte[1024];
-				while ((read = fileContent.read(bytes)) != -1) {
-					out.write(bytes, 0, read);
-				}
-			} catch (FileNotFoundException e) {
-				System.out.println("sto nel catch");
-				e.printStackTrace();
-			}
-			if((request.getParameter("fileUrl").trim().equals("")||request.getParameter("fileUrl")==null)&&(fileName==null||fileName.trim().equals(""))) {
-				f2.setLocandina("https://thumbs.dreamstime.com/b/pellicola-di-film-di-colore-di-35mm-3995550.jpg");
-			}else if(fileName==null||fileName.trim().equals("")) {
-				f2.setLocandina(request.getParameter("fileUrl"));
-			}else if (request.getParameter("fileUrl").trim().equals("")||request.getParameter("fileUrl")==null) {
-				f2.setLocandina("http://127.0.0.1:8887/" + fileName);
-			}
-			
-			// controllo sul titolo
-			for (Film f : allFilm) {
-				if (f.getTitolo().equalsIgnoreCase(f2.getTitolo())) {
-					System.out.println("if check falso");
-					check = true;
-					response.sendRedirect("http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletLeggiFilmToModifica?id_FilmMod="+request.getParameter("id_filmMod"));
-				}
-			}
-			if (check == false) {
-				System.out.println("if aggiunta film");
-				// aggiungo film
-				UtilitiesDbFilm.inserisciFilm(f2);
-			}
-			List<Film> film=UtilitiesDbFilm.leggiFilmAll();
-			film.sort((f1,f3)->f1.getTitolo().compareToIgnoreCase(f3.getTitolo()));
-			request.setAttribute("tuttiFilm", film);
-			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-film.jsp").forward(request, response);
 		}
-		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

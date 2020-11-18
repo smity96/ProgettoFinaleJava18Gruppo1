@@ -2,6 +2,14 @@ html, body {
   overflow-x:hidden;
 }
 
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .banner {
   background-image: url(http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/cinema-sala3.jpg);
   background-position: center;
