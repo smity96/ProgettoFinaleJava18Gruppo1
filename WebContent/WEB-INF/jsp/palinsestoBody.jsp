@@ -246,6 +246,9 @@ Utente u=(Utente)s.getAttribute("uLog");
   <!--CHIUSURA DIV CONTAINER-->
     
   </div>
+  <br>
+  <br>
+  
     
     <jsp:include page= "footer.jsp"></jsp:include>
 

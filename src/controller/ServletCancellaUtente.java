@@ -27,7 +27,7 @@ public class ServletCancellaUtente extends HttpServlet {
    
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	if(isAdmin(request)||isStaff(request)) {
+    	if(isAdmin(request) || isStaff(request)) {
         	if(!request.getParameter("canc").trim().equals("")||request.getParameter("canc")!=null) {
         		//creo l'utente che devo cancellare
              	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
@@ -36,16 +36,19 @@ public class ServletCancellaUtente extends HttpServlet {
         		if(isAdmin(request)) {
         			request.setAttribute("listaU", listaU);
         			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-gestione-utenti.jsp").forward(request, response);
-        		}else if(isStaff(request)) {
+        		} 
+        		if(isStaff(request)) {
         			request.setAttribute("listaU", listaU);
         			request.getRequestDispatcher("/WEB-INF/jsp/dashboard-staff-gestione-utenti.jsp").forward(request, response);
         		}
-        	}
+        	
+        		}
     	}else {
-    		response.sendRedirect("ServletLeggiIndex");
+    	
+        	response.sendRedirect("ServletLeggiIndex");
     	}	
     }
-    
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	doGet(request, response);
     }

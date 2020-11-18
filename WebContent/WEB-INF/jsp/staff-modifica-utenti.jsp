@@ -1,4 +1,5 @@
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -55,11 +56,13 @@
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
                                             value="<%=b.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
-
+<%SimpleDateFormat sDf=new SimpleDateFormat("yyyy-MM-dd");
+String dN=sDf.format(b.getDataDiNascita());
+%>
                                 <tr class="d-flex">
-                                    <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita'</label></th>
+                                    <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
-                                            value="<%=b.getDataDiNascita()%>">
+                                            value="<%=dN%>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -83,13 +86,13 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%b.getPassword(); %> "></td>
+                                        placeholder="password"></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="img" value="<%b.getImmagine(); %>"></td>
+                                    type="file" name="img" value="<%=b.getImmagine() %>"></td>
                             </tr>
                             </tbody>
                             <thead>
@@ -116,7 +119,6 @@
                                             value="<%=b.getNomeSocieta() %>"></td>
                                 </tr>
                                     <tr style="visibility: collapse;">
-                                    <input type="hidden"name="red" value="<%=u.getRuolo()%>">
                                     </tr> 
                                 <tr class="d-flex">
                                     <td class="col-12 justify-content-center"><input class="bg-colore-icone-scuro"
@@ -181,6 +183,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
+      
 </body>
 
 </html>

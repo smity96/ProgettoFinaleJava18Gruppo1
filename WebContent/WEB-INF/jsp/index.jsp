@@ -181,7 +181,7 @@ Utente u=(Utente)s.getAttribute("uLog");
               }else{
             	  films.add(p.getFilm());
             	  %>
-            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films <%=p.getFilm().getGenere()%>">
+            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 films <%=p.getFilm().getGenere().toLowerCase()%>">
                 <div class="card single-film">
                     <div class="img-container size-custom">
                         <!-- il getlocandina stava qui -->
@@ -256,8 +256,11 @@ Utente u=(Utente)s.getAttribute("uLog");
             <!-- fine film prossimamente -->
         </div>
     </section>
+    <br>
+     <br>
+      
     <!-- fine sezione film prossimamente -->
-
+	
      <!-- Footer: -->
     <jsp:include page= "footer.jsp"></jsp:include>
 

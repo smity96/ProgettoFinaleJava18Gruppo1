@@ -33,16 +33,19 @@ public class ServletAccessoUtente extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 	throws ServletException, IOException {
-		listaU = UtilitiesDbUtente.listaUtenti();
-		String email = request.getParameter("email").trim();
+	//	listaU = UtilitiesDbUtente.listaUtenti();
+	/*	String email = request.getParameter("email").trim();
 		String pssw = request.getParameter("password").trim();
 		boolean dentro = false;
-		for (Utente ut : listaU) {
+	/*	for (Utente ut : listaU) {
 //-----------DECRIPTO LA PASSWORD NEL DATABASE E LA PARAGONO CON QUELLA FORNITA ------			
 			byte[] decodedBytes = Base64.getDecoder().decode(ut.getPassword());
 			String decodedString = new String(decodedBytes);
+			
 //-----------CONTROLLO SE NEL DB e' PRESENTE MAIL+PASSWORD-----------------------------
-			if (email.equals(ut.getEmail()) && pssw.equals(decodedString)) {
+		*/	
+	/*	Utente ut=UtilitiesDbUtente.uLogin(email, pssw);
+		if (ut!=null) {
 //-----------CREO UNA SESSIONE CON L'UTENTE LOGGATO-----------------------------------				
 				HttpSession session = request.getSession();
 				session.setAttribute("uLog", ut);
@@ -79,12 +82,53 @@ public class ServletAccessoUtente extends HttpServlet {
 				}
 				dentro = true;
 			}
-		}
+		//}
 //------------------SE LOGIN ERRATO INDIRIZZATO ALLA REGISTRAZIONE-----------------------------		
 		if (!dentro) {
 			request.getRequestDispatcher("/WEB-INF/jsp/registrazione.jsp").forward(request, response);
-		}
-	
+		}*/
+		
+		String email = request.getParameter("email").trim();
+		String pssw = request.getParameter("password").trim();
+		String  path = "/WEB-INF/jsp/registrazione.jsp";
+		Utente ut=UtilitiesDbUtente.uLogin(email, pssw);
+		if (ut!=null) {
+			//-----------CREO UNA SESSIONE CON L'UTENTE LOGGATO-----------------------------------				
+							HttpSession session = request.getSession();
+							session.setAttribute("uLog", ut);
+			//-----------CREO I COOKIES DELL'UTENTE-----------------------------------------------				
+						/*	if (request.getParameter("ricordami")!=null){
+								Cookie accesso=new Cookie("idUtente",Integer.toString(ut.getIdUtente()));
+								response.addCookie(accesso);
+							}*/
+
+			//-----------CONTROLLO IL RUOLO E INDIRIZZO ALLE VARIE DASHBOARD----------------------
+							switch (ut.getRuolo()) {
+							case 0:
+								//registrazione non approvata
+								request.setAttribute("error", "L'utente deve essere accettato dall'admin");
+								path="/WEB-INF/jsp/login.jsp";
+								break;
+							case 1:
+								//utente normale
+								path="ServletLeggiIndex";
+								break;
+							case 2:
+								//staff
+								request.setAttribute("listaU", listaU);
+								path="/WEB-INF/jsp/dashboard-staff-messaggio-benvenuto.jsp";
+								break;
+							case 3:
+								//admin
+								request.setAttribute("listaU", listaU);
+								path="/WEB-INF/jsp/dashboard-messaggio-benvenuto.jsp";
+								break;
+							default:
+								System.out.println("Non dovresti essere qui");
+								break;
+							}
+						}
+		request.getRequestDispatcher(path).forward(request, response);
 		// response.sendRedirect("/profilo.jsp");
 	}	
 }

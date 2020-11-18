@@ -1,4 +1,5 @@
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -15,9 +16,9 @@
                                         //String mail = (String) s.getAttribute("mailLog");
                                         //String pssw = (String) session.getAttribute("psswLog");
                                         Utente u = (Utente)s.getAttribute("uLog");
-                                        if(request.getAttribute("uLogSt")!=null){
+                                        /*if(request.getAttribute("uLogSt")!=null){
                                         	u=(Utente)request.getAttribute("uLogSt");
-                                        }
+                                        }*/
                                         //Utente u=UtilitiesDbUtente.leggiUtenteById(2);
                                         
                     
@@ -55,11 +56,13 @@
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
                                             value="<%=u.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
-
+<%SimpleDateFormat sDf=new SimpleDateFormat("yyyy-MM-dd");
+String dN=sDf.format(u.getDataDiNascita());
+%>
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
-                                            value="<%=u.getDataDiNascita()%>">
+                                            value="<%=dN %>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -83,7 +86,7 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%=u.getPassword() %> "></td>
+                                      placeholder="password"></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>

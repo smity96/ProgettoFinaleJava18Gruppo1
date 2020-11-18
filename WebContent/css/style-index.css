@@ -3,8 +3,15 @@ html, body {
 }
 
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
 .banner {
-  background-image: url(../src/cinema-sala3.jpg);
+  background-image: url(http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/cinema-sala3.jpg);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -15,18 +22,18 @@ html, body {
 
 .custom-posizionamento {
   position: relative;
-  top: 10rem;
+  top: 160px;
 }
 
 .custom-posizionamento2 {
   position: relative;
-  top: 10rem;
-  left: 2rem;
+  top: 160px;
+  left: 32px;
 }
 
 .custom-posizionamento3 {
   position: relative;
-  top: 3rem;
+  top: 48px;
 }
 
 .img-banner {
@@ -34,11 +41,7 @@ html, body {
 }
 
 .banner-title {
-  font-size: 10rem;
-}
-
-.banner-title2 {
-  font-size: 7rem;
+  font-size: 160px;
 }
 
 .c-image{
@@ -133,7 +136,7 @@ display: block;
   
     @media screen and (max-width: 1450px) {
       .banner-title {
-        font-size: 5rem;
+        font-size: 80px;
       }
   
       .img-banner {
@@ -150,7 +153,7 @@ display: block;
   
       @media screen and (max-width: 425px) {
         .banner-title {
-          font-size: 3rem;
+          font-size: 48px;
         }
   
         .footer-copy {
@@ -166,7 +169,7 @@ display: block;
   
         @media screen and (max-width: 322px) {
           .banner-title {
-            font-size: 3rem;
+            font-size: 48px;
           }
   
           .img-banner {

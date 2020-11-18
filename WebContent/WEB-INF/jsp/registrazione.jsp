@@ -307,11 +307,10 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
     
     <br>
    <br>
-       
+       <!-- data-toggle="modal" data-target="#registra" -->
       <button
         onclick="prendiDataNascita()"
         class="btn text-light btn-outline-warning stile"
-        data-toggle="modal" data-target="#registra"
         href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"
       >
         Registrati
@@ -320,7 +319,7 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
       <br />
       <br />
 
-      <!--Accedi qui se sei gi� registrato-->
+      <!--Accedi qui se sei gia' registrato-->
       <p class="text-warning stile">Sei gia' registrato?</p>
       <a class="text-warning stile" href="/ProgettoFinaleJava18Gruppo1/IndieLogin"
         >Accedi qui!</a
@@ -356,6 +355,8 @@ f) l'esistenza di un processo decisionale automatizzato, compresa la profilazion
                 </div>
             </div>
         </div>
+        <br>
+        <br>
         
   
     

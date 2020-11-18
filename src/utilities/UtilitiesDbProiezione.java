@@ -75,12 +75,16 @@ public class UtilitiesDbProiezione {
 		LocalDateTime finePDaAggiungere=inizioPDaAggiungere.plusMinutes(pDaAggiungere.getIntervallo()+pDaAggiungere.getFilm().getDurata());
 		Boolean timeSlotOccupato=false;
 		for (Proiezione p : proiezioni) {
+			if(pDaAggiungere.equals(p)) {
+				continue;
+			}
 			LocalDateTime inizioP=LocalDateTime.ofInstant(p.getDataOra().toInstant(), ZoneId.systemDefault());			
 			LocalDateTime fineP=inizioP.plusMinutes(p.getIntervallo()+p.getFilm().getDurata());
-			if(inizioPDaAggiungere.isEqual(inizioP)&&finePDaAggiungere.isEqual(fineP)) {
+			/*if(inizioPDaAggiungere.isEqual(inizioP)&&finePDaAggiungere.isEqual(fineP)) {
 				timeSlotOccupato=false;
-			}else if(inizioP.isBefore(finePDaAggiungere) && fineP.isAfter(inizioPDaAggiungere)) {
-					timeSlotOccupato=true;
+			}else*/
+			if(inizioP.isBefore(finePDaAggiungere) && fineP.isAfter(inizioPDaAggiungere)) {
+				timeSlotOccupato=true;
 			}
 		}
 		return timeSlotOccupato;

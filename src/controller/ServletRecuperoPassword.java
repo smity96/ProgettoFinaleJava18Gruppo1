@@ -22,7 +22,7 @@ public class ServletRecuperoPassword extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("/WEB-INF/jsp/emailPasswordInviata.jsp").forward(request, response);
+		doPost(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -32,6 +32,7 @@ public class ServletRecuperoPassword extends HttpServlet {
 		String decodedString=null;
 		//mi prendo tutti gli utenti
 		List<Utente>allUtenti=UtilitiesDbUtente.listaUtenti();
+		boolean emailInviata=true;
 		//li scorro
 		for(Utente u: allUtenti) {
 			//se ne trovo uno con la stessa email
@@ -42,8 +43,13 @@ public class ServletRecuperoPassword extends HttpServlet {
 				decodedString = new String(decodedBytes);
 				//gliela invio via mail
 				InvioEmail.inviaMail(u, 3, decodedString);
+				emailInviata=true;
+				request.getRequestDispatcher("/WEB-INF/jsp/emailPasswordInviata.jsp").forward(request, response);
+			}else {
+				emailInviata=false;
 			}
 		}
-		doGet(request, response);
+		request.setAttribute("emailInviata", emailInviata);
+		request.getRequestDispatcher("/WEB-INF/jsp/emailRecuperaPassword.jsp").forward(request, response);
 	}
 }

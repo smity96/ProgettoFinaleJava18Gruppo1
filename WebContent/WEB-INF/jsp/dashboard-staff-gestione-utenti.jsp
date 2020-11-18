@@ -30,7 +30,7 @@
                             <table class="table table-bordered table-hover table-dark" id="myTable">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-3 scritta-dorata" onclick="sortTable(0)">Id° Utente</th>
+                                        <th class="col-3 scritta-dorata" onclick="sortTable(0)">Id Utente</th>
                                         <th class="col-3 scritta-dorata" onclick="sortTable(1)">Nome Utente</th>
                                         <th class="col-3 scritta-dorata">Cancella Utente</th>
                                         <th class="col-3 scritta-dorata">Modifica Utente</th>
@@ -40,11 +40,12 @@
                                 <%
                                 
                                 List<Utente>lU=(List<Utente>)request.getAttribute("listaU");
-                                
+                                int i=0;
                                     for(Utente g:lU){
+                                    	i++;
                                 %>
                                     <tr class="d-flex">
-                                        <td class="col-3 scritta-dorata"><%=g.getIdUtente() %></td>
+                                        <td class="col-3 scritta-dorata"><%=i %></td>
                                         <td class="col-3 scritta-dorata"><%=g.getEmail() %></td>
                                         <td class="col-3"><a href="/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=g.getIdUtente()%>"><i
                                                     class="colore-icone-scuro icona-menu-piccolo fas fa-trash-alt"></i></a>
@@ -73,17 +74,20 @@
                             <table class="table table-bordered table-dark" id="myTable2">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 scritta-dorata" onclick="sortTable2(0)">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable2(0)">Id� Utente</th>
                                         <th class="col-2 scritta-dorata" onclick="sortTable2(1)">Nome Utente</th>
                                         <th class="col-5 scritta-dorata">Gestisci Utente</th>
                                         <th class="col-3 scritta-dorata">Conferma Operazione</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <%for(Utente x:lU) 
-                                                    {%>         
+                                <%
+                                int nR=0;
+                                for(Utente x:lU){
+                                	nR++;
+                                                    %>         
                                     <tr class="d-flex">
-                                        <td class="col-2 scritta-dorata"><%=x.getIdUtente() %></td>
+                                        <td class="col-2 scritta-dorata"><%=nR %></td>
                                         <td class="col-2 scritta-dorata"><%=x.getNome() %></td>
                                         <td class="col-5"><label><select class="col-12 text-center h-100"
                                                     name="gestici-utente">
@@ -162,6 +166,7 @@
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
         <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/riordina.js" type="text/javascript"></script>
 </body>
 
 </html>

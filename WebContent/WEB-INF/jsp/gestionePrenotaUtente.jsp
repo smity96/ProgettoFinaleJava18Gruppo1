@@ -13,7 +13,12 @@
     <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
    <%
      HttpSession s=request.getSession(false);  
-     Utente u = (Utente)s.getAttribute("uLog");
+   Utente u=null;
+	if(request.getAttribute("uLogSt")==null){
+		u = (Utente)s.getAttribute("uLog");
+	}else{
+		u=(Utente)request.getAttribute("uLogSt");
+	}
                             
    %>
 
@@ -84,9 +89,9 @@
                     <ul class="navbar-nav icons align-items-center">
                         <li class="nav-item mr-5">
                             <a class="navbar-brand py-3 stile" href="/ProgettoFinaleJava18Gruppo1/IndieProfiloUtente">
-                                <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail mr-3"
+                                <img src="<%=u.getImmagine() %>" class="img-fluid rounded-circle img-thumbnail mr-3"
                                     alt="Logo" style="width:40px;" />
-                               <%="BENVENUTO:"+u.getNome()%>
+                               <%="CIAO:"+u.getNome().toUpperCase()%>
                             </a>
                         </li>
                         <li class="nav-item">
