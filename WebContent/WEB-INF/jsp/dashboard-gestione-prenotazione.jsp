@@ -23,10 +23,12 @@
 							<h1 class="d-inline mr-3 titolo-custom">Gestione
 								Prenotazione</h1>
 						</div>
-						<table class="table table-bordered table-dark mb-0">
+						<input class="col-4 mb-3" type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Cerca Email">
+                        <input class="col-4 mb-3" type="text" id="myInput5" onkeyup="myFunction5()" placeholder="Cerca Film o Ora">
+						<table class="table table-bordered table-dark mb-0" id="myTable">
 							<thead>
 								<tr class="d-flex">
-									<th class="col-2 scritta-dorata">Utente</th>
+									<th class="col-2 scritta-dorata" onclick="sortTable(0)">Utente</th>
 									<th class="col-8 scritta-dorata">Film Prenotato</th>
 									<th class="col-2 scritta-dorata">Cancella Prenotazione</th>
 								</tr>
@@ -142,7 +144,7 @@
 		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
 		crossorigin="anonymous"></script>
 	<script
-		src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js"
+		src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/riordina.js"
 		type="text/javascript"></script>
 </body>
 

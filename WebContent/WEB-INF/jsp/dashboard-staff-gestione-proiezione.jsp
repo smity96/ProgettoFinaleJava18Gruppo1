@@ -38,11 +38,13 @@
 								 proiezioni o e' antecedente alla data e ora attuale.</p>
 								 <%} %>
 							</div>
-							<table class="table table-dark">
+							<input class="col-4 mb-3" type="text" id="myInput2" onkeyup="myFunction2()" placeholder="Cerca Per Data e Ora">
+                        	<input class="col-4 mb-3" type="text" id="myInput" onkeyup="myFunction()" placeholder="Cerca Per Film">
+							<table class="table table-dark" id="myTable">
 								<thead>
 									<tr class="d-flex justify-content-center">
-										<th class="col-2 scritta-dorata">Data e Ora</th>
-										<th class="col-2 scritta-dorata">Film Proiettato</th>
+										<th class="col-2 scritta-dorata" onclick="sortTable(0)">Data e Ora</th>
+										<th class="col-2 scritta-dorata" onclick="sortTable(1)">Film Proiettato</th>
 										<th class="col-2 scritta-dorata">Intervallo</th>
 										<th class="col-2 scritta-dorata">N. Posti</th>
 										<th class="col-2 scritta-dorata">Costo Biglietto</th>
@@ -119,10 +121,11 @@
 									</a>
 								</p>
 							</div>
-							<table class="table table-dark">
+							<input class="col-3 mb-3" type="text" id="myInput4" onkeyup="myFunction4()" placeholder="Cerca per Film">
+							<table class="table table-dark" id="myTable2">
 								<thead>
 									<tr class="d-flex justify-content-center">
-										<th class="col-4 scritta-dorata">Film Proiettato</th>
+										<th class="col-4 scritta-dorata" onclick="sortTable2(0)">Film Proiettato</th>
 										<th class="col-4 scritta-dorata">Info Film</th>
 										<th class="col-2 scritta-dorata">Modifica Proiezione</th>
 										<th class="col-2 scritta-dorata">Cancella Proiezione</th>
@@ -290,7 +293,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
         integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
         crossorigin="anonymous"></script>
-        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/script.js" type="text/javascript"></script>
+        <script src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/js/riordina.js" type="text/javascript"></script>
 </body>
 
 </html>

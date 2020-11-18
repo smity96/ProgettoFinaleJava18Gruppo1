@@ -85,6 +85,28 @@ function myFunction() {
       }       
     }
   }
+
+  function myFunction5() {
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("myInput5");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("myTable");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[2];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          console.log(tr.item(i))
+          tr.item(i).classList.add("d-flex")
+          tr.item(i).classList.remove("d-none")
+        } else {
+          tr.item(i).classList.add("d-none")
+          tr.item(i).classList.remove("d-flex")
+        }
+      }       
+    }
+  }
   
   function sortTable(n) {
     var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
