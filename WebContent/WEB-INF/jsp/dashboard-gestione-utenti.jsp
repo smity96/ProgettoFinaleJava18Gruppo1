@@ -78,7 +78,7 @@
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="CIAO :"+u.getNome()%></span>
                       </a>
                     </li>
                     <li class="nav-item">

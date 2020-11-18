@@ -49,9 +49,9 @@ public class ServletInserisciUtente extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (!isAdmin(request)) {
+		/*if (!isAdmin(request)) {
 			response.sendRedirect(request.getContextPath());
-		} else {
+		} else {*/
 			String email = request.getParameter("email").trim();
 			String pi = request.getParameter("P.I.").trim();
 			String dDn = request.getParameter("data_di_nascita").trim();
@@ -142,7 +142,7 @@ public class ServletInserisciUtente extends HttpServlet {
 				}
 			}
 		}
-	}
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

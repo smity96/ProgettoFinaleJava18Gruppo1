@@ -1,4 +1,5 @@
 
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>
@@ -87,7 +88,7 @@
                       <a class="nav-link" href="#">
                         <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
                           style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="BENVENUTO:"+u.getNome()%></span>
+                        <span class="scritta-dorata ml-2"><%="CIAO:"+u.getNome().toUpperCase()%></span>
                       </a>
                     </li>
                     <li class="nav-item">
@@ -185,11 +186,13 @@
                                     <td class="col-md-10 col-9"><input class="col-8" type="text" name="cognome"
                                             value="<%=b.getCognome() %>" class="text-capitalize"></td>
                                 </tr>
-
+<%SimpleDateFormat sDf=new SimpleDateFormat("yyyy-MM-dd");
+String dN=sDf.format(b.getDataDiNascita());
+%>
                                 <tr class="d-flex">
                                     <th class="col-md-2 col-3 scritta-dorata"><label>Data di Nascita'</label></th>
                                     <td class="col-md-10 col-9"><input class="col-8" type="date" name="data_di_nascita"
-                                            value="<%=b.getDataDiNascita()%>">
+                                            value="<%=dN %>">
                                     </td>
                                 </tr>
                             </tbody>
@@ -213,13 +216,13 @@
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Password</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8" type="password" name="password"
-                                        value="<%b.getPassword(); %> "></td>
+                                        value="<%=b.getPassword() %> "></td>
                             </tr>
                             <tr class="d-flex">
                                 <th class="col-md-2 col-3 scritta-dorata"><label>Immagine Profilo</label></th>
                                 <td class="col-md-10 col-9"><input class="col-8 col-lg-5 mb-3 mb-lg-1" type="url"
                                     name="datanascita" value="" placeholder="Inserisci URL"><input class="col-8 col-lg-3 m-0"
-                                    type="file" name="img" value="<%b.getImmagine(); %>"></td>
+                                    type="file" name="img" value="<%=b.getImmagine() %>"></td>
                             </tr>
                             </tbody>
                             <thead>
