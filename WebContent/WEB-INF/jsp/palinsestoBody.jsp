@@ -1,3 +1,4 @@
+<%@page import="utilities.UtilitiesDbUtente"%>
 <%@page import="model.Utente"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.text.DateFormat"%>
@@ -152,9 +153,13 @@ Utente u=(Utente)s.getAttribute("uLog");
      <a class="btn btn-outline-light bottone p-1 text-warning text-decoration-none mt-1 stile" href="<%=p.getFilm().getUrlTrailer() %>" target="_blank">Vai al Trailer</a>
      
      <!-- METTERE SE SONO LOGGATO VADO A PRENOTA. SENNO VADO A LOGIN: -->
-     
+  <%   if(UtilitiesDbUtente.isAdmin(request)||UtilitiesDbUtente.isStaff(request)||UtilitiesDbUtente.isUtente(request)){%> 
      <a class="btn btn-outline-warning bottone p-1 text-light text-decoration-none mt-1 stile ml-3" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiPrenotazione">Prenota</a>
-                
+   <%       }  else{%>  
+          
+          <a class="btn btn-outline-warning bottone p-1 text-light text-decoration-none mt-1 stile ml-3" href="/ProgettoFinaleJava18Gruppo1/IndieLogin">Prenota</a>
+  
+    <%      }   %>   
       </div>
       
       

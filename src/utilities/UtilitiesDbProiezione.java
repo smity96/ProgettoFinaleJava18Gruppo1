@@ -77,7 +77,9 @@ public class UtilitiesDbProiezione {
 		for (Proiezione p : proiezioni) {
 			LocalDateTime inizioP=LocalDateTime.ofInstant(p.getDataOra().toInstant(), ZoneId.systemDefault());			
 			LocalDateTime fineP=inizioP.plusMinutes(p.getIntervallo()+p.getFilm().getDurata());
-			if(inizioP.isBefore(finePDaAggiungere) && fineP.isAfter(inizioPDaAggiungere)) {
+			if(inizioPDaAggiungere.isEqual(inizioP)&&finePDaAggiungere.isEqual(fineP)) {
+				timeSlotOccupato=false;
+			}else if(inizioP.isBefore(finePDaAggiungere) && fineP.isAfter(inizioPDaAggiungere)) {
 					timeSlotOccupato=true;
 			}
 		}

@@ -6,126 +6,7 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-     <!--Titolo e logo barra ricerca-->
-    <title>Sorrento Cinema</title>
-    <link rel = "icon" href ="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" type = "image/x-icon"> 
-    
-     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
-   
-    
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/stylemain.css">
-    <link rel="stylesheet" href="http://localhost:8080/ProgettoFinaleJava18Gruppo1/css/style-dash-final.css">
-   /ProgettoFinaleJava18Gruppo1/html/index.jsp
-    </head>
-   <%
-        HttpSession s=request.getSession(false);    
-        Utente u = (Utente)s.getAttribute("uLog");
-              
-                %>
-<body style="font-family: 'Monserrat', sans-serif">
-    <!-- navbar in alto-->
-    <nav class="navbar bg-nero navbar-expand-xl">
-        <div class="container-fluid">
-
-            <!-- Navbar Brand -->
-            <h1 class="navbar-brand scritta-dorata scritta-click-scuro text-uppercase">Dashboard Staff</h1>
-            <!-- Fine Navbar Brand -->
-
-            <!-- Toggler/collapse Button -->
-            <button class="navbar-toggler bg-oro" type="button" data-toggle="collapse" data-target="#myNavbar">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-            <!-- Navbar links collapse -->
-
-            <div class="collapse navbar-collapse justify-content-end" id="myNavbar">
-                <ul class="navbar-nav links d-xl-none">
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link active scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex"><i class="fa fa-home text-muted scritta-click-scuro scritta-dorata mr-3"></i>Torna Al Sito</a>
-                    </li>
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff"><i class="fas fa-folder-open mr-3 text-muted"></i>Dashboard</a>
-                    </li>
-          
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff"><i class="fas fa-user mr-3 text-muted"></i>Gestione Profilo</a>
-                    </li>
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff"><i class="fas fas fa-calendar-alt mr-3 text-muted"></i>Gestione Proiezioni</a>
-                    </li>
-                    <li class="nav-item nav-item-custom">
-                      <a class="nav-link scritta-click-scuro scritta-dorata" href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff"><i class="fas fa-users mr-3 text-muted"></i>Gestione Utenti</a>
-                    </li>
-                  </ul>
-
-                <!-- nav icons -->
-                
-                <ul class="navbar-nav icons">
-                    <li class="nav-item mr-5">
-                      <a class="nav-link" href="#">
-                        <img src="http://localhost:8080/ProgettoFinaleJava18Gruppo1/src/logocinema.png" class="img-fluid rounded-circle img-thumbnail" alt="Logo"
-                          style="width:30px;">
-                        <span class="scritta-dorata ml-2"><%="CIAO :"+u.getNome().toUpperCase() %></span>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link scritta-dorata scritta-click-scuro" data-toggle="modal" data-target="#sign-out" href="#">
-                        <i class="fa fa-sign-out scritta-dorata align-items-center"></i> Logut
-                      </a>
-                    </li>
-                </ul>
-
-            </div>
-        </div>
-    </nav>
-    <!-- fine nav -->
-
-    <!-- main content -->
-
-    <div class="container-fluid bg-oro">
-        <div class="row">
-
-            <!-- Inizio Sidebar sinistra -->
-
-            <nav class="col-xl-2 d-none d-xl-flex sidebar justify-content-center max-viewport">
-                <ul class="navbar-nav flex-column list-side-height">
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fa fa-home text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro" 
-                            href="/ProgettoFinaleJava18Gruppo1/ServletLeggiIndex">Torna Al
-                                Sito</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-folder-open text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/IndieDashboardStaff">Dashboard</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-user text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/IndieGestioneProfiloStaff">Gestione Profilo</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-calendar-alt text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiProiezioniStaff">Gestione Proiezioni</a></div>
-                    </li>
-                    <li class="nav-item d-flex justify-content-around align-items-center my-3">
-                        <div class="col-2 m-0"><i class="fas fa-users text-muted mr-3 nav-size"></i></div>
-                        <div class="col-6 m-0"><a class="nav-link scritta-dorata scritta-click-scuro"
-                                href="/ProgettoFinaleJava18Gruppo1/ServletLeggiUtenteStaff">Gestione Utenti</a></div>
-                    </li>
-                </ul>
-            </nav>
-            <!-- fine sidebar -->
+<jsp:include page="DashboardStaff.jsp"></jsp:include>
 
             <!-- Inizio main destra -->
 
@@ -149,7 +30,7 @@
                             <table class="table table-bordered table-hover table-dark" id="myTable">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-3 scritta-dorata" onclick="sortTable(0)">Id° Utente</th>
+                                        <th class="col-3 scritta-dorata" onclick="sortTable(0)">Idï¿½ Utente</th>
                                         <th class="col-3 scritta-dorata" onclick="sortTable(1)">Nome Utente</th>
                                         <th class="col-3 scritta-dorata">Cancella Utente</th>
                                         <th class="col-3 scritta-dorata">Modifica Utente</th>
@@ -193,7 +74,7 @@
                             <table class="table table-bordered table-dark" id="myTable2">
                                 <thead>
                                     <tr class="d-flex">
-                                        <th class="col-2 scritta-dorata" onclick="sortTable2(0)">Id° Utente</th>
+                                        <th class="col-2 scritta-dorata" onclick="sortTable2(0)">Idï¿½ Utente</th>
                                         <th class="col-2 scritta-dorata" onclick="sortTable2(1)">Nome Utente</th>
                                         <th class="col-5 scritta-dorata">Gestisci Utente</th>
                                         <th class="col-3 scritta-dorata">Conferma Operazione</th>

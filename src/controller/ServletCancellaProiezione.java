@@ -27,7 +27,7 @@ public class ServletCancellaProiezione extends HttpServlet {
 		}else {
 			Proiezione pDaEliminare=UtilitiesDbProiezione.leggiProiezioneById(Integer.parseInt(request.getParameter("idDaEliminare")));
 			UtilitiesDbProiezione.eliminaProiezione(pDaEliminare);
-			response.sendRedirect("/ServletLeggiProiezioniAdmin");
+			response.sendRedirect("ServletLeggiProiezioniAdmin");
 		}
 	}
 
