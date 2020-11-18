@@ -34,7 +34,7 @@
     </head>
 <body style="font-family: 'Monserrat', sans-serif">
     <!-- navbar in alto-->
-    <nav class="navbar navbar-expand-xl">
+    <nav class="navbar navbar-expand-xl bg-nero">
         <div class="container-fluid">
 
             <!-- Navbar Brand -->
@@ -147,4 +147,3 @@
             </nav>
 
             <!-- fine sidebar -->
-</html>
