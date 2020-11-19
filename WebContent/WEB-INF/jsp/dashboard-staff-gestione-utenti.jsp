@@ -41,8 +41,15 @@
                                 <%
                                 
                                 List<Utente>lU=(List<Utente>)request.getAttribute("listaU");
+                                //List<Utente>lUApp=(List<Utente>)(Object)lU.stream().filter(a->a.getRuolo()!=3).collect(Collectors.toList());
+                                List<Utente>lUApp=new ArrayList<>();
+                                for(Utente p:lU){
+                                	if(p.getRuolo()!=3){
+                                		lUApp.add(p);
+                                	}
+                                }
                                 int i=0;
-                                    for(Utente g:lU){
+                                    for(Utente g:lUApp){
                                     	i++;
                                 %>
                                     <tr class="d-flex">
