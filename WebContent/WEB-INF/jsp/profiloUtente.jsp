@@ -274,6 +274,16 @@ String dN=sDf.format(u.getDataDiNascita());
 
 
 </form>
+<br>
+<br>
+
+<div class="text-center col-6">
+			
+                            <a class="btn btn-outline-danger text-light" data-toggle="modal" data-target="#cancellaAccount" href="">
+                              Cancella Account
+                            </a>
+                            </div>
+                        
 
               </div>
                           </div>
@@ -313,6 +323,40 @@ String dN=sDf.format(u.getDataDiNascita());
                 </div>
             </div>
         </div>
+        
+          <!-- Modal -->
+        <div class="modal fade text-warning" id="cancellaAccount">
+            <div class="modal-dialog bg-dark text-warning">
+                <div class="modal-content bg-dark text-warning">
+                    <!-- Modal Header -->
+                    <div class="modal-header bg-dark text-warning">
+                        <h4 class="modal-title stile text-warning">Vuoi cancellare il tuo account?</h4>
+                        <button type="button" class="close" data-dismiss="modal">
+                            &times;
+                        </button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body stile bg-dark text-warning">
+                        Premi cancella per confermare.
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer stile">
+                        <button type="button" class="btn btn-outline-warning text-light" data-dismiss="modal">
+                            Torna Indietro
+                        </button>
+                        <button onclick="location.href='http://localhost:8080/ProgettoFinaleJava18Gruppo1/ServletCancellaUtente?canc=<%=u.getIdUtente() %>';" type="button" class="btn btn-outline-danger text-light" data-dismiss="modal">
+                        Cancella Account
+                    </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <br>
+        <br>
+        <br><br>
         
          <!-- Footer: -->
     <jsp:include page= "footer.jsp"></jsp:include>

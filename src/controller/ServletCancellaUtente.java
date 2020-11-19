@@ -43,7 +43,21 @@ public class ServletCancellaUtente extends HttpServlet {
         		}
         	
         		}
-    	}else {
+    	}else if(isUtente(request)) {
+    		if(!request.getParameter("canc").trim().equals("")||request.getParameter("canc")!=null) {
+	        		//creo l'utente che devo cancellare
+	             	u=UtilitiesDbUtente.leggiUtenteById(Integer.parseInt(request.getParameter("canc")));
+	        		UtilitiesDbUtente.cancUtente(u);
+	        		listaU=UtilitiesDbUtente.listaUtenti();
+	        		HttpSession session = request.getSession();
+					session.setAttribute("uLog", null);
+        		
+        			request.setAttribute("listaU", listaU);
+        			request.getRequestDispatcher("ServletLeggiIndex").forward(request, response);
+        		
+        		}
+    	
+    	} else {
     	
         	response.sendRedirect("ServletLeggiIndex");
     	}	
