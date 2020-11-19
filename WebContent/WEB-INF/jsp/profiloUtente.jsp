@@ -220,7 +220,7 @@ String dN=sDf.format(u.getDataDiNascita());
                  <div class="form-gorup row">
                         <label class="col-sm-2 col-form-label text-warning stile">Data di Nascita: </label>
                         <div class="col-sm-10">
-                    <input  class="rounded bottone" name="data_di_nascita" type="date" value="<%=dN%>">
+                    <input  class="rounded bottone" name="data_di_nascita" type="date" value="<%=dN%>" disabled>
                 </div>
                 </div>
 
@@ -228,7 +228,7 @@ String dN=sDf.format(u.getDataDiNascita());
                 <div class="form-gorup row">
                     <label class="col-sm-2 col-form-label text-warning stile">Email: </label>
                     <div class="col-sm-10">
-                <input class="rounded stile" name="email" type="email" value="<%=u.getEmail() %>">
+                <input class="rounded stile" name="email" type="email" value="<%=u.getEmail() %>" disabled>
             </div>
             </div>
 

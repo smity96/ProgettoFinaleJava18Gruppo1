@@ -1,4 +1,5 @@
 
+<%@page import="java.util.stream.Collectors"%>
 <%@page import="utilities.*"%>
 <%@page import="model.*"%>
 <%@page import="java.util.*"%>

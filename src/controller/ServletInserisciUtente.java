@@ -118,10 +118,10 @@ public class ServletInserisciUtente extends HttpServlet {
 					LocalDate d1 = LocalDate.parse(dDn, dtf);
 					int periodo = Period.between(d1, LocalDate.now()).getYears();
 					System.out.println("PERIODO:" + periodo);
-					if (periodo > 16) {
+					if (periodo > 16 && periodo<110) {
 						Date dNa = UtilitiesDbFilm.convertiLocalDate(d1);
 						utente.setDataDiNascita(dNa);
-						// ----------INSERIMENTO UETENTE NEL
+						// ----------INSERIMENTO UTENTE NEL
 						// DATABASE-----------------------------------------------------
 						UtilitiesDbUtente.insUtente(utente);
 						System.out.println(utente.toString());

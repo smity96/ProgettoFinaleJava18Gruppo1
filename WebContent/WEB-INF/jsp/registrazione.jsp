@@ -83,7 +83,7 @@ pageEncoding="ISO-8859-1"%>
     <% if (request.getAttribute("error")!=null){
     boolean minore=(Boolean)request.getAttribute("error");
     if(minore==true){%>
-    <h1 class="text-warning">SEI TROPPO GIOVANE PER REGISTARTI</h1>
+    <h1 class="text-warning">Oops...SEMBRA CHE TU NON ABBIA L'ETA GIUSTA PER REGISTRARTI </h1>
     <%} 
     	}%>
     
